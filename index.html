@@ -92,6 +92,11 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <style>
+      .navi {
+        color: #3adbff;
+      }
+    </style>
   </head>
 
   <body>
@@ -103,7 +108,6 @@
       <div class="spinner-grow text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
-
     <!-- Navbar Start -->
     <nav
       class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5"
@@ -121,38 +125,62 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-4 py-lg-0">
-          <a href="index.html" class="nav-item nav-link">Home</a>
-          <a href="about.html" class="nav-item nav-link">About</a>
-          <a href="service.html" class="nav-item nav-link">Service</a>
-          <a href="clints.html" class="nav-item nav-link">Clients</a>
+          <a href="index.html" class="nav-item nav-link"
+            ><i class="fas fa-home navi"></i> &nbsp; Home</a
+          >
+          <a href="about.html" class="nav-item nav-link"
+            ><i class="fas fa-info-circle navi"></i> &nbsp; About</a
+          >
+          <a href="service.html" class="nav-item nav-link"
+            ><i class="fas fa-cogs navi"></i> &nbsp; Service</a
+          >
+          <a href="clints.html" class="nav-item nav-link"
+            ><i class="fas fa-users navi"></i> &nbsp; Clients</a
+          >
+
           <div class="nav-item dropdown">
             <a
               href="#"
               class="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
-              >Products</a
+            >
+              <i class="fas fa-box navi"></i> &nbsp; Products</a
             >
             <div class="dropdown-menu shadow-sm m-0">
               <a href="tallycusto.html" class="dropdown-item"
-                >Tally Customization</a
+                ><i class="fas fa-cogs navi"></i>&nbsp; Tally Customization</a
               >
               <a href="behave.html" class="dropdown-item"
-                >Distribution & Management System</a
+                ><i class="fas fa-database navi"></i>&nbsp; Distribution &
+                Management System</a
               >
               <a href="webdev.html" class="dropdown-item"
-                >Custom Web Based Application</a
+                ><i class="fas fa-globe navi"></i>&nbsp; Custom Web Based
+                Application</a
               >
-              <a href="tallyprime.html" class="dropdown-item">Tally Prime</a>
+              <a href="tallyprime.html" class="dropdown-item"
+                ><i class="fas fa-cube navi"></i>&nbsp; Tally Prime</a
+              >
               <a href="easybill.html" class="dropdown-item"
-                >Easy Bill – Billing Management Solution</a
+                ><i class="fas fa-file-invoice navi"></i>&nbsp; Easy Bill –
+                Billing Management Solution</a
               >
               <a href="satreport.html" class="dropdown-item"
-                >Customized Statutory Report</a
+                ><i class="fas fa-file-alt navi"></i>&nbsp; Customized Statutory
+                Report</a
               >
-              <a href="biz.html" class="dropdown-item">Biz Analyst</a>
+              <a href="biz.html" class="dropdown-item"
+                ><i class="fas fa-chart-line navi"></i>&nbsp; Biz Analyst</a
+              >
             </div>
           </div>
-          <a href="contact.html" class="nav-item nav-link">Contact</a>
+          <a
+            href="contact.html"
+            class="nav-item nav-link"
+            style="margin-right: 80px"
+          >
+            <i class="fas fa-phone navi"></i> &nbsp; Contact</a
+          >
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
           <a
@@ -184,16 +212,19 @@
               Welcome to Pioneer Software Solutions
             </h6>
             <style>
-              #entropara{
+              #entropara {
                 display: inline-block;
-                    width: 100%;
-                    text-align: justify;
-                    font-size: 14px; /* Reset font size */
+                width: 100%;
+                text-align: justify;
+                font-size: 14px; /* Reset font size */
               }
             </style>
-            <p class="animated slideInDown" id="entropara" >
-              At our company, we're the trusted name in software services. With a commitment to innovation and excellence, we deliver cutting-edge solutions meeting our clients' unique needs. Our experts provide top-notch development, customization, and support services,keeping clients ahead in today's digital landscape ...
-
+            <p class="animated slideInDown" id="entropara">
+              At our company, we're the trusted name in software services. With
+              a commitment to innovation and excellence, we deliver cutting-edge
+              solutions meeting our clients' unique needs. Our experts provide
+              top-notch development, customization, and support services,keeping
+              clients ahead in today's digital landscape ...
             </p>
             <a
               href="about.html"
@@ -223,21 +254,21 @@
           </div>
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
             <div class="h-100">
-              <h1 class="display-6">About Us</h1>
+              <h4 class="display-6">About Us</h4>
               <p class="text-primary fs-5 mb-4">
                 The Most Trusted Name in Software Services
               </p>
               <style>
-                #mainapara{
+                #mainapara {
                   display: inline-block;
-                    width: 100%;
-                    text-align: justify;
-                    font-size: 14px; /* Reset font size */
+                  width: 100%;
+                  text-align: justify;
+                  font-size: 14px; /* Reset font size */
                 }
               </style>
-              <p id="mainapara" >
+              <p id="mainapara">
                 Pioneer Software Solutions came into existence with serving the
-                consulting  forcomputerized accounting system since 2010. The
+                consulting forcomputerized accounting system since 2010. The
                 major object of the company is to identify itself in the field
                 on computerized accounting system implementation and had chosen
                 Tally to nurture its ideas. It is associated with Tally as a
@@ -246,7 +277,9 @@
                 and more than 200 clients across Nepal ...
               </p>
 
-              <a class="btn btn-primary py-3 px-4" href="">Read More</a>
+              <a class="btn btn-primary py-3 px-4" href="about.html"
+                >Read More</a
+              >
             </div>
           </div>
         </div>
@@ -262,9 +295,12 @@
           data-wow-delay="0.1s"
           style="max-width: 500px"
         >
-          <h1 class="display-6">Why Us!</h1>
+          <h4 class="display-6">
+            <img src="img/why.png" style="max-width: 70px" alt="" /> Why Us !
+          </h4>
+          <hr />
           <p class="text-primary fs-5 mb-5">
-            The Best In The Software Services Industry
+            <!-- The Best In The Software Services Industry -->
           </p>
         </div>
         <div class="row g-5">
@@ -272,7 +308,8 @@
             <div class="d-flex align-items-start">
               <img
                 class="img-fluid flex-shrink-0"
-                src="img/icon-7.png"
+                src="img/whyus/expert.png"
+                style="max-width: 70px"
                 alt=""
               />
               <div class="ps-4">
@@ -297,15 +334,16 @@
             <div class="d-flex align-items-start">
               <img
                 class="img-fluid flex-shrink-0"
-                src="img/icon-6.png"
+                src="img/whyus/customize.png"
                 alt=""
+                style="max-width: 60px"
               />
               <div class="ps-4">
                 <h5 class="mb-3">Customized Solutions</h5>
                 <span
                   >Emphasize your ability to tailor solutions to meet each
                   client's individual requirements, ensuring they receive
-                  personalized and effective software solutions.</span
+                  personalized.</span
                 >
               </div>
             </div>
@@ -314,16 +352,16 @@
             <div class="d-flex align-items-start">
               <img
                 class="img-fluid flex-shrink-0"
-                src="img/icon-5.png"
+                src="img/whyus/dialogue.png"
                 alt=""
+                style="max-width: 60px"
               />
               <div class="ps-4">
                 <h5 class="mb-3">Transparent Communication</h5>
                 <span
                   >Promise clear and open communication throughout the project
-                  lifecycle, fostering trust and collaboration between your team
-                  and the client.</span
-                >
+                  lifecycle, fostering trust and collaboration With your team
+                </span>
               </div>
             </div>
           </div>
@@ -331,15 +369,16 @@
             <div class="d-flex align-items-start">
               <img
                 class="img-fluid flex-shrink-0"
-                src="img/icon-4.png"
+                src="img/whyus/cost.png"
                 alt=""
+                style="max-width: 65px"
               />
               <div class="ps-4">
                 <h5 class="mb-3">Cost-Effective Solutions</h5>
-                <span
-                  >Showcase your ability to provide high-quality software
-                  solutions at competitive prices, ensuring clients get
-                  excellent value for their investment</span
+                <span>
+                  Highlight your ability to deliver high-quality software
+                  solutions at competitive prices, ensuring clients receive
+                  excellent value.</span
                 >
               </div>
             </div>
@@ -348,15 +387,16 @@
             <div class="d-flex align-items-start">
               <img
                 class="img-fluid flex-shrink-0"
-                src="img/icon-3.png"
+                src="img/whyus/customer-service.png"
+                style="max-width: 75px"
                 alt=""
               />
               <div class="ps-4">
                 <h5 class="mb-3">Dedicated Support</h5>
-                <span
-                  >Assure clients of your ongoing support and assistance even
-                  after project completion, providing peace of mind and ensuring
-                  their long-term satisfaction with your services</span
+                <span>
+                  Dedicated to seamless customer support, we prioritize quick
+                  responses to address any arising issues promptly and
+                  effectively.</span
                 >
               </div>
             </div>
@@ -365,15 +405,15 @@
             <div class="d-flex align-items-start">
               <img
                 class="img-fluid flex-shrink-0"
-                src="img/icon-8.png"
+                src="img/whyus/timely.png"
                 alt=""
+                style="max-width: 65px"
               />
               <div class="ps-4">
                 <h5 class="mb-3">Timely Support</h5>
-                <span
-                  >In our commitment to timely support, we prioritize
-                  responsiveness and effectiveness. Our dedicated support team
-                  is readily available to address any issues or concerns.</span
+                <span>
+                  Committed to providing timely support, we prioritize swift
+                  responses to ensure your peace of mind and satisfaction.</span
                 >
               </div>
             </div>
@@ -402,27 +442,30 @@
         transform: scale(1.2);
       }
 
-      #servdata{
+      #servdata {
         display: inline-block;
         width: 100%;
         text-align: justify;
         font-size: 14px; /* Reset font size */
       }
     </style>
+
     <div class="container-xxl bg-light py-5 my-5">
       <div class="container py-5">
         <div
           class="text-center mx-auto wow fadeInUp"
           data-wow-delay="0.1s"
           style="max-width: 500px"
-
           id="serve"
         >
-          <h1 class="display-6">Services</h1>
-          <p class="text-primary fs-5 mb-5" id="servdata">
-            Services Built Specifically For Your Business
-          </p>
+          <h4 class="display-6">
+            <img src="img/services.png" style="max-width: 70px" alt="" />
+            Services
+          </h4>
+          <hr />
         </div>
+        <br />
+        <br />
         <div class="row g-4">
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="service-item bg-white p-5">
@@ -432,8 +475,7 @@
                 alt=""
               />
               <h5 class="mb-3">Tally Customization</h5>
-              <p id="servdata" >
-
+              <p id="servdata">
                 Most of the business organization fulfill their basic accounting
                 automation with available accounting software ...
               </p>
@@ -450,7 +492,7 @@
                 alt=""
               />
               <h5 class="mb-3">Web Development</h5>
-              <p  id="servdata" >
+              <p id="servdata">
                 We create your web address for your business. We are creating
                 static and dynamic natured websites for last ...
               </p>
@@ -463,7 +505,7 @@
             <div class="service-item bg-white p-5">
               <img class="img-fluid mb-4" src="img/Products/Prime.png" alt="" />
               <h5 class="mb-3">Tally Prime</h5>
-              <p id="servdata" >
+              <p id="servdata">
                 It is a globally recognized and most popular over South Asia
                 region and widely used on different business ...
               </p>
@@ -480,9 +522,9 @@
                 alt=""
               />
               <h5 class="mb-3">EasyBill</h5>
-              <p id="servdata" >
+              <p id="servdata">
                 EasyBill is a product especially designed for computerized
-                billing. The software has various features of billing and ...                
+                billing. The software has various features of billing and ...
               </p>
               <a href="easybill.html"
                 >Read More <i class="fa fa-arrow-right ms-2"></i
@@ -497,7 +539,7 @@
                 alt=""
               />
               <h5 class="mb-3">Customized Statutory Report</h5>
-              <p id="servdata" >
+              <p id="servdata">
                 There are various business requirements on different business
                 verticals. Default features of Tally Prime gives the ..
               </p>
@@ -510,7 +552,7 @@
             <div class="service-item bg-white p-5">
               <img class="img-fluid mb-4" src="img/Products/biz.png" alt="" />
               <h5 class="mb-3">Biz Analyst</h5>
-              <p id="servdata" >
+              <p id="servdata">
                 Biz Analyst is a mobile application that gives real time
                 information & allows you to access your TallyPrime data
                 anytime..
@@ -533,9 +575,13 @@
           data-wow-delay="0.1s"
           style="max-width: 500px"
         >
-          <h1 class="display-6">Our Clients</h1>
-          <hr />
+          <h4 class="display-6">
+            <img src="img/clints.png" style="max-width: 70px" alt="" /> Our
+            Clients
+          </h4>
         </div>
+        <br />
+        <br />
         <div
           class="owl-carousel roadmap-carousel wow fadeInUp"
           data-wow-delay="0.1s"
@@ -609,8 +655,11 @@
           data-wow-delay="0.1s"
           style="max-width: 500px"
         >
-          <h1 class="display-6">FAQs</h1>
-          <p class="text-primary fs-5 mb-5">Frequently Asked Questions</p>
+          <h4 class="display-6">
+            <img src="img/faq.png" style="max-width: 60px" alt="" /> FAQs
+          </h4>
+          <br />
+          <br />
         </div>
         <div class="row justify-content-center">
           <div class="col-lg-10">

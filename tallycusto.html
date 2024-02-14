@@ -37,6 +37,9 @@
            text-align: justify;
            font-size: 14px; /* Reset font size */
           }
+          .navi {
+        color: #3adbff;
+      }
     </style>
 </head>
 
@@ -50,42 +53,80 @@
 
 
     <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
-        <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <img id="logoimg" src="img/Logo.png" alt="">
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-4 py-lg-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a href="about.html" class="nav-item nav-link">About</a>
-                <a href="service.html" class="nav-item nav-link">Service</a>
-                <a href="clints.html" class="nav-item nav-link">Clients</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Products</a>
-                    <div class="dropdown-menu shadow-sm m-0">
-                        <a href="tallycusto.html" class="dropdown-item">Tally Customization</a>
-                        <a href="behave.html" class="dropdown-item">Distribution & Management System</a>
-                        <a href="webdev.html" class="dropdown-item">Custom Web Based Application</a>
-                        <a href="tallyprime.html" class="dropdown-item">Tally Prime</a>
-                        <a href="easybill.html" class="dropdown-item">Easy Bill – Billing Management Solution</a>
-                        <a href="satreport.html" class="dropdown-item">Customized Statutory Report</a>
-                        <a href="biz.html" class="dropdown-item">Biz Analyst</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
-            </div>
-            <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i
-                        class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i
-                        class="fab fa-twitter"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-0" href=""><i
-                        class="fab fa-linkedin-in"></i></a>
-            </div>
+    <nav
+      class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5"
+    >
+      <a href="index.html" class="navbar-brand d-flex align-items-center">
+        <img id="logoimg" src="img/Logo.png" alt="" />
+      </a>
+      <button
+        type="button"
+        class="navbar-toggler"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarCollapse"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto py-4 py-lg-0">
+          <a href="index.html" class="nav-item nav-link"
+            ><i class="fas fa-home navi"></i> &nbsp; Home</a
+          >
+          <a href="about.html" class="nav-item nav-link"
+            ><i class="fas fa-info-circle navi"></i>  &nbsp; About</a
+          >
+          <a href="service.html" class="nav-item nav-link"
+            ><i class="fas fa-cogs navi"></i> &nbsp; Service</a
+          >
+          <a href="clints.html" class="nav-item nav-link"
+            ><i class="fas fa-users navi"></i> &nbsp; Clients</a
+          >
+
+          <div class="nav-item dropdown">
+            <a
+              href="#"
+              class="nav-link dropdown-toggle"
+              data-bs-toggle="dropdown"
+            >
+              <i class="fas fa-box navi"></i> &nbsp; Products</a
+            >
+            <div class="dropdown-menu shadow-sm m-0">
+              <a href="tallycusto.html" class="dropdown-item"><i class="fas fa-cogs navi"></i>&nbsp; Tally Customization</a>
+              <a href="behave.html" class="dropdown-item"><i class="fas fa-database navi"></i>&nbsp; Distribution & Management System</a>
+              <a href="webdev.html" class="dropdown-item"><i class="fas fa-globe navi"></i>&nbsp; Custom Web Based Application</a>
+              <a href="tallyprime.html" class="dropdown-item"><i class="fas fa-cube navi"></i>&nbsp; Tally Prime</a>
+              <a href="easybill.html" class="dropdown-item"><i class="fas fa-file-invoice navi"></i>&nbsp; Easy Bill – Billing Management Solution</a>
+              <a href="satreport.html" class="dropdown-item"><i class="fas fa-file-alt navi"></i>&nbsp; Customized Statutory Report</a>
+              <a href="biz.html" class="dropdown-item"><i class="fas fa-chart-line navi"></i>&nbsp; Biz Analyst</a>
+          </div>
+          
+          </div>
+          <a
+            href="contact.html"
+            class="nav-item nav-link"
+            style="margin-right: 80px"
+          >
+            <i class="fas fa-phone navi"></i> &nbsp; Contact</a
+          >
         </div>
+        <div class="h-100 d-lg-inline-flex align-items-center d-none">
+          <a
+            class="btn btn-square rounded-circle bg-light text-primary me-2"
+            href="https://m.facebook.com/p/Pioneer-Software-Solutions-Pvt-Ltd-100046733833026/"
+            ><i class="fab fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn btn-square rounded-circle bg-light text-primary me-2"
+            href=""
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a
+            class="btn btn-square rounded-circle bg-light text-primary me-0"
+            href=""
+            ><i class="fab fa-linkedin-in"></i
+          ></a>
+        </div>
+      </div>
     </nav>
     <!-- Navbar End -->
 
