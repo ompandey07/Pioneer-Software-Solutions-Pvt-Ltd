@@ -7,7 +7,7 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
-    <!-- SEO  -->
+    <!-- SEO -->
     <meta charset="UTF-8" />
     <meta
       name="description"
@@ -60,8 +60,6 @@
     <meta name="twitter:site" content="www.pioneersoftware.com.np" />
     <meta name="twitter:creator" content="www.pioneersoftware.com.np" />
 
-    <!-- SEO  -->
-
     <!-- Favicon -->
     <link href="img/title.jpg" rel="icon" />
 
@@ -96,6 +94,101 @@
       .navi {
         color: #3adbff;
       }
+      /* Floating Contact Icon Styles */
+      .floating-contact {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+      .floating-contact img {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        animation: float 2s ease-in-out infinite;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .floating-contact img:hover {
+        transform: scale(1.15);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+      }
+      /* Floating Animation */
+      @keyframes float {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0); }
+      }
+      /* Contact Popup Styles */
+      .contact-popup {
+        position: absolute;
+        bottom: 90px;
+        right: 10px;
+        background: linear-gradient(135deg, #007bff, #00c4ff);
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        display: none;
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .contact-popup.active {
+        display: block;
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+      .contact-popup::before {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        right: 30px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid #007bff;
+      }
+      .contact-popup h6 {
+        margin: 0 0 15px;
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .contact-popup p {
+        margin: 8px 0;
+        font-size: 14px;
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        white-space: nowrap;
+        padding: 8px 10px;
+        border-radius: 5px;
+        transition: background 0.2s ease;
+      }
+      .contact-popup p:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .contact-popup p strong {
+        font-weight: 600;
+        flex: 1;
+        margin-right: 10px;
+      }
+      .contact-popup p span {
+        flex: 1;
+        text-align: right;
+        font-weight: 400;
+      }
+      .contact-popup p i {
+        margin-right: 8px;
+        color: rgba(255, 255, 255, 0.8);
+      }
     </style>
   </head>
 
@@ -126,54 +219,53 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto py-4 py-lg-0">
           <a href="index.html" class="nav-item nav-link"
-            ><i class="fas fa-home navi"></i> &nbsp; Home</a
+            ><i class="fas fa-home navi"></i>   Home</a
           >
           <a href="about.html" class="nav-item nav-link"
-            ><i class="fas fa-info-circle navi"></i> &nbsp; About</a
+            ><i class="fas fa-info-circle navi"></i>   About</a
           >
           <a href="downloads.html" class="nav-item nav-link"
-            ><i class="fa fa-download navi"></i> &nbsp; Downloads</a
+            ><i class="fa fa-download navi"></i>   Downloads</a
           >
           <a href="clints.html" class="nav-item nav-link"
-            ><i class="fas fa-users navi"></i> &nbsp; Clients</a
+            ><i class="fas fa-users navi"></i>   Clients</a
           >
-
           <div class="nav-item dropdown">
             <a
               href="#"
               class="nav-link dropdown-toggle"
               data-bs-toggle="dropdown"
             >
-              <i class="fas fa-box navi"></i> &nbsp; Products</a
+              <i class="fas fa-box navi"></i>   Products</a
             >
             <div class="dropdown-menu shadow-sm m-0">
               <a href="tallycusto.html" class="dropdown-item"
-                ><i class="fas fa-cogs navi"></i>&nbsp; Tally Customization</a
+                ><i class="fas fa-cogs navi"></i>  Tally Customization</a
               >
               <a href="behave.html" class="dropdown-item"
-                ><i class="fas fa-database navi"></i>&nbsp; Distribution &
+                ><i class="fas fa-database navi"></i>  Distribution &
                 Management System</a
               >
               <a href="webdev.html" class="dropdown-item"
-                ><i class="fas fa-globe navi"></i>&nbsp; Custom Web Based
+                ><i class="fas fa-globe navi"></i>  Custom Web Based
                 Application</a
               >
               <a href="tallyprime.html" class="dropdown-item"
-                ><i class="fas fa-cube navi"></i>&nbsp; Tally Prime</a
+                ><i class="fas fa-cube navi"></i>  Tally Prime</a
               >
               <a href="easybill.html" class="dropdown-item"
-                ><i class="fas fa-file-invoice navi"></i>&nbsp; Easy Bill –
+                ><i class="fas fa-file-invoice navi"></i>  Easy Bill –
                 Billing Management Solution</a
               >
               <a href="satreport.html" class="dropdown-item"
-                ><i class="fas fa-file-alt navi"></i>&nbsp; Customized Statutory
+                ><i class="fas fa-file-alt navi"></i>  Customized Statutory
                 Report</a
               >
               <a href="biz.html" class="dropdown-item"
-                ><i class="fas fa-chart-line navi"></i>&nbsp; Biz Analyst</a
+                ><i class="fas fa-chart-line navi"></i>  Biz Analyst</a
               >
               <a href="tallycloud.html" class="dropdown-item"
-                ><i class="fa fa-cloud navi"></i>&nbsp; Tally On Cloud
+                ><i class="fa fa-cloud navi"></i>  Tally On Cloud
                 Service</a
               >
             </div>
@@ -183,7 +275,7 @@
             class="nav-item nav-link"
             style="margin-right: 80px"
           >
-            <i class="fas fa-phone navi"></i> &nbsp; Contact</a
+            <i class="fas fa-phone navi"></i>   Contact</a
           >
         </div>
         <div class="h-100 d-lg-inline-flex align-items-center d-none">
@@ -199,7 +291,7 @@
           ></a>
           <a
             class="btn btn-square rounded-circle bg-light text-primary me-0"
-            href="" target="_blank"
+            href=""
             ><i class="fab fa-linkedin-in"></i
           ></a>
         </div>
@@ -280,7 +372,6 @@
                 years experience of serving solution on Tally with 10+ team size
                 and more than 200 clients across Nepal ...
               </p>
-
               <a class="btn btn-primary py-3 px-4" href="about.html"
                 >Read More</a
               >
@@ -433,7 +524,6 @@
         transition: transform 0.3s;
         cursor: pointer;
       }
-
       .service-item {
         display: flex;
         flex-direction: column;
@@ -442,7 +532,6 @@
       .service-item img:hover {
         transform: scale(1.2);
       }
-
       #servdata {
         display: inline-block;
         width: 100%;
@@ -450,7 +539,6 @@
         font-size: 14px;
       }
     </style>
-
     <div class="container-xxl bg-light py-5 my-5">
       <div class="container py-5">
         <div
@@ -607,7 +695,6 @@
           </div>
           <div class="roadmap-item">
             <div class="roadmap-point"><span></span></div>
-
             <span><img src="img/Clints/saurya.png" alt="" /></span>
           </div>
           <div class="roadmap-item">
@@ -616,12 +703,10 @@
           </div>
           <div class="roadmap-item">
             <div class="roadmap-point"><span></span></div>
-
             <span><img src="img/Clints/riddhi.png" alt="" /></span>
           </div>
           <div class="roadmap-item">
             <div class="roadmap-point"><span></span></div>
-
             <span><img src="img/Clints/RedBUll.png" alt="" /></span>
           </div>
           <div class="roadmap-item">
@@ -653,7 +738,6 @@
         width: 70%;
         height: auto;
       }
-
       .roadmap-item img {
         width: 100%;
         height: 100%;
@@ -772,6 +856,21 @@
     </div>
     <!-- FAQs Start -->
 
+    <!-- Sticky Floating Contact -->
+    <div class="floating-contact">
+      <img src="img/whatsapp.png" alt="Contact Us" id="toggleContact" />
+      <div class="contact-popup" id="contactPopup">
+        <h6>Contact Our Team</h6>
+        <p><i class="fas fa-user"></i><strong>Anil Munankarmi</strong><span>+977-985-1141375</span></p>
+        <p><i class="fas fa-user"></i><strong>Suman Mool</strong><span>+977-984-1915661</span></p>
+        <p><i class="fas fa-user"></i><strong>Nhuja Maharjan</strong><span>+977-986-1823984</span></p>
+        <p><i class="fas fa-user"></i><strong>Om Pandey</strong><span>+977-980-5533806</span></p>
+        <p><i class="fas fa-user"></i><strong>Absek Maharjan</strong><span>+977-984-1817045</span></p>
+        <p><i class="fas fa-user"></i><strong>Ashish Shrestha</strong><span>+977-980-5533804</span></p>
+        <p><i class="fas fa-user"></i><strong>Mani Maharjan</strong><span>+977-982-3834009</span></p>
+      </div>
+    </div>
+
     <!-- Footer Start -->
     <div
       class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn"
@@ -784,7 +883,6 @@
               <img id="logoimg" src="img/Logo.png" alt="" />
             </a>
             <br />
-
             <span
               >Whether it's designing custom applications, implementing
               enterprise solutions, or providing ongoing maintenance and
@@ -819,7 +917,7 @@
             <h5 class="mb-4">Get In Touch</h5>
             <p style="font-size: 13px">
               <i class="fa fa-map-marker-alt me-3"></i>Naag Pokhari, Kathmandu,
-              Nepal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80 meter north form
+              Nepal        80 meter north form
               Hotel Marriot
             </p>
             <hr />
@@ -827,7 +925,6 @@
               <i class="fa fa-phone-alt me-3"></i>+977-1-4533234, 4533434,
               4533331
             </p>
-
             <p>
               <i class="fa fa-envelope me-3"></i>info@pioneersoftware.com.np
             </p>
@@ -836,9 +933,7 @@
             <h5 class="mb-4">Cell</h5>
             <p style="white-space: nowrap">Anil Munankarmi : 977-9851141375</p>
             <p>Suman Mool : 977-9841915661</p>
-            <p>Rajesh Heka : 977-9860116706</p>
           </div>
-
           <div class="col-lg-3 col-md-6">
             <h5 class="mb-4">Quick Links</h5>
             <a class="btn btn-link" href="about.html">About Us</a>
@@ -869,13 +964,13 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-              &copy; <a href="#">Pioneer Software Solution Pvt Ltd</a>, All
+              © <a href="index.html">Pioneer Software Solution Pvt Ltd</a>, All
               Right Reserved.
             </div>
             <div class="col-md-6 text-center text-md-end">
               Developed By : 
-              <a href="https://www.omkumarpandey.com.np/">Ꭷʍ Ꭾαи∂єყ</a> &nbsp;
-              &nbsp; illustration Credit :
+              <a href="https://www.omkumarpandey.com.np/">Ꭷʍ Ꭾαиđєy</a>  
+                illustration Credit :
               <a href="https://www.freepik.com/">Freepik</a>
             </div>
           </div>
@@ -893,8 +988,14 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
 
-
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <!-- Floating Contact Toggle Script -->
+    <script>
+      document.getElementById('toggleContact').addEventListener('click', function() {
+        const contactPopup = document.getElementById('contactPopup');
+        contactPopup.classList.toggle('active');
+      });
+    </script>
   </body>
 </html>
