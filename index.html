@@ -434,7 +434,7 @@
             background-clip: text;
         }
 
-        /* ===== TALLY PARTNERSHIP SECTION (MODIFIED) ===== */
+        /* ===== TALLY PARTNERSHIP SECTION ===== */
         .partnership-section {
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
             position: relative;
@@ -520,7 +520,6 @@
             z-index: 2;
         }
 
-        
         .partnership-image.right {
             width: 220px;
             height: 165px;
@@ -678,6 +677,260 @@
 
         .timeline-content:hover .timeline-icon { transform: scale(1.1) rotate(5deg); }
 
+        /* ===== NEW SERVICES SECTION - MATCHING PAGE COLORS ===== */
+        .services-new {
+            background: white;
+            position: relative;
+            padding: 120px 0;
+            overflow: hidden;
+        }
+
+        .services-new::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.02) 0%, transparent 50%);
+        }
+
+        .services-new-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .services-new-title {
+            font-family: 'Kaushan Script', cursive;
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            text-align: center;
+        }
+
+        .services-new-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 5rem;
+            color: #4b5563;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .services-tabs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .services-tabs-nav {
+            display: flex;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            overflow-x: auto;
+        }
+
+        .service-tab-btn {
+            flex: 1;
+            padding: 1.5rem 1rem;
+            background: none;
+            border: none;
+            color: #6b7280;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 160px;
+            position: relative;
+        }
+
+        .service-tab-btn:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.05);
+        }
+
+        .service-tab-btn.active {
+            color: #667eea;
+            background: white;
+        }
+
+        .service-tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .service-tab-icon {
+            width: 40px;
+            height: 40px;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .service-tab-btn:hover .service-tab-icon,
+        .service-tab-btn.active .service-tab-icon {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .service-tab-title {
+            font-size: 0.9rem;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .services-content-area {
+            padding: 3rem;
+            background: white;
+        }
+
+        .service-content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .service-content-text {
+            color: #1a202c;
+        }
+
+        .service-content-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: #1f2937;
+        }
+
+        .service-content-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            color: #4b5563;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #374151;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 0.8rem;
+        }
+
+        .service-image-area {
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-image-area img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            transition: all 0.3s ease;
+        }
+
+        .service-content-grid:hover .service-image-area img {
+            transform: scale(1.05);
+        }
+
+        .service-cta-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .service-cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            background: linear-gradient(135deg, #5a67d8, #6b46c1);
+        }
+
+        .service-cta-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .service-cta-btn:hover i {
+            transform: translateX(3px);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1200px) {
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .footer-logo-section,
+            .footer-contact-section,
+            .footer-center-section {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-center-image {
+                width: 200px;
+                height: 140px;
+            }
+
+            .partnership-title { font-size: 3rem; }
+            .partnership-images-grid { flex-direction: column; gap: 1.5rem; }
+            .partnership-image.left, .partnership-image.right { width: 180px; height: 130px; }
+            .partnership-image.center { width: 140px; height: 100px; }
+
+            .services-grid-modern {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+        }
         /* ===== BUTTONS ===== */
         .btn-enhanced {
             background: var(--primary-gradient);
@@ -737,54 +990,6 @@
             transform: translateY(-3px);
             box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
         }
-
-        /* ===== SERVICE CARDS ===== */
-        .service-enhanced {
-            background: white;
-            border-radius: 20px;
-            padding: 2.5rem;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid #f1f5f9;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-        }
-        
-        .service-enhanced::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--primary-gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: -1;
-        }
-        
-        .service-enhanced:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
-            color: white;
-        }
-        
-        .service-enhanced:hover::after { opacity: 1; }
-        
-        .service-enhanced:hover .service-icon {
-            transform: scale(1.15) rotate(5deg);
-            filter: brightness(0) invert(1);
-        }
-        
-        .service-enhanced:hover .service-link { color: white; }
-        
-        .service-icon {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            margin-bottom: 1.5rem;
-        }
-        
-        .service-link { transition: color 0.3s ease; }
 
         /* ===== FOOTER ===== */
         .footer-enhanced {
@@ -1064,7 +1269,7 @@
         }
 
         .contact-trigger::after {
-            content: '5';
+            content: '7';
             position: absolute;
             top: -5px;
             right: -5px;
@@ -1244,6 +1449,31 @@
             .partnership-images-grid { flex-direction: column; gap: 1.5rem; }
             .partnership-image.left, .partnership-image.right { width: 180px; height: 130px; }
             .partnership-image.center { width: 140px; height: 100px; }
+
+            .services-hexagon-grid {
+                width: 600px;
+                height: 500px;
+            }
+
+            .service-hexagon {
+                width: 160px;
+                height: 160px;
+                padding: 1rem;
+            }
+
+            .achievements-pentagon-container {
+                height: 500px;
+            }
+
+            .achievement-center {
+                width: 180px;
+                height: 180px;
+            }
+
+            .achievement-center img {
+                width: 120px;
+                height: 120px;
+            }
         }
 
         @media (max-width: 1024px) {
@@ -1274,6 +1504,40 @@
             .partnership-section { padding: 80px 0; }
             .partnership-title { font-size: 2.5rem; }
             .partnership-images-grid .connection-line { display: none; }
+
+            .services-new { padding: 80px 0; }
+            .services-new-title { font-size: 3rem; }
+            
+            .services-tabs-nav {
+                flex-wrap: wrap;
+            }
+
+            .service-tab-btn {
+                min-width: 120px;
+                padding: 1rem 0.5rem;
+            }
+
+            .service-tab-icon {
+                width: 30px;
+                height: 30px;
+            }
+
+            .service-tab-title {
+                font-size: 0.8rem;
+            }
+
+            .service-content-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .services-content-area {
+                padding: 2rem;
+            }
+
+            .service-content-title {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1297,6 +1561,37 @@
             .partnership-subtitle { font-size: 1.1rem; }
             .partnership-image.left, .partnership-image.right { width: 160px; height: 110px; }
             .partnership-image.center { width: 120px; height: 90px; }
+
+            .services-new-title { font-size: 2.5rem; }
+            
+            .services-tabs-nav {
+                flex-direction: column;
+            }
+
+            .service-tab-btn {
+                min-width: auto;
+                flex-direction: row;
+                justify-content: flex-start;
+                padding: 1rem 1.5rem;
+                text-align: left;
+            }
+
+            .service-tab-icon {
+                width: 24px;
+                height: 24px;
+            }
+
+            .service-content-title {
+                font-size: 1.8rem;
+            }
+
+            .services-content-area {
+                padding: 1.5rem;
+            }
+
+            .service-image-area img {
+                max-width: 250px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1324,6 +1619,30 @@
             .partnership-title { font-size: 1.8rem; }
             .partnership-image.left, .partnership-image.right { width: 140px; height: 100px; }
             .partnership-image.center { width: 100px; height: 80px; }
+
+            .services-new { padding: 60px 0; }
+            .services-new-title { font-size: 2rem; }
+
+            .service-content-title {
+                font-size: 1.5rem;
+            }
+
+            .service-content-description {
+                font-size: 1rem;
+            }
+
+            .services-content-area {
+                padding: 1rem;
+            }
+
+            .service-image-area img {
+                max-width: 200px;
+            }
+
+            .service-cta-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -1528,6 +1847,76 @@
         </div>
     </section>
 
+    <!-- New Single Content Services Section -->
+    <section class="services-new">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="services-new-content">
+                <h2 class="services-new-title">
+                    Our Services
+                </h2>
+                
+                <p class="services-new-subtitle">
+                    Transforming your business with innovative software solutions designed to meet your unique needs and drive growth in the digital age.
+                </p>
+                
+                <div class="services-tabs-container">
+                    <!-- Tabs Navigation -->
+                    <div class="services-tabs-nav">
+                        <button class="service-tab-btn active" data-service="tally-custom">
+                            <img src="img/Products/customize.png" alt="Tally Customization" class="service-tab-icon" />
+                            <span class="service-tab-title">Tally Customization</span>
+                        </button>
+                        <button class="service-tab-btn" data-service="web-dev">
+                            <img src="img/Products/webdev.webp" alt="Web Development" class="service-tab-icon" />
+                            <span class="service-tab-title">Web Development</span>
+                        </button>
+                        <button class="service-tab-btn" data-service="tally-prime">
+                            <img src="img/Products/Prime.png" alt="Tally Prime" class="service-tab-icon" />
+                            <span class="service-tab-title">Tally Prime</span>
+                        </button>
+                        <button class="service-tab-btn" data-service="easybill">
+                            <img src="img/Products/EasyBill.png" alt="EasyBill" class="service-tab-icon" />
+                            <span class="service-tab-title">EasyBill</span>
+                        </button>
+                        <button class="service-tab-btn" data-service="reports">
+                            <img src="img/Products/creport.png" alt="Reports" class="service-tab-icon" />
+                            <span class="service-tab-title">Custom Reports</span>
+                        </button>
+                        <button class="service-tab-btn" data-service="biz-analyst">
+                            <img src="img/Products/biz.png" alt="Biz Analyst" class="service-tab-icon" />
+                            <span class="service-tab-title">Biz Analyst</span>
+                        </button>
+                    </div>
+                    
+                    <!-- Single Content Area -->
+                    <div class="services-content-area">
+                        <div class="service-content-grid">
+                            <div class="service-content-text">
+                                <h3 class="service-content-title" id="serviceTitle">Tally Customization</h3>
+                                <p class="service-content-description" id="serviceDescription">
+                                    Most business organizations fulfill their basic accounting automation with available accounting software, but customization takes it to the next level. We specialize in creating tailored solutions that perfectly fit your unique business processes.
+                                </p>
+                                <ul class="service-features" id="serviceFeatures">
+                                    <li>Custom Reports & Analytics</li>
+                                    <li>Automated Data Entry</li>
+                                    <li>Integration with Third-party Systems</li>
+                                    <li>Custom User Interfaces</li>
+                                    <li>Advanced Security Features</li>
+                                </ul>
+                                <a href="tallycusto.html" class="service-cta-btn" id="serviceLink">
+                                    Learn More <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="service-image-area">
+                                <img src="img/Products/customize.png" alt="Service Image" id="serviceImage" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- About Section -->
     <section class="py-24 bg-white relative overflow-hidden">
         <div class="absolute top-0 left-0 w-full h-full opacity-5">
@@ -1652,87 +2041,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-20 slide-in-bottom">
-                <div class="inline-flex items-center space-x-3 bg-blue-50 px-6 py-3 rounded-full mb-8">
-                    <img src="img/services.png" alt="Services" class="w-8 h-8" />
-                    <span class="text-blue-600 font-semibold">Our Services</span>
-                </div>
-                <h2 class="text-5xl lg:text-6xl font-bold text-gray-900 mb-6">Our Services</h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="service-enhanced slide-in-bottom">
-                    <img src="img/Products/customize.png" alt="Tally Customization" class="service-icon w-20 h-20 mx-auto" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Tally Customization</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Most of the business organization fulfill their basic accounting automation with available accounting software, but customization takes it to the next level.
-                    </p>
-                    <a href="tallycusto.html" class="service-link text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center gap-2">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-enhanced slide-in-bottom">
-                    <img src="img/Products/webdev.webp" alt="Web Development" class="service-icon w-20 h-20 mx-auto rounded-lg" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Web Development</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        We create your web address for your business. We are creating static and dynamic natured websites for various industries with modern technologies.
-                    </p>
-                    <a href="webdev.html" class="service-link text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center gap-2">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-enhanced slide-in-bottom">
-                    <img src="img/Products/Prime.png" alt="Tally Prime" class="service-icon w-20 h-20 mx-auto" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Tally Prime</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        It is a globally recognized and most popular over South Asia region and widely used on different business verticals for accounting automation.
-                    </p>
-                    <a href="tallyprime.html" class="service-link text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center gap-2">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-enhanced slide-in-bottom">
-                    <img src="img/Products/EasyBill.png" alt="EasyBill" class="service-icon w-20 h-20 mx-auto" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">EasyBill</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        EasyBill is a product especially designed for computerized billing. The software has various features of billing and inventory management.
-                    </p>
-                    <a href="easybill.html" class="service-link text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center gap-2">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-enhanced slide-in-bottom">
-                    <img src="img/Products/creport.png" alt="Reports" class="service-icon w-20 h-20 mx-auto" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Customized Statutory Report</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        There are various business requirements on different business verticals. Default features of Tally Prime gives comprehensive reports.
-                    </p>
-                    <a href="satreport.html" class="service-link text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center gap-2">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                
-                <div class="service-enhanced slide-in-bottom">
-                    <img src="img/Products/biz.png" alt="Biz Analyst" class="service-icon w-20 h-20 mx-auto" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-4">Biz Analyst</h3>
-                    <p class="text-gray-600 leading-relaxed mb-6">
-                        Biz Analyst is a mobile application that gives real time information & allows you to access your TallyPrime data anytime, anywhere.
-                    </p>
-                    <a href="biz.html" class="service-link text-blue-600 hover:text-blue-800 font-semibold inline-flex items-center gap-2">
-                        Read More <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    
 
     <!-- Simplified Footer -->
     <footer class="footer-enhanced">
@@ -1837,7 +2146,6 @@
                     <div class="contact-phone">+977-985-1141375</div>
                 </div>
 
-
                 <div class="contact-person" onclick="callNumber('+9779805533801')">
                     <div class="contact-avatar">MM</div>
                     <div class="contact-details flex-1">
@@ -1888,7 +2196,6 @@
             </div>
         </div>
     </div>
-
 
     <script>
         // YouTube-style Top Progress Bar
@@ -2020,6 +2327,147 @@
                 }
             });
         }
+
+        // Services Tabs Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.service-tab-btn');
+            const serviceTitle = document.getElementById('serviceTitle');
+            const serviceDescription = document.getElementById('serviceDescription');
+            const serviceFeatures = document.getElementById('serviceFeatures');
+            const serviceLink = document.getElementById('serviceLink');
+            const serviceImage = document.getElementById('serviceImage');
+
+            // Service data
+            const servicesData = {
+                'tally-custom': {
+                    title: 'Tally Customization',
+                    description: 'Most business organizations fulfill their basic accounting automation with available accounting software, but customization takes it to the next level. We specialize in creating tailored solutions that perfectly fit your unique business processes.',
+                    features: [
+                        'Custom Reports & Analytics',
+                        'Automated Data Entry',
+                        'Integration with Third-party Systems',
+                        'Custom User Interfaces',
+                        'Advanced Security Features'
+                    ],
+                    link: 'tallycusto.html',
+                    image: 'img/Products/customize.png',
+                    alt: 'Tally Customization'
+                },
+                'web-dev': {
+                    title: 'Web Development',
+                    description: 'We create your web presence for your business. We develop static and dynamic websites for various industries using modern technologies, ensuring responsive design and optimal performance.',
+                    features: [
+                        'Responsive Web Design',
+                        'E-commerce Solutions',
+                        'Content Management Systems',
+                        'Progressive Web Apps',
+                        'API Development & Integration'
+                    ],
+                    link: 'webdev.html',
+                    image: 'img/Products/webdev.webp',
+                    alt: 'Web Development'
+                },
+                'tally-prime': {
+                    title: 'Tally Prime',
+                    description: 'Globally recognized and most popular accounting software in South Asia, widely used across different business verticals for complete accounting automation and business management.',
+                    features: [
+                        'Complete Business Management',
+                        'GST Compliance & Returns',
+                        'Inventory Management',
+                        'Multi-location Support',
+                        'Banking & Reconciliation'
+                    ],
+                    link: 'tallyprime.html',
+                    image: 'img/Products/Prime.png',
+                    alt: 'Tally Prime'
+                },
+                'easybill': {
+                    title: 'EasyBill',
+                    description: 'EasyBill is a product especially designed for computerized billing. The software includes various features for billing and inventory management, making it perfect for small to medium businesses.',
+                    features: [
+                        'Quick Billing Solutions',
+                        'Inventory Tracking',
+                        'Customer Management',
+                        'Sales Analytics',
+                        'Multi-payment Support'
+                    ],
+                    link: 'easybill.html',
+                    image: 'img/Products/EasyBill.png',
+                    alt: 'EasyBill'
+                },
+                'reports': {
+                    title: 'Customized Statutory Reports',
+                    description: 'Various business requirements across different verticals need specialized reporting. While Tally Prime provides comprehensive reports, we create customized solutions for specific compliance needs.',
+                    features: [
+                        'Statutory Compliance Reports',
+                        'Custom Financial Statements',
+                        'Regulatory Submissions',
+                        'Automated Report Generation',
+                        'Multi-format Export Options'
+                    ],
+                    link: 'satreport.html',
+                    image: 'img/Products/creport.png',
+                    alt: 'Custom Reports'
+                },
+                'biz-analyst': {
+                    title: 'Biz Analyst',
+                    description: 'Biz Analyst is a mobile application that provides real-time information and allows you to access your TallyPrime data anytime, anywhere. Monitor your business performance on the go.',
+                    features: [
+                        'Real-time Business Analytics',
+                        'Mobile Dashboard Access',
+                        'Performance Monitoring',
+                        'Instant Notifications',
+                        'Offline Data Sync'
+                    ],
+                    link: 'biz.html',
+                    image: 'img/Products/biz.png',
+                    alt: 'Biz Analyst'
+                }
+            };
+
+            // Update content function
+            function updateServiceContent(serviceKey) {
+                const service = servicesData[serviceKey];
+                if (!service) return;
+
+                // Update title
+                serviceTitle.textContent = service.title;
+                
+                // Update description
+                serviceDescription.textContent = service.description;
+                
+                // Update features
+                serviceFeatures.innerHTML = '';
+                service.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    serviceFeatures.appendChild(li);
+                });
+                
+                // Update link
+                serviceLink.href = service.link;
+                
+                // Update image
+                serviceImage.src = service.image;
+                serviceImage.alt = service.alt;
+            }
+
+            // Tab click handlers
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceKey = this.getAttribute('data-service');
+                    
+                    // Remove active class from all buttons
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Update content
+                    updateServiceContent(serviceKey);
+                });
+            });
+        });
 
         // Call functionality
         function callNumber(number) {
