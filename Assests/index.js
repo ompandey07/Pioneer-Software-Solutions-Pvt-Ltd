@@ -169,7 +169,7 @@
                 },
                 'tally-prime': {
                     title: 'Tally Prime',
-                    description: 'Globally recognized and most popular accounting software in South Asia, widely used across different business verticals for complete accounting automation and business management.',
+                    description: 'Globally recognized and most popul    ar accounting software in South Asia, widely used across different business verticals for complete accounting automation and business management.',
                     features: [
                         'Complete Business Management',
                         'VAT Compliance & Returns',
