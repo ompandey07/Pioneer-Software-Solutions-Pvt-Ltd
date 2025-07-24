@@ -2,238 +2,1719 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <title>Pioneer Software Solutions Pvt Ltd</title>
+    <title>Downloads - Pioneer Software Solutions Pvt Ltd</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
+    <!-- SEO -->
+    <meta charset="UTF-8" />
+    <meta name="description" content="Download essential software tools and applications from Pioneer Software Solutions. Access Tally Prime, EasyBill, remote desktop tools, and more for your business needs." />
+    <meta name="keywords" content="Pioneer Software Solutions, downloads, software download, Tally Prime, EasyBill, remote desktop tools" />
+    <meta name="author" content="Pioneer Software Solutions Pvt Ltd" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="og:title" property="og:title" content="Downloads - Pioneer Software Solutions Pvt Ltd" />
+    <meta name="og:description" property="og:description" content="Download essential software tools and applications from Pioneer Software Solutions." />
+    <meta name="og:image" property="og:image" content="https://www.pioneersoftware.com.np/img/downloads.png" />
+    <meta name="og:url" property="og:url" content="www.pioneersoftware.com.np/downloads.html" />
+    <meta name="og:type" property="og:type" content="website" />
+
     <!-- Favicon -->
-    <link href="img/title.jpg" rel="icon" />
+    <link href="img/Logo.jpg" rel="icon" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet" />
     <style>
-        .navi {
-            color: #3adbff;
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
         }
-        .table-container {
-            margin: 20px 0;
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .table th, .table td {
-            vertical-align: middle;
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            overflow-x: hidden;
+            background: #fafafa;
         }
-        .table a {
+        
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .font-dancing { font-family: 'Dancing Script', cursive; }
+        .font-kaushan { font-family: 'Kaushan Script', cursive; }
+        
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+        }
+        
+        /* ===== PROGRESS BAR ===== */
+        .top-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .nav-enhanced {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+        }
+        
+        .nav-enhanced.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            position: relative;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            z-index: 10;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: logoGlow 3s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        .logo-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+        }
+
+        @keyframes logoGlow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .logo-circle img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-divider {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, #667eea, transparent);
+            opacity: 0.3;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 12px;
             text-decoration: none;
-            color: #3adbff;
+            color: #374151;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .table a:hover {
+
+        .nav-item.active {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.08);
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-item:hover {
+            color: #3b82f6;
+            background: rgba(59, 130, 246, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .nav-item:hover::before { left: 100%; }
+
+        .nav-item i {
+            color: #3b82f6;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover i { transform: scale(1.2); }
+
+        /* Dropdown */
+        .dropdown-enhanced {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 10px);
+            min-width: 350px;
+            width: max-content;
+            max-width: 450px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            z-index: 1000;
+        }
+        
+        .dropdown-enhanced.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #374151;
+            transition: all 0.3s ease;
+            border-radius: 0;
+            margin: 0;
+            white-space: nowrap;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .dropdown-item:first-child {
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+        
+        .dropdown-item:hover {
+            background: linear-gradient(90deg, #f8fafc, #f1f5f9);
+            color: #1f2937;
+            transform: translateX(8px);
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .dropdown-item i {
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover i { transform: scale(1.2); }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+        .mobile-menu {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: white;
+            z-index: 999;
+            transition: left 0.3s ease;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active { left: 0; }
+
+        .mobile-nav-item {
+            display: block;
+            padding: 1rem 0;
+            color: #374151;
+            text-decoration: none;
+            border-bottom: 1px solid #f1f5f9;
+            font-weight: 500;
+        }
+
+        .mobile-nav-item:hover { color: #3b82f6; }
+
+        /* ===== DOWNLOADS PAGE STYLES ===== */
+        .downloads-hero {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+            margin-top: 80px;
+        }
+        
+        .downloads-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .downloads-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+
+        .breadcrumb-enhanced {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            color: #6b7280;
+        }
+
+        .breadcrumb-enhanced a {
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb-enhanced a:hover {
+            color: #4f46e5;
             text-decoration: underline;
+        }
+
+        .downloads-section {
+            background: white;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .downloads-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.02) 0%, transparent 50%);
+        }
+
+        .downloads-table-container {
+            position: relative;
+            z-index: 10;
+            background: white;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .downloads-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .downloads-table thead {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .downloads-table th {
+            padding: 1.5rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+        }
+
+        .downloads-table tbody tr {
+            border-bottom: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+        }
+
+        .downloads-table tbody tr:hover {
+            background: linear-gradient(90deg, #f8fafc, #f1f5f9);
+            transform: scale(1.01);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+
+        .downloads-table td {
+            padding: 1.25rem 1rem;
+            vertical-align: middle;
+            border: none;
+        }
+
+        .software-name {
+            font-weight: 600;
+            color: #1f2937;
+            font-size: 1rem;
+        }
+
+        .software-description {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        .download-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .download-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .download-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            color: white;
+        }
+
+        .download-link:hover::before { left: 100%; }
+
+        .download-link i {
+            transition: transform 0.3s ease;
+        }
+
+        .download-link:hover i {
+            transform: translateX(3px);
+        }
+
+        /* Category Icons */
+        .software-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .icon-billing { background: linear-gradient(135deg, #f093fb, #f5576c); }
+        .icon-remote { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+        .icon-accounting { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .icon-utility { background: linear-gradient(135deg, #2c3e50, #34495e); }
+
+        .software-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .software-details {
+            flex: 1;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-enhanced {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .btn-enhanced:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-enhanced:hover::before { left: 100%; }
+
+        /* ===== FOOTER ===== */
+        .footer-enhanced {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-enhanced::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+        }
+
+        .footer-enhanced::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+            background-size: 20px 20px;
+            opacity: 0.5;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            margin-bottom: 3rem;
+        }
+
+        /* Footer Left */
+        .footer-logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+            animation: logoFloat 6s ease-in-out infinite;
+        }
+
+        .footer-logo::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            background-size: 400% 400%;
+            animation: logoGlow 4s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        @keyframes logoFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .footer-company-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a202c;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-description {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer Center */
+        .footer-center-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .footer-center-image {
+            width: 220px;
+            height: 160px;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-center-image:hover { transform: translateY(-5px); }
+
+        .footer-center-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 12px;
+        }
+
+        /* Footer Right */
+        .footer-contact-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .contact-title {
+            color: #1a202c;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-title::before {
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: #4b5563;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover { transform: translateX(5px); }
+
+        .contact-icon {
+            width: 35px;
+            height: 35px;
+            background: var(--primary-gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info-item:hover .contact-icon { transform: scale(1.1); }
+
+        .contact-details h4 {
+            color: #1f2937;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-details p {
+            line-height: 1.4;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        .phone-numbers {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(102, 126, 234, 0.15);
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #6b7280;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .developer-credit {
+            color: #9ca3af;
+            font-size: 0.85rem;
+        }
+
+        .developer-credit a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .developer-credit a:hover { color: #4facfe; }
+
+        /* ===== FLOATING CONTACT ===== */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-trigger {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            animation: contactPulse 2s infinite;
+        }
+
+        .contact-trigger::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 25px;
+            height: 25px;
+            background: #ff4444;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            animation: notificationBounce 1.5s infinite;
+        }
+
+        .contact-trigger::after {
+            content: '7';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        @keyframes contactPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes notificationBounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .contact-trigger:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+        }
+
+        .contact-popup {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 400px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.9);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+        }
+
+        .contact-popup.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .contact-popup-header {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .contact-popup-body {
+            padding: 1rem;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .contact-person {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #f1f5f9;
+        }
+
+        .contact-person:hover {
+            background: #f8fafc;
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .contact-phone {
+            color: #10b981;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .slide-in-bottom {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in-bottom.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .slide-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; }
+            .nav-divider { display: none; }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .footer-logo-section,
+            .footer-contact-section,
+            .footer-center-section {
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-center-image {
+                width: 200px;
+                height: 140px;
+            }
+
+            .downloads-table-container {
+                overflow-x: auto;
+            }
+
+            .downloads-table th,
+            .downloads-table td {
+                padding: 1rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-text { display: none; }
+            .nav-container { padding: 0 1rem; }
+
+            .contact-popup {
+                width: 300px;
+                right: -20px;
+            }
+
+            .footer-content { padding: 0 1rem; }
+            .footer-center-image {
+                width: 180px;
+                height: 120px;
+            }
+
+            .downloads-hero {
+                padding: 100px 0 60px;
+            }
+
+            .software-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .downloads-table th {
+                font-size: 1rem;
+                padding: 1.25rem 0.75rem;
+            }
+
+            .downloads-table td {
+                padding: 1rem 0.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-popup {
+                width: 280px;
+                right: -30px;
+            }
+
+            .floating-contact {
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .contact-trigger {
+                width: 60px;
+                height: 60px;
+            }
+
+            .footer-center-image {
+                width: 160px;
+                height: 100px;
+            }
+
+            .downloads-hero {
+                padding: 80px 0 40px;
+            }
+
+            .downloads-table th,
+            .downloads-table td {
+                padding: 0.75rem 0.5rem;
+                font-size: 0.9rem;
+            }
+
+            .download-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .software-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" role="status"></div>
+    <!-- YouTube-style Top Progress Bar -->
+    <div class="top-progress-bar" id="topProgressBar">
+        <div class="progress-fill" id="progressFill"></div>
     </div>
-    <!-- Spinner End -->
 
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0 px-4 px-lg-5">
-        <a href="index.html" class="navbar-brand d-flex align-items-center">
-            <img id="logoimg" src="img/Logo.png" alt="" />
-        </a>
-        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto py-4 py-lg-0">
-                <a href="index.html" class="nav-item nav-link"><i class="fas fa-home navi"></i> &nbsp; Home</a>
-                <a href="about.html" class="nav-item nav-link"><i class="fas fa-info-circle navi"></i> &nbsp; About</a>
-                <a href="downloads.html" class="nav-item nav-link"><i class="fa fa-download navi"></i> &nbsp; Downloads</a>
-                <a href="clints.html" class="nav-item nav-link"><i class="fas fa-users navi"></i> &nbsp; Clients</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fas fa-box navi"></i> &nbsp; Products</a>
-                    <div class="dropdown-menu shadow-sm m-0">
-                        <a href="tallycusto.html" class="dropdown-item"><i class="fas fa-cogs navi"></i>&nbsp; Tally Customization</a>
-                        <a href="behave.html" class="dropdown-item"><i class="fas fa-database navi"></i>&nbsp; Distribution & Management System</a>
-                        <a href="webdev.html" class="dropdown-item"><i class="fas fa-globe navi"></i>&nbsp; Custom Web Based Application</a>
-                        <a href="tallyprime.html" class="dropdown-item"><i class="fas fa-cube navi"></i>&nbsp; Tally Prime</a>
-                        <a href="easybill.html" class="dropdown-item"><i class="fas fa-file-invoice navi"></i>&nbsp; Easy Bill – Billing Management Solution</a>
-                        <a href="satreport.html" class="dropdown-item"><i class="fas fa-file-alt navi"></i>&nbsp; Customized Statutory Report</a>
-                        <a href="biz.html" class="dropdown-item"><i class="fas fa-chart-line navi"></i>&nbsp; Biz Analyst</a>
-                        <a href="tallycloud.html" class="dropdown-item"><i class="fa fa-cloud navi "></i>&nbsp; Tally On Cloud Service</a>
+    <!-- Enhanced Navigation -->
+    <nav class="nav-enhanced fixed w-full top-0">
+        <div class="nav-container">
+            <!-- Logo Section (Left) -->
+            <div class="logo-section">
+                <div class="logo-circle">
+                    <img src="img/MainLogo.png" alt="Pioneer Software" />
+                </div>
+                <span class="logo-text">Pioneer Software</span>
+            </div>
+            
+            <!-- Center Divider -->
+            <div class="nav-divider"></div>
+            
+            <!-- Navigation Menu (Right) -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About</span>
+                </a>
+                <a href="downloads.html" class="nav-item active">
+                    <i class="fa fa-download"></i>
+                    <span>Downloads</span>
+                </a>
+                <a href="clints.html" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    <span>Clients</span>
+                </a>
+                <div class="relative">
+                    <button class="nav-item dropdown-trigger" id="products-dropdown">
+                        <i class="fas fa-box"></i>
+                        <span>Products</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform ml-1" id="dropdown-arrow"></i>
+                    </button>
+                    <div class="dropdown-enhanced" id="dropdown-menu">
+                        <div class="p-0">
+                            <a href="tallycusto.html" class="dropdown-item">
+                                <i class="fas fa-cogs text-orange-500"></i>
+                                <span>Tally Customization</span>
+                            </a>
+                            <a href="behave.html" class="dropdown-item">
+                                <i class="fas fa-database text-green-500"></i>
+                                <span>Distribution & Management System</span>
+                            </a>
+                            <a href="webdev.html" class="dropdown-item">
+                                <i class="fas fa-globe text-blue-500"></i>
+                                <span>Custom Web Based Application</span>
+                            </a>
+                            <a href="tallyprime.html" class="dropdown-item">
+                                <i class="fas fa-cube text-purple-500"></i>
+                                <span>Tally Prime</span>
+                            </a>
+                            <a href="easybill.html" class="dropdown-item">
+                                <i class="fas fa-file-invoice text-red-500"></i>
+                                <span>Easy Bill – Billing Management Solution</span>
+                            </a>
+                            <a href="satreport.html" class="dropdown-item">
+                                <i class="fas fa-file-alt text-indigo-500"></i>
+                                <span>Customized Statutory Report</span>
+                            </a>
+                            <a href="biz.html" class="dropdown-item">
+                                <i class="fas fa-chart-line text-teal-500"></i>
+                                <span>Biz Analyst</span>
+                            </a>
+                            <a href="tallycloud.html" class="dropdown-item">
+                                <i class="fa fa-cloud text-cyan-500"></i>
+                                <span>Tally On Cloud Service</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link" style="margin-right: 80px"><i class="fas fa-phone navi"></i> &nbsp; Contact</a>
+                <a href="contact.html" class="nav-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Contact</span>
+                </a>
             </div>
-            <div class="h-100 d-lg-inline-flex align-items-center d-none">
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href="https://m.facebook.com/p/Pioneer-Software-Solutions-Pvt-Ltd-100046733833026/"><i class="fab fa-facebook-f"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-2" href=""><i class="fab fa-twitter"></i></a>
-                <a class="btn btn-square rounded-circle bg-light text-primary me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-    </nav>
-    <!-- Navbar End -->
 
-    <!-- Table Start -->
-    <div class="container-xxl bg-light py-5 my-5">
-        <div class="container py-5">
-            <div class="table-container">
-                <table class="table table-bordered">
-                    <thead class="bg-primary text-white">
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-nav-item">🏠 Home</a>
+            <a href="about.html" class="mobile-nav-item">ℹ️ About</a>
+            <a href="downloads.html" class="mobile-nav-item">⬇️ Downloads</a>
+            <a href="clints.html" class="mobile-nav-item">👥 Clients</a>
+            <div class="mobile-nav-item">📦 Products</div>
+            <a href="tallycusto.html" class="mobile-nav-item ml-4">• Tally Customization</a>
+            <a href="behave.html" class="mobile-nav-item ml-4">• Distribution & Management</a>
+            <a href="webdev.html" class="mobile-nav-item ml-4">• Web Development</a>
+            <a href="tallyprime.html" class="mobile-nav-item ml-4">• Tally Prime</a>
+            <a href="easybill.html" class="mobile-nav-item ml-4">• Easy Bill</a>
+            <a href="satreport.html" class="mobile-nav-item ml-4">• Statutory Reports</a>
+            <a href="biz.html" class="mobile-nav-item ml-4">• Biz Analyst</a>
+            <a href="tallycloud.html" class="mobile-nav-item ml-4">• Tally Cloud</a>
+            <a href="contact.html" class="mobile-nav-item">📞 Contact</a>
+        </div>
+    </nav>
+
+    <!-- Downloads Hero Section -->
+    <section class="downloads-hero">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center slide-in-bottom">
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Downloads</span>
+                </h1>
+                <nav class="breadcrumb-enhanced justify-center mb-6">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Downloads</span>
+                </nav>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Access essential software tools and applications for your business needs. Download the latest versions of our software solutions and recommended tools.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="downloads-table-container slide-in-bottom">
+                <table class="downloads-table">
+                    <thead>
                         <tr>
                             <th>Software Name</th>
                             <th>Description</th>
-                            <th>Last Download</th>
+                            <th>Download</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Easy Bill New Exe</td>
-                            <td>Billing Management Solution</td>
-                            <td><a href="https://easybill.pythonanywhere.com/"  target="_blank">Download</a></td>
+                            <td>
+                                <div class="software-info">
+                                    <div class="software-icon icon-billing">
+                                        <i class="fas fa-file-invoice"></i>
+                                    </div>
+                                    <div class="software-details">
+                                        <div class="software-name">Easy Bill New Exe</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="software-description">Billing Management Solution</div>
+                            </td>
+                            <td>
+                                <a href="https://easybill.pythonanywhere.com/" target="_blank" class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                          <td>Anydesk</td>
-                          <td>Remote Desktop</td>
-                          <td><a href="https://anydesk.com/en" target="_blank">Download</a></td>
-                      </tr>
-                      <tr>
-                        <td>Ultra Viewer</td>
-                        <td>Remote Desktop</td>
-                        <td><a href="https://www.ultraviewer.net/en/download.html" target="_blank">Download</a></td>
-                    </tr>
-                        <tr>
-                            <td>Tally Prime</td>
-                            <td>Accounting Software</td>
-                            <td><a href="https://tallysolutions.com/download/"  target="_blank">Download</a></td>
+                            <td>
+                                <div class="software-info">
+                                    <div class="software-icon icon-remote">
+                                        <i class="fas fa-desktop"></i>
+                                    </div>
+                                    <div class="software-details">
+                                        <div class="software-name">AnyDesk</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="software-description">Remote Desktop</div>
+                            </td>
+                            <td>
+                                <a href="https://anydesk.com/en" target="_blank" class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td>Team Viewer </td>
-                            <td>Remote Desktop</td>
-                            <td><a href="https://www.teamviewer.com/apac/download/free-download-with-license-options/" target="_blank">Download</a></td>
+                            <td>
+                                <div class="software-info">
+                                    <div class="software-icon icon-remote">
+                                        <i class="fas fa-eye"></i>
+                                    </div>
+                                    <div class="software-details">
+                                        <div class="software-name">Ultra Viewer</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="software-description">Remote Desktop</div>
+                            </td>
+                            <td>
+                                <a href="https://www.ultraviewer.net/en/download.html" target="_blank" class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </a>
+                            </td>
                         </tr>
-                         <tr>
-                            <td>Win Rar </td>
-                            <td>WinRAR is a powerful archiver extractor too</td>
-                            <td><a href="Downloads/winrar-x64-711.exe" download  target="_blank">Download</a></td>
+                        <tr>
+                            <td>
+                                <div class="software-info">
+                                    <div class="software-icon icon-accounting">
+                                        <i class="fas fa-calculator"></i>
+                                    </div>
+                                    <div class="software-details">
+                                        <div class="software-name">Tally Prime</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="software-description">Accounting Software</div>
+                            </td>
+                            <td>
+                                <a href="https://tallysolutions.com/download/" target="_blank" class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="software-info">
+                                    <div class="software-icon icon-remote">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="software-details">
+                                        <div class="software-name">Team Viewer</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="software-description">Remote Desktop</div>
+                            </td>
+                            <td>
+                                <a href="https://www.teamviewer.com/apac/download/free-download-with-license-options/" target="_blank" class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="software-info">
+                                    <div class="software-icon icon-utility">
+                                        <i class="fas fa-file-archive"></i>
+                                    </div>
+                                    <div class="software-details">
+                                        <div class="software-name">WinRAR</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="software-description">WinRAR is a powerful archiver extractor tool</div>
+                            </td>
+                            <td>
+                                <a href="Downloads/winrar-x64-711.exe" download target="_blank" class="download-link">
+                                    <i class="fas fa-download"></i>
+                                    <span>Download</span>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
-    <!-- Table End -->
+    </section>
 
-    <!-- Footer Start -->
-    <div class="container-fluid bg-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6">
-                    <a href="index.html" class="navbar-brand d-flex align-items-center">
-                        <img id="logoimg" src="img/Logo.png" alt="" />
-                    </a>
-                    <br />
-                    <span>Whether it's designing custom applications, implementing enterprise solutions, or providing ongoing maintenance and support, we are dedicated to helping our clients succeed</span>
+    <!-- Simplified Footer -->
+    <footer class="footer-enhanced">
+        <div class="footer-content">
+            <div class="footer-main">
+                <!-- Left Section: Logo & Description -->
+                <div class="footer-logo-section">
+                    <div class="footer-logo-container">
+                        <div class="footer-logo">
+                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
+                        </div>
+                        <div>
+                            <h3 class="footer-company-name">Pioneer Software</h3>
+                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+                    </p>
                 </div>
-                <div class="col-md-6">
-                    <h5 class="mb-4">Newsletter</h5>
-                    <p>Connect for Solutions, Reach Out Today!</p>
-                    <div class="position-relative">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" />
-                        <button type="button" class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2" id="signupbutton">
-                            SignUp
-                        </button>
-                        <script>
-                            let signupbutton = document.querySelector("#signupbutton");
-                            signupbutton.addEventListener("click", function () {
-                                alert("Thank You For Your Message");
-                            });
-                        </script>
+
+                <!-- Center Section: Just Image -->
+                <div class="footer-center-section">
+                    <div class="footer-center-image">
+                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Get In Touch</h5>
-                    <p style="font-size: 13px">
-                        <i class="fa fa-map-marker-alt me-3"></i>Naag Pokhari, Kathmandu, Nepal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 80 meter north form Hotel Marriot
-                    </p>
-                    <hr />
-                    <p style="font-size: 13px">
-                        <i class="fa fa-phone-alt me-3"></i>+977-1-4533234, 4533434, 4533331
-                    </p>
-                    <p>
-                        <i class="fa fa-envelope me-3"></i>info@pioneersoftware.com.np
-                    </p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Cell</h5>
-                    <p style="white-space: nowrap">Anil Munankarmi : 977-9851141375</p>
-                    <p>Suman Mool : 977-9841915661</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Quick Links</h5>
-                    <a class="btn btn-link" href="about.html">About Us</a>
-                    <a class="btn btn-link" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link" href="service.html">Our Services</a>
-                    <a class="btn btn-link" href="clints.html">Our Trusted Clints</a>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="mb-4">Follow Us</h5>
-                    <div class="d-flex">
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square rounded-circle me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+
+                <!-- Right Section: Contact Information -->
+                <div class="footer-contact-section">
+                    <div class="contact-title">
+                        Contact Us
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Office Address</h4>
+                            <p>
+                                Naag Pokhari, Kathmandu, Nepal<br>
+                                80 meter north from Hotel Marriot
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone Numbers</h4>
+                            <p class="phone-numbers">
+                                +977-1-4533234<br>
+                                +977-1-4533434<br>
+                                +977-1-4533331
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Address</h4>
+                            <p>info@pioneersoftware.com.np</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="container-fluid copyright">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a href="#">Pioneer Software Solution Pvt Ltd</a>, All Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        Developed By :  <a href="https://www.omkumarpandey.com.np/">Ꭷʍ Ꭾαи∂єყ</a> &nbsp; &nbsp; illustration Credit : <a href="https://www.freepik.com/">Freepik</a>
-                    </div>
+            
+            <!-- Bottom Section -->
+            <div class="footer-bottom">
+                <p>© 2024 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+                <div class="developer-credit">
+                    Designed By: <a href="https://www.omkumarpandey.com.np/">Ꭷʍ Ꭾαи∂єყ</a>
+                    &nbsp; | &nbsp;
+                    Illustration Credit: <a href="https://www.freepik.com/">Freepik</a>
                 </div>
             </div>
         </div>
+    </footer>
+
+    <!-- Enhanced Floating Contact -->
+    <div class="floating-contact">
+        <div class="contact-trigger" id="contactTrigger">
+            <img src="img/whatsapp.png" alt="WhatsApp" class="w-10 h-10" />
+        </div>
+        
+        <div class="contact-popup" id="contactPopup">
+            <div class="contact-popup-header">
+                <h3 class="text-xl font-bold flex items-center justify-center gap-2">
+                    <i class="fas fa-users"></i>
+                    Contact Our Team
+                </h3>
+                <p class="text-sm opacity-90 mt-1">Click on any contact to call directly</p>
+            </div>
+            
+            <div class="contact-popup-body">
+                <div class="contact-person" onclick="callNumber('+9779851141375')">
+                    <div class="contact-avatar">AM</div>
+                    <div class="contact-details flex-1">
+                        <h4>Anil Munakarmi</h4>
+                    </div>
+                    <div class="contact-phone">+977-985-1141375</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533801')">
+                    <div class="contact-avatar">MM</div>
+                    <div class="contact-details flex-1">
+                        <h4>Mani Maharjan</h4>
+                      </div>
+                    <div class="contact-phone">+977-980-5533801</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533802')">
+                    <div class="contact-avatar">SM</div>
+                    <div class="contact-details flex-1">
+                        <h4>Suman Moon</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533802</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533803')">
+                    <div class="contact-avatar">AM</div>
+                    <div class="contact-details flex-1">
+                        <h4>Absek Maharjan</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533803</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533804')">
+                    <div class="contact-avatar">AS</div>
+                    <div class="contact-details flex-1">
+                        <h4>Ashish Shrestha</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533804</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533805')">
+                    <div class="contact-avatar">NH</div>
+                    <div class="contact-details flex-1">
+                        <h4>Nhuja Maharjan</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533805</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533806')">
+                    <div class="contact-avatar">OP</div>
+                    <div class="contact-details flex-1">
+                        <h4>Om Pandey</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533806</div>
+                </div> 
+            </div>
+        </div>
     </div>
-    <!-- Footer End -->
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <script>
+        // YouTube-style Top Progress Bar
+        window.addEventListener('load', function() {
+            const progressBar = document.getElementById('topProgressBar');
+            const progressFill = document.getElementById('progressFill');
+            
+            if (!progressBar || !progressFill) return;
+            
+            let progress = 0;
+            const duration = 1500;
+            const steps = 50;
+            const increment = 100 / steps;
+            const stepTime = duration / steps;
+            
+            const progressInterval = setInterval(() => {
+                progress += increment;
+                
+                if (progress >= 100) {
+                    progress = 100;
+                    progressFill.style.width = '100%';
+                    
+                    setTimeout(() => {
+                        progressBar.style.opacity = '0';
+                        progressBar.style.transition = 'opacity 0.3s ease';
+                        setTimeout(() => {
+                            progressBar.style.display = 'none';
+                        }, 300);
+                    }, 200);
+                    
+                    clearInterval(progressInterval);
+                } else {
+                    progressFill.style.width = progress + '%';
+                }
+            }, stepTime);
+        });
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.nav-enhanced');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', function() {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        }
+
+        // Enhanced Dropdown Menu
+        const productsDropdown = document.getElementById('products-dropdown');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const dropdownArrow = document.getElementById('dropdown-arrow');
+        let isDropdownOpen = false;
+
+        function toggleDropdown() {
+            isDropdownOpen = !isDropdownOpen;
+            if (isDropdownOpen) {
+                dropdownMenu.classList.add('show');
+                dropdownArrow.style.transform = 'rotate(180deg)';
+            } else {
+                dropdownMenu.classList.remove('show');
+                dropdownArrow.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        if (productsDropdown) {
+            productsDropdown.addEventListener('click', toggleDropdown);
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (productsDropdown && !productsDropdown.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('show');
+                dropdownArrow.style.transform = 'rotate(0deg)';
+                isDropdownOpen = false;
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animationElements = document.querySelectorAll('.slide-in-bottom, .slide-in-left, .slide-in-right');
+            animationElements.forEach(el => observer.observe(el));
+        });
+
+        // Enhanced floating contact
+        const contactTrigger = document.getElementById('contactTrigger');
+        const contactPopup = document.getElementById('contactPopup');
+        let isContactOpen = false;
+
+        if (contactTrigger && contactPopup) {
+            contactTrigger.addEventListener('click', function() {
+                isContactOpen = !isContactOpen;
+                if (isContactOpen) {
+                    contactPopup.classList.add('active');
+                } else {
+                    contactPopup.classList.remove('active');
+                }
+            });
+
+            // Close contact popup when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!contactTrigger.contains(event.target) && !contactPopup.contains(event.target)) {
+                    contactPopup.classList.remove('active');
+                    isContactOpen = false;
+                }
+            });
+        }
+
+        // Call functionality
+        function callNumber(number) {
+            window.open(`tel:${number}`, '_self');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                if (this.getAttribute('href') && this.getAttribute('href') !== '#') {
+                    if (mobileMenuBtn && mobileMenu) {
+                        mobileMenuBtn.classList.remove('active');
+                        mobileMenu.classList.remove('active');
+                    }
+                }
+            });
+        });
+
+        // Performance monitoring
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(function() {
+                console.log('Pioneer Software Solutions - Downloads Page Loaded Successfully');
+            });
+        }
+    </script>
 </body>
 </html>
