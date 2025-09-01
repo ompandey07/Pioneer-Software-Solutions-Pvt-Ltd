@@ -178,7 +178,7 @@
                         'Banking & Reconciliation'
                     ],
                     link: 'tallyprime.html',
-                    image: 'img/Products/Prime.png',
+                    image: 'img/Products/TallyNew.png',
                     alt: 'Tally Prime'
                 },
                 'easybill': {
