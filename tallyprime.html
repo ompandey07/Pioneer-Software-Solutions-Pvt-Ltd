@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -423,33 +424,12 @@
             background: radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.02) 0%, transparent 50%);
         }
 
-        .product-card {
-            background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 3rem;
-            position: relative;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
-        }
-
-        .product-video {
+        .product-image {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
         }
 
-        .product-video:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
-        }
+        
 
         .product-content h1 {
             font-size: 3rem;
@@ -475,44 +455,30 @@
             color: #4b5563;
             text-align: justify;
             margin-bottom: 2rem;
+            font-weight: bold;
         }
 
-        /* ===== BUTTONS ===== */
-        .btn-enhanced {
-            background: var(--primary-gradient);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s ease;
+        /* Zigzag Connector */
+        .zigzag-connector {
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
-            border: none;
-            cursor: pointer;
+            margin: 20px 0;
         }
 
-        .btn-enhanced::before {
+        .zigzag-connector::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s ease;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            clip-path: polygon(
+                0% 0%, 5% 100%, 10% 0%, 15% 100%, 20% 0%, 25% 100%, 30% 0%, 35% 100%, 40% 0%, 
+                45% 100%, 50% 0%, 55% 100%, 60% 0%, 65% 100%, 70% 0%, 75% 100%, 80% 0%, 
+                85% 100%, 90% 0%, 95% 100%, 100% 0%
+            );
+            z-index: 0;
         }
-
-        .btn-enhanced:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-enhanced:hover::before { left: 100%; }
 
         /* ===== FOOTER ===== */
         .footer-enhanced {
@@ -955,10 +921,6 @@
                 width: 200px;
                 height: 140px;
             }
-
-            .product-card {
-                padding: 2rem;
-            }
         }
 
         @media (max-width: 768px) {
@@ -982,10 +944,6 @@
 
             .product-section {
                 padding: 60px 0;
-            }
-
-            .product-card {
-                padding: 1.5rem;
             }
 
             .product-content h1 {
@@ -1020,10 +978,6 @@
 
             .product-section {
                 padding: 40px 0;
-            }
-
-            .product-card {
-                padding: 1.25rem;
             }
 
             .product-content h1 {
@@ -1152,7 +1106,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center slide-in-bottom">
                 <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    Tally Prime <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Solutions</span>
+                    Everything <span class="text-gray-600" >tallies with the</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Perfectly Simple TallyPrime</span>
                 </h1>
                 <nav class="breadcrumb-enhanced justify-center mb-6">
                     <a href="index.html">Home</a>
@@ -1174,92 +1128,95 @@
             <!-- Tally Prime -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                 <div class="slide-in-left">
-                    <video class="product-video" src="img/tallygraph.mp4" autoplay loop muted></video>
+                    <img class="product-image" src="img/Tally/Introducing.png" alt="Tally Prime">
                 </div>
                 <div class="slide-in-right">
-                    <div class="product-card">
-                        <h1 class="product-content">Tally Prime</h1>
-                        <p class="product-description">
-                            Tally Prime is a globally recognized and highly popular accounting software, widely used across South Asia for various business verticals, except banking and purely financial institutions. Evolving from its DOS-mode origins, Tally Prime now offers web-based services alongside its robust features, moving toward a full ERP system in the coming years. Regular updates introduce new features, enabling efficient implementation tailored to organizational needs. Tally releases two versions globally: Tally Prime Silver and Tally Prime Gold.
-                        </p>
-                        <div class="mt-8">
-                            <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Explore Tally Prime</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h1 class="product-content">All-in-One, All for You - Meet TallyPrime</h1>
+                    <p class="product-description">
+                        From managing books to invoicing, tracking inventory to generating insightful reports—TallyPrime is your all-in-one growth partner. Take charge of your business effortlessly—streamline operations, enhance efficiency, and boost productivity. TallyPrime brings everything you need, from accounting and compliance to banking, and more, into one seamless platform to help you manage, optimize, and scale with ease.
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Accounting</li>
+                            <li>Banking</li>
+                            <li>Multiple billing format</li>
+                            <li>Cash & Credit Management</li>
+                        </ul>
+                    </p>
                 </div>
+                <div class="zigzag-connector"></div>
             </div>
 
-            <!-- Tally Prime Silver -->
+            <!-- Accounting, Banking, Cashflow -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                 <div class="slide-in-left order-last lg:order-first">
-                    <div class="product-card">
-                        <h3>Tally Prime Silver</h3>
-                        <p class="product-description">
-                            Tally Prime Silver is designed for single-user environments, allowing use on one computer at a time. The license is transferable to another machine when needed. Data on the local computer can be accessed remotely via the internet through Tally Software Subscription (TSS) or by copying the database file to another system.
-                        </p>
-                        <div class="mt-8">
-                            <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Get Tally Prime Silver</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h3>Accounting, Banking, Cashflow, and More</h3>
+                    <p class="product-description">
+                        Take charge of your business effortlessly—streamline operations, enhance efficiency, and boost productivity. TallyPrime brings everything you need, from accounting and compliance to banking, and more, into one seamless platform to help you manage, optimize, and scale with ease.
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Accounting</li>
+                            <li>Banking</li>
+                            <li>Multiple billing format</li>
+                            <li>Cash & Credit Management</li>
+                        </ul>
+                    </p>
                 </div>
                 <div class="slide-in-right">
-                    <video class="product-video" src="img/Tally.mp4" autoplay loop muted></video>
+                    <img class="product-image" src="img/Tally/accounting-inventory-e-invoicing-and-more-all-in-one-software.webp" alt="Accounting and Banking">
                 </div>
+                <div class="zigzag-connector"></div>
             </div>
 
-            <!-- Tally Prime Gold -->
+            <!-- Inventory Management -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
                 <div class="slide-in-left">
-                    <video class="product-video" src="img/gold.mp4" autoplay loop muted></video>
+                    <img class="product-image" src="img/Tally/simplify-gst-and-banking-with-connected-solution.png" alt="Inventory Management">
                 </div>
                 <div class="slide-in-right">
-                    <div class="product-card">
-                        <h3>Tally Prime Gold</h3>
-                        <p class="product-description">
-                            Tally Prime Gold supports multiple users within a LAN environment. The server setup is installed on one system, sharing the license with multiple computers on the LAN. Computers outside the LAN cannot share the license but can access server data remotely via the internet using Tally Software Subscription (TSS).
-                        </p>
-                        <div class="mt-8">
-                            <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Get Tally Prime Gold</span>
-                            </a>
-                        </div>
-                    </div>
+                    <h3>Effortless Inventory Management for Complete Control</h3>
+                    <p class="product-description">
+                        Stay on top of your stock movement, classification, and valuation with TallyPrime’s powerful inventory capabilities. Manage unlimited stock items, track manufacturing, plan reorders, and never lose sight of expiry details—all with a system that fits your unique business workflows.
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Unlimited stock structuring options</li>
+                            <li>Bill of Material (BoM)</li>
+                            <li>Reorder Level Management</li>
+                            <li>Multiple Stock Valuation Methods</li>
+                        </ul>
+                    </p>
                 </div>
+                <div class="zigzag-connector"></div>
+            </div>
+
+            <!-- Online Access -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div class="slide-in-left order-last lg:order-first">
+                    <h3>Online Access to Your Reports and Data</h3>
+                    <p class="product-description">
+                        Stay connected to your business anytime, anywhere. Access your business reports online from any device, keeping you informed and in control, no matter where you are. Instantly share invoices, reports, and documents via WhatsApp directly from TallyPrime, enabling faster communication and smarter decisions.
+                        <ul class="list-disc pl-6 mt-4">
+                            <li>Online Report Access</li>
+                            <li>Online Data Consolidation</li>
+                            <li>Invoices & Reports on WhatsApp</li>
+                            <li>Personalized Message Templates</li>
+                        </ul>
+                    </p>
+                </div>
+                <div class="slide-in-right">
+                    <img class="product-image" src="img/Tally/manage-your-business-from-anywhere-anydevice.webp" alt="Online Access">
+                </div>
+                <div class="zigzag-connector"></div>
             </div>
 
             <!-- Tally Software Subscription (TSS) -->
-            <div class="product-card text-center mb-12">
-                <h3>Tally Software Subscription (TSS)</h3>
-                <p class="product-description mx-auto max-w-4xl">
-                    Tally Software Subscription (TSS) enhances Tally Prime with revolutionary capabilities, including continuous upgrades, updates, and centralized consolidation of branch data. TSS is available for one year from the date of activation and expires thereafter. While not mandatory, TSS unlocks advanced features, though Tally Prime continues to function with all standard features without it.
-                </p>
-                <div class="mt-8">
-                    <a href="contact.html" class="btn-enhanced">
-                        <i class="fas fa-rocket"></i>
-                        <span>Learn About TSS</span>
-                    </a>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
+                <div class="slide-in-left">
+                    <img class="product-image" src="img/Tally/tss-banner.webp" alt="Tally Software Subscription">
                 </div>
-            </div>
-
-            <!-- Tally.Server9 -->
-            <div class="product-card text-center">
-                <h3>Tally.Server9</h3>
-                <p class="product-description mx-auto max-w-4xl">
-                    Tally.Server9 is an enterprise-class product designed for medium to large businesses, enhancing Tally Prime Gold's capabilities. It converts peer-to-peer data access into server-based data management, offering multi-version concurrency for efficient scalability. Every user's requests are processed in parallel, ensuring no queuing and seamless operation. Tally.Server9 maintains high data consistency, reduces ownership costs, and boosts operational efficiency, making it ideal for businesses needing an enterprise-grade system.
-                </p>
-                <div class="mt-8">
-                    <a href="contact.html" class="btn-enhanced">
-                        <i class="fas fa-rocket"></i>
-                        <span>Discover Tally.Server9</span>
-                    </a>
+                <div class="slide-in-right">
+                    <h3>Tally Software Subscription (TSS)</h3>
+                    <p class="product-description">
+                        Tally Software Subscription (TSS) enhances TallyPrime with revolutionary capabilities, including continuous upgrades, updates, and centralized consolidation of branch data. TSS is available for one year from the date of activation and expires thereafter. While not mandatory, TSS unlocks advanced features, though TallyPrime continues to function with all standard features without it.
+                    </p>
                 </div>
+                <div class="zigzag-connector"></div>
             </div>
         </div>
     </section>
@@ -1336,7 +1293,6 @@
             <!-- Bottom Section -->
             <div class="footer-bottom">
                 <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
-                
             </div>
         </div>
     </footer>
@@ -1369,7 +1325,7 @@
                     <img src="Team/Images/mani.jpg" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Mani Maharjan</h4>
-                      </div>
+                    </div>
                     <div class="contact-phone">+977-980-5533801</div>
                 </div>
 
@@ -1597,3 +1553,4 @@
 </body>
 
 </html>
+```
