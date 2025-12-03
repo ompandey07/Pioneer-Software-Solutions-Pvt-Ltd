@@ -111,41 +111,41 @@
         "name": "Mani Maharjan",
         "phone": "+977-980-5533801",
         "role": "Senior Developer",
-        "expertise": "Full Stack Development",
+        "expertise": "Acc & Support",
         "image": "Team/Images/mani.jpg"
       },
       {
         "name": "Suman Mool",
         "phone": "+977-980-5533802",
-        "role": "Lead Designer",
+        "role": "Support Officer",
         "expertise": "UI/UX Design",
         "image": "Team/Images/Suman.jpg"
       },
       {
         "name": "Krijan Maharjan",
         "phone": "+977-980-5533803",
-        "role": "Developer",
+        "role": "Support Officer",
         "expertise": "Backend Development",
         "image": "Team/Images/Krijan.png"
       },
       {
         "name": "Ashish Shrestha",
         "phone": "+977-980-5533804",
-        "role": "Marketing Head",
+        "role": "Support Officer",
         "expertise": "Digital Marketing",
         "image": "Team/Images/Ashish.png"
       },
       {
         "name": "Nhuja Maharjan",
         "phone": "+977-980-5533805",
-        "role": "Support Lead",
+        "role": "IT & SUPPORT",
         "expertise": "Customer Success",
         "image": "Team/Images/Nhuja.png"
       },
       {
         "name": "Om Pandey",
         "phone": "+977-980-5533806",
-        "role": "Developer",
+        "role": "DEV & SUPPORT",
         "expertise": "Frontend Development",
         "image": "Team/Images/Om.jpg"
       }
