@@ -1,0 +1,160 @@
+{
+  "company": {
+    "name": "Pioneer Software Solutions",
+    "address": "Naag Pokhari, Kathmandu, Nepal",
+    "landmark": "80 meters north from Hotel Marriott",
+    "employee_count": 8,
+    "opening_time": "09:00 AM",
+    "closing_time": "06:00 PM",
+    "working_days": "Sunday - Friday",
+    "website": "https://pioneersoftware.com.np/",
+    "phone": "+977-1-4533234",
+    "email": "info@pioneersoftware.com.np",
+    "whatsapp": "+977-985-1141375",
+    "description": "Pioneer Software Solutions is a technology company providing web, mobile, and software development services. We have been a trusted name in accounting technology consulting since 2010.",
+    "tagline": "Your Trusted Technology Partner Since 2010",
+    "established": 2010,
+    "happy_clients": "2500+",
+    
+    "tally": {
+      "is_authorized_partner": true,
+      "partner_since": 2012,
+      "certifications": [
+        "Authorized Tally Sales Partner",
+        "Certified Tally Cloud Partner",
+        "Tally Implementation Expert"
+      ],
+      "services": [
+        {
+          "name": "Tally Prime Licensing",
+          "description": "Silver & Gold editions with genuine licenses",
+          "icon": "📦"
+        },
+        {
+          "name": "Tally on Cloud",
+          "description": "Access Tally from anywhere, anytime",
+          "icon": "☁️",
+          "popular": true
+        },
+        {
+          "name": "Tally Customization",
+          "description": "TDL development, custom reports, invoices",
+          "icon": "🔧"
+        },
+        {
+          "name": "Tally Training",
+          "description": "Beginner to advanced level training",
+          "icon": "🎓"
+        },
+        {
+          "name": "Data Migration",
+          "description": "Safe transfer from other software",
+          "icon": "🔄"
+        },
+        {
+          "name": "Annual Maintenance",
+          "description": "Updates, backups, priority support",
+          "icon": "🛡️"
+        }
+      ],
+      "products": [
+        {
+          "name": "Tally Prime Silver",
+          "type": "Single User",
+          "popular": false
+        },
+        {
+          "name": "Tally Prime Gold",
+          "type": "Multi User",
+          "popular": true
+        }
+      ]
+    },
+    
+    "services": [
+      {
+        "name": "Web Development",
+        "icon": "💻",
+        "description": "Modern, responsive websites"
+      },
+      {
+        "name": "Mobile App Development",
+        "icon": "📱",
+        "description": "iOS & Android applications"
+      },
+      {
+        "name": "Custom Software",
+        "icon": "⚙️",
+        "description": "Tailored software solutions"
+      },
+      {
+        "name": "Digital Marketing",
+        "icon": "📈",
+        "description": "SEO, social media, PPC"
+      },
+      {
+        "name": "Graphic Design",
+        "icon": "🎨",
+        "description": "Branding & UI/UX design"
+      }
+    ],
+    
+    "employees": [
+      {
+        "name": "Anil Munakarmi",
+        "phone": "+977-985-1141375",
+        "role": "CEO",
+        "expertise": "Business Strategy & Tally",
+        "image": "Team/Images/Anil.jpg"
+      },
+      {
+        "name": "Mani Maharjan",
+        "phone": "+977-980-5533801",
+        "role": "Senior Developer",
+        "expertise": "Full Stack Development",
+        "image": "Team/Images/mani.jpg"
+      },
+      {
+        "name": "Suman Mool",
+        "phone": "+977-980-5533802",
+        "role": "Lead Designer",
+        "expertise": "UI/UX Design",
+        "image": "Team/Images/Suman.jpg"
+      },
+      {
+        "name": "Krijan Maharjan",
+        "phone": "+977-980-5533803",
+        "role": "Developer",
+        "expertise": "Backend Development",
+        "image": "Team/Images/Krijan.png"
+      },
+      {
+        "name": "Ashish Shrestha",
+        "phone": "+977-980-5533804",
+        "role": "Marketing Head",
+        "expertise": "Digital Marketing",
+        "image": "Team/Images/Ashish.png"
+      },
+      {
+        "name": "Nhuja Maharjan",
+        "phone": "+977-980-5533805",
+        "role": "Support Lead",
+        "expertise": "Customer Success",
+        "image": "Team/Images/Nhuja.png"
+      },
+      {
+        "name": "Om Pandey",
+        "phone": "+977-980-5533806",
+        "role": "Developer",
+        "expertise": "Frontend Development",
+        "image": "Team/Images/Om.jpg"
+      }
+    ],
+    
+    "chatbot": {
+      "name": "Ani",
+      "personality": "friendly, helpful, professional but casual",
+      "avatar": "Team/Images/Ani.png"
+    }
+  }
+}
