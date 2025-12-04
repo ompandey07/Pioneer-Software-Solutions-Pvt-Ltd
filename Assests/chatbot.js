@@ -95,10 +95,10 @@ class PioneerChatbot {
             },
             employees: [
                 {name: "Anil Munakarmi", phone: "+977-985-1141375", role: "CEO", expertise: "Business Strategy"},
-                {name: "Mani Maharjan", phone: "+977-980-5533801", role: "Senior Developer", expertise: "Full Stack"},
-                {name: "Suman Mool", phone: "+977-980-5533802", role: "Lead Designer", expertise: "UI/UX"},
-                {name: "Krijan Maharjan", phone: "+977-980-5533803", role: "Developer", expertise: "Backend"},
-                {name: "Ashish Shrestha", phone: "+977-980-5533804", role: "Marketing Head", expertise: "Digital Marketing"},
+                {name: "Mani Maharjan", phone: "+977-980-5533801", role: "Acc & Finance", expertise: "Acc & Finance"},
+                {name: "Suman Mool", phone: "+977-980-5533802", role: "Support Officer", expertise: "Support Officer"},
+                {name: "Krijan Maharjan", phone: "+977-980-5533803", role: "Support Officer", expertise: "Support"},
+                {name: "Ashish Shrestha", phone: "+977-980-5533804", role: "Support Officer", expertise: "IT and Software Support"},
                 {name: "Nhuja Maharjan", phone: "+977-980-5533805", role: "Support Lead", expertise: "Customer Success"},
                 {name: "Om Pandey", phone: "+977-980-5533806", role: "Developer", expertise: "Frontend"}
             ],
