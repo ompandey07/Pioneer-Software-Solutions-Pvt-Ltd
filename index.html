@@ -42,7 +42,6 @@
     
     <!-- Custom CSS -->
     <link href="Assests/index.css" rel="stylesheet" />       
-    <link href="Assests/chatbot.css" rel="stylesheet" />       
 </head>
 
 <body>   
@@ -261,12 +260,47 @@
                         </div>
                     </div>
                 </div>
-                <div class="relative flex justify-center lg:justify-end items-center py-6">
-                    <!-- Soft Ambient Teal Halo Backdrop -->
-                    <div class="absolute -z-10 w-[85%] h-[85%] rounded-full bg-[#006C81] opacity-15 blur-3xl pointer-events-none"></div>
+                <!-- Hero Right: Original image + animated SVG orbit surroundings -->
+                <div class="relative flex justify-center lg:justify-end items-center py-8">
+                    <div style="position:relative;display:inline-flex;align-items:center;justify-content:center;">
 
-                    <!-- Clean Large Hero Image -->
-                    <img src="img/NewHeroSection.png" alt="Software Solutions" class="hero-img-main max-w-3xl lg:max-w-5xl w-full relative z-10" />
+                        <!-- Animated SVG orbit rings (absolute, non-intrusive) -->
+                        <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0;" width="520" height="520" viewBox="0 0 520 520" fill="none">
+                            <!-- Outer ring -->
+                            <circle cx="260" cy="260" r="240" stroke="#00687B" stroke-width="1.2" stroke-dasharray="14 10" opacity="0.18">
+                                <animateTransform attributeName="transform" type="rotate" from="0 260 260" to="360 260 260" dur="32s" repeatCount="indefinite"/>
+                            </circle>
+                            <!-- Mid ring -->
+                            <circle cx="260" cy="260" r="185" stroke="#0096AD" stroke-width="1" stroke-dasharray="8 14" opacity="0.15">
+                                <animateTransform attributeName="transform" type="rotate" from="360 260 260" to="0 260 260" dur="21s" repeatCount="indefinite"/>
+                            </circle>
+                            <!-- Inner ring -->
+                            <circle cx="260" cy="260" r="130" stroke="#00c4df" stroke-width="0.9" stroke-dasharray="5 10" opacity="0.18">
+                                <animateTransform attributeName="transform" type="rotate" from="0 260 260" to="360 260 260" dur="14s" repeatCount="indefinite"/>
+                            </circle>
+                            <!-- Orbiting dot — outer ring -->
+                            <circle r="6" fill="#00687B" opacity="0.5">
+                                <animateMotion dur="32s" repeatCount="indefinite" path="M500,260 A240,240 0 1,1 499.99,259.99"/>
+                            </circle>
+                            <!-- Orbiting dot — mid ring -->
+                            <circle r="4.5" fill="#00d9b0" opacity="0.55">
+                                <animateMotion dur="21s" repeatCount="indefinite" keyPoints="0.5;1;0.5" keyTimes="0;0.5;1" calcMode="linear" path="M445,260 A185,185 0 1,1 444.99,259.99"/>
+                            </circle>
+                            <!-- Orbiting dot — inner ring -->
+                            <circle r="3.5" fill="#0096AD" opacity="0.5">
+                                <animateMotion dur="14s" repeatCount="indefinite" path="M390,260 A130,130 0 1,1 389.99,259.99"/>
+                            </circle>
+                            <!-- Pulsing center halo -->
+                            <circle cx="260" cy="260" r="90" stroke="#00687B" stroke-width="0.7" stroke-dasharray="3 6" opacity="0.12">
+                                <animate attributeName="r" values="84;96;84" dur="4s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.08;0.18;0.08" dur="4s" repeatCount="indefinite"/>
+                            </circle>
+                        </svg>
+
+                        <!-- Original hero image — untouched -->
+                        <img src="img/NewHeroSection.png" alt="Software Solutions" class="hero-img-main max-w-3xl lg:max-w-5xl w-full relative" style="z-index:1;" />
+
+                    </div>
                 </div>
             </div>
         </div>
@@ -967,84 +1001,11 @@
     </div>
 
     <script>
-        // Social Media Modal JavaScript
-        document.addEventListener('DOMContentLoaded', function() {
-            const modal = document.getElementById('socialModal');
-            const closeBtn = document.getElementById('closeModal');
-            
-            // Show modal on page load with delay
-            setTimeout(() => {
-                modal.classList.add('show');
-            }, 1000);
-            
-            // Close modal function
-            function closeModal() {
-                modal.classList.remove('show');
-            }
-            
-            // Close button event
-            closeBtn.addEventListener('click', closeModal);
-            
-            // Close when clicking outside modal
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    closeModal();
-                }
-            });
-            
-            // Close with Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && modal.classList.contains('show')) {
-                    closeModal();
-                }
-            });
-        });
-
-        // Add the existing JavaScript functionality here
         function callNumber(phoneNumber) {
             window.location.href = 'tel:' + phoneNumber;
         }
-
-        // Add your existing index.js functionality here...
-        // (All the existing JavaScript code should be included)
     </script>
     <script src="Assests/index.js"></script>
     <script src="Assests/inspectblock.js"></script>
-        <!-- Chatbot -->
-    <div class="chatbot-floating">
-        <button class="chatbot-trigger" id="chatbotTrigger">
-            <i class="fas fa-robot bot-icon"></i>
-            <i class="fas fa-times close-icon"></i>
-        </button>
-        
-        <div class="chatbot-container" id="chatbotContainer">
-            <div class="chatbot-header">
-                <div class="chatbot-avatar">
-                    <img src="Team/Images/Ani.png" alt="Ani" />
-                </div>
-                <div class="chatbot-header-info">
-                    <h3>Ani - Virtual Assistant</h3>
-                    <p><span class="online-status"></span> Online | Pioneer Software</p>
-                </div>
-                <button class="chatbot-close" id="chatbotClose">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-            
-            <div class="chatbot-messages" id="chatbotMessages">
-                <!-- Messages will be dynamically added here -->
-            </div>
-            
-            <div class="chatbot-input-area">
-                <input type="text" class="chatbot-input" id="chatbotInput" placeholder="Type your message..." autocomplete="off" />
-                <button class="chatbot-send" id="chatbotSend">
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Chatbot Script -->
-    <script src="Assests/chatbot.js"></script>
 </body>
 </html>

@@ -33,10 +33,10 @@
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --primary-gradient: linear-gradient(135deg, #00687B 0%, #0096AD 100%);
+            --secondary-gradient: linear-gradient(135deg, #0096AD 0%, #00c4df 100%);
+            --accent-gradient: linear-gradient(135deg, #00d9b0 0%, #0096AD 100%);
+            --dark-gradient: linear-gradient(135deg, #071527 0%, #0f2035 100%);
         }
 
         /* ===== BASE STYLES ===== */
@@ -63,11 +63,11 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea, #764ba2);
+            background: linear-gradient(180deg, #00687B, #0096AD);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+            background: linear-gradient(180deg, #004F5E, #00687B);
         }
 
         /* ===== PROGRESS BAR ===== */
@@ -83,25 +83,26 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
             width: 0%;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
         }
 
         /* ===== NAVIGATION ===== */
         .nav-enhanced {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 2px solid #00687B;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: none;
         }
 
         .nav-enhanced.scrolled {
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
         }
 
         .nav-container {
@@ -111,7 +112,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px;
+            height: 60px;
             position: relative;
         }
 
@@ -129,67 +130,14 @@
             object-fit: contain !important;
         }
 
-        .logo-circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .logo-circle::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
-            background-size: 400% 400%;
-            animation: logoGlow 3s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        .logo-circle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
-        }
-
-        @keyframes logoGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .logo-circle img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            transition: all 0.3s ease;
-        }
-
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
         .nav-divider {
             position: absolute;
             left: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
             width: 2px;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, #667eea, transparent);
+            height: 30px;
+            background: linear-gradient(to bottom, transparent, #00687B, transparent);
             opacity: 0.3;
         }
 
@@ -203,7 +151,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
+            padding: 0.5rem 1rem;
             border-radius: 0;
             text-decoration: none;
             color: #374151;
@@ -215,11 +163,10 @@
         }
 
         .nav-item.active {
-            color: #3b82f6;
-            background: rgba(59, 130, 246, 0.08);
+            color: #00687B;
+            background: rgba(0, 104, 123, 0.08);
         }
 
-        /* Animated underline */
         .nav-item::after {
             content: '';
             position: absolute;
@@ -227,9 +174,9 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: linear-gradient(90deg, #00687B, #0096AD);
             transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
+            border-radius: 0;
         }
 
         .nav-item:hover::after {
@@ -237,15 +184,8 @@
             left: 0;
         }
 
-        .nav-item:hover {
-            color: #667eea;
-        }
-
-        .nav-item i {
-            color: #667eea;
-            transition: all 0.3s ease;
-        }
-
+        .nav-item:hover { color: #00687B; }
+        .nav-item i { color: #00687B; transition: all 0.3s ease; }
         .nav-item:hover i { transform: scale(1.15); }
 
         /* Dropdown */
@@ -264,7 +204,7 @@
             transform: translateY(-10px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
-            border-top: 2px solid #667eea;
+            border-top: 2px solid #00687B;
             z-index: 1000;
             margin-top: 4px;
         }
@@ -289,27 +229,16 @@
         }
 
         .dropdown-item.active {
-            background: rgba(59, 130, 246, 0.08);
-            color: #3b82f6;
-            border-left: 4px solid #3b82f6;
-        }
-
-        .dropdown-item:first-child {
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
-        }
-
-        .dropdown-item:last-child {
-            border-bottom: none;
-            border-bottom-left-radius: 16px;
-            border-bottom-right-radius: 16px;
+            background: rgba(0, 104, 123, 0.08);
+            color: #00687B;
+            border-left: 4px solid #00687B;
         }
 
         .dropdown-item:hover {
             background: linear-gradient(90deg, #f8fafc, #f1f5f9);
             color: #1f2937;
             transform: translateX(8px);
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #00687B;
         }
 
         .dropdown-item i {
@@ -344,10 +273,10 @@
 
         .mobile-menu {
             position: fixed;
-            top: 80px;
+            top: 60px;
             left: -100%;
             width: 100%;
-            height: calc(100vh - 80px);
+            height: calc(100vh - 60px);
             background: white;
             z-index: 999;
             transition: left 0.3s ease;
@@ -366,136 +295,109 @@
             font-weight: 500;
         }
 
-        .mobile-nav-item:hover { color: #3b82f6; }
+        .mobile-nav-item:hover { color: #00687B; }
 
         /* ===== HERO SECTION ===== */
         .hero-header {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7f9 50%, #e1eff3 100%);
             position: relative;
             overflow: hidden;
-            padding: 120px 0 80px;
-            margin-top: 80px;
+            padding: 100px 0 70px;
+            margin-top: 60px;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.15);
         }
 
-        .hero-header::before {
-            content: '';
+        .hero-bg-svg-1 {
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(135deg, #667eea15, #764ba215);
-            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            top: -40px;
+            right: -40px;
+            width: 440px;
+            height: 440px;
+            opacity: 0.35;
+            pointer-events: none;
+            animation: floatSvgSlow 22s infinite ease-in-out alternate;
         }
 
-        .hero-header::after {
-            content: '';
+        .hero-bg-svg-2 {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
-            background-size: 20px 20px;
-            opacity: 0.5;
+            bottom: -30px;
+            left: -30px;
+            width: 380px;
+            height: 380px;
+            opacity: 0.28;
+            pointer-events: none;
+            animation: floatSvgReverse 18s infinite ease-in-out alternate;
+        }
+
+        @keyframes floatSvgSlow {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-25px, 20px) rotate(6deg); }
+            100% { transform: translate(15px, -15px) rotate(-4deg); }
+        }
+
+        @keyframes floatSvgReverse {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, -20px) rotate(-8deg); }
+            100% { transform: translate(-15px, 15px) rotate(5deg); }
         }
 
         .breadcrumb-enhanced {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #6b7280;
         }
 
         .breadcrumb-enhanced a {
-            color: #667eea;
+            color: #00687B;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .breadcrumb-enhanced a:hover {
-            color: #4f46e5;
+            color: #0096AD;
             text-decoration: underline;
         }
 
-        /* ===== PRODUCT SECTION ===== */
+        /* ===== FLAT PRODUCT BODY & TALLY NEW LOOK CONTENT ===== */
         .product-section {
-            background: white;
-            padding: 100px 0;
+            background: #fafafa;
+            padding: 80px 0;
             position: relative;
         }
 
-        .product-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.02) 0%, transparent 50%);
-        }
-
-        .product-card {
-            background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 3rem;
-            position: relative;
-            z-index: 10;
-            transition: all 0.3s ease;
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
-        }
-
+        /* Flat body image with NO frames, NO rounded corners, NO shadows */
         .product-image {
-            max-width: 100%;
+            width: 100%;
             height: auto;
-            border-radius: 12px;
+            object-fit: cover;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            border: none !important;
+            outline: none !important;
+            display: block;
+        }
+
+        .tally-solution-block {
+            background: white;
+            border-left: 4px solid #00687B;
+            border-radius: 0 !important;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
         }
 
-        .product-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
-        }
-
-        .product-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .product-content h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1f2937;
-            margin-bottom: 1rem;
-        }
-
-        .product-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #4b5563;
-            text-align: justify;
-            margin-bottom: 2rem;
+        .tally-solution-block:hover {
+            border-left-color: #0096AD;
         }
 
         /* ===== BUTTONS ===== */
         .btn-enhanced {
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, #00687B 0%, #0096AD 100%);
             color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
+            padding: 14px 28px;
+            border-radius: 0 !important;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -504,7 +406,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 104, 123, 0.2);
             border: none;
             cursor: pointer;
         }
@@ -521,251 +423,11 @@
         }
 
         .btn-enhanced:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 104, 123, 0.3);
         }
 
         .btn-enhanced:hover::before { left: 100%; }
-
-        /* ===== FOOTER ===== */
-        .footer-enhanced {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 60px 0 30px;
-        }
-
-        .footer-enhanced::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
-            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-
-        .footer-enhanced::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
-            background-size: 20px 20px;
-            opacity: 0.5;
-        }
-
-        .footer-content {
-            position: relative;
-            z-index: 10;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-main {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-
-        /* Footer Left */
-        .footer-logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-
-        .footer-logo::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
-            background-size: 400% 400%;
-            animation: logoGlow 4s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        @keyframes logoGlow {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-        }
-
-        .footer-logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .footer-company-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1a202c;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .footer-description {
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Footer Center */
-        .footer-center-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .footer-center-image {
-            width: 220px;
-            height: 160px;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-center-image:hover { transform: translateY(-5px); }
-
-        .footer-center-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 12px;
-        }
-
-        /* Footer Right */
-        .footer-contact-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .contact-title {
-            color: #1a202c;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .contact-title::before {
-            content: '';
-            width: 30px;
-            height: 3px;
-            background: var(--primary-gradient);
-            border-radius: 2px;
-        }
-
-        .contact-info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            color: #4b5563;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info-item:hover { transform: translateX(5px); }
-
-        .contact-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--primary-gradient);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            flex-shrink: 0;
-            margin-top: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info-item:hover .contact-icon { transform: scale(1.1); }
-
-        .contact-details h4 {
-            color: #1f2937;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            font-size: 0.95rem;
-        }
-
-        .contact-details p {
-            line-height: 1.4;
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .phone-numbers {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 500;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(102, 126, 234, 0.15);
-            padding-top: 2rem;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            color: #6b7280;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .developer-credit {
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-
-        .developer-credit a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .developer-credit a:hover { color: #4facfe; }
 
         /* ===== FLOATING CONTACT ===== */
         .floating-contact {
@@ -776,8 +438,8 @@
         }
 
         .contact-trigger {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             background: linear-gradient(135deg, #25d366, #128c7e);
             border-radius: 50%;
             display: flex;
@@ -795,15 +457,15 @@
             position: absolute;
             top: -5px;
             right: -5px;
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             background: #ff4444;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
             animation: notificationBounce 1.5s infinite;
         }
@@ -813,13 +475,13 @@
             position: absolute;
             top: -5px;
             right: -5px;
-            width: 25px;
-            height: 25px;
+            width: 22px;
+            height: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
             z-index: 1;
         }
@@ -841,17 +503,18 @@
 
         .contact-popup {
             position: absolute;
-            bottom: 80px;
+            bottom: 75px;
             right: 0;
-            width: 400px;
+            width: 380px;
             background: white;
-            border-radius: 20px;
+            border-radius: 0;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
             opacity: 0;
             visibility: hidden;
             transform: translateY(20px) scale(0.9);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
+            border-top: 3px solid #00687B;
             overflow: hidden;
         }
 
@@ -862,25 +525,25 @@
         }
 
         .contact-popup-header {
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, #00687B 0%, #0096AD 100%);
             color: white;
-            padding: 1.5rem;
+            padding: 1.25rem;
             text-align: center;
         }
 
         .contact-popup-body {
-            padding: 1rem;
-            max-height: 400px;
+            padding: 0.75rem;
+            max-height: 380px;
             overflow-y: auto;
         }
 
         .contact-person {
             display: flex;
             align-items: center;
-            gap: 1rem;
-            padding: 1rem;
+            gap: 0.75rem;
+            padding: 0.75rem;
             margin-bottom: 0.5rem;
-            border-radius: 12px;
+            border-radius: 0;
             transition: all 0.3s ease;
             cursor: pointer;
             border: 1px solid #f1f5f9;
@@ -888,33 +551,29 @@
 
         .contact-person:hover {
             background: #f8fafc;
-            transform: translateX(5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transform: translateX(4px);
+            border-left: 3px solid #00687B;
         }
 
         .contact-avatar {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
-            background: var(--primary-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
+            object-fit: cover;
             flex-shrink: 0;
         }
 
         .contact-phone {
-            color: #10b981;
+            color: #00687B;
             font-weight: 600;
             font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
         }
 
         /* ===== ANIMATIONS ===== */
         .slide-in-bottom {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -925,7 +584,7 @@
 
         .slide-in-left {
             opacity: 0;
-            transform: translateX(-50px);
+            transform: translateX(-30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -936,7 +595,7 @@
 
         .slide-in-right {
             opacity: 0;
-            transform: translateX(50px);
+            transform: translateX(30px);
             transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -950,98 +609,12 @@
             .nav-menu { display: none; }
             .mobile-menu-btn { display: flex; }
             .nav-divider { display: none; }
-
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-
-            .footer-logo-section,
-            .footer-contact-section,
-            .footer-center-section {
-                align-items: center;
-                text-align: center;
-            }
-
-            .footer-center-image {
-                width: 200px;
-                height: 140px;
-            }
-
-            .product-card {
-                padding: 2rem;
-            }
         }
 
         @media (max-width: 768px) {
-            .logo-text { display: none; }
-            .nav-container { padding: 0 1rem; }
-
-            .contact-popup {
-                width: 300px;
-                right: -20px;
-            }
-
-            .footer-content { padding: 0 1rem; }
-            .footer-center-image {
-                width: 180px;
-                height: 120px;
-            }
-
-            .hero-header {
-                padding: 100px 0 60px;
-            }
-
-            .product-section {
-                padding: 60px 0;
-            }
-
-            .product-card {
-                padding: 1.5rem;
-            }
-
-            .product-content h1 {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .contact-popup {
-                width: 280px;
-                right: -30px;
-            }
-
-            .floating-contact {
-                bottom: 20px;
-                right: 20px;
-            }
-
-            .contact-trigger {
-                width: 60px;
-                height: 60px;
-            }
-
-            .footer-center-image {
-                width: 160px;
-                height: 100px;
-            }
-
-            .hero-header {
-                padding: 80px 0 40px;
-            }
-
-            .product-section {
-                padding: 40px 0;
-            }
-
-            .product-card {
-                padding: 1.25rem;
-            }
-
-            .product-content h1 {
-                font-size: 2rem;
-            }
+            .hero-header { padding: 80px 0 50px; }
+            .product-section { padding: 50px 0; }
+            .tally-solution-block { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -1102,35 +675,35 @@
                     <div class="dropdown-enhanced" id="dropdown-menu">
                         <div class="p-0">
                             <a href="tallycusto.html" class="dropdown-item">
-                                <i class="fas fa-cogs text-orange-500"></i>
+                                <i class="fas fa-cogs text-[#00687B]"></i>
                                 <span>Tally Customization</span>
                             </a>
                             <a href="behave.html" class="dropdown-item">
-                                <i class="fas fa-database text-green-500"></i>
+                                <i class="fas fa-database text-green-600"></i>
                                 <span>Distribution & Management System</span>
                             </a>
                             <a href="webdev.html" class="dropdown-item">
-                                <i class="fas fa-globe text-blue-500"></i>
+                                <i class="fas fa-globe text-blue-600"></i>
                                 <span>Custom Web Based Application</span>
                             </a>
                             <a href="tallyprime.html" class="dropdown-item">
-                                <i class="fas fa-cube text-purple-500"></i>
+                                <i class="fas fa-cube text-purple-600"></i>
                                 <span>Tally Prime</span>
                             </a>
                             <a href="easybill.html" class="dropdown-item active">
-                                <i class="fas fa-file-invoice text-red-500"></i>
+                                <i class="fas fa-file-invoice text-red-600"></i>
                                 <span>Easy Bill – Billing Management Solution</span>
                             </a>
                             <a href="satreport.html" class="dropdown-item">
-                                <i class="fas fa-file-alt text-indigo-500"></i>
+                                <i class="fas fa-file-alt text-indigo-600"></i>
                                 <span>Customized Statutory Report</span>
                             </a>
                             <a href="biz.html" class="dropdown-item">
-                                <i class="fas fa-chart-line text-teal-500"></i>
+                                <i class="fas fa-chart-line text-[#00687B]"></i>
                                 <span>Biz Analyst</span>
                             </a>
                             <a href="tallycloud.html" class="dropdown-item">
-                                <i class="fa fa-cloud text-cyan-500"></i>
+                                <i class="fa fa-cloud text-cyan-600"></i>
                                 <span>Tally On Cloud Service</span>
                             </a>
                         </div>
@@ -1158,12 +731,12 @@
             <a href="about.html" class="mobile-nav-item">ℹ️ About</a>
             <a href="downloads.html" class="mobile-nav-item">⬇️ Downloads</a>
             <a href="clints.html" class="mobile-nav-item">👥 Clients</a>
-            <div class="mobile-nav-item">📦 Products</div>
+            <div class="mobile-nav-item font-bold text-[#00687B]">📦 Products</div>
             <a href="tallycusto.html" class="mobile-nav-item ml-4">• Tally Customization</a>
             <a href="behave.html" class="mobile-nav-item ml-4">• Distribution & Management</a>
             <a href="webdev.html" class="mobile-nav-item ml-4">• Web Development</a>
             <a href="tallyprime.html" class="mobile-nav-item ml-4">• Tally Prime</a>
-            <a href="easybill.html" class="mobile-nav-item ml-4">• Easy Bill</a>
+            <a href="easybill.html" class="mobile-nav-item ml-4 font-semibold text-[#00687B]">• Easy Bill</a>
             <a href="satreport.html" class="mobile-nav-item ml-4">• Statutory Reports</a>
             <a href="biz.html" class="mobile-nav-item ml-4">• Biz Analyst</a>
             <a href="tallycloud.html" class="mobile-nav-item ml-4">• Tally Cloud</a>
@@ -1173,188 +746,360 @@
 
     <!-- Product Hero Section -->
     <section class="hero-header">
+        <!-- Background Animated SVGs -->
+        <svg class="hero-bg-svg-1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="85" stroke="#00687B" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.4"/>
+            <circle cx="100" cy="100" r="60" stroke="#0096AD" stroke-width="1" opacity="0.3"/>
+            <circle cx="100" cy="100" r="35" fill="url(#heroGlowEasy)" opacity="0.25"/>
+            <circle cx="100" cy="15" r="5" fill="#00687B"/>
+            <circle cx="160" cy="140" r="4" fill="#0096AD"/>
+            <circle cx="35" cy="130" r="6" fill="#00687B"/>
+            <defs>
+                <radialGradient id="heroGlowEasy" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(35)">
+                    <stop stop-color="#00687B"/>
+                    <stop offset="1" stop-color="#0096AD" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+        </svg>
+
+        <svg class="hero-bg-svg-2" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 120 Q 70 40, 120 120 T 220 120" stroke="#00687B" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity="0.35"/>
+            <path d="M20 160 Q 80 80, 140 160 T 220 100" stroke="#0096AD" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <rect x="110" y="110" width="20" height="20" rx="3" fill="#00687B" opacity="0.2" transform="rotate(45 120 120)"/>
+            <circle cx="120" cy="120" r="4" fill="#00687B"/>
+        </svg>
+
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center slide-in-bottom">
-                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    Easy Bill <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Solutions</span>
+                <!-- Modern Sharp Eyebrow Tag -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider border-l-2 border-[#00687B] mb-5">
+                    <i class="fas fa-file-invoice text-[10px]"></i>
+                    <span>Easy Bill Billing Solution</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-5 tracking-tight">
+                    Smart &amp; Effortless <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00687B] via-[#00839B] to-[#0096AD]">Easy Bill Solutions</span>
                 </h1>
+
                 <nav class="breadcrumb-enhanced justify-center mb-6">
                     <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
                     <a href="#">Products</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>Easy Bill</span>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <span class="text-gray-500 font-medium">Easy Bill</span>
                 </nav>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Streamline your business operations with Easy Bill, a versatile billing management solution designed for schools, restaurants, parking systems, and various industries.
+
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Streamline your retail, educational, restaurant, and enterprise operations with Easy Bill — a versatile computerized billing management solution compliant with IRD Nepal.
                 </p>
+
+                <!-- Hero Feature Pills -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3">
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> IRD Nepal Approved
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Multi-Sector Billing
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Customizable Templates
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Automated Tax Reports
+                    </span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Section -->
+    <!-- NEW TALLY CONTENT LOOK & FLAT BODY PRODUCT SECTION -->
     <section class="product-section">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <!-- Easy Bill -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-                <div class="slide-in-left">
-                    <img class="product-image" src="img/Products/Easybilllll.jpg" alt="Easy Bill Solution" />
-                </div>
-                <div class="slide-in-right">
-                    <div class="product-card">
-                        <h1 class="product-content">Easy Bill – Billing Management Solution</h1>
-                        <p class="product-description">
-                            <b>EasyBill</b> is a specialized billing management software designed for seamless computerized billing. It offers a wide range of features, including data entry, statutory compliance, and customized reports as per the latest requirements of the Inland Revenue Office. Suitable for diverse business verticals such as educational institutions, trading houses, restaurants, medical shop distributors, advertising agencies, travel agencies, vehicle dealers, and more, EasyBill allows customization of billing formats and reports to meet specific business needs.
+            
+            <!-- Solution Header -->
+            <div class="text-center mb-12 slide-in-bottom">
+                <h2 class="text-3xl font-extrabold text-[#00687B] mb-2">Easy Bill Solution Matrix</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm">Empowering diverse industries with tailored, IRD-compliant computerized billing workflows.</p>
+            </div>
+
+            <!-- 1. Easy Bill Core Solution -->
+            <div class="tally-solution-block slide-in-bottom">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5">
+                        <img class="product-image" src="img/Products/EasyBill.png" alt="Easy Bill Solution" />
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-file-invoice text-[10px]"></i> Flagship Billing Engine
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Easy Bill – Billing Management Solution</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            EasyBill provides seamless computerized billing with automated data entry, statutory IRD compliance, and customizable tax reporting. Designed for educational institutions, trading houses, medical distributors, advertising agencies, travel agencies, and vehicle dealerships.
                         </p>
-                        <div class="mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5 text-xs text-gray-700">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> IRD Nepal Approved Formats
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Custom Invoice Printing
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Automated Tax Ledger & Sales Book
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Multi-Sector Adaptability
+                            </div>
+                        </div>
+                        <div>
                             <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Explore Easy Bill</span>
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire Easy Bill Core</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Parking Management System -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-                <div class="slide-in-left order-last lg:order-first">
-                    <div class="product-card">
-                        <h3>Parking Management System</h3>
-                        <p class="product-description">
-                            The Parking Management System in EasyBill automates vehicle parking operations, managing detailed records of check-in and check-out for various vehicle types (e.g., bikes, cars, vans). At check-in, it captures vehicle details and generates a slip with check-in time, vehicle number, and a barcode, printed via a POS printer. During check-out, the barcode is scanned to produce a tax invoice or receipt, indicating parking duration and charges. The system supports reports like daily cash collection, vehicle-type-wise cash collection, and parked vehicle counts, with customizable options for reserved parking, monthly paid parking, and free parking.
+            <!-- 2. Parking Management System -->
+            <div class="tally-solution-block slide-in-bottom">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 order-last lg:order-first">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-parking text-[10px]"></i> Mobility &amp; Parking
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Parking Management System</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Automate vehicle check-in and check-out with POS barcode scanners and thermal slip printers. Real-time rate calculation based on vehicle type (bikes, cars, commercial vans) and exact parking duration.
                         </p>
-                        <div class="mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5 text-xs text-gray-700">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Instant POS Barcode Entry
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Duration-Based Billing
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Daily Cash Collection Summary
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> VIP &amp; Monthly Pass Manager
+                            </div>
+                        </div>
+                        <div>
                             <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Get Parking Management</span>
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Get Parking System</span>
                             </a>
                         </div>
                     </div>
-                </div>
-                <div class="slide-in-right">
-                    <img class="product-image" src="img/Products/parking2.avif" alt="Parking Management System" />
-                </div>
-            </div>
-
-            <!-- School Management System -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-                <div class="slide-in-left">
-                    <img class="product-image" src="img/school.png" alt="School Management System" />
-                </div>
-                <div class="slide-in-right">
-                    <div class="product-card">
-                        <h3>School Management System</h3>
-                        <p class="product-description">
-                            EasyBill's School Management System revolutionizes educational institution operations. It streamlines student admissions, attendance tracking, grade management, timetable scheduling, fee collection, and more. With a user-friendly interface and customizable features, it enables seamless collaboration among administrators, teachers, and parents, ensuring efficient management and enhanced productivity for modern schools.
-                        </p>
-                        <div class="mt-8">
-                            <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Get School Management</span>
-                            </a>
-                        </div>
+                    <div class="lg:col-span-5">
+                        <img class="product-image" src="img/Products/parking2.avif" alt="Parking Management System" />
                     </div>
                 </div>
             </div>
 
-            <!-- Restaurant Management System -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-                <div class="slide-in-left order-last lg:order-first">
-                    <div class="product-card">
-                        <h3>Restaurant Management System</h3>
-                        <p class="product-description">
-                            EasyBill's Restaurant Management System automates restaurant operations, managing orders from tables and take-away stations, handling bills, and processing payments. It includes real-time inventory management, covering procurement, purchase orders, stock consumption, damages, raw materials, and sales. This comprehensive solution ensures efficient management of your restaurant business.
+            <!-- 3. School Management System -->
+            <div class="tally-solution-block slide-in-bottom">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5">
+                        <img class="product-image" src="img/school.png" alt="School Management System" />
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-graduation-cap text-[10px]"></i> Academic Suite
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">School Management System</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Complete administrative automation for schools and colleges. Seamlessly manage student admissions, attendance, gradebooks, class timetables, student fee ledgers, and automated receipt generation.
                         </p>
-                        <div class="mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5 text-xs text-gray-700">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Automated Fee Ledgers
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Exam &amp; Gradebook Processing
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Multi-Role Access Control
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Parent Communication Portal
+                            </div>
+                        </div>
+                        <div>
                             <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Get Restaurant Management</span>
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Get School System</span>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="slide-in-right">
-                    <img class="product-image" src="img/Products/resturent.avif" alt="Restaurant Management System" />
+            </div>
+
+            <!-- 4. Restaurant Management System -->
+            <div class="tally-solution-block slide-in-bottom mb-0">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 order-last lg:order-first">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-utensils text-[10px]"></i> Hospitality POS
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Restaurant Management System</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Streamline dining room table ordering, takeaway billing, and kitchen order ticket (KOT) printing. Features real-time raw material ingredient inventory tracking, stock consumption analysis, and split billing support.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5 text-xs text-gray-700">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Kitchen Order Ticket (KOT)
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Raw Ingredient Stock Tracking
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Split &amp; Discount Billing
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Table Layout Management
+                            </div>
+                        </div>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Get Restaurant System</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <img class="product-image" src="img/Products/resturent.avif" alt="Restaurant Management System" />
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo">
-                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
-                        </div>
-                        <div>
-                            <h3 class="footer-company-name">Pioneer Software</h3>
-                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
                     </p>
-                </div>
-
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Services -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">+977-1-4533234 / 4533434</div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">info@pioneersoftware.com.np</div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+            <!-- Footer Bottom -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    &copy; 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;">
+                    <a href="#" style="color:#64748b;font-size:0.82rem;text-decoration:none;" class="ft-bottom-link">Privacy Policy</a>
+                    <a href="#" style="color:#64748b;font-size:0.82rem;text-decoration:none;" class="ft-bottom-link">Terms of Service</a>
+                </div>
             </div>
         </div>
+        
+        <style>
+            .ft-social-btn:hover { background: #00687B !important; color: #ffffff !important; transform: translateY(-3px); }
+            .ft-link:hover { color: #00d9b0 !important; transform: translateX(4px); }
+            .ft-bottom-link:hover { color: #00d9b0 !important; }
+            @media (max-width: 1024px) { .footer-grid-layout { grid-template-columns: 1fr 1fr !important; } }
+            @media (max-width: 640px) { .footer-grid-layout { grid-template-columns: 1fr !important; } }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->
@@ -1385,7 +1130,7 @@
                     <img src="Team/Images/mani.jpg" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Mani Maharjan</h4>
-                      </div>
+                    </div>
                     <div class="contact-phone">+977-980-5533801</div>
                 </div>
 
@@ -1594,14 +1339,6 @@
             });
         });
 
-        // Newsletter signup
-        const signupButton = document.querySelector("#signupbutton");
-        if (signupButton) {
-            signupButton.addEventListener('click', function() {
-                alert("Thank You For Your Message");
-            });
-        }
-
         // Performance monitoring
         if ('requestIdleCallback' in window) {
             requestIdleCallback(function() {
@@ -1611,5 +1348,4 @@
     </script>
     <script src="Assests/inspectblock.js"></script>
 </body>
-
 </html>

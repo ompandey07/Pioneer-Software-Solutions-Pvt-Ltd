@@ -63,11 +63,11 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea, #764ba2);
+            background: linear-gradient(180deg, #00687B, #0096AD);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+            background: linear-gradient(180deg, #004F5E, #00687B);
         }
 
         /* ===== PROGRESS BAR ===== */
@@ -83,25 +83,26 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
             width: 0%;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
         }
 
         /* ===== NAVIGATION ===== */
         .nav-enhanced {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 2px solid #00687B;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: none;
         }
 
         .nav-enhanced.scrolled {
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
         }
 
         .nav-container {
@@ -111,7 +112,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px;
+            height: 60px;
             position: relative;
         }
 
@@ -370,11 +371,11 @@
 
         /* ===== HERO SECTION ===== */
         .hero-header {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: linear-gradient(135deg, #f8fafc 0%, #edf4f7 50%, #e2ecef 100%);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
-            margin-top: 80px;
+            margin-top: 60px;
         }
 
         .hero-header::before {
@@ -384,8 +385,9 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea15, #764ba215);
+            background: linear-gradient(135deg, rgba(0, 104, 123, 0.12), rgba(0, 150, 173, 0.08));
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 1;
         }
 
         .hero-header::after {
@@ -395,34 +397,68 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
-            background-size: 20px 20px;
-            opacity: 0.5;
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 104, 123, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        @keyframes floatSvgSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        @keyframes floatSvgReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(12px) rotate(-3deg); }
+        }
+
+        .hero-bg-svg-1 {
+            position: absolute;
+            top: 10%;
+            left: 2%;
+            width: 280px;
+            height: 280px;
+            pointer-events: none;
+            z-index: 2;
+            animation: floatSvgSlow 8s ease-in-out infinite;
+        }
+
+        .hero-bg-svg-2 {
+            position: absolute;
+            bottom: 5%;
+            right: 3%;
+            width: 320px;
+            height: 320px;
+            pointer-events: none;
+            z-index: 2;
+            animation: floatSvgReverse 10s ease-in-out infinite;
         }
 
         .breadcrumb-enhanced {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #6b7280;
         }
 
         .breadcrumb-enhanced a {
-            color: #667eea;
+            color: #00687B;
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .breadcrumb-enhanced a:hover {
-            color: #4f46e5;
+            color: #004F5E;
             text-decoration: underline;
         }
 
         /* ===== REPORT SECTION ===== */
         .report-section {
             background: white;
-            padding: 100px 0;
+            padding: 90px 0;
             position: relative;
         }
 
@@ -437,42 +473,40 @@
         }
 
         .report-card {
-            background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 3rem;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
             position: relative;
             z-index: 10;
-            transition: all 0.3s ease;
+            border-radius: 0 !important;
+            transform: none !important;
         }
 
         .report-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+            transform: none !important;
+            box-shadow: none !important;
         }
 
         .report-image {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
+            border-radius: 0 !important;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(0, 104, 123, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .report-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 104, 123, 0.15);
         }
 
-        .report-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .report-content, .report-card h3 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #00687B;
+            margin-bottom: 1.25rem;
         }
 
         .report-content h3 {
@@ -492,10 +526,10 @@
 
         /* ===== BUTTONS ===== */
         .btn-enhanced {
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, #00687B 0%, #0096AD 100%);
             color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
+            padding: 14px 28px;
+            border-radius: 0 !important;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -504,7 +538,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 104, 123, 0.25);
             border: none;
             cursor: pointer;
         }
@@ -1173,177 +1207,295 @@
 
     <!-- Report Hero Section -->
     <section class="hero-header">
+        <!-- Background Animated SVGs -->
+        <svg class="hero-bg-svg-1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="85" stroke="#00687B" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.4"/>
+            <circle cx="100" cy="100" r="60" stroke="#0096AD" stroke-width="1" opacity="0.3"/>
+            <circle cx="100" cy="100" r="35" fill="url(#heroGlowSat)" opacity="0.25"/>
+            <circle cx="100" cy="15" r="5" fill="#00687B"/>
+            <circle cx="160" cy="140" r="4" fill="#0096AD"/>
+            <circle cx="35" cy="130" r="6" fill="#00687B"/>
+            <defs>
+                <radialGradient id="heroGlowSat" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(35)">
+                    <stop stop-color="#00687B"/>
+                    <stop offset="1" stop-color="#0096AD" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+        </svg>
+
+        <svg class="hero-bg-svg-2" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 120 Q 70 40, 120 120 T 220 120" stroke="#00687B" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity="0.35"/>
+            <path d="M20 160 Q 80 80, 140 160 T 220 100" stroke="#0096AD" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <rect x="110" y="110" width="20" height="20" rx="3" fill="#00687B" opacity="0.2" transform="rotate(45 120 120)"/>
+            <circle cx="120" cy="120" r="4" fill="#00687B"/>
+        </svg>
+
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center slide-in-bottom">
-                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    Customized Statutory <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Reports</span>
+                <!-- Modern Sharp Eyebrow Tag -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider border-l-2 border-[#00687B] mb-5">
+                    <i class="fas fa-file-contract text-[10px]"></i>
+                    <span>IRD Nepal Statutory Compliance</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-5 tracking-tight">
+                    Customized <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00687B] via-[#00839B] to-[#0096AD]">Statutory Reports</span>
                 </h1>
+
                 <nav class="breadcrumb-enhanced justify-center mb-6">
                     <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
                     <a href="#">Products</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>Customized Statutory Report</span>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <span class="text-gray-500 font-medium">Statutory Reports</span>
                 </nav>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Meet Nepal's regulatory requirements with tailored statutory reporting solutions for Tally Prime, customized to your business needs.
+
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Customized Anusuchi 13, VAT Registers, and financial compliance statements for TallyPrime — aligned with Inland Revenue Office regulations in Nepal.
                 </p>
+
+                <!-- Hero Feature Pills -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3">
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Anusuchi 13 Reports
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> VAT Purchase Registers
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Confirmation Statements
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Direct IRD Excel Formats
+                    </span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Report Section -->
-    <section class="report-section">
+    <!-- NEW TALLY CONTENT LOOK & FLAT BODY PRODUCT SECTION -->
+    <section class="report-section" style="background: #fafafa; padding: 80px 0;">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <!-- Customized Statutory Report -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
-                <div class="slide-in-left">
-                    <img class="report-image" src="img/Products/anu1.jpg" alt="Customized Statutory Report" />
-                </div>
-                <div class="slide-in-right">
-                    <div class="report-card">
-                        <h1 class="report-content">Customized Statutory Report</h1>
-                        <p class="report-description">
-                            Businesses across various verticals in Nepal require specialized statutory reports to comply with government regulations, which are frequently updated. While Tally Prime provides standard reports like Balance Sheet, Profit & Loss, Trial Balance, Ledger Report, and Bank Books, additional reporting needs often arise. Pioneer Software Solutions offers customized statutory reporting solutions tailored to your business, ensuring compliance with the latest requirements of the Inland Revenue Office.
+            
+            <!-- Solution Header -->
+            <div class="text-center mb-12 slide-in-bottom">
+                <h2 class="text-3xl font-extrabold text-[#00687B] mb-2">Statutory Reporting Suite</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm">Pre-built and customized Inland Revenue Office (IRD Nepal) compliance reports for TallyPrime.</p>
+            </div>
+
+            <!-- 1. Customized Statutory Report Overview -->
+            <div class="tally-solution-block slide-in-bottom">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5">
+                        <img src="img/Products/anu1.jpg" alt="Customized Statutory Report" class="report-image" style="width: 100%; height: auto; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-file-alt text-[10px]"></i> IRD Nepal Compliance
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-3">Customized Statutory Reports</h2>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            Businesses across Nepal require specialized statutory reports to comply with frequently updated government regulations. Beyond standard financial statements, Pioneer Software Solutions provides tailor-made statutory report extensions for TallyPrime to guarantee 100% tax compliance.
                         </p>
-                        <div class="mt-8">
-                            <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Request Customization</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5 text-xs text-gray-700">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> ANUSUCHI 13 Tax Compliance
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Item-Wise VAT Purchase Registers
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Customer Confirmation Statements
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Direct Export to IRD Excel Formats
+                            </div>
+                        </div>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Request Report Customization</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- ANUSUCHI 13 Report -->
-            <div class="grid grid-cols-1 gap-12 mb-12">
-                <div class="slide-in-bottom">
-                    <div class="report-card">
-                        <h3>ANUSUCHI 13 Report</h3>
-                        <img class="report-image mb-6" src="img/Products/anu1.jpg" alt="ANUSUCHI 13 Report" />
-                        <p class="report-description">
-                            The ANUSUCHI 13 Report is a critical compliance requirement for businesses in Nepal, mandated by the Inland Revenue Office. Our customized solution ensures accurate data compilation and formatting to meet regulatory standards, streamlining your reporting process.
+            <!-- 2. ANUSUCHI 13 Report -->
+            <div class="tally-solution-block slide-in-bottom">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 order-last lg:order-first">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-table text-[10px]"></i> Mandated Tax Module
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">ANUSUCHI 13 Compliance Report</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            The ANUSUCHI 13 Report is a critical compliance requirement mandated by the Inland Revenue Office of Nepal. Our customized module compiles sales and purchase figures straight from TallyPrime vouchers and formats them ready for official tax filing.
                         </p>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Get ANUSUCHI 13 Module</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <img src="img/Products/anu1.jpg" alt="ANUSUCHI 13 Report" class="report-image" style="width: 100%; height: auto; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
                     </div>
                 </div>
             </div>
 
-            <!-- Confirmation Statement -->
-            <div class="grid grid-cols-1 gap-12 mb-12">
-                <div class="slide-in-bottom">
-                    <div class="report-card">
-                        <h3>Confirmation Statement</h3>
-                        <img class="report-image mb-6" src="img/Products/anu3.jpg" alt="Confirmation Statement" />
-                        <p class="report-description">
-                            The Confirmation Statement is a vital document for businesses to validate financial transactions and ensure compliance. Our tailored solution integrates seamlessly with Tally Prime, providing accurate and compliant reporting.
-                        </p>
-                    </div>
+            <!-- 3. Confirmation Statement & VAT Registers -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="tally-solution-block slide-in-left" style="margin-bottom: 0;">
+                    <img src="img/Products/anu3.jpg" alt="Confirmation Statement" class="report-image mb-4" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Confirmation Statement</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Validate financial transactions with party balance confirmation statements generated directly from TallyPrime ledgers.
+                    </p>
+                    <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
+                        <span>Inquire Statement</span>
+                    </a>
+                </div>
+
+                <div class="tally-solution-block slide-in-right" style="margin-bottom: 0;">
+                    <img src="img/Products/anu2.jpg" alt="Item-wise VAT Purchase Register" class="report-image mb-4" style="width: 100%; height: 200px; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Item-wise VAT Purchase Register</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Detailed item-level tracking of VAT purchase registers essential for auditing and tax credit claims under Nepal tax laws.
+                    </p>
+                    <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
+                        <span>Inquire Register</span>
+                    </a>
                 </div>
             </div>
 
-            <!-- Item-wise VAT Purchase Register -->
-            <div class="grid grid-cols-1 gap-12 mb-12">
-                <div class="slide-in-bottom">
-                    <div class="report-card">
-                        <h3>Item-wise VAT Purchase Register</h3>
-                        <img class="report-image mb-6" src="img/Products/anu2.jpg" alt="Item-wise VAT Purchase Register" />
-                        <p class="report-description">
-                            The Item-wise VAT Purchase Register provides detailed insights into VAT-related purchases, essential for tax compliance. Our customized solution ensures precise tracking and reporting, tailored to your business requirements.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Purchase Register -->
-            <div class="grid grid-cols-1 gap-12 mb-12">
-                <div class="slide-in-bottom">
-                    <div class="report-card">
-                        <h3>Purchase Register</h3>
-                        <img class="report-image mb-6" src="img/Products/anu4.jpg" alt="Purchase Register" />
-                        <p class="report-description">
-                            The Purchase Register tracks all purchase transactions, providing a comprehensive overview for compliance and auditing. Our solution is customized to deliver accurate, formatted reports that meet regulatory standards.
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo">
-                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
-                        </div>
-                        <div>
-                            <h3 class="footer-company-name">Pioneer Software</h3>
-                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
                     </p>
-                </div>
-
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Services -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">+977-1-4533234 / 4533434</div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">info@pioneersoftware.com.np</div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+            <!-- Footer Bottom -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    &copy; 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;">
+                    <a href="#" style="color:#64748b;font-size:0.82rem;text-decoration:none;" class="ft-bottom-link">Privacy Policy</a>
+                    <a href="#" style="color:#64748b;font-size:0.82rem;text-decoration:none;" class="ft-bottom-link">Terms of Service</a>
+                </div>
             </div>
         </div>
+        
+        <style>
+            .ft-social-btn:hover { background: #00687B !important; color: #ffffff !important; transform: translateY(-3px); }
+            .ft-link:hover { color: #00d9b0 !important; transform: translateX(4px); }
+            .ft-bottom-link:hover { color: #00d9b0 !important; }
+            @media (max-width: 1024px) { .footer-grid-layout { grid-template-columns: 1fr 1fr !important; } }
+            @media (max-width: 640px) { .footer-grid-layout { grid-template-columns: 1fr !important; } }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->

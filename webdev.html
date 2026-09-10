@@ -63,11 +63,11 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea, #764ba2);
+            background: linear-gradient(180deg, #00687B, #0096AD);
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+            background: linear-gradient(180deg, #004F5E, #00687B);
         }
 
         /* ===== PROGRESS BAR ===== */
@@ -83,25 +83,26 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
             width: 0%;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
         }
 
         /* ===== NAVIGATION ===== */
         .nav-enhanced {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 2px solid #00687B;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: none;
         }
 
         .nav-enhanced.scrolled {
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
         }
 
         .nav-container {
@@ -111,7 +112,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px;
+            height: 60px;
             position: relative;
         }
 
@@ -370,11 +371,11 @@
 
         /* ===== HERO SECTION ===== */
         .hero-header {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: linear-gradient(135deg, #f8fafc 0%, #edf4f7 50%, #e2ecef 100%);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
-            margin-top: 80px;
+            margin-top: 60px;
         }
 
         .hero-header::before {
@@ -384,8 +385,9 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea15, #764ba215);
+            background: linear-gradient(135deg, rgba(0, 104, 123, 0.12), rgba(0, 150, 173, 0.08));
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+            z-index: 1;
         }
 
         .hero-header::after {
@@ -395,34 +397,68 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
-            background-size: 20px 20px;
-            opacity: 0.5;
+            background-image: radial-gradient(circle at 1px 1px, rgba(0, 104, 123, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        @keyframes floatSvgSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(3deg); }
+        }
+
+        @keyframes floatSvgReverse {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(12px) rotate(-3deg); }
+        }
+
+        .hero-bg-svg-1 {
+            position: absolute;
+            top: 10%;
+            left: 2%;
+            width: 280px;
+            height: 280px;
+            pointer-events: none;
+            z-index: 2;
+            animation: floatSvgSlow 8s ease-in-out infinite;
+        }
+
+        .hero-bg-svg-2 {
+            position: absolute;
+            bottom: 5%;
+            right: 3%;
+            width: 320px;
+            height: 320px;
+            pointer-events: none;
+            z-index: 2;
+            animation: floatSvgReverse 10s ease-in-out infinite;
         }
 
         .breadcrumb-enhanced {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: #6b7280;
         }
 
         .breadcrumb-enhanced a {
-            color: #667eea;
+            color: #00687B;
+            font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .breadcrumb-enhanced a:hover {
-            color: #4f46e5;
+            color: #004F5E;
             text-decoration: underline;
         }
 
         /* ===== PRODUCT SECTION ===== */
         .product-section {
             background: white;
-            padding: 100px 0;
+            padding: 90px 0;
             position: relative;
         }
 
@@ -437,42 +473,40 @@
         }
 
         .product-card {
-            background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            padding: 3rem;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            padding: 0 !important;
             position: relative;
             z-index: 10;
-            transition: all 0.3s ease;
+            border-radius: 0 !important;
+            transform: none !important;
         }
 
         .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+            transform: none !important;
+            box-shadow: none !important;
         }
 
         .product-image {
             max-width: 100%;
             height: auto;
-            border-radius: 12px;
+            border-radius: 0 !important;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(0, 104, 123, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
 
         .product-image:hover {
-            transform: scale(1.05);
-            box-shadow: 0 20px 50px rgba(102, 126, 234, 0.2);
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(0, 104, 123, 0.15);
         }
 
-        .product-content h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .product-content h1, .product-content h2, h3 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #00687B;
+            margin-bottom: 1.25rem;
         }
 
         .product-description {
@@ -485,10 +519,10 @@
 
         /* ===== BUTTONS ===== */
         .btn-enhanced {
-            background: var(--primary-gradient);
+            background: linear-gradient(135deg, #00687B 0%, #0096AD 100%);
             color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
+            padding: 14px 28px;
+            border-radius: 0 !important;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -497,7 +531,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 104, 123, 0.25);
             border: none;
             cursor: pointer;
         }
@@ -519,241 +553,6 @@
         }
 
         .btn-enhanced:hover::before { left: 100%; }
-
-        /* ===== FOOTER ===== */
-        .footer-enhanced {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            position: relative;
-            overflow: hidden;
-            padding: 60px 0 30px;
-        }
-
-        .footer-enhanced::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
-            clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
-
-        .footer-enhanced::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
-            background-size: 20px 20px;
-            opacity: 0.5;
-        }
-
-        .footer-content {
-            position: relative;
-            z-index: 10;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .footer-main {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-            margin-bottom: 3rem;
-        }
-
-        /* Footer Left */
-        .footer-logo-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-
-        .footer-logo::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
-            background-size: 400% 400%;
-            animation: logoGlow 4s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .footer-logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .footer-company-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #1a202c;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .footer-description {
-            color: #6b7280;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        /* Footer Center */
-        .footer-center-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .footer-center-image {
-            width: 220px;
-            height: 160px;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .footer-center-image:hover { transform: translateY(-5px); }
-
-        .footer-center-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 12px;
-        }
-
-        /* Footer Right */
-        .footer-contact-section {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .contact-title {
-            color: #1a202c;
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .contact-title::before {
-            content: '';
-            width: 30px;
-            height: 3px;
-            background: var(--primary-gradient);
-            border-radius: 2px;
-        }
-
-        .contact-info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            color: #4b5563;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info-item:hover { transform: translateX(5px); }
-
-        .contact-icon {
-            width: 35px;
-            height: 35px;
-            background: var(--primary-gradient);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            flex-shrink: 0;
-            margin-top: 2px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-info-item:hover .contact-icon { transform: scale(1.1); }
-
-        .contact-details h4 {
-            color: #1f2937;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-            font-size: 0.95rem;
-        }
-
-        .contact-details p {
-            line-height: 1.4;
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-
-        .phone-numbers {
-            font-family: 'JetBrains Mono', monospace;
-            font-weight: 500;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(102, 126, 234, 0.15);
-            padding-top: 2rem;
-            text-align: center;
-        }
-
-        .footer-bottom p {
-            color: #6b7280;
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-
-        .developer-credit {
-            color: #9ca3af;
-            font-size: 0.85rem;
-        }
-
-        .developer-credit a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .developer-credit a:hover { color: #4facfe; }
 
         /* ===== FLOATING CONTACT ===== */
         .floating-contact {
@@ -939,24 +738,6 @@
             .mobile-menu-btn { display: flex; }
             .nav-divider { display: none; }
 
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-
-            .footer-logo-section,
-            .footer-contact-section,
-            .footer-center-section {
-                align-items: center;
-                text-align: center;
-            }
-
-            .footer-center-image {
-                width: 200px;
-                height: 140px;
-            }
-
             .product-card {
                 padding: 2rem;
             }
@@ -971,12 +752,6 @@
                 right: -20px;
             }
 
-            .footer-content { padding: 0 1rem; }
-            .footer-center-image {
-                width: 180px;
-                height: 120px;
-            }
-
             .hero-header {
                 padding: 100px 0 60px;
             }
@@ -987,10 +762,6 @@
 
             .product-card {
                 padding: 1.5rem;
-            }
-
-            .product-content h1 {
-                font-size: 2.5rem;
             }
         }
 
@@ -1010,11 +781,6 @@
                 height: 60px;
             }
 
-            .footer-center-image {
-                width: 160px;
-                height: 100px;
-            }
-
             .hero-header {
                 padding: 80px 0 40px;
             }
@@ -1025,10 +791,6 @@
 
             .product-card {
                 padding: 1.25rem;
-            }
-
-            .product-content h1 {
-                font-size: 2rem;
             }
         }
     </style>
@@ -1161,56 +923,115 @@
 
     <!-- Product Hero Section -->
     <section class="hero-header">
+        <!-- Background Animated SVGs -->
+        <svg class="hero-bg-svg-1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="85" stroke="#00687B" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.4"/>
+            <circle cx="100" cy="100" r="60" stroke="#0096AD" stroke-width="1" opacity="0.3"/>
+            <circle cx="100" cy="100" r="35" fill="url(#heroGlowWeb)" opacity="0.25"/>
+            <circle cx="100" cy="15" r="5" fill="#00687B"/>
+            <circle cx="160" cy="140" r="4" fill="#0096AD"/>
+            <circle cx="35" cy="130" r="6" fill="#00687B"/>
+            <defs>
+                <radialGradient id="heroGlowWeb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) rotate(90) scale(35)">
+                    <stop stop-color="#00687B"/>
+                    <stop offset="1" stop-color="#0096AD" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+        </svg>
+
+        <svg class="hero-bg-svg-2" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 120 Q 70 40, 120 120 T 220 120" stroke="#00687B" stroke-width="2" stroke-dasharray="4 4" fill="none" opacity="0.35"/>
+            <path d="M20 160 Q 80 80, 140 160 T 220 100" stroke="#0096AD" stroke-width="1.5" fill="none" opacity="0.3"/>
+            <rect x="110" y="110" width="20" height="20" rx="3" fill="#00687B" opacity="0.2" transform="rotate(45 120 120)"/>
+            <circle cx="120" cy="120" r="4" fill="#00687B"/>
+        </svg>
+
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center slide-in-bottom">
-                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    Custom Web Based <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Application</span>
+                <!-- Modern Sharp Eyebrow Tag -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider border-l-2 border-[#00687B] mb-5">
+                    <i class="fas fa-globe text-[10px]"></i>
+                    <span>Custom Web & Application Development</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-5 tracking-tight">
+                    Custom Web Based <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00687B] via-[#00839B] to-[#0096AD]">Applications</span>
                 </h1>
+
                 <nav class="breadcrumb-enhanced justify-center mb-6">
                     <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
                     <a href="#">Products</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>Custom Web Based Application</span>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <span class="text-gray-500 font-medium">Web Development</span>
                 </nav>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Discover our expertise in creating smart, responsive, and professional web designs and custom web applications tailored to your business needs.
+
+                <p class="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Custom responsive websites and enterprise web applications powered by modern full-stack technologies to drive business growth.
                 </p>
+
+                <!-- Hero Feature Pills -->
+                <div class="mt-8 flex flex-wrap justify-center gap-3">
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Responsive Web Design
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Full-Stack Web Apps
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Database Architecture
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> API & Tally Integration
+                    </span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Section -->
-    <section class="product-section">
+    <!-- NEW TALLY CONTENT LOOK & FLAT BODY PRODUCT SECTION -->
+    <section class="product-section" style="background: #fafafa; padding: 80px 0;">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Product Image -->
-                <div class="slide-in-left">
-                    <img src="img/Products/webdev.webp" alt="Custom Web Based Application" class="product-image" />
-                </div>
+            <div class="tally-solution-block slide-in-bottom" style="background: white; border-left: 4px solid #00687B; border-radius: 0 !important; padding: 2.5rem; margin-bottom: 0;">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-5">
+                        <img src="img/Products/WebDevelopment.png" alt="Custom Web Based Application" class="product-image" style="width: 100%; height: auto; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-code text-[10px]"></i> Enterprise Web Solutions
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-3">Custom Web Application &amp; Web Design</h2>
+                        
+                        <h4 class="text-base font-bold text-[#00687B] mt-4 mb-2">Website Designing</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                            We craft responsive, high-performance static and dynamic websites engineered to represent your brand digitally. Built with modern UI/UX principles, our websites guarantee smooth navigation across desktop and mobile browsers.
+                        </p>
 
-                <!-- Product Content -->
-                <div class="slide-in-right">
-                    <div class="product-card">
-                        <h1 class="product-content">Custom Web Based Application</h1>
-                        <h3>Website Designing</h3>
-                        <p class="product-description">
-                            We create your web address for your business. We are creating static and dynamic natured websites for the last couple of years. With our past experience, we are creating smart, interactive, or responsive quality web design at affordable prices for small business houses to mid-sized business organizations. The basic features of websites:
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4 text-xs text-gray-700">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Fully Responsive Mobile Layouts
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Multi-Browser Compatibility
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Search Engine Optimized (SEO)
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Fast Page Load Speed
+                            </div>
+                        </div>
+
+                        <h4 class="text-base font-bold text-[#00687B] mt-5 mb-2">Web Application Development</h4>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-5">
+                            Our engineering team specializes in custom web application development utilizing SQL Server, MySQL, PHP, ASP, and ASP.NET. We turn complex business logic into intuitive web portals, API integrations, and database management systems.
                         </p>
-                        <ul class="list-disc pl-6 mb-4 text-gray-600">
-                            <li>Fully Functional and navigable websites</li>
-                            <li>Mobile device support</li>
-                            <li>Multi browser compatibility and easy viewing</li>
-                            <li>Affordable and professional web design</li>
-                        </ul>
-                        <h3>Web Application Development</h3>
-                        <p class="product-description">
-                            We are also in the field of development of custom-built Web Based Applications. With the latest tools and technologies, our expert team creates basic to complex applications facilitating business transformation. Our development team of experts is capable of handling SQL Server, MySQL, PHP, ASP, and ASP.NET, delivering web apps that simplify complex business logic for end-users, ensuring high performance, scalability, and seamless integration.
-                        </p>
-                        <div class="mt-8">
-                            <a href="contact.html" class="btn-enhanced">
-                                <i class="fas fa-rocket"></i>
-                                <span>Get Started Today</span>
+
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Start Web Development</span>
                             </a>
                         </div>
                     </div>
@@ -1219,81 +1040,129 @@
         </div>
     </section>
 
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo">
-                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
-                        </div>
-                        <div>
-                            <h3 class="footer-company-name">Pioneer Software</h3>
-                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
                     </p>
-                </div>
-
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Services -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">+977-1-4533234 / 4533434</div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">info@pioneersoftware.com.np</div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
-             
+            <!-- Footer Bottom -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    &copy; 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;">
+                    <a href="#" style="color:#64748b;font-size:0.82rem;text-decoration:none;" class="ft-bottom-link">Privacy Policy</a>
+                    <a href="#" style="color:#64748b;font-size:0.82rem;text-decoration:none;" class="ft-bottom-link">Terms of Service</a>
+                </div>
             </div>
         </div>
+        
+        <style>
+            .ft-social-btn:hover { background: #00687B !important; color: #ffffff !important; transform: translateY(-3px); }
+            .ft-link:hover { color: #00d9b0 !important; transform: translateX(4px); }
+            .ft-bottom-link:hover { color: #00d9b0 !important; }
+            @media (max-width: 1024px) { .footer-grid-layout { grid-template-columns: 1fr 1fr !important; } }
+            @media (max-width: 640px) { .footer-grid-layout { grid-template-columns: 1fr !important; } }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->
