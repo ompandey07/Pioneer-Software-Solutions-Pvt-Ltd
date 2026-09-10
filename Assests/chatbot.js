@@ -97,7 +97,7 @@ class PioneerChatbot {
                 {name: "Anil Munakarmi", phone: "+977-985-1141375", role: "CEO", expertise: "Business Strategy"},
                 {name: "Mani Maharjan", phone: "+977-980-5533801", role: "Acc & Finance", expertise: "Acc & Finance"},
                 {name: "Suman Mool", phone: "+977-980-5533802", role: "Support Officer", expertise: "Support Officer"},
-                {name: "Krijan Maharjan", phone: "+977-980-5533803", role: "Support Officer", expertise: "Support"},
+                {name: "Ranjit Bata", phone: "+977-980-5533803", role: "Support Officer", expertise: "Support"},
                 {name: "Ashish Shrestha", phone: "+977-980-5533804", role: "Support Officer", expertise: "IT and Software Support"},
                 {name: "Nhuja Maharjan", phone: "+977-980-5533805", role: "Support Lead", expertise: "Customer Success"},
                 {name: "Om Pandey", phone: "+977-980-5533806", role: "Developer", expertise: "Frontend"}
@@ -726,7 +726,7 @@ class PioneerChatbot {
             'Anil Munakarmi': 'Team/Images/Anil.jpg',
             'Mani Maharjan': 'Team/Images/mani.jpg',
             'Suman Mool': 'Team/Images/Suman.jpg',
-            'Krijan Maharjan': 'Team/Images/Krijan.png',
+            'Ranjit Bata': 'Team/Images/Ranjit.jpg',
             'Ashish Shrestha': 'Team/Images/Ashish.png',
             'Nhuja Maharjan': 'Team/Images/Nhuja.png',
             'Om Pandey': 'Team/Images/Om.jpg'
