@@ -118,8 +118,15 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 1rem;
             z-index: 10;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 44px !important;
+            max-height: 48px !important;
+            width: auto !important;
+            object-fit: contain !important;
         }
 
         .logo-circle {
@@ -197,13 +204,14 @@
             align-items: center;
             gap: 0.5rem;
             padding: 0.75rem 1.25rem;
-            border-radius: 12px;
+            border-radius: 0;
             text-decoration: none;
             color: #374151;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
+            background: transparent;
         }
 
         .nav-item.active {
@@ -211,31 +219,34 @@
             background: rgba(59, 130, 246, 0.08);
         }
 
-        .nav-item::before {
+        /* Animated underline */
+        .nav-item::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: -100%;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+        }
+
+        .nav-item:hover::after {
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
-            transition: left 0.5s ease;
+            left: 0;
         }
 
         .nav-item:hover {
-            color: #3b82f6;
-            background: rgba(59, 130, 246, 0.08);
-            transform: translateY(-2px);
+            color: #667eea;
         }
 
-        .nav-item:hover::before { left: 100%; }
-
         .nav-item i {
-            color: #3b82f6;
+            color: #667eea;
             transition: all 0.3s ease;
         }
 
-        .nav-item:hover i { transform: scale(1.2); }
+        .nav-item:hover i { transform: scale(1.15); }
 
         /* Dropdown */
         .dropdown-enhanced {
@@ -246,14 +257,16 @@
             width: max-content;
             max-width: 450px;
             background: white;
-            border-radius: 16px;
+            border-radius: 0;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
+            border-top: 2px solid #667eea;
             z-index: 1000;
+            margin-top: 4px;
         }
 
         .dropdown-enhanced.show {
@@ -996,12 +1009,9 @@
     <nav class="nav-enhanced fixed w-full top-0">
         <div class="nav-container">
             <!-- Logo Section (Left) -->
-            <div class="logo-section">
-                <div class="logo-circle">
-                    <img src="img/MainLogo.png" alt="Pioneer Software" />
-                </div>
-                <span class="logo-text">Pioneer Software</span>
-            </div>
+            <a href="index.html" class="logo-section">
+                <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" class="nav-logo-img h-11 max-h-12 w-auto object-contain" />
+            </a>
 
             <!-- Center Divider -->
             <div class="nav-divider"></div>
@@ -1009,26 +1019,38 @@
             <!-- Navigation Menu (Right) -->
             <div class="nav-menu">
                 <a href="index.html" class="nav-item">
-                    <i class="fas fa-home"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                    </svg>
                     <span>Home</span>
                 </a>
                 <a href="about.html" class="nav-item">
-                    <i class="fas fa-info-circle"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
                     <span>About</span>
                 </a>
                 <a href="downloads.html" class="nav-item">
-                    <i class="fa fa-download"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                    </svg>
                     <span>Downloads</span>
                 </a>
                 <a href="clints.html" class="nav-item">
-                    <i class="fas fa-users"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
                     <span>Clients</span>
                 </a>
                 <div class="relative">
                     <button class="nav-item dropdown-trigger active" id="products-dropdown">
-                        <i class="fas fa-box"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                        </svg>
                         <span>Products</span>
-                        <i class="fas fa-chevron-down text-xs transition-transform ml-1" id="dropdown-arrow"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-3 h-3 text-[#00687B] transition-transform ml-1 stroke-current" id="dropdown-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+                        </svg>
                     </button>
                     <div class="dropdown-enhanced" id="dropdown-menu">
                         <div class="p-0">
@@ -1068,7 +1090,9 @@
                     </div>
                 </div>
                 <a href="contact.html" class="nav-item">
-                    <i class="fas fa-phone"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
                     <span>Contact</span>
                 </a>
             </div>
