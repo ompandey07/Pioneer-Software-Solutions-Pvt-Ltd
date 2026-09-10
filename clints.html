@@ -36,10 +36,10 @@
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --primary-gradient: linear-gradient(135deg, #00687B 0%, #004f5e 100%);
+            --secondary-gradient: linear-gradient(135deg, #0096AD 0%, #00687B 100%);
+            --accent-gradient: linear-gradient(135deg, #00c4df 0%, #00687B 100%);
+            --dark-gradient: linear-gradient(135deg, #0f2035 0%, #1e293b 100%);
         }
 
         /* ===== BASE STYLES ===== */
@@ -66,11 +66,11 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            border-radius: 4px;
+            background: linear-gradient(180deg, #00687B, #0096AD);
+            border-radius: 0px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+            background: linear-gradient(180deg, #004f5e, #00687B);
         }
         
         /* ===== PROGRESS BAR ===== */
@@ -86,25 +86,26 @@
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
             width: 0%;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
         }
         
         /* ===== NAVIGATION ===== */
         .nav-enhanced {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 104, 123, 0.12);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: none;
         }
         
         .nav-enhanced.scrolled {
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
         }
 
         .nav-container {
@@ -114,7 +115,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px;
+            height: 60px;
             position: relative;
         }
 
@@ -126,8 +127,8 @@
         }
 
         .nav-logo-img {
-            height: 44px !important;
-            max-height: 48px !important;
+            height: 38px !important;
+            max-height: 44px !important;
             width: auto !important;
             object-fit: contain !important;
         }
@@ -135,13 +136,13 @@
         .logo-circle {
             width: 60px;
             height: 60px;
-            border-radius: 50%;
+            border-radius: 0%;
             background: white;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 104, 123, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -152,16 +153,16 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            border-radius: 0%;
+            background: linear-gradient(45deg, #00687B, #0096AD, #00c4df);
             background-size: 400% 400%;
             animation: logoGlow 3s ease-in-out infinite;
             z-index: -1;
         }
 
         .logo-circle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 104, 123, 0.25);
         }
 
         @keyframes logoGlow {
@@ -179,21 +180,11 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00687B;
         }
 
         .nav-divider {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 2px;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, #667eea, transparent);
-            opacity: 0.3;
+            display: none !important;
         }
 
         .nav-menu {
@@ -218,8 +209,8 @@
         }
 
         .nav-item.active {
-            color: #3b82f6;
-            background: rgba(59, 130, 246, 0.08);
+            color: #00687B;
+            background: rgba(0, 104, 123, 0.08);
         }
 
         /* Animated underline */
@@ -230,9 +221,9 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: #00687B;
             transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
+            border-radius: 0px;
         }
 
         .nav-item:hover::after {
@@ -241,11 +232,11 @@
         }
 
         .nav-item:hover {
-            color: #667eea;
+            color: #00687B;
         }
 
         .nav-item i {
-            color: #667eea;
+            color: #00687B;
             transition: all 0.3s ease;
         }
 
@@ -267,7 +258,7 @@
             transform: translateY(-10px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
-            border-top: 2px solid #667eea;
+            border-top: 2px solid #00687B;
             z-index: 1000;
             margin-top: 4px;
         }
@@ -292,21 +283,21 @@
         }
 
         .dropdown-item:first-child {
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
 
         .dropdown-item:last-child {
             border-bottom: none;
-            border-bottom-left-radius: 16px;
-            border-bottom-right-radius: 16px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
         
         .dropdown-item:hover {
-            background: linear-gradient(90deg, #f8fafc, #f1f5f9);
-            color: #1f2937;
+            background: #f0f9fb;
+            color: #00687B;
             transform: translateX(8px);
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #00687B;
         }
         
         .dropdown-item i {
@@ -331,7 +322,7 @@
             width: 25px;
             height: 3px;
             background: #374151;
-            border-radius: 2px;
+            border-radius: 0;
             transition: all 0.3s ease;
         }
 
@@ -363,15 +354,16 @@
             font-weight: 500;
         }
 
-        .mobile-nav-item:hover { color: #3b82f6; }
+        .mobile-nav-item:hover { color: #00687B; }
 
         /* ===== CLIENTS PAGE STYLES ===== */
         .clients-hero {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: #fafafa;
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
             margin-top: 80px;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.1);
         }
         
         .clients-hero::before {
@@ -381,7 +373,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea15, #764ba215);
+            background: linear-gradient(135deg, rgba(0, 104, 123, 0.05), rgba(0, 79, 94, 0.05));
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
@@ -393,7 +385,7 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+                radial-gradient(circle at 1px 1px, rgba(0, 104, 123, 0.08) 1px, transparent 0);
             background-size: 20px 20px;
             opacity: 0.5;
         }
@@ -407,89 +399,237 @@
         }
 
         .breadcrumb-enhanced a {
-            color: #667eea;
+            color: #00687B;
             text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .breadcrumb-enhanced a:hover {
-            color: #4f46e5;
+            color: #004f5e;
             text-decoration: underline;
         }
 
-        /* Client Logos Showcase */
+        /* Client Logos Showcase & Animated SVG Styling */
         .clients-showcase {
-            background: white;
-            padding: 100px 0;
+            background: #fafafa;
+            padding: 95px 0 100px;
             position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #e2e8f0;
         }
 
-        .clients-showcase::before {
-            content: '';
+        .partners-svg-bg {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.02) 0%, transparent 50%);
+            top: 55%;
+            left: 50%;
+            transform: translate(-50%, -45%);
+            width: 850px;
+            height: 850px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.65;
         }
 
-        .client-logo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+        @keyframes spinOrbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
-        .client-logo-item {
-            background: white;
-            padding: 2rem;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            transition: all 0.3s ease;
+        @keyframes spinOrbitReverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        .spin-slow {
+            transform-origin: 300px 300px;
+            animation: spinOrbit 40s linear infinite;
+        }
+
+        .spin-reverse {
+            transform-origin: 300px 300px;
+            animation: spinOrbitReverse 55s linear infinite;
+        }
+
+        /* Category Filter Tabs */
+        .filter-container {
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 150px;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 3rem;
             position: relative;
             z-index: 10;
         }
 
-        .client-logo-item:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15);
-            border-color: #667eea;
+        .client-filter-btn {
+            padding: 0.55rem 1.25rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            border: 1.5px solid #e2e8f0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            color: #475569;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            border-radius: 0px;
         }
 
-        .client-logo-item img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            transition: all 0.3s ease;
+        .client-filter-btn.active, .client-filter-btn:hover {
+            background: #00687B;
+            color: #ffffff;
+            border-color: #00687B;
+            box-shadow: 0 4px 14px rgba(0, 104, 123, 0.25);
         }
 
-        .client-logo-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Industry Categories */
-        .industries-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
-            padding: 100px 0;
+        /* Modern Client Card V2 */
+        .client-logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 1.5rem;
             position: relative;
+            z-index: 10;
         }
 
-        .industries-section::before {
+        .client-card-v2 {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 1.5px solid rgba(0, 104, 123, 0.15);
+            padding: 1.5rem 1rem 1.2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 155px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .client-card-v2::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
+            width: 0;
+            height: 3px;
+            background: #00687B;
+            transition: width 0.35s ease;
+        }
+
+        .client-card-v2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 3px;
+            background: #00687B;
+            transition: width 0.35s ease;
+        }
+
+        .client-card-v2:hover::before,
+        .client-card-v2:hover::after {
             width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+        }
+
+        .client-card-v2:hover {
+            transform: translateY(-6px);
+            border-color: #00687B;
+            box-shadow: 0 16px 36px rgba(0, 104, 123, 0.16);
+            background: #ffffff;
+        }
+
+        .client-card-v2 .corner-tl {
+            position: absolute;
+            top: -1px;
+            left: -1px;
+            width: 10px;
+            height: 10px;
+            border-top: 2.5px solid #00687B;
+            border-left: 2.5px solid #00687B;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .client-card-v2 .corner-br {
+            position: absolute;
+            bottom: -1px;
+            right: -1px;
+            width: 10px;
+            height: 10px;
+            border-bottom: 2.5px solid #00687B;
+            border-right: 2.5px solid #00687B;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .client-card-v2:hover .corner-tl,
+        .client-card-v2:hover .corner-br {
+            opacity: 1;
+        }
+
+        .client-card-v2 .card-idx {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: #cbd5e1;
+            transition: color 0.3s ease;
+        }
+
+        .client-card-v2:hover .card-idx {
+            color: #00687B;
+        }
+
+        .client-card-v2 .img-wrap {
+            height: 65px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-card-v2 img {
+            max-height: 100%;
+            max-width: 85%;
+            object-fit: contain;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: grayscale(10%) opacity(0.95);
+        }
+
+        .client-card-v2:hover img {
+            transform: scale(1.08);
+            filter: grayscale(0%) opacity(1);
+        }
+
+        .client-card-v2 .card-tag {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: #64748b;
+            letter-spacing: 0.06em;
+            margin-top: 0.6rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .client-card-v2:hover .card-tag {
+            color: #00687B;
+        }
+
+        /* Industry Categories */
+        .industries-section {
+            background: #fafafa;
+            padding: 90px 0;
+            position: relative;
+            border-top: 1px solid #e2e8f0;
         }
 
         .industries-grid {
@@ -502,58 +642,54 @@
 
         .industry-card {
             background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1.5px solid #00687B;
+            border-radius: 0px;
+            box-shadow: 0 8px 24px rgba(0, 104, 123, 0.08);
             transition: all 0.3s ease;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .industry-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0, 104, 123, 0.15);
         }
 
         .industry-header {
-            background: var(--primary-gradient);
+            background: #0f2035;
             color: white;
-            padding: 1.5rem;
-            text-align: center;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
             position: relative;
-        }
-
-        .industry-header::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid #764ba2;
+            border-bottom: 2px solid #00687B;
         }
 
         .industry-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            background: #00687B;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 1.5rem;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
 
         .industry-title {
-            font-size: 1.4rem;
+            font-size: 1.25rem;
             font-weight: 700;
             margin: 0;
+            color: #ffffff;
         }
 
         .industry-body {
-            padding: 2rem;
+            padding: 1.5rem;
+            flex: 1;
         }
 
         .client-list {
@@ -563,12 +699,15 @@
         }
 
         .client-list li {
-            padding: 0.75rem 0;
+            padding: 0.65rem 0.5rem;
             border-bottom: 1px solid #f1f5f9;
             display: flex;
             align-items: center;
             gap: 0.75rem;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
+            font-size: 0.95rem;
+            color: #334155;
+            font-weight: 500;
         }
 
         .client-list li:last-child {
@@ -576,63 +715,74 @@
         }
 
         .client-list li:hover {
-            background: #f8fafc;
-            padding-left: 1rem;
-            transform: translateX(5px);
+            background: #f0f9fb;
+            padding-left: 0.85rem;
+            border-left: 3px solid #00687B;
         }
 
         .client-list li::before {
             content: '✓';
-            width: 20px;
-            height: 20px;
-            background: var(--primary-gradient);
+            width: 18px;
+            height: 18px;
+            background: #00687B;
             color: white;
-            border-radius: 50%;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: bold;
             flex-shrink: 0;
         }
 
         .stats-section {
-            background: var(--primary-gradient);
+            background: #0f2035;
+            border: 2px solid #00687B;
+            box-shadow: 12px 12px 0px rgba(0, 104, 123, 0.15);
             color: white;
-            padding: 80px 0;
+            padding: 60px 40px;
             text-align: center;
+            margin: 40px auto;
+            max-width: 1280px;
+            position: relative;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
         .stat-item {
             text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 104, 123, 0.4);
         }
 
         .stat-number {
-            font-size: 4rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: 'JetBrains Mono', monospace;
+            color: #00d9b0;
             display: block;
             margin-bottom: 0.5rem;
         }
 
         .stat-label {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.05rem;
+            color: #94a3b8;
+            font-weight: 600;
         }
 
         /* ===== BUTTONS ===== */
         .btn-enhanced {
-            background: var(--primary-gradient);
+            background: #00687B;
             color: white;
-            padding: 16px 32px;
-            border-radius: 12px;
-            font-weight: 600;
+            padding: 14px 28px;
+            border-radius: 0px;
+            font-weight: 700;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -640,9 +790,12 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(0, 104, 123, 0.25);
             border: none;
             cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
         }
         
         .btn-enhanced::before {
@@ -657,8 +810,9 @@
         }
         
         .btn-enhanced:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            transform: translateY(-2px);
+            background: #004f5e;
+            box-shadow: 0 8px 25px rgba(0, 104, 123, 0.35);
         }
         
         .btn-enhanced:hover::before { left: 100%; }
@@ -678,7 +832,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+            background: linear-gradient(135deg, rgba(0, 104, 123, 0.08), rgba(0, 150, 173, 0.08));
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
@@ -690,7 +844,7 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+                radial-gradient(circle at 1px 1px, rgba(0, 104, 123, 0.08) 1px, transparent 0);
             background-size: 20px 20px;
             opacity: 0.5;
         }
@@ -722,55 +876,22 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: white;
+            width: auto;
+            height: auto;
+            background: transparent;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-
-        .footer-logo::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
-            background-size: 400% 400%;
-            animation: logoGlow 4s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .footer-logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
         }
 
         .footer-company-name {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #1a202c;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00687B;
         }
 
         .footer-description {
@@ -874,7 +995,7 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(102, 126, 234, 0.15);
+            border-top: 1px solid rgba(0, 104, 123, 0.15);
             padding-top: 2rem;
             text-align: center;
         }
@@ -891,13 +1012,13 @@
         }
 
         .developer-credit a {
-            color: #667eea;
+            color: #00687B;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .developer-credit a:hover { color: #4facfe; }
+        .developer-credit a:hover { color: #004f5e; }
 
         /* ===== FLOATING CONTACT ===== */
         .floating-contact {
@@ -1035,6 +1156,7 @@
             color: white;
             font-weight: bold;
             flex-shrink: 0;
+            object-fit: cover;
         }
 
         .contact-phone {
@@ -1220,9 +1342,6 @@
                 <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" class="nav-logo-img h-11 max-h-12 w-auto object-contain" />
             </a>
             
-            <!-- Center Divider -->
-            <div class="nav-divider"></div>
-            
             <!-- Navigation Menu (Right) -->
             <div class="nav-menu">
                 <a href="index.html" class="nav-item">
@@ -1335,16 +1454,22 @@
     <section class="clients-hero">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center slide-in-bottom">
-                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    Our <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Trusted</span> Clients
+                <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.9rem;background:#00687B;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem;">
+                    Clientele Portfolio
+                </div>
+                <h1 class="text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4 tracking-tight">
+                    Our <span style="color:#00687B;">Trusted</span> Clients
                 </h1>
+                <div style="width:50px;height:3.5px;background:#00687B;margin:0 auto 1.5rem;"></div>
                 <nav class="breadcrumb-enhanced justify-center mb-6">
                     <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>Clients</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-400 stroke-current ml-1 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span class="text-gray-500 font-medium">Clients</span>
                 </nav>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Proudly serving 2500+ clients across diverse industries in Nepal. From hydropower giants to healthcare institutions, logistics companies to hospitality businesses - we've been their trusted technology partner.
+                <p class="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                    Proudly serving 2,500+ clients across diverse industries in Nepal. From hydropower giants to healthcare institutions, logistics leaders to hospitality brands — we remain their trusted technology partner.
                 </p>
             </div>
         </div>
@@ -1352,75 +1477,269 @@
 
     <!-- Client Logos Showcase -->
     <section class="clients-showcase">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12 slide-in-bottom">
-                <div class="inline-flex items-center space-x-3 bg-white px-6 py-3 rounded-full shadow-lg mb-8">
-                    <img src="img/clints.png" alt="Clients" class="w-8 h-8" />
-                    <span class="text-blue-600 font-semibold">Featured Clients</span>
+        <!-- Animated SVG Tech Background Graphic -->
+        <div class="partners-svg-bg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" fill="none" style="width:100%;height:100%;opacity:0.35;">
+                <!-- Outer Spinning Orbit Ring -->
+                <circle cx="300" cy="300" r="280" stroke="#00687B" stroke-width="1.2" stroke-dasharray="12 10" class="spin-slow" />
+                <!-- Inner Reverse Spinning Ring -->
+                <circle cx="300" cy="300" r="200" stroke="#0096AD" stroke-width="1" stroke-dasharray="6 14" class="spin-reverse" />
+                <!-- Center Tech Core -->
+                <circle cx="300" cy="300" r="100" stroke="#00687B" stroke-width="0.8" opacity="0.4" />
+                <!-- Connecting Grid Rays -->
+                <line x1="20" y1="300" x2="580" y2="300" stroke="#00687B" stroke-width="0.6" stroke-dasharray="4 8" opacity="0.3" />
+                <line x1="300" y1="20" x2="300" y2="580" stroke="#00687B" stroke-width="0.6" stroke-dasharray="4 8" opacity="0.3" />
+                <!-- Animated Tech Nodes -->
+                <circle cx="300" cy="20" r="4" fill="#00687B" />
+                <circle cx="580" cy="300" r="4" fill="#0096AD" />
+                <circle cx="300" cy="580" r="4" fill="#00687B" />
+                <circle cx="20" cy="300" r="4" fill="#0096AD" />
+            </svg>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-10 slide-in-bottom">
+                <div style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.4rem 1.1rem;background:#00687B;color:#fff;font-size:0.72rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5m3 0h4M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                    Corporate Alliances
                 </div>
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Partners We're Proud Of</h2>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 tracking-tight">
+                    Partners We're <span style="color:#00687B;">Proud Of</span>
+                </h2>
+                <div style="width:50px;height:3.5px;background:#00687B;margin:0 auto 1.5rem;"></div>
+                <p class="text-base lg:text-lg text-gray-600 max-w-2xl mx-auto">
+                    Powering leading enterprises, logistics networks, travel groups, and institutions across Nepal with precision software infrastructure.
+                </p>
+            </div>
+
+            <!-- Category Filter Controls -->
+            <div class="filter-container slide-in-bottom">
+                <button class="client-filter-btn active" onclick="filterClients('all', this)">All Partners</button>
+                <button class="client-filter-btn" onclick="filterClients('aviation', this)">Aviation &amp; Travel</button>
+                <button class="client-filter-btn" onclick="filterClients('enterprise', this)">Enterprise &amp; Retail</button>
+                <button class="client-filter-btn" onclick="filterClients('logistics', this)">Logistics &amp; Tech</button>
+                <button class="client-filter-btn" onclick="filterClients('services', this)">Services &amp; NGOs</button>
             </div>
             
-            <div class="client-logo-grid slide-in-bottom">
-                <div class="client-logo-item">
-                    <img src="img/Clints/food.png" alt="Food Client" />
+            <div class="client-logo-grid slide-in-bottom" id="clientGrid">
+                <!-- 01: Food -->
+                <div class="client-card-v2" data-category="services">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#01</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/food.png" alt="Food Client" />
+                    </div>
+                    <span class="card-tag">Food &amp; Hospitality</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/saurya.png" alt="Saurya Airlines" />
+
+                <!-- 02: Saurya Airlines -->
+                <div class="client-card-v2" data-category="aviation">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#02</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/saurya.png" alt="Saurya Airlines" />
+                    </div>
+                    <span class="card-tag">Airlines</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/IMS.png" alt="Riddhi" />
+
+                <!-- 03: IMS Group -->
+                <div class="client-card-v2" data-category="enterprise">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#03</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/IMS.png" alt="IMS Group" />
+                    </div>
+                    <span class="card-tag">Enterprise Conglomerate</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/pathao.png" alt="Pathao" />
+
+                <!-- 04: Pathao -->
+                <div class="client-card-v2" data-category="logistics">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#04</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/pathao.png" alt="Pathao" />
+                    </div>
+                    <span class="card-tag">Tech &amp; Logistics</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/redcross.png" alt="Red Cross" />
+
+                <!-- 05: Red Cross -->
+                <div class="client-card-v2" data-category="services">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#05</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/redcross.png" alt="Red Cross" />
+                    </div>
+                    <span class="card-tag">Humanitarian NGO</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/natraj.webp" alt="Natraj" />
+
+                <!-- 06: Natraj Tours -->
+                <div class="client-card-v2" data-category="aviation">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#06</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/natraj.webp" alt="Natraj" />
+                    </div>
+                    <span class="card-tag">Tours &amp; Travel</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/garud.png" alt="Garud" />
+
+                <!-- 07: Garud Securities -->
+                <div class="client-card-v2" data-category="services">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#07</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/garud.png" alt="Garud" />
+                    </div>
+                    <span class="card-tag">Security Services</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/fire.png" alt="Fire & Ice" />
+
+                <!-- 08: Fire & Ice -->
+                <div class="client-card-v2" data-category="services">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#08</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/fire.png" alt="Fire & Ice" />
+                    </div>
+                    <span class="card-tag">Hospitality &amp; Dining</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/anna.png" alt="Anna" />
+
+                <!-- 09: Anna -->
+                <div class="client-card-v2" data-category="enterprise">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#09</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/anna.png" alt="Anna" />
+                    </div>
+                    <span class="card-tag">FMCG &amp; Retail</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/jobs.png" alt="Jobs" />
+
+                <!-- 10: Jobs -->
+                <div class="client-card-v2" data-category="logistics">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#10</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/jobs.png" alt="Jobs" />
+                    </div>
+                    <span class="card-tag">HR &amp; Recruitment</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/everest.png" alt="Everest" />
+
+                <!-- 11: Everest -->
+                <div class="client-card-v2" data-category="aviation">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#11</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/everest.png" alt="Everest" />
+                    </div>
+                    <span class="card-tag">Travel &amp; Hospitality</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/mero.png" alt="Mero" />
+
+                <!-- 12: Mero -->
+                <div class="client-card-v2" data-category="logistics">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#12</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/mero.png" alt="Mero" />
+                    </div>
+                    <span class="card-tag">Digital Platform</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/sar.png" alt="SAR" />
+
+                <!-- 13: SAR Associates -->
+                <div class="client-card-v2" data-category="services">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#13</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/sar.png" alt="SAR Associates" />
+                    </div>
+                    <span class="card-tag">Audit &amp; Consultancy</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/webserfer.png" alt="Web Surfer" />
+
+                <!-- 14: Web Surfer -->
+                <div class="client-card-v2" data-category="logistics">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#14</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/webserfer.png" alt="Web Surfer" />
+                    </div>
+                    <span class="card-tag">ISP &amp; Telecommunications</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/chaya.png" alt="Chaya" />
+
+                <!-- 15: Chaya Center -->
+                <div class="client-card-v2" data-category="enterprise">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#15</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/chaya.png" alt="Chaya Center" />
+                    </div>
+                    <span class="card-tag">Commercial Complex</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/kings.png" alt="Kings" />
+
+                <!-- 16: Kings College -->
+                <div class="client-card-v2" data-category="services">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#16</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/kings.png" alt="Kings College" />
+                    </div>
+                    <span class="card-tag">Higher Education</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/ApooloPaints.jpeg" alt="Kings" />
+
+                <!-- 17: Apollo Paints -->
+                <div class="client-card-v2" data-category="enterprise">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#17</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/ApooloPaints.jpeg" alt="Apollo Paints" />
+                    </div>
+                    <span class="card-tag">Manufacturing</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/Toyota.jpg" alt="Kings" />
+
+                <!-- 18: Toyota -->
+                <div class="client-card-v2" data-category="enterprise">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#18</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/Toyota.jpg" alt="Toyota" />
+                    </div>
+                    <span class="card-tag">Automotive Partner</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/Kalika.jpeg" alt="Kings" />
+
+                <!-- 19: Kalika Construction -->
+                <div class="client-card-v2" data-category="enterprise">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#19</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/Kalika.jpeg" alt="Kalika Construction" />
+                    </div>
+                    <span class="card-tag">Infrastructure Development</span>
                 </div>
-                <div class="client-logo-item">
-                    <img src="img/Clints/Malla tours & travels.png" alt="Kings" />
+
+                <!-- 20: Malla Tours & Travels -->
+                <div class="client-card-v2" data-category="aviation">
+                    <div class="corner-tl"></div>
+                    <div class="corner-br"></div>
+                    <span class="card-idx">#20</span>
+                    <div class="img-wrap">
+                        <img src="img/Clints/Malla tours & travels.png" alt="Malla Tours & Travels" />
+                    </div>
+                    <span class="card-tag">Travel &amp; Logistics</span>
                 </div>
             </div>
         </div>
@@ -1428,27 +1747,32 @@
 
     <!-- Stats Section -->
     <section class="stats-section">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <h2 class="text-4xl font-bold mb-4">Our Impact in Numbers</h2>
-            <p class="text-xl opacity-90 mb-8">Building lasting partnerships across Nepal's business landscape</p>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">2500+</span>
-                    <p class="stat-label">Happy Clients</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">50+</span>
-                    <p class="stat-label">Industries Served</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">12+</span>
-                    <p class="stat-label">Years Experience</p>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">99%</span>
-                    <p class="stat-label">Client Satisfaction</p>
-                </div>
+        <!-- Corner brackets for high-tech look -->
+        <div style="position:absolute;top:-6px;left:-6px;width:20px;height:20px;border-top:3px solid #00687B;border-left:3px solid #00687B;"></div>
+        <div style="position:absolute;bottom:-6px;right:-6px;width:20px;height:20px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;"></div>
+
+        <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 0.85rem;background:#00687B;color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1rem;">
+            Enterprise Growth
+        </div>
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-2 tracking-tight">Our Impact in Numbers</h2>
+        <p class="text-gray-300 text-base lg:text-lg opacity-90 max-w-2xl mx-auto">Building lasting partnerships across Nepal's corporate and enterprise business landscape.</p>
+        
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">2500+</span>
+                <p class="stat-label">Happy Clients</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <p class="stat-label">Industries Served</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">12+</span>
+                <p class="stat-label">Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">99%</span>
+                <p class="stat-label">Client Satisfaction</p>
             </div>
         </div>
     </section>
@@ -1456,10 +1780,16 @@
     <!-- Industries Section -->
     <section class="industries-section">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16 slide-in-bottom">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Industries We Serve</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Our diverse client portfolio spans across multiple industries, each benefiting from our tailored software solutions and dedicated support.
+            <div class="text-center mb-14 slide-in-bottom">
+                <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.9rem;background:#00687B;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1rem;">
+                    Industry Expertise
+                </div>
+                <h2 class="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-3 tracking-tight">
+                    Industries We <span style="color:#00687B;">Serve</span>
+                </h2>
+                <div style="width:40px;height:3px;background:#00687B;margin:0 auto 1.5rem;"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Our diverse client portfolio spans across multiple key industries, each benefiting from our tailored software solutions, statutory reporting modules, and dedicated support.
                 </p>
             </div>
 
@@ -1670,83 +2000,162 @@
         </div>
     </section>
 
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo">
-                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
-                        </div>
-                        <div>
-                            <h3 class="footer-company-name">Pioneer Software</h3>
-                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <!-- Rotating Tech Orbit Top Right -->
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Pulsing Orbit Bottom Left -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Tech Grid Overlay Pattern -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
                     </p>
-                </div>
-
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
-                    </div>
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Solutions -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
                     
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">
+                                +977-1-4533234 / 4533434
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;">
+                                info@pioneersoftware.com.np
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+
+            <!-- Footer Bottom Border & Copyright -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    © 2025 <strong style="color:#cbd5e1;">Pioneer Software Solutions Pvt Ltd</strong>. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;font-size:0.8rem;color:#64748b;">
+                    <a href="about.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Company Profile</a>
+                    <span>•</span>
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Support Hotline</a>
+                    <span>•</span>
+                    <a href="tallycusto.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Tally Customization</a>
+                </div>
             </div>
         </div>
+
+        <style>
+            .ft-social-btn:hover {
+                background: #00687B !important;
+                color: #ffffff !important;
+                border-color: #00d9b0 !important;
+                transform: translateY(-3px);
+            }
+            .ft-link:hover {
+                color: #00d9b0 !important;
+                padding-left: 4px;
+            }
+            .ft-sublink:hover {
+                color: #00d9b0 !important;
+            }
+            @media (max-width: 1024px) {
+                .footer-grid-layout { grid-template-columns: 1fr 1fr !important; }
+            }
+            @media (max-width: 640px) {
+                .footer-grid-layout { grid-template-columns: 1fr !important; }
+            }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->
@@ -1985,6 +2394,29 @@
                 }
             });
         });
+
+        // Client category filter functionality
+        function filterClients(category, btn) {
+            document.querySelectorAll('.client-filter-btn').forEach(b => b.classList.remove('active'));
+            if (btn) btn.classList.add('active');
+            
+            const cards = document.querySelectorAll('.client-card-v2');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 200);
+                }
+            });
+        }
 
         // Performance monitoring
         if ('requestIdleCallback' in window) {

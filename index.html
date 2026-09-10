@@ -59,9 +59,6 @@
                 <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" class="nav-logo-img h-11 max-h-12 w-auto object-contain" />
             </a>
             
-            <!-- Center Divider -->
-            <div class="nav-divider"></div>
-            
             <!-- Navigation Menu (Right) -->
             <div class="nav-menu">
                 <a href="index.html" class="nav-item">
@@ -378,7 +375,7 @@
             <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:1.5px;background:#00687B;" class="svc-main-grid">
 
                 <!-- LEFT: Featured Active Service Panel -->
-                <div id="svcPanel" style="background:#0f2035;padding:2.5rem;display:flex;flex-direction:column;gap:1.5rem;min-height:420px;position:relative;overflow:hidden;">
+                <div id="svcPanel" style="background:#0f2035;padding:2.5rem;display:flex;flex-direction:column;gap:1.5rem;min-height:480px;height:100%;box-sizing:border-box;position:relative;overflow:hidden;">
                     <!-- Subtle corner SVG decoration -->
                     <svg style="position:absolute;bottom:-20px;right:-20px;opacity:0.08;" width="180" height="180" viewBox="0 0 180 180" fill="none">
                         <circle cx="90" cy="90" r="80" stroke="#00d9b0" stroke-width="1.5" stroke-dasharray="8 6">
@@ -394,7 +391,7 @@
                     </div>
                     <div>
                         <h3 id="svcPanelTitle" style="font-size:1.4rem;font-weight:800;color:#fff;margin:0 0 0.5rem 0;">Tally Customization</h3>
-                        <p id="svcPanelDesc" style="font-size:0.9rem;color:#94a3b8;line-height:1.75;margin:0;">Most business organizations fulfill their basic accounting automation with available accounting software, but customization takes it to the next level. We specialize in creating tailored solutions that perfectly fit your unique business processes.</p>
+                        <p id="svcPanelDesc" style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin:0;min-height:4.8rem;">We create tailored Tally solutions to automate unique workflows, enhance reporting precision, and streamline your operational processes for maximum efficiency.</p>
                     </div>
                     <ul id="svcPanelFeatures" style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;">
                         <li style="display:flex;align-items:center;gap:0.6rem;font-size:0.82rem;color:#cbd5e1;">
@@ -420,42 +417,42 @@
                 <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:#00687B;">
 
                     <!-- Card 1 — Active -->
-                    <div class="svc-card svc-active" data-title="Tally Customization" data-desc="Most business organizations fulfill their basic accounting automation with available accounting software, but customization takes it to the next level. We specialize in creating tailored solutions that perfectly fit your unique business processes." data-icon="img/Products/customize.png" data-link="tallycusto.html" data-f1="Custom Reports &amp; Analytics" data-f2="Automated Data Entry" data-f3="Third-party System Integration" data-f4="Advanced Security Features" style="background:#0f2035;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;border-bottom:2px solid #00d9b0;">
+                    <div class="svc-card svc-active" data-title="Tally Customization" data-desc="We create tailored Tally solutions to automate unique workflows, enhance reporting precision, and streamline your operational processes for maximum efficiency." data-icon="img/Products/customize.png" data-link="tallycusto.html" data-f1="Custom Reports &amp; Analytics" data-f2="Automated Data Entry" data-f3="Third-party System Integration" data-f4="Advanced Security Features" style="background:#0f2035;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;border-bottom:2px solid #00d9b0;">
                         <img src="img/Products/customize.png" alt="Tally Customization" style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#fff;margin:0 0 0.35rem 0;">Tally Customization</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Tailored Tally solutions for your business processes.</p>
                     </div>
 
                     <!-- Card 2 -->
-                    <div class="svc-card" data-title="Web Development" data-desc="We build modern, responsive web applications tailored to your business needs. From simple websites to complex enterprise portals, our team delivers high-quality, scalable solutions that drive digital growth." data-icon="img/Products/webdev.webp" data-link="webdev.html" data-f1="Custom Web Applications" data-f2="Responsive Design" data-f3="E-Commerce Solutions" data-f4="API Integration" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+                    <div class="svc-card" data-title="Web Development" data-desc="We build modern, responsive web applications tailored to your business needs, delivering scalable digital solutions that drive growth and engagement." data-icon="img/Products/webdev.webp" data-link="webdev.html" data-f1="Custom Web Applications" data-f2="Responsive Design" data-f3="E-Commerce Solutions" data-f4="API Integration" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
                         <img src="img/Products/webdev.webp" alt="Web Dev" style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#fff;margin:0 0 0.35rem 0;">Web Development</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Modern, scalable web apps for your business.</p>
                     </div>
 
                     <!-- Card 3 -->
-                    <div class="svc-card" data-title="Tally Prime" data-desc="Tally Prime is the new age business management software that makes accounting, inventory, payroll and compliance easy. We provide complete Tally Prime implementation, training, and support services." data-icon="img/Products/TallyNew.png" data-link="tallyprime.html" data-f1="GST &amp; Compliance Ready" data-f2="Real-time Reports" data-f3="Multi-company Support" data-f4="Cloud Backup" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+                    <div class="svc-card" data-title="Tally Prime" data-desc="Tally Prime provides complete business management with accounting, inventory, and compliance tools. We deliver setup, training, and ongoing support." data-icon="img/Products/TallyNew.png" data-link="tallyprime.html" data-f1="GST &amp; Compliance Ready" data-f2="Real-time Reports" data-f3="Multi-company Support" data-f4="Cloud Backup" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
                         <img src="img/Products/TallyNew.png" alt="Tally Prime" style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#fff;margin:0 0 0.35rem 0;">Tally Prime</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Modern ERP for accounting &amp; business management.</p>
                     </div>
 
                     <!-- Card 4 -->
-                    <div class="svc-card" data-title="EasyBill — Billing Solution" data-desc="EasyBill is a powerful, user-friendly billing management solution that simplifies invoice generation, payment tracking, and financial reporting for businesses of all sizes." data-icon="img/Products/EasyBill.png" data-link="easybill.html" data-f1="Invoice Generation" data-f2="Payment Tracking" data-f3="Financial Reports" data-f4="Multi-branch Support" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+                    <div class="svc-card" data-title="EasyBill — Billing Solution" data-desc="EasyBill simplifies invoicing, payment tracking, and financial management for growing businesses, ensuring fast, accurate, and effortless billing." data-icon="img/Products/EasyBill.png" data-link="easybill.html" data-f1="Invoice Generation" data-f2="Payment Tracking" data-f3="Financial Reports" data-f4="Multi-branch Support" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
                         <img src="img/Products/EasyBill.png" alt="EasyBill" style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#fff;margin:0 0 0.35rem 0;">EasyBill</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Smart billing &amp; invoice management system.</p>
                     </div>
 
                     <!-- Card 5 -->
-                    <div class="svc-card" data-title="Custom Statutory Reports" data-desc="We design and develop custom statutory and compliance reports tailored to Nepal's regulatory requirements, integrated directly with your Tally or accounting system." data-icon="img/Products/creport.png" data-link="satreport.html" data-f1="Statutory Compliance" data-f2="Custom Report Design" data-f3="Tally Integration" data-f4="VAT &amp; Tax Reports" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+                    <div class="svc-card" data-title="Custom Statutory Reports" data-desc="We design custom statutory and tax compliance reports tailored to Nepal's regulatory standards, integrated seamlessly into your Tally accounting system." data-icon="img/Products/creport.png" data-link="satreport.html" data-f1="Statutory Compliance" data-f2="Custom Report Design" data-f3="Tally Integration" data-f4="VAT &amp; Tax Reports" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
                         <img src="img/Products/creport.png" alt="Reports" style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#fff;margin:0 0 0.35rem 0;">Statutory Reports</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Compliance reports tailored to Nepal regulations.</p>
                     </div>
 
                     <!-- Card 6 -->
-                    <div class="svc-card" data-title="Biz Analyst" data-desc="Biz Analyst is a powerful mobile app that connects to your Tally data, giving you real-time business insights, sales analytics, and performance dashboards on the go." data-icon="img/Products/biz.png" data-link="biz.html" data-f1="Real-time Tally Data" data-f2="Sales Analytics" data-f3="Performance Dashboard" data-f4="Mobile Access" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
+                    <div class="svc-card" data-title="Biz Analyst" data-desc="Biz Analyst connects to Tally to give you real-time business insights, sales analytics, and interactive performance dashboards on your mobile phone." data-icon="img/Products/biz.png" data-link="biz.html" data-f1="Real-time Tally Data" data-f2="Sales Analytics" data-f3="Performance Dashboard" data-f4="Mobile Access" style="background:#0a1628;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
                         <img src="img/Products/biz.png" alt="Biz Analyst" style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#fff;margin:0 0 0.35rem 0;">Biz Analyst</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Real-time business intelligence from your Tally.</p>
@@ -503,7 +500,7 @@
             });
         })();
         </script>
-    </section>n>
+    </section>
 
     <!-- About Section — Creative Redesign -->
     <section style="padding:5rem 0 5rem;background:#fff;position:relative;overflow:hidden;">
@@ -736,77 +733,162 @@
 
     
 
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container" style="margin-bottom:0.75rem;">
-                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:52px;width:auto;object-fit:contain;max-width:200px;" />
-                    </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <!-- Rotating Tech Orbit Top Right -->
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Pulsing Orbit Bottom Left -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Tech Grid Overlay Pattern -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
                     </p>
-                </div>
-
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
-                    </div>
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Solutions -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
                     
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">
+                                +977-1-4533234 / 4533434
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;">
+                                info@pioneersoftware.com.np
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+
+            <!-- Footer Bottom Border & Copyright -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    © 2025 <strong style="color:#cbd5e1;">Pioneer Software Solutions Pvt Ltd</strong>. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;font-size:0.8rem;color:#64748b;">
+                    <a href="about.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Company Profile</a>
+                    <span>•</span>
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Support Hotline</a>
+                    <span>•</span>
+                    <a href="tallycusto.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Tally Customization</a>
+                </div>
             </div>
         </div>
+
+        <style>
+            .ft-social-btn:hover {
+                background: #00687B !important;
+                color: #ffffff !important;
+                border-color: #00d9b0 !important;
+                transform: translateY(-3px);
+            }
+            .ft-link:hover {
+                color: #00d9b0 !important;
+                padding-left: 4px;
+            }
+            .ft-sublink:hover {
+                color: #00d9b0 !important;
+            }
+            @media (max-width: 1024px) {
+                .footer-grid-layout { grid-template-columns: 1fr 1fr !important; }
+            }
+            @media (max-width: 640px) {
+                .footer-grid-layout { grid-template-columns: 1fr !important; }
+            }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->

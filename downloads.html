@@ -36,10 +36,10 @@
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --primary-gradient: linear-gradient(135deg, #00687B 0%, #004f5e 100%);
+            --secondary-gradient: linear-gradient(135deg, #0096AD 0%, #00687B 100%);
+            --accent-gradient: linear-gradient(135deg, #00c4df 0%, #00687B 100%);
+            --dark-gradient: linear-gradient(135deg, #0f2035 0%, #1e293b 100%);
         }
 
         /* ===== BASE STYLES ===== */
@@ -66,11 +66,11 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            border-radius: 4px;
+            background: #00687B;
+            border-radius: 0px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+            background: #004f5e;
         }
         
         /* ===== PROGRESS BAR ===== */
@@ -86,25 +86,26 @@
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
             width: 0%;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
         }
         
         /* ===== NAVIGATION ===== */
         .nav-enhanced {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 104, 123, 0.12);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: none;
         }
         
         .nav-enhanced.scrolled {
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
         }
 
         .nav-container {
@@ -114,7 +115,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px;
+            height: 60px;
             position: relative;
         }
 
@@ -135,13 +136,13 @@
         .logo-circle {
             width: 60px;
             height: 60px;
-            border-radius: 50%;
+            border-radius: 0%;
             background: white;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 104, 123, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -152,16 +153,16 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            border-radius: 0%;
+            background: linear-gradient(45deg, #00687B, #0096AD, #00c4df);
             background-size: 400% 400%;
             animation: logoGlow 3s ease-in-out infinite;
             z-index: -1;
         }
 
         .logo-circle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 104, 123, 0.25);
         }
 
         @keyframes logoGlow {
@@ -179,21 +180,11 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00687B;
         }
 
         .nav-divider {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 2px;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, #667eea, transparent);
-            opacity: 0.3;
+            display: none !important;
         }
 
         .nav-menu {
@@ -218,8 +209,8 @@
         }
 
         .nav-item.active {
-            color: #3b82f6;
-            background: rgba(59, 130, 246, 0.08);
+            color: #00687B;
+            background: rgba(0, 104, 123, 0.08);
         }
 
         /* Animated underline */
@@ -230,9 +221,9 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: #00687B;
             transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
+            border-radius: 0px;
         }
 
         .nav-item:hover::after {
@@ -241,11 +232,11 @@
         }
 
         .nav-item:hover {
-            color: #667eea;
+            color: #00687B;
         }
 
         .nav-item i {
-            color: #667eea;
+            color: #00687B;
             transition: all 0.3s ease;
         }
 
@@ -267,7 +258,7 @@
             transform: translateY(-10px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
-            border-top: 2px solid #667eea;
+            border-top: 2px solid #00687B;
             z-index: 1000;
             margin-top: 4px;
         }
@@ -381,7 +372,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea15, #764ba215);
+            background: linear-gradient(135deg, rgba(0, 104, 123, 0.05), rgba(0, 79, 94, 0.05));
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
@@ -393,7 +384,7 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+                radial-gradient(circle at 1px 1px, rgba(0, 104, 123, 0.08) 1px, transparent 0);
             background-size: 20px 20px;
             opacity: 0.5;
         }
@@ -407,13 +398,13 @@
         }
 
         .breadcrumb-enhanced a {
-            color: #667eea;
+            color: #00687B;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .breadcrumb-enhanced a:hover {
-            color: #4f46e5;
+            color: #004f5e;
             text-decoration: underline;
         }
 
@@ -545,10 +536,10 @@
             font-size: 1.2rem;
         }
 
-        .icon-billing { background: linear-gradient(135deg, #f093fb, #f5576c); }
-        .icon-remote { background: linear-gradient(135deg, #4facfe, #00f2fe); }
-        .icon-accounting { background: linear-gradient(135deg, #667eea, #764ba2); }
-        .icon-utility { background: linear-gradient(135deg, #2c3e50, #34495e); }
+        .icon-billing { background: #00687B; }
+        .icon-remote { background: #00687B; }
+        .icon-accounting { background: #00687B; }
+        .icon-utility { background: #00687B; }
 
         .software-info {
             display: flex;
@@ -678,8 +669,8 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            border-radius: 0%;
+            background: linear-gradient(45deg, #00687B, #0096AD, #00c4df);
             background-size: 400% 400%;
             animation: logoGlow 4s ease-in-out infinite;
             z-index: -1;
@@ -699,11 +690,7 @@
         .footer-company-name {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #1a202c;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00687B;
         }
 
         .footer-description {
@@ -824,13 +811,13 @@
         }
 
         .developer-credit a {
-            color: #667eea;
+            color: #00687B;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .developer-credit a:hover { color: #4facfe; }
+        .developer-credit a:hover { color: #004f5e; }
 
         /* ===== FLOATING CONTACT ===== */
         .floating-contact {
@@ -1249,247 +1236,401 @@
         </div>
     </nav>
 
-    <!-- Downloads Hero Section -->
-    <section class="downloads-hero">
+    <!-- Downloads Hero Section — Sharp Brand Redesign -->
+    <section style="background:#f0f9fb;position:relative;overflow:hidden;padding:7rem 0 4rem;margin-top:80px;">
+        <!-- Animated SVG background decorators -->
+        <svg style="position:absolute;top:-50px;right:-50px;opacity:0.08;pointer-events:none;" width="380" height="380" viewBox="0 0 380 380" fill="none">
+            <circle cx="190" cy="190" r="170" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 8">
+                <animateTransform attributeName="transform" type="rotate" from="0 190 190" to="360 190 190" dur="24s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="190" cy="190" r="120" stroke="#0096AD" stroke-width="1" stroke-dasharray="6 12">
+                <animateTransform attributeName="transform" type="rotate" from="360 190 190" to="0 190 190" dur="16s" repeatCount="indefinite"/>
+            </circle>
+        </svg>
+
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="text-center slide-in-bottom">
-                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Downloads</span>
-                </h1>
-                <nav class="breadcrumb-enhanced justify-center mb-6">
-                    <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
-                    <span>Downloads</span>
-                </nav>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Access essential software tools and applications for your business needs. Download the latest versions of our software solutions and recommended tools.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Downloads Section -->
-    <section class="downloads-section">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="downloads-table-container slide-in-bottom">
-                <table class="downloads-table">
-                    <thead>
-                        <tr>
-                            <th>Software Name</th>
-                            <th>Description</th>
-                            <th>Download</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="software-info">
-                                    <div class="software-icon icon-billing">
-                                        <i class="fas fa-file-invoice"></i>
-                                    </div>
-                                    <div class="software-details">
-                                        <div class="software-name">Easy Bill New Exe</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="software-description">Billing Management Solution</div>
-                            </td>
-                            <td>
-                                <a href="https://easyshare.pythonanywhere.com/" target="_blank" class="download-link">
-                                    <i class="fas fa-download"></i>
-                                    <span>Download</span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="software-info">
-                                    <div class="software-icon icon-remote">
-                                        <i class="fas fa-desktop"></i>
-                                    </div>
-                                    <div class="software-details">
-                                        <div class="software-name">AnyDesk</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="software-description">Remote Desktop</div>
-                            </td>
-                            <td>
-                                <a href="https://anydesk.com/en" target="_blank" class="download-link">
-                                    <i class="fas fa-download"></i>
-                                    <span>Download</span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="software-info">
-                                    <div class="software-icon icon-remote">
-                                        <i class="fas fa-eye"></i>
-                                    </div>
-                                    <div class="software-details">
-                                        <div class="software-name">Ultra Viewer</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="software-description">Remote Desktop</div>
-                            </td>
-                            <td>
-                                <a href="https://www.ultraviewer.net/en/download.html" target="_blank" class="download-link">
-                                    <i class="fas fa-download"></i>
-                                    <span>Download</span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="software-info">
-                                    <div class="software-icon icon-accounting">
-                                        <i class="fas fa-calculator"></i>
-                                    </div>
-                                    <div class="software-details">
-                                        <div class="software-name">Tally Prime</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="software-description">Accounting Software</div>
-                            </td>
-                            <td>
-                                <a href="https://tallysolutions.com/download/" target="_blank" class="download-link">
-                                    <i class="fas fa-download"></i>
-                                    <span>Download</span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="software-info">
-                                    <div class="software-icon icon-remote">
-                                        <i class="fas fa-users"></i>
-                                    </div>
-                                    <div class="software-details">
-                                        <div class="software-name">Team Viewer</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="software-description">Remote Desktop</div>
-                            </td>
-                            <td>
-                                <a href="https://easyshare.pythonanywhere.com/" target="_blank" class="download-link">
-                                    <i class="fas fa-download"></i>
-                                    <span>Download</span>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="software-info">
-                                    <div class="software-icon icon-utility">
-                                        <i class="fas fa-file-archive"></i>
-                                    </div>
-                                    <div class="software-details">
-                                        <div class="software-name">WinRAR</div>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="software-description">WinRAR is a powerful archiver extractor tool</div>
-                            </td>
-                            <td>
-                                <a href="Downloads/winrar-x64-711.exe" download target="_blank" class="download-link">
-                                    <i class="fas fa-download"></i>
-                                    <span>Download</span>
-                                </a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo">
-                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
-                        </div>
-                        <div>
-                            <h3 class="footer-company-name">Pioneer Software</h3>
-                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
-                        </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left: Header Details -->
+                <div>
+                    <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.9rem;background:#00687B;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                        Software &amp; Tools Center
                     </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+                    <h1 style="font-size:clamp(2.5rem,4.5vw,3.6rem);font-weight:800;color:#0f172a;letter-spacing:-0.03em;line-height:1.1;margin:0 0 1rem 0;">
+                        Software <span style="color:#00687B;">Downloads</span>
+                    </h1>
+                    <div style="width:50px;height:3.5px;background:#00687B;margin-bottom:1.5rem;"></div>
+                    <nav class="breadcrumb-enhanced" style="margin-bottom:1.2rem;">
+                        <a href="index.html" style="color:#00687B;font-weight:600;">Home</a>
+                        <i class="fas fa-chevron-right" style="font-size:0.75rem;color:#94a3b8;"></i>
+                        <span style="color:#64748b;font-weight:500;">Downloads</span>
+                    </nav>
+                    <p style="font-size:1.05rem;color:#475569;line-height:1.7;margin:0;">
+                        Access official Tally installation builds, billing software executables, remote support utility tools, and archives for your enterprise needs.
                     </p>
                 </div>
 
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                <!-- Right: High-Tech Downloads Feature Box -->
+                <div class="flex justify-center lg:justify-end">
+                    <div style="position:relative;padding:2rem;background:#0f2035;border:2px solid #00687B;box-shadow:12px 12px 0px rgba(0,104,123,0.15);width:100%;max-width:440px;" class="text-white">
+                        <!-- Corner Brackets -->
+                        <div style="position:absolute;top:-6px;left:-6px;width:18px;height:18px;border-top:3px solid #00687B;border-left:3px solid #00687B;"></div>
+                        <div style="position:absolute;bottom:-6px;right:-6px;width:18px;height:18px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;"></div>
+
+                        <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem;">
+                            <div style="width:48px;height:48px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                            </div>
+                            <div>
+                                <h4 style="font-size:1.1rem;font-weight:800;color:#fff;margin:0;">Verified &amp; Safe Builds</h4>
+                                <p style="font-size:0.78rem;color:#94a3b8;margin:0;">Direct download links &amp; official builds</p>
+                            </div>
+                        </div>
+
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;background:#0a1628;padding:1rem;border-left:3px solid #00d9b0;">
+                            <div>
+                                <div style="font-size:0.7rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;">Security Status</div>
+                                <div style="font-size:0.88rem;font-weight:800;color:#00d9b0;">100% Virus-Free</div>
+                            </div>
+                            <div>
+                                <div style="font-size:0.7rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.05em;">Support SLA</div>
+                                <div style="font-size:0.88rem;font-weight:800;color:#00d9b0;">15-Min Response</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section — Modern Sharp Table -->
+    <section style="padding:5rem 0 6rem;background:#fff;position:relative;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            
+            <div style="border:1.5px solid #00687B;box-shadow:0 15px 40px rgba(0,104,123,0.08);overflow:hidden;background:#fff;">
+                <table style="width:100%;border-collapse:collapse;text-align:left;">
+                    <thead>
+                        <tr style="background:#0f2035;color:#fff;border-bottom:2px solid #00687B;">
+                            <th style="padding:1.25rem 1.5rem;font-size:0.85rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;">Software Name</th>
+                            <th style="padding:1.25rem 1.5rem;font-size:0.85rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;">Category / Purpose</th>
+                            <th style="padding:1.25rem 1.5rem;font-size:0.85rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;text-align:right;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <!-- Row 1: Tally Prime -->
+                        <tr style="border-bottom:1px solid #e2e8f0;transition:background 0.2s;" class="dl-row">
+                            <td style="padding:1.25rem 1.5rem;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1rem;font-weight:800;color:#0f172a;">Tally Prime ERP</div>
+                                        <div style="font-size:0.75rem;color:#64748b;">Official Tally Solutions Build</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;">
+                                <span style="display:inline-block;padding:0.25rem 0.75rem;background:#f0f9fb;color:#00687B;font-size:0.78rem;font-weight:700;border-left:3px solid #00687B;">Accounting &amp; Business Management ERP</span>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;text-align:right;">
+                                <a href="https://tallysolutions.com/download/" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.25rem;background:#00687B;color:#fff;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#005568'" onmouseout="this.style.background='#00687B'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    Download Build
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2: EasyBill -->
+                        <tr style="border-bottom:1px solid #e2e8f0;transition:background 0.2s;" class="dl-row">
+                            <td style="padding:1.25rem 1.5rem;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1rem;font-weight:800;color:#0f172a;">EasyBill New Exe</div>
+                                        <div style="font-size:0.75rem;color:#64748b;">Pioneer Billing Solution</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;">
+                                <span style="display:inline-block;padding:0.25rem 0.75rem;background:#f0f9fb;color:#00687B;font-size:0.78rem;font-weight:700;border-left:3px solid #00687B;">Billing &amp; Invoice Management Software</span>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;text-align:right;">
+                                <a href="https://easyshare.pythonanywhere.com/" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.25rem;background:#00687B;color:#fff;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#005568'" onmouseout="this.style.background='#00687B'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    Download Build
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3: AnyDesk -->
+                        <tr style="border-bottom:1px solid #e2e8f0;transition:background 0.2s;" class="dl-row">
+                            <td style="padding:1.25rem 1.5rem;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1rem;font-weight:800;color:#0f172a;">AnyDesk Remote</div>
+                                        <div style="font-size:0.75rem;color:#64748b;">Remote Assistance Tool</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;">
+                                <span style="display:inline-block;padding:0.25rem 0.75rem;background:#f0f9fb;color:#00687B;font-size:0.78rem;font-weight:700;border-left:3px solid #00687B;">Remote Desktop Assistance</span>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;text-align:right;">
+                                <a href="https://anydesk.com/en" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.25rem;background:#00687B;color:#fff;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#005568'" onmouseout="this.style.background='#00687B'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    Download Tool
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4: UltraViewer -->
+                        <tr style="border-bottom:1px solid #e2e8f0;transition:background 0.2s;" class="dl-row">
+                            <td style="padding:1.25rem 1.5rem;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1rem;font-weight:800;color:#0f172a;">Ultra Viewer</div>
+                                        <div style="font-size:0.75rem;color:#64748b;">Remote Support Client</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;">
+                                <span style="display:inline-block;padding:0.25rem 0.75rem;background:#f0f9fb;color:#00687B;font-size:0.78rem;font-weight:700;border-left:3px solid #00687B;">Remote Screen Support &amp; Sharing</span>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;text-align:right;">
+                                <a href="https://www.ultraviewer.net/en/download.html" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.25rem;background:#00687B;color:#fff;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#005568'" onmouseout="this.style.background='#00687B'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    Download Tool
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 5: TeamViewer -->
+                        <tr style="border-bottom:1px solid #e2e8f0;transition:background 0.2s;" class="dl-row">
+                            <td style="padding:1.25rem 1.5rem;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1rem;font-weight:800;color:#0f172a;">Team Viewer</div>
+                                        <div style="font-size:0.75rem;color:#64748b;">Remote Collaboration Client</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;">
+                                <span style="display:inline-block;padding:0.25rem 0.75rem;background:#f0f9fb;color:#00687B;font-size:0.78rem;font-weight:700;border-left:3px solid #00687B;">Remote Desktop &amp; Collaboration</span>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;text-align:right;">
+                                <a href="https://easyshare.pythonanywhere.com/" target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.25rem;background:#00687B;color:#fff;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#005568'" onmouseout="this.style.background='#00687B'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    Download Tool
+                                </a>
+                            </td>
+                        </tr>
+
+                        <!-- Row 6: WinRAR -->
+                        <tr style="transition:background 0.2s;" class="dl-row">
+                            <td style="padding:1.25rem 1.5rem;">
+                                <div style="display:flex;align-items:center;gap:1rem;">
+                                    <div style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002-2V8m-9 4h4"/></svg>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:1rem;font-weight:800;color:#0f172a;">WinRAR 64-bit</div>
+                                        <div style="font-size:0.75rem;color:#64748b;">Archiver &amp; Extractor Utility</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;">
+                                <span style="display:inline-block;padding:0.25rem 0.75rem;background:#f0f9fb;color:#00687B;font-size:0.78rem;font-weight:700;border-left:3px solid #00687B;">File Archive &amp; Compression Utility</span>
+                            </td>
+                            <td style="padding:1.25rem 1.5rem;text-align:right;">
+                                <a href="Downloads/winrar-x64-711.exe" download target="_blank" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.6rem 1.25rem;background:#00687B;color:#fff;font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#005568'" onmouseout="this.style.background='#00687B'">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                    Download Exe
+                                </a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        <style>
+            .dl-row:hover { background: #f0f9fb !important; }
+        </style>
+    </section>
+
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <!-- Rotating Tech Orbit Top Right -->
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Pulsing Orbit Bottom Left -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Tech Grid Overlay Pattern -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
+                    </p>
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Solutions -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
                     
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">
+                                +977-1-4533234 / 4533434
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;">
+                                info@pioneersoftware.com.np
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+
+            <!-- Footer Bottom Border & Copyright -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    © 2025 <strong style="color:#cbd5e1;">Pioneer Software Solutions Pvt Ltd</strong>. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;font-size:0.8rem;color:#64748b;">
+                    <a href="about.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Company Profile</a>
+                    <span>•</span>
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Support Hotline</a>
+                    <span>•</span>
+                    <a href="tallycusto.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Tally Customization</a>
+                </div>
             </div>
         </div>
+
+        <style>
+            .ft-social-btn:hover {
+                background: #00687B !important;
+                color: #ffffff !important;
+                border-color: #00d9b0 !important;
+                transform: translateY(-3px);
+            }
+            .ft-link:hover {
+                color: #00d9b0 !important;
+                padding-left: 4px;
+            }
+            .ft-sublink:hover {
+                color: #00d9b0 !important;
+            }
+            @media (max-width: 1024px) {
+                .footer-grid-layout { grid-template-columns: 1fr 1fr !important; }
+            }
+            @media (max-width: 640px) {
+                .footer-grid-layout { grid-template-columns: 1fr !important; }
+            }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->

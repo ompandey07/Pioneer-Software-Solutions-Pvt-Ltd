@@ -66,11 +66,11 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            border-radius: 4px;
+            background: linear-gradient(180deg, #00687B, #0096AD);
+            border-radius: 0px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+            background: linear-gradient(180deg, #004f5e, #00687B);
         }
         
         /* ===== PROGRESS BAR ===== */
@@ -86,25 +86,26 @@
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
             width: 0%;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
         }
         
         /* ===== NAVIGATION ===== */
         .nav-enhanced {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 104, 123, 0.12);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: none;
         }
         
         .nav-enhanced.scrolled {
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
         }
 
         .nav-container {
@@ -114,7 +115,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px;
+            height: 60px;
             position: relative;
         }
 
@@ -126,8 +127,8 @@
         }
 
         .nav-logo-img {
-            height: 44px !important;
-            max-height: 48px !important;
+            height: 38px !important;
+            max-height: 44px !important;
             width: auto !important;
             object-fit: contain !important;
         }
@@ -186,14 +187,7 @@
         }
 
         .nav-divider {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 2px;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, #667eea, transparent);
-            opacity: 0.3;
+            display: none !important;
         }
 
         .nav-menu {
@@ -678,21 +672,18 @@
 
         .achievements-title {
             font-family: 'Kaushan Script', cursive;
-            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 4rem;
+            color: #00687B;
+            -webkit-text-fill-color: #00687B;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.1;
             text-align: center;
-            animation: heroTextFloat 4s ease-in-out infinite;
         }
 
         .achievements-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 5rem;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
             color: #4b5563;
             max-width: 700px;
             margin-left: auto;
@@ -715,7 +706,7 @@
             position: absolute;
             transition: all 0.4s ease;
             cursor: pointer;
-            border: 3px solid #667eea;
+            border: 3px solid #00687B;
             background: white;
             padding: 10px;
         }
@@ -723,8 +714,8 @@
         .achievement-item:hover {
             transform: scale(1.15);
             z-index: 10;
-            border-color: #f093fb;
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            border-color: #0096AD;
+            box-shadow: 0 20px 40px rgba(0, 104, 123, 0.25);
         }
 
         .achievement-item img {
@@ -1387,9 +1378,6 @@
                 <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" class="nav-logo-img h-11 max-h-12 w-auto object-contain" />
             </a>
             
-            <!-- Center Divider -->
-            <div class="nav-divider"></div>
-            
             <!-- Navigation Menu (Right) -->
             <div class="nav-menu">
                 <a href="index.html" class="nav-item">
@@ -1498,116 +1486,414 @@
         </div>
     </nav>
 
-    <!-- About Hero Section -->
-    <section class="about-hero">
+    <!-- About Hero Section — Sharp & Creative Redesign -->
+    <section style="background:linear-gradient(135deg,#e8f6f9 0%,#f0f9fb 50%,#e0f4f8 100%);position:relative;overflow:hidden;padding:7rem 0 4rem;margin-top:60px;">
+
+        <!-- ═══════════ ANIMATED SVG BACKGROUND LAYER ═══════════ -->
+        <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+
+            <!-- Large Concentric Orbit — Top Right -->
+            <svg style="position:absolute;top:-80px;right:-80px;opacity:0.10;" width="500" height="500" viewBox="0 0 500 500" fill="none">
+                <circle cx="250" cy="250" r="230" stroke="#00687B" stroke-width="1.5" stroke-dasharray="14 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="32s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="250" cy="250" r="170" stroke="#0096AD" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 250 250" to="0 250 250" dur="22s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="250" cy="250" r="110" stroke="#00c4df" stroke-width="1.2" stroke-dasharray="5 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 250 250" to="360 250 250" dur="14s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Orbiting dot on outer ring -->
+                <circle r="5" fill="#00687B" opacity="0.5">
+                    <animateMotion dur="32s" repeatCount="indefinite">
+                        <mpath href="#orbit-outer-about"/>
+                    </animateMotion>
+                </circle>
+                <circle r="3.5" fill="#00d9b0" opacity="0.6">
+                    <animateMotion dur="22s" repeatCount="indefinite" keyPoints="0.5;1;0.5" keyTimes="0;0.5;1" calcMode="linear">
+                        <mpath href="#orbit-mid-about"/>
+                    </animateMotion>
+                </circle>
+                <defs>
+                    <path id="orbit-outer-about" d="M480,250 A230,230 0 1,1 479.99,249.99"/>
+                    <path id="orbit-mid-about" d="M420,250 A170,170 0 1,1 419.99,249.99"/>
+                </defs>
+            </svg>
+
+            <!-- Medium Orbit — Bottom Left -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.09;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="160" stroke="#00687B" stroke-width="1.2" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="26s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="100" stroke="#0096AD" stroke-width="1" stroke-dasharray="5 9">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="17s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+
+            <!-- Data Flow Lines — Diagonal across middle -->
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.06;" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" fill="none">
+                <!-- Flowing dashed diagonal lines -->
+                <line x1="-100" y1="150" x2="1300" y2="350" stroke="#00687B" stroke-width="1" stroke-dasharray="20 40">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-120" dur="6s" repeatCount="indefinite"/>
+                </line>
+                <line x1="-100" y1="250" x2="1300" y2="50" stroke="#0096AD" stroke-width="0.8" stroke-dasharray="15 35">
+                    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="8s" repeatCount="indefinite"/>
+                </line>
+                <line x1="0" y1="400" x2="1300" y2="80" stroke="#00687B" stroke-width="0.6" stroke-dasharray="12 28">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-80" dur="10s" repeatCount="indefinite"/>
+                </line>
+                <!-- Horizontal scanning line -->
+                <line x1="0" y1="0" x2="1200" y2="0" stroke="#00d9b0" stroke-width="1.5" stroke-dasharray="8 30" opacity="0.5">
+                    <animateTransform attributeName="transform" type="translate" from="0 0" to="0 500" dur="7s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;0.5;0" dur="7s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+
+            <!-- Floating Pulsing Node Dots -->
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.5;" viewBox="0 0 1200 500" preserveAspectRatio="xMidYMid slice" fill="none">
+                <!-- Node 1 -->
+                <circle cx="120" cy="80" r="4" fill="#00687B">
+                    <animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="120" cy="80" r="10" stroke="#00687B" stroke-width="1" fill="none">
+                    <animate attributeName="r" values="8;16;8" dur="3s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.4;0;0.4" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Node 2 -->
+                <circle cx="320" cy="380" r="3.5" fill="#0096AD">
+                    <animate attributeName="r" values="2.5;4.5;2.5" dur="4.5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.3;0.8;0.3" dur="4.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="320" cy="380" r="8" stroke="#0096AD" stroke-width="1" fill="none">
+                    <animate attributeName="r" values="6;14;6" dur="4.5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.3;0;0.3" dur="4.5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Node 3 -->
+                <circle cx="600" cy="60" r="3" fill="#00c4df">
+                    <animate attributeName="r" values="2;4;2" dur="3.8s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.8s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Node 4 -->
+                <circle cx="900" cy="420" r="4" fill="#00687B">
+                    <animate attributeName="r" values="3;5.5;3" dur="5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0.4;1;0.4" dur="5s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Node connector lines -->
+                <line x1="120" y1="80" x2="320" y2="380" stroke="#00687B" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.25">
+                    <animate attributeName="opacity" values="0.1;0.35;0.1" dur="4s" repeatCount="indefinite"/>
+                </line>
+                <line x1="320" y1="380" x2="600" y2="60" stroke="#0096AD" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.2">
+                    <animate attributeName="opacity" values="0.1;0.3;0.1" dur="5s" repeatCount="indefinite"/>
+                </line>
+                <line x1="600" y1="60" x2="900" y2="420" stroke="#00c4df" stroke-width="0.5" stroke-dasharray="4 8" opacity="0.2">
+                    <animate attributeName="opacity" values="0.1;0.28;0.1" dur="6s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+
+            <!-- Dot Grid Overlay -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(0,104,123,0.18) 1px,transparent 0);background-size:28px 28px;opacity:0.5;"></div>
+
+            <!-- Top teal accent gradient bar -->
+            <div style="position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,#00687B 30%,#0096AD 70%,transparent);"></div>
+            <!-- Bottom soft fade -->
+            <div style="position:absolute;bottom:0;left:0;width:100%;height:60px;background:linear-gradient(to bottom,transparent,rgba(240,249,251,0.8));"></div>
+        </div>
+        <!-- ═══════════ END ANIMATED SVG BACKGROUND ═══════════ -->
+
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-8 slide-in-left">
-                    <div class="space-y-6">
-                        <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
-                            About <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Pioneer</span>
-                        </h1>
-                        <nav class="breadcrumb-enhanced">
-                            <a href="index.html">Home</a>
-                            <i class="fas fa-chevron-right"></i>
-                            <span>About Us</span>
-                        </nav>
-                        <p class="text-xl text-blue-600 font-semibold">
-                            The Most Trusted Name in Software Services
-                        </p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Left: Eyebrow + Heading + Breadcrumbs -->
+                <div>
+                    <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.9rem;background:#00687B;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        About Pioneer Software
+                    </div>
+                    <h1 style="font-size:clamp(2.5rem,4.5vw,3.6rem);font-weight:800;color:#0f172a;letter-spacing:-0.03em;line-height:1.1;margin:0 0 1rem 0;">
+                        About <span style="color:#00687B;">Pioneer</span>
+                    </h1>
+                    <div style="width:50px;height:3.5px;background:#00687B;margin-bottom:1.5rem;"></div>
+                    <nav class="breadcrumb-enhanced" style="margin-bottom:1.2rem;">
+                        <a href="index.html" style="color:#00687B;font-weight:600;">Home</a>
+                        <i class="fas fa-chevron-right" style="font-size:0.75rem;color:#94a3b8;"></i>
+                        <span style="color:#64748b;font-weight:500;">About Us</span>
+                    </nav>
+                    <p style="font-size:1.15rem;font-weight:700;color:#00687B;line-height:1.5;margin:0;">
+                        The Most Trusted Name in Software Services Since 2010
+                    </p>
+                </div>
+
+                <!-- Right: Award Image Showcase with Sharp Frames -->
+                <div class="flex justify-center lg:justify-end">
+                    <div style="position:relative;padding:12px;background:#fff;border:2px solid #00687B;box-shadow:12px 12px 0px rgba(0,104,123,0.15);width:100%;max-width:440px;">
+                        <!-- Sharp Corner Brackets -->
+                        <div style="position:absolute;top:-6px;left:-6px;width:18px;height:18px;border-top:3px solid #00687B;border-left:3px solid #00687B;"></div>
+                        <div style="position:absolute;bottom:-6px;right:-6px;width:18px;height:18px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;"></div>
+                        
+                        <img src="Awards/Classic.png" alt="Pioneer Software Awards" style="width:100%;height:auto;display:block;object-fit:cover;" />
+                        
+                        <!-- Floating Badge -->
+                        <div style="position:absolute;bottom:-18px;left:-18px;background:#00687B;color:#fff;padding:0.75rem 1.25rem;border:1px solid #005568;">
+                            <div style="font-size:1.3rem;font-weight:800;line-height:1;">12+ Yrs</div>
+                            <div style="font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;opacity:0.9;">Tally Partner</div>
+                        </div>
                     </div>
                 </div>
-                <div class="flex justify-center lg:justify-end slide-in-right">
-                    <div class="hero-image-container">
-                        <img src="Awards/Classic.png" alt="Pioneer Software Awards" class="award-image" />
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                        <div class="bubble"></div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- About Content Section -->
-    <section class="about-content-section">
+    <!-- Main Company Story & Stats Section -->
+    <section style="padding:5rem 0;background:#fff;position:relative;">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <!-- Main About Card -->
-            <div class="about-card slide-in-bottom mb-16">
-                <div class="about-card-header">
-                    <h2>About Us</h2>
-                    <p class="text-lg opacity-90">Serving Excellence Since 2010</p>
+            
+            <!-- Story 2-Col Grid -->
+            <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:3.5rem;align-items:center;margin-bottom:4rem;" class="story-grid">
+                
+                <!-- Left: Company Image Frame -->
+                <div style="position:relative;">
+                    <div style="position:relative;border:2px solid #00687B;background:#0f2035;padding:8px;">
+                        <img src="Awards/Mega.png" alt="Pioneer Software" style="width:100%;height:auto;display:block;object-fit:cover;" />
+                    </div>
+                    <!-- Stat Floating Pill -->
+                    <div style="position:absolute;top:-15px;right:-15px;background:#00687B;color:#fff;padding:0.6rem 1.1rem;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;">
+                        Est. December 2010
+                    </div>
                 </div>
-                <div class="about-card-content">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+
+                <!-- Right: Content Story -->
+                <div>
+                    <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.3rem 0.85rem;background:#00687B;color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1rem;">
+                        Our Story &amp; Expertise
+                    </div>
+                    <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:#0f172a;line-height:1.25;margin:0 0 1.25rem 0;">
+                        Empowering Businesses With <span style="color:#00687B;">Automated Accounting</span>
+                    </h2>
+                    <p style="font-size:0.95rem;color:#475569;line-height:1.8;margin:0 0 1.2rem 0;text-align:justify;">
+                        Pioneer Software Solutions came into existence with serving consulting for computerized accounting systems since 2010. The major objective of the company is to identify itself in the field of computerized accounting system implementation, choosing Tally to nurture its innovative ideas. We have been an official <strong style="color:#00687B;">Tally Partner since late December 2013</strong>.
+                    </p>
+                    <p style="font-size:0.95rem;color:#475569;line-height:1.8;margin:0 0 1.8rem 0;text-align:justify;">
+                        With our broad technical skill base, superior project management techniques, and long experience in system implementation, we help our clients achieve their goals, increase productivity, and realize high returns on investment. Strength of our company lies in our working principle of <strong style="color:#00687B;">Customer Satisfaction</strong>.
+                    </p>
+
+                    <!-- Milestone Strip -->
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+                        <div style="border-left:3px solid #00687B;padding-left:0.85rem;">
+                            <div style="font-size:1.1rem;font-weight:800;color:#00687B;">2010</div>
+                            <div style="font-size:0.75rem;color:#64748b;">Founded Consulting</div>
+                        </div>
+                        <div style="border-left:3px solid #00687B;padding-left:0.85rem;">
+                            <div style="font-size:1.1rem;font-weight:800;color:#00687B;">2013</div>
+                            <div style="font-size:0.75rem;color:#64748b;">Official Tally Partner</div>
+                        </div>
+                        <div style="border-left:3px solid #00687B;padding-left:0.85rem;">
+                            <div style="font-size:1.1rem;font-weight:800;color:#00687B;">2500+</div>
+                            <div style="font-size:0.75rem;color:#64748b;">Satisfied Clients</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats Grid: 3 columns, 1.5px gaps -->
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:#00687B;margin-top:2rem;" id="about-stats-grid">
+                
+                <div class="abt-stat-card" style="background:#f8fafc;padding:2.25rem 1.5rem;text-align:center;position:relative;">
+                    <span style="font-size:2.8rem;font-weight:800;color:#00687B;display:block;line-height:1;">2500+</span>
+                    <p style="font-size:0.85rem;font-weight:700;color:#475569;letter-spacing:0.06em;text-transform:uppercase;margin:0.6rem 0 0 0;">Happy Clients</p>
+                    <div class="abt-stat-line" style="position:absolute;bottom:0;left:0;width:0;height:2.5px;background:#00687B;transition:width 0.35s ease;"></div>
+                </div>
+
+                <div class="abt-stat-card" style="background:#f8fafc;padding:2.25rem 1.5rem;text-align:center;position:relative;">
+                    <span style="font-size:2.8rem;font-weight:800;color:#00687B;display:block;line-height:1;">12+</span>
+                    <p style="font-size:0.85rem;font-weight:700;color:#475569;letter-spacing:0.06em;text-transform:uppercase;margin:0.6rem 0 0 0;">Years Experience</p>
+                    <div class="abt-stat-line" style="position:absolute;bottom:0;left:0;width:0;height:2.5px;background:#00687B;transition:width 0.35s ease;"></div>
+                </div>
+
+                <div class="abt-stat-card" style="background:#f8fafc;padding:2.25rem 1.5rem;text-align:center;position:relative;">
+                    <span style="font-size:2.8rem;font-weight:800;color:#00687B;display:block;line-height:1;">10+</span>
+                    <p style="font-size:0.85rem;font-weight:700;color:#475569;letter-spacing:0.06em;text-transform:uppercase;margin:0.6rem 0 0 0;">Team Members</p>
+                    <div class="abt-stat-line" style="position:absolute;bottom:0;left:0;width:0;height:2.5px;background:#00687B;transition:width 0.35s ease;"></div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Who We Are & What We Do — High Impact Redesign -->
+    <section style="padding:5rem 0 6rem;background:#f8fafc;position:relative;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+            <!-- Section Title Header -->
+            <div style="text-align:center;max-width:650px;margin:0 auto 3.5rem auto;">
+                <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 0.9rem;background:#00687B;color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:0.9rem;">
+                    Core Capabilities &amp; Identity
+                </div>
+                <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;color:#0f172a;line-height:1.2;margin:0 0 0.75rem 0;">
+                    Engineered For Excellence In <span style="color:#00687B;">Financial Automation</span>
+                </h2>
+                <p style="font-size:0.92rem;color:#64748b;line-height:1.6;margin:0;">
+                    Delivering high-reliability Tally database administration, custom software integration, and compliance reporting across Nepal.
+                </p>
+            </div>
+
+            <!-- 2-Col Symmetrical Human-Readable Showcase Cards -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;" class="split-cards-grid">
+                
+                <!-- CARD 1: WHO WE ARE -->
+                <div style="background:#ffffff;border:1.5px solid #00687B;padding:2.5rem;position:relative;display:flex;flex-direction:column;justify-content:space-between;" class="abt-feature-card">
+                    <div>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+                            <span style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.3rem 0.85rem;background:#00687B;color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">
+                                Who We Are
+                            </span>
+                            <span style="font-size:0.85rem;font-weight:800;color:#00687B;">01</span>
+                        </div>
+                        
+                        <h3 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin:0 0 1rem 0;line-height:1.3;">
+                            Accounting Database &amp; System Experts
+                        </h3>
+
+                        <p style="font-size:0.92rem;color:#475569;line-height:1.75;margin:0 0 1.5rem 0;">
+                            At Pioneer, we are a team of certified technology consultants specializing in computerized accounting system administration. We safeguard your financial database and automate processes to keep your operations running seamlessly.
+                        </p>
+
+                        <!-- Key Feature List with SVG Icons -->
+                        <div style="display:flex;flex-direction:column;gap:0.9rem;margin-bottom:1.75rem;">
+                            <div style="display:flex;align-items:center;gap:0.85rem;background:#f0f9fb;padding:0.85rem 1rem;border-left:3.5px solid #00687B;">
+                                <div style="width:32px;height:32px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85rem;font-weight:800;color:#00687B;">Database Security &amp; Audit</div>
+                                    <div style="font-size:0.78rem;color:#64748b;line-height:1.4;">Remote &amp; local database administration &amp; risk prevention</div>
+                                </div>
+                            </div>
+
+                            <div style="display:flex;align-items:center;gap:0.85rem;background:#f0f9fb;padding:0.85rem 1rem;border-left:3.5px solid #00687B;">
+                                <div style="width:32px;height:32px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85rem;font-weight:800;color:#00687B;">15-Minute Response SLA</div>
+                                    <div style="font-size:0.78rem;color:#64748b;line-height:1.4;">Rapid incident handling by certified Tally professionals</div>
+                                </div>
+                            </div>
+
+                            <div style="display:flex;align-items:center;gap:0.85rem;background:#f0f9fb;padding:0.85rem 1rem;border-left:3.5px solid #00687B;">
+                                <div style="width:32px;height:32px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85rem;font-weight:800;color:#00687B;">99.99% High Availability</div>
+                                    <div style="font-size:0.78rem;color:#64748b;line-height:1.4;">Continuous system uptime with strict regulatory compliance</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Metrics Strip -->
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;background:#0f2035;padding:0.85rem 1rem;text-align:center;">
                         <div>
-                            <img src="Awards/Mega.png" alt="About Pioneer Software" class="w-full rounded-2xl shadow-lg" />
+                            <div style="font-size:1rem;font-weight:800;color:#00d9b0;">15 Min</div>
+                            <div style="font-size:0.68rem;color:#94a3b8;">Response SLA</div>
                         </div>
-                        <div class="space-y-6">
-                            <p class="about-text">
-                                Pioneer Software Solutions came into existence with serving the consulting for computerized accounting system 
-                                since 2010. The major object of the company is to identify itself in the field on computerized accounting 
-                                system implementation and had chosen Tally to nurture its ideas. It is associated with Tally as a Tally 
-                                Partner since late December 2013. At present we have 8+ years experience of serving solution on Tally with 
-                                10+ team size and more than 200 clients across Nepal.
-                            </p>
-                            <p class="about-text">
-                                With our broad technical skill base, our superior project management techniques with long experience of 
-                                system implementation, we help our client achieve their goals, increase productivity and realize high 
-                                return on investment. We have a high quality infrastructure with excellent team spirit to ensure maximum 
-                                reliability and efficiency at all times. Our creative team can understand the client's requirements and 
-                                deliver tailor-fit solutions. Besides, customized solution is a major wings of our service. Strength of 
-                                our company lies in its working principle of Customer Satisfaction that leads us to serve the customer 
-                                database over 200 + within a few span of time.
-                            </p>
+                        <div>
+                            <div style="font-size:1rem;font-weight:800;color:#00d9b0;">99.99%</div>
+                            <div style="font-size:0.68rem;color:#94a3b8;">Uptime</div>
                         </div>
-                    </div>
-
-                    <!-- Stats Grid -->
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <span class="stat-number">2500+</span>
-                            <p class="stat-label">Happy Clients</p>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">12+</span>
-                            <p class="stat-label">Years Experience</p>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number">10+</span>
-                            <p class="stat-label">Team Members</p>
+                        <div>
+                            <div style="font-size:1rem;font-weight:800;color:#00d9b0;">9+ Yrs</div>
+                            <div style="font-size:0.68rem;color:#94a3b8;">Expertise</div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Who We Are Section -->
-            <div class="section-card slide-in-left">
-                <div class="section-header">
-                    <h3>Who We Are?</h3>
-                </div>
-                <div class="section-content">
-                    <img src="img/WhoWeAre.gif" alt="Who We Are" class="section-image" />
-                    <p class="about-text">
-                        At Pioneer, we provide local as well as remote accounting database administration, system implementation, accounting process automation, advisory services, and computerized accounting system audit. Our quality speaks and we are highly customer focused. Our passion is to automate the accounting processes and make things easier. We will capture the potential risks of your financial database and avoid escalations so that you can continue to focus on your business.
-                        We are a team of experienced and certified professionals with more than 9 years of experience. We are experienced and certified Tally Professionals. We respond to any incident within 15 minutes. We strive to provide 99.99% uptime of your systems with high compliance.
-                    </p>
-                </div>
-            </div>
+                <!-- CARD 2: WHAT WE DO -->
+                <div style="background:#ffffff;border:1.5px solid #00687B;padding:2.5rem;position:relative;display:flex;flex-direction:column;justify-content:space-between;" class="abt-feature-card">
+                    <div>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem;">
+                            <span style="display:inline-flex;align-items:center;gap:0.4rem;padding:0.3rem 0.85rem;background:#00687B;color:#fff;font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;">
+                                What We Do
+                            </span>
+                            <span style="font-size:0.85rem;font-weight:800;color:#00687B;">02</span>
+                        </div>
+                        
+                        <h3 style="font-size:1.5rem;font-weight:800;color:#0f172a;margin:0 0 1rem 0;line-height:1.3;">
+                            Complete Software &amp; Consulting Solutions
+                        </h3>
 
-            <!-- What We Do Section -->
-            <div class="section-card slide-in-right">
-                <div class="section-header">
-                    <h3>What We Do?</h3>
+                        <p style="font-size:0.92rem;color:#475569;line-height:1.75;margin:0 0 1.5rem 0;">
+                            We deliver end-to-end accounting automation solutions across Nepal. As an official Tally Partner, we help businesses implement, customize, and integrate Tally software with vertical application workflows.
+                        </p>
+
+                        <!-- Key Feature List with SVG Icons -->
+                        <div style="display:flex;flex-direction:column;gap:0.9rem;margin-bottom:1.75rem;">
+                            <div style="display:flex;align-items:center;gap:0.85rem;background:#f0f9fb;padding:0.85rem 1rem;border-left:3.5px solid #00687B;">
+                                <div style="width:32px;height:32px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85rem;font-weight:800;color:#00687B;">Tally Prime Sales &amp; Licensing</div>
+                                    <div style="font-size:0.78rem;color:#64748b;line-height:1.4;">Authorized product distribution, setup, and corporate training</div>
+                                </div>
+                            </div>
+
+                            <div style="display:flex;align-items:center;gap:0.85rem;background:#f0f9fb;padding:0.85rem 1rem;border-left:3.5px solid #00687B;">
+                                <div style="width:32px;height:32px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85rem;font-weight:800;color:#00687B;">TDL Customization &amp; Integration</div>
+                                    <div style="font-size:0.78rem;color:#64748b;line-height:1.4;">Tailored vouchers, custom fields, and third-party API integration</div>
+                                </div>
+                            </div>
+
+                            <div style="display:flex;align-items:center;gap:0.85rem;background:#f0f9fb;padding:0.85rem 1rem;border-left:3.5px solid #00687B;">
+                                <div style="width:32px;height:32px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                                </div>
+                                <div>
+                                    <div style="font-size:0.85rem;font-weight:800;color:#00687B;">Statutory &amp; MIS Reporting</div>
+                                    <div style="font-size:0.78rem;color:#64748b;line-height:1.4;">Nepal VAT, tax compliance reports, and executive decision dashboards</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Metrics / Solution Strip -->
+                    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;background:#00687B;padding:0.85rem 1rem;text-align:center;">
+                        <div>
+                            <div style="font-size:0.85rem;font-weight:800;color:#fff;">Tally Prime</div>
+                            <div style="font-size:0.68rem;color:#e2e8f0;">Authorized</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.85rem;font-weight:800;color:#fff;">TDL Modules</div>
+                            <div style="font-size:0.68rem;color:#e2e8f0;">Customized</div>
+                        </div>
+                        <div>
+                            <div style="font-size:0.85rem;font-weight:800;color:#fff;">MIS &amp; Tax</div>
+                            <div style="font-size:0.68rem;color:#e2e8f0;">Compliant</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="section-content">
-                    <img src="img/WhatWeDo.gif" alt="What We Do" class="section-image" />
-                    <p class="about-text">
-                        Primarily we are focused on selling Tally products in Nepal. We gives consulting services on process automation through accounting software with the help of customizing Tally Software or third party applications. Besides that we also provide advisor service on processing MIS reports in different business verticals.
-                    </p>
-                </div>
+
             </div>
         </div>
+
+        <style>
+            .abt-stat-card:hover { background: #f0f9fb !important; }
+            .abt-stat-card:hover .abt-stat-line { width: 100% !important; }
+            .abt-feature-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+            .abt-feature-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,104,123,0.12); }
+            @media (max-width: 900px) {
+                .story-grid, .split-cards-grid { grid-template-columns: 1fr !important; }
+                #about-stats-grid { grid-template-columns: 1fr !important; }
+            }
+        </style>
     </section>
 
     <!-- Achievements & Awards Section -->
@@ -1670,83 +1956,162 @@
         </div>
     </section>
 
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo">
-                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
-                        </div>
-                        <div>
-                            <h3 class="footer-company-name">Pioneer Software</h3>
-                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <!-- Rotating Tech Orbit Top Right -->
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Pulsing Orbit Bottom Left -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Tech Grid Overlay Pattern -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
                     </p>
-                </div>
-
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
-                    </div>
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Solutions -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
                     
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">
+                                +977-1-4533234 / 4533434
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;">
+                                info@pioneersoftware.com.np
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+
+            <!-- Footer Bottom Border & Copyright -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    © 2025 <strong style="color:#cbd5e1;">Pioneer Software Solutions Pvt Ltd</strong>. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;font-size:0.8rem;color:#64748b;">
+                    <a href="about.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Company Profile</a>
+                    <span>•</span>
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Support Hotline</a>
+                    <span>•</span>
+                    <a href="tallycusto.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Tally Customization</a>
+                </div>
             </div>
         </div>
+
+        <style>
+            .ft-social-btn:hover {
+                background: #00687B !important;
+                color: #ffffff !important;
+                border-color: #00d9b0 !important;
+                transform: translateY(-3px);
+            }
+            .ft-link:hover {
+                color: #00d9b0 !important;
+                padding-left: 4px;
+            }
+            .ft-sublink:hover {
+                color: #00d9b0 !important;
+            }
+            @media (max-width: 1024px) {
+                .footer-grid-layout { grid-template-columns: 1fr 1fr !important; }
+            }
+            @media (max-width: 640px) {
+                .footer-grid-layout { grid-template-columns: 1fr !important; }
+            }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->

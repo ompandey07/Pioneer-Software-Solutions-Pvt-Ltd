@@ -36,10 +36,10 @@
     <style>
         /* ===== CSS VARIABLES ===== */
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            --primary-gradient: linear-gradient(135deg, #00687B 0%, #004f5e 100%);
+            --secondary-gradient: linear-gradient(135deg, #0096AD 0%, #00687B 100%);
+            --accent-gradient: linear-gradient(135deg, #00c4df 0%, #00687B 100%);
+            --dark-gradient: linear-gradient(135deg, #0f2035 0%, #1e293b 100%);
         }
 
         /* ===== BASE STYLES ===== */
@@ -66,11 +66,11 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(180deg, #667eea, #764ba2);
-            border-radius: 4px;
+            background: linear-gradient(180deg, #00687B, #0096AD);
+            border-radius: 0px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(180deg, #5a67d8, #6b46c1);
+            background: linear-gradient(180deg, #004f5e, #00687B);
         }
         
         /* ===== PROGRESS BAR ===== */
@@ -86,25 +86,26 @@
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
             width: 0%;
             transition: width 0.3s ease;
-            box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
         }
         
         /* ===== NAVIGATION ===== */
         .nav-enhanced {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 104, 123, 0.12);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+            box-shadow: none;
         }
         
         .nav-enhanced.scrolled {
             background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
         }
 
         .nav-container {
@@ -114,7 +115,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 80px;
+            height: 60px;
             position: relative;
         }
 
@@ -135,13 +136,13 @@
         .logo-circle {
             width: 60px;
             height: 60px;
-            border-radius: 50%;
+            border-radius: 0%;
             background: white;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 8px 25px rgba(0, 104, 123, 0.15);
             transition: all 0.3s ease;
         }
 
@@ -152,16 +153,16 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
+            border-radius: 0%;
+            background: linear-gradient(45deg, #00687B, #0096AD, #00c4df);
             background-size: 400% 400%;
             animation: logoGlow 3s ease-in-out infinite;
             z-index: -1;
         }
 
         .logo-circle:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 104, 123, 0.25);
         }
 
         @keyframes logoGlow {
@@ -179,21 +180,11 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00687B;
         }
 
         .nav-divider {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            width: 2px;
-            height: 40px;
-            background: linear-gradient(to bottom, transparent, #667eea, transparent);
-            opacity: 0.3;
+            display: none !important;
         }
 
         .nav-menu {
@@ -218,8 +209,8 @@
         }
 
         .nav-item.active {
-            color: #3b82f6;
-            background: rgba(59, 130, 246, 0.08);
+            color: #00687B;
+            background: rgba(0, 104, 123, 0.08);
         }
 
         /* Animated underline */
@@ -230,9 +221,9 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
+            background: #00687B;
             transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 2px;
+            border-radius: 0px;
         }
 
         .nav-item:hover::after {
@@ -241,11 +232,11 @@
         }
 
         .nav-item:hover {
-            color: #667eea;
+            color: #00687B;
         }
 
         .nav-item i {
-            color: #667eea;
+            color: #00687B;
             transition: all 0.3s ease;
         }
 
@@ -267,7 +258,7 @@
             transform: translateY(-10px);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid #e2e8f0;
-            border-top: 2px solid #667eea;
+            border-top: 2px solid #00687B;
             z-index: 1000;
             margin-top: 4px;
         }
@@ -292,21 +283,21 @@
         }
 
         .dropdown-item:first-child {
-            border-top-left-radius: 16px;
-            border-top-right-radius: 16px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
         }
 
         .dropdown-item:last-child {
             border-bottom: none;
-            border-bottom-left-radius: 16px;
-            border-bottom-right-radius: 16px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
         }
         
         .dropdown-item:hover {
-            background: linear-gradient(90deg, #f8fafc, #f1f5f9);
-            color: #1f2937;
+            background: linear-gradient(90deg, #f0f9fb, #f1f5f9);
+            color: #00687B;
             transform: translateX(8px);
-            border-left: 4px solid #3b82f6;
+            border-left: 4px solid #00687B;
         }
         
         .dropdown-item i {
@@ -331,7 +322,7 @@
             width: 25px;
             height: 3px;
             background: #374151;
-            border-radius: 2px;
+            border-radius: 0px;
             transition: all 0.3s ease;
         }
 
@@ -363,11 +354,11 @@
             font-weight: 500;
         }
 
-        .mobile-nav-item:hover { color: #3b82f6; }
+        .mobile-nav-item:hover { color: #00687B; }
 
         /* ===== CONTACT PAGE STYLES ===== */
         .contact-hero {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            background: linear-gradient(135deg, #f0f9fb 0%, #e6f4f7 100%);
             position: relative;
             overflow: hidden;
             padding: 120px 0 80px;
@@ -381,7 +372,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(135deg, #667eea15, #764ba215);
+            background: linear-gradient(135deg, rgba(0, 104, 123, 0.08), rgba(0, 217, 176, 0.06));
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
@@ -393,7 +384,7 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+                radial-gradient(circle at 1px 1px, rgba(0, 104, 123, 0.08) 1px, transparent 0);
             background-size: 20px 20px;
             opacity: 0.5;
         }
@@ -407,13 +398,13 @@
         }
 
         .breadcrumb-enhanced a {
-            color: #667eea;
+            color: #00687B;
             text-decoration: none;
             transition: all 0.3s ease;
         }
 
         .breadcrumb-enhanced a:hover {
-            color: #4f46e5;
+            color: #004f5e;
             text-decoration: underline;
         }
 
@@ -431,37 +422,39 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 25% 25%, rgba(102, 126, 234, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 75% 75%, rgba(118, 75, 162, 0.02) 0%, transparent 50%);
+                radial-gradient(circle at 25% 25%, rgba(0, 104, 123, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(0, 150, 173, 0.02) 0%, transparent 50%);
         }
 
         .contact-info-card {
             background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 104, 123, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 104, 123, 0.08);
             padding: 3rem;
             position: relative;
             z-index: 10;
             height: 100%;
+            border-radius: 0;
         }
 
         .contact-info-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 25px 50px rgba(0, 104, 123, 0.15);
         }
 
         .contact-form-card {
             background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 104, 123, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 104, 123, 0.08);
             padding: 3rem;
             position: relative;
             z-index: 10;
+            border-radius: 0;
         }
 
         .contact-form-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.12);
+            box-shadow: 0 20px 40px rgba(0, 104, 123, 0.12);
         }
 
         .contact-info-item {
@@ -481,16 +474,17 @@
 
         .contact-info-item:hover {
             transform: translateX(10px);
-            background: #f8fafc;
+            background: #f0f9fb;
             padding-left: 1rem;
-            border-radius: 12px;
+            border-radius: 0;
+            border-left: 3px solid #00687B;
         }
 
         .contact-icon {
             width: 60px;
             height: 60px;
             background: var(--primary-gradient);
-            border-radius: 12px;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -502,7 +496,7 @@
 
         .contact-info-item:hover .contact-icon {
             transform: scale(1.1);
-            border-radius: 50%;
+            border-radius: 0;
         }
 
         .contact-details h3 {
@@ -534,7 +528,7 @@
             width: 50px;
             height: 50px;
             background: var(--primary-gradient);
-            border-radius: 50%;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -545,7 +539,7 @@
 
         .social-link:hover {
             transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 10px 25px rgba(0, 104, 123, 0.3);
         }
 
         /* Form Styles */
@@ -567,15 +561,16 @@
             border: 2px solid #e2e8f0;
             background: #f8fafc;
             font-size: 1rem;
+            border-radius: 0;
             transition: all 0.3s ease;
             color: #374151;
         }
 
         .form-input:focus {
             outline: none;
-            border-color: #667eea;
+            border-color: #00687B;
             background: white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            box-shadow: 0 0 0 3px rgba(0, 104, 123, 0.15);
         }
 
         .form-textarea {
@@ -588,13 +583,14 @@
             color: white;
             padding: 1rem 2.5rem;
             border: none;
+            border-radius: 0;
             font-weight: 600;
             font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 104, 123, 0.3);
             width: 100%;
         }
 
@@ -611,14 +607,14 @@
 
         .submit-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 104, 123, 0.4);
         }
 
         .submit-btn:hover::before { left: 100%; }
 
         /* Map Section */
         .map-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f9fb 50%, #e6f4f7 100%);
             padding: 100px 0;
             position: relative;
         }
@@ -631,17 +627,18 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 20% 20%, rgba(0, 104, 123, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 150, 173, 0.03) 0%, transparent 50%);
         }
 
         .map-container {
             position: relative;
             z-index: 10;
             background: white;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 104, 123, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 104, 123, 0.1);
             overflow: hidden;
+            border-radius: 0;
         }
 
         .map-container iframe {
@@ -653,7 +650,7 @@
 
         .map-container:hover {
             transform: translateY(-5px);
-            box-shadow: 0 25px 60px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 25px 60px rgba(0, 104, 123, 0.2);
         }
 
         /* ===== BUTTONS ===== */
@@ -661,7 +658,7 @@
             background: var(--primary-gradient);
             color: white;
             padding: 16px 32px;
-            border-radius: 12px;
+            border-radius: 0;
             font-weight: 600;
             text-decoration: none;
             display: inline-flex;
@@ -670,7 +667,7 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 8px 25px rgba(0, 104, 123, 0.3);
             border: none;
             cursor: pointer;
         }
@@ -688,7 +685,7 @@
         
         .btn-enhanced:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 104, 123, 0.4);
         }
         
         .btn-enhanced:hover::before { left: 100%; }
@@ -708,7 +705,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+            background: linear-gradient(135deg, rgba(0, 104, 123, 0.08), rgba(0, 150, 173, 0.08));
             clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
@@ -720,7 +717,7 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 1px 1px, rgba(102, 126, 234, 0.08) 1px, transparent 0);
+                radial-gradient(circle at 1px 1px, rgba(0, 104, 123, 0.08) 1px, transparent 0);
             background-size: 20px 20px;
             opacity: 0.5;
         }
@@ -752,55 +749,13 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-
-        .footer-logo::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #4facfe);
-            background-size: 400% 400%;
-            animation: logoGlow 4s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes logoFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-        }
-
-        .footer-logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
+            margin-bottom: 1.5rem;
         }
 
         .footer-company-name {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #1a202c;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00687B;
         }
 
         .footer-description {
@@ -899,7 +854,7 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(102, 126, 234, 0.15);
+            border-top: 1px solid rgba(0, 104, 123, 0.15);
             padding-top: 2rem;
             text-align: center;
         }
@@ -911,18 +866,18 @@
         }
 
         .developer-credit {
-            color: #9ca3af;
+            color: #64748b;
             font-size: 0.85rem;
         }
 
         .developer-credit a {
-            color: #667eea;
+            color: #0096AD;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
-        .developer-credit a:hover { color: #4facfe; }
+        .developer-credit a:hover { color: #00c4df; }
 
         /* ===== FLOATING CONTACT ===== */
         .floating-contact {
@@ -1362,15 +1317,77 @@
     </nav>
 
     <!-- Contact Hero Section -->
-    <section class="contact-hero">
+    <section class="contact-hero" style="position:relative;overflow:hidden;">
+
+        <!-- Animated SVG Background Layer -->
+        <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+            <!-- Top-right orbiting rings -->
+            <svg style="position:absolute;top:-80px;right:-80px;opacity:0.10;" width="480" height="480" viewBox="0 0 480 480" fill="none">
+                <circle cx="240" cy="240" r="220" stroke="#00687B" stroke-width="1.5" stroke-dasharray="14 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="240" cy="240" r="160" stroke="#0096AD" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 240 240" to="0 240 240" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="240" cy="240" r="100" stroke="#00c4df" stroke-width="1.2" stroke-dasharray="5 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="13s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="5" fill="#00d9b0" opacity="0.6">
+                    <animateMotion dur="30s" repeatCount="indefinite" path="M460,240 A220,220 0 1,1 459.99,239.99"/>
+                </circle>
+            </svg>
+            <!-- Bottom-left counter-orbit -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.08;" width="340" height="340" viewBox="0 0 340 340" fill="none">
+                <circle cx="170" cy="170" r="150" stroke="#00687B" stroke-width="1.2" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 170 170" to="0 170 170" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="170" cy="170" r="90" stroke="#0096AD" stroke-width="1" stroke-dasharray="5 9">
+                    <animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="16s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Flowing diagonal data lines -->
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.05;" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" fill="none">
+                <line x1="-100" y1="100" x2="1300" y2="320" stroke="#00687B" stroke-width="1" stroke-dasharray="20 40">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-120" dur="6s" repeatCount="indefinite"/>
+                </line>
+                <line x1="-100" y1="260" x2="1300" y2="60" stroke="#0096AD" stroke-width="0.8" stroke-dasharray="15 35">
+                    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="9s" repeatCount="indefinite"/>
+                </line>
+                <!-- Scanning horizontal line -->
+                <line x1="0" y1="0" x2="1200" y2="0" stroke="#00d9b0" stroke-width="1.5" stroke-dasharray="8 30" opacity="0.5">
+                    <animateTransform attributeName="transform" type="translate" from="0 0" to="0 420" dur="6s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;0.5;0" dur="6s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+            <!-- Pulsing nodes -->
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.55;" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid slice" fill="none">
+                <circle cx="100" cy="70" r="4" fill="#00687B"><animate attributeName="r" values="3;5;3" dur="3s" repeatCount="indefinite"/></circle>
+                <circle cx="100" cy="70" r="10" stroke="#00687B" stroke-width="1" fill="none"><animate attributeName="r" values="8;18;8" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="3s" repeatCount="indefinite"/></circle>
+                <circle cx="400" cy="360" r="3.5" fill="#0096AD"><animate attributeName="r" values="2.5;4.5;2.5" dur="4.5s" repeatCount="indefinite"/></circle>
+                <circle cx="400" cy="360" r="8" stroke="#0096AD" stroke-width="1" fill="none"><animate attributeName="r" values="6;16;6" dur="4.5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0;0.4" dur="4.5s" repeatCount="indefinite"/></circle>
+                <circle cx="750" cy="50" r="3" fill="#00c4df"><animate attributeName="r" values="2;4;2" dur="3.8s" repeatCount="indefinite"/></circle>
+                <line x1="100" y1="70" x2="400" y2="360" stroke="#00687B" stroke-width="0.5" stroke-dasharray="4 8"><animate attributeName="opacity" values="0.1;0.3;0.1" dur="4s" repeatCount="indefinite"/></line>
+                <line x1="400" y1="360" x2="750" y2="50" stroke="#0096AD" stroke-width="0.5" stroke-dasharray="4 8"><animate attributeName="opacity" values="0.1;0.25;0.1" dur="5s" repeatCount="indefinite"/></line>
+            </svg>
+            <!-- Dot grid -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(0,104,123,0.15) 1px,transparent 0);background-size:28px 28px;opacity:0.5;"></div>
+            <!-- Top teal bar -->
+            <div style="position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,#00687B 30%,#0096AD 70%,transparent);"></div>
+        </div>
+
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center slide-in-bottom">
-                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-                    Get In <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Touch</span>
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#00687B]/10 border border-[#00687B]/30 text-[#00687B] text-xs font-mono font-semibold tracking-wider uppercase mb-4">
+                    <span class="w-2 h-2 bg-[#00687B] animate-ping rounded-full"></span>
+                    Direct Communication
+                </span>
+                <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4">
+                    Get In <span class="text-[#00687B]">Touch</span>
                 </h1>
+                <div class="w-24 h-1 bg-gradient-to-r from-[#00687B] to-[#00d9b0] mx-auto mb-6"></div>
                 <nav class="breadcrumb-enhanced justify-center mb-6">
                     <a href="index.html">Home</a>
-                    <i class="fas fa-chevron-right"></i>
+                    <i class="fas fa-chevron-right text-xs text-[#00687B]"></i>
                     <span>Contact Us</span>
                 </nav>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -1380,133 +1397,167 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Information -->
-                <div class="slide-in-left">
-                    <div class="contact-info-card">
-                        <div class="mb-8">
-                            <div class="inline-flex items-center space-x-3 bg-blue-50 px-6 py-3 rounded-full mb-6">
-                                <img src="img/telephone.png" alt="Contact" class="w-8 h-8" />
-                                <span class="text-blue-600 font-semibold">Contact Information</span>
-                            </div>
-                            <h2 class="text-4xl font-bold text-gray-900 mb-4">Let's Start a Conversation</h2>
-                            <p class="text-lg text-gray-600">
-                                Hit us up for laughs and solutions! We're your friendly neighborhood service superheroes ready to rescue you with a smile.
-                            </p>
-                        </div>
+    <!-- Contact Info Section — Full Width Redesign (No Form) -->
+    <section style="background:#fff;padding:5rem 0;position:relative;overflow:hidden;">
 
-                        <div class="space-y-6">
-                            <div class="contact-info-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>Our Office</h3>
-                                    <p>Naag Pokhari, Kathmandu, Nepal<br>80 meter north from Hotel Marriot</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-info-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>Call Us</h3>
-                                    <p class="phone-numbers">
-                                        +977-1-4533234<br>
-                                        +977-1-4533434<br>
-                                        +977-1-4533331
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="contact-info-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>Email Us</h3>
-                                    <p>info@pioneersoftware.com.np</p>
-                                </div>
-                            </div>
-
-                            <div class="contact-info-item">
-                                <div class="contact-icon">
-                                    <i class="fas fa-share-alt"></i>
-                                </div>
-                                <div class="contact-details">
-                                    <h3>Follow Us</h3>
-                                    <div class="social-links">
-                                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" class="social-link" target="_blank">
-                                            <i class="fab fa-facebook-f"></i>
-                                        </a>
-                                        <a href="#" class="social-link">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a href="#" class="social-link">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                        <a href="#" class="social-link">
-                                            <i class="fab fa-youtube"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="slide-in-right">
-                    <div class="contact-form-card">
-                        <div class="mb-8">
-                            <h3 class="text-3xl font-bold text-gray-900 mb-4">Send Us a Message</h3>
-                            <p class="text-gray-600">
-                                Have a question or ready to start a project? Fill out the form below and we'll get back to you within 24 hours.
-                            </p>
-                        </div>
-
-                        <form id="contactForm" onsubmit="handleSubmit(event)">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="form-group">
-                                    <label for="name" class="form-label">Your Name</label>
-                                    <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email" class="form-label">Your Email</label>
-                                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email address" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject" class="form-label">Subject</label>
-                                <input type="text" id="subject" name="subject" class="form-input" placeholder="What is this regarding?" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message" class="form-label">Message</label>
-                                <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us more about your project or inquiry..." required></textarea>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">
-                                <i class="fas fa-paper-plane mr-2"></i>
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <!-- Animated SVG Background -->
+        <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.06;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00687B" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="28s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#0096AD" stroke-width="1" stroke-dasharray="7 13">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="18s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="1" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="11s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <svg style="position:absolute;bottom:-50px;left:-50px;opacity:0.05;" width="340" height="340" viewBox="0 0 340 340" fill="none">
+                <circle cx="170" cy="170" r="155" stroke="#00687B" stroke-width="1.2" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 170 170" to="0 170 170" dur="24s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="170" cy="170" r="90" stroke="#00c4df" stroke-width="0.8" stroke-dasharray="5 9">
+                    <animateTransform attributeName="transform" type="rotate" from="0 170 170" to="360 170 170" dur="14s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Animated dashed center accent line -->
+            <svg style="position:absolute;top:50%;left:0;width:100%;height:2px;opacity:0.06;" viewBox="0 0 1200 2" fill="none">
+                <line x1="0" y1="1" x2="1200" y2="1" stroke="#00687B" stroke-width="2" stroke-dasharray="16 24">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-80" dur="5s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px,rgba(0,104,123,0.1) 1px,transparent 0);background-size:26px 26px;opacity:0.4;"></div>
         </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative" style="z-index:2;">
+
+            <!-- Section Header -->
+            <div style="text-align:center;margin-bottom:3.5rem;">
+                <div style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 1rem;background:#00687B;color:#fff;font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;margin-bottom:1.2rem;">
+                    <i class="fas fa-headset"></i> Contact Information
+                </div>
+                <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#0f172a;letter-spacing:-0.03em;line-height:1.15;margin:0 0 0.75rem 0;">
+                    Let's Start a <span style="color:#00687B;">Conversation</span>
+                </h2>
+                <div style="width:50px;height:3.5px;background:#00687B;margin:0 auto 1rem;"></div>
+                <p style="font-size:1.05rem;color:#64748b;max-width:580px;margin:0 auto;line-height:1.7;">
+                    Hit us up for software inquiries and customized solutions! We're your friendly tech team ready to assist you with a smile.
+                </p>
+            </div>
+
+            <!-- Contact Cards Grid (2x2) -->
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-bottom:3rem;" class="contact-cards-grid">
+
+                <!-- Card: Office -->
+                <div style="background:#f8fafc;border:1.5px solid rgba(0,104,123,0.15);padding:2rem 2rem 2rem 1.75rem;position:relative;overflow:hidden;transition:all 0.3s ease;" class="ccard">
+                    <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:#00687B;"></div>
+                    <div style="position:absolute;top:-20px;right:-20px;opacity:0.06;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="40" stroke="#00687B" stroke-width="1.5" stroke-dasharray="6 6"><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="12s" repeatCount="indefinite"/></circle></svg>
+                    </div>
+                    <div style="width:52px;height:52px;background:#00687B;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+                        <i class="fas fa-map-marker-alt" style="color:#fff;font-size:1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 0.5rem 0;letter-spacing:-0.01em;">Our Office</h3>
+                    <p style="font-size:0.92rem;color:#475569;line-height:1.7;margin:0;">Naag Pokhari, Kathmandu, Nepal<br><span style="color:#64748b;font-size:0.85rem;">80 meter north from Hotel Marriott</span></p>
+                </div>
+
+                <!-- Card: Phone -->
+                <div style="background:#f8fafc;border:1.5px solid rgba(0,104,123,0.15);padding:2rem 2rem 2rem 1.75rem;position:relative;overflow:hidden;transition:all 0.3s ease;" class="ccard">
+                    <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:#0096AD;"></div>
+                    <div style="position:absolute;top:-20px;right:-20px;opacity:0.06;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="40" stroke="#0096AD" stroke-width="1.5" stroke-dasharray="6 6"><animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="10s" repeatCount="indefinite"/></circle></svg>
+                    </div>
+                    <div style="width:52px;height:52px;background:#0096AD;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+                        <i class="fas fa-phone-alt" style="color:#fff;font-size:1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 0.5rem 0;letter-spacing:-0.01em;">Call Us</h3>
+                    <p style="font-size:0.92rem;color:#475569;line-height:1.85;margin:0;font-family:'JetBrains Mono',monospace;">
+                        +977-1-4533234<br>+977-1-4533434<br>+977-1-4533331
+                    </p>
+                </div>
+
+                <!-- Card: Email -->
+                <div style="background:#f8fafc;border:1.5px solid rgba(0,104,123,0.15);padding:2rem 2rem 2rem 1.75rem;position:relative;overflow:hidden;transition:all 0.3s ease;" class="ccard">
+                    <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:#00c4df;"></div>
+                    <div style="position:absolute;top:-20px;right:-20px;opacity:0.06;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="40" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="6 6"><animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="14s" repeatCount="indefinite"/></circle></svg>
+                    </div>
+                    <div style="width:52px;height:52px;background:#00c4df;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+                        <i class="fas fa-envelope" style="color:#fff;font-size:1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 0.5rem 0;letter-spacing:-0.01em;">Email Us</h3>
+                    <p style="font-size:0.92rem;color:#475569;line-height:1.7;margin:0;">info@pioneersoftware.com.np</p>
+                </div>
+
+                <!-- Card: Follow Us -->
+                <div style="background:#f8fafc;border:1.5px solid rgba(0,104,123,0.15);padding:2rem 2rem 2rem 1.75rem;position:relative;overflow:hidden;transition:all 0.3s ease;" class="ccard">
+                    <div style="position:absolute;top:0;left:0;width:4px;height:100%;background:#00d9b0;"></div>
+                    <div style="position:absolute;top:-20px;right:-20px;opacity:0.06;">
+                        <svg width="100" height="100" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="40" stroke="#00d9b0" stroke-width="1.5" stroke-dasharray="6 6"><animateTransform attributeName="transform" type="rotate" from="360 50 50" to="0 50 50" dur="9s" repeatCount="indefinite"/></circle></svg>
+                    </div>
+                    <div style="width:52px;height:52px;background:#00d9b0;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;">
+                        <i class="fas fa-share-alt" style="color:#fff;font-size:1.2rem;"></i>
+                    </div>
+                    <h3 style="font-size:1.05rem;font-weight:800;color:#0f172a;margin:0 0 0.75rem 0;letter-spacing:-0.01em;">Follow Us</h3>
+                    <div style="display:flex;gap:0.65rem;flex-wrap:wrap;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.2s;" class="csoc-btn"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.2s;" class="csoc-btn"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.2s;" class="csoc-btn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="width:40px;height:40px;background:#00687B;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:all 0.2s;" class="csoc-btn"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Business Hours Strip -->
+            <div style="background:linear-gradient(135deg,#071527 0%,#0f2035 60%,#004f5e 100%);color:#cbd5e1;padding:2rem 2.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:2rem;position:relative;overflow:hidden;border-top:3px solid #00687B;">
+                <div style="position:absolute;top:-30px;right:-30px;opacity:0.08;">
+                    <svg width="180" height="180" viewBox="0 0 180 180" fill="none"><circle cx="90" cy="90" r="80" stroke="#00d9b0" stroke-width="1.5" stroke-dasharray="8 8"><animateTransform attributeName="transform" type="rotate" from="0 90 90" to="360 90 90" dur="20s" repeatCount="indefinite"/></circle></svg>
+                </div>
+                <div style="display:flex;align-items:center;gap:1rem;">
+                    <div style="width:48px;height:48px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <i class="fas fa-clock" style="color:#fff;font-size:1.1rem;"></i>
+                    </div>
+                    <div>
+                        <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#00d9b0;margin-bottom:2px;">Business Hours</div>
+                        <div style="font-size:0.95rem;color:#e2e8f0;font-weight:600;">Sunday – Friday &nbsp;|&nbsp; 9:00 AM – 5:00 PM NST</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:1rem;">
+                    <div style="width:48px;height:48px;background:#0096AD;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <i class="fas fa-map-pin" style="color:#fff;font-size:1.1rem;"></i>
+                    </div>
+                    <div>
+                        <div style="font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#00d9b0;margin-bottom:2px;">Location</div>
+                        <div style="font-size:0.95rem;color:#e2e8f0;font-weight:600;">Naag Pokhari, Kathmandu, Nepal</div>
+                    </div>
+                </div>
+                <a href="tel:+97714533234" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.75rem 1.5rem;background:#00687B;color:#fff;font-size:0.85rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='#005568'" onmouseout="this.style.background='#00687B'">
+                    <i class="fas fa-phone-alt"></i> Call Now
+                </a>
+            </div>
+
+        </div>
+
+        <style>
+            .ccard:hover { border-color: rgba(0,104,123,0.4) !important; background: #f0f9fb !important; transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,104,123,0.1); }
+            .csoc-btn:hover { background: #005568 !important; transform: translateY(-2px); }
+            @media (max-width: 768px) {
+                .contact-cards-grid { grid-template-columns: 1fr !important; }
+            }
+        </style>
     </section>
 
     <!-- Google Map Section -->
     <section class="map-section">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12 slide-in-bottom">
-                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Find Us Here</h2>
+                <span class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#00687B]/10 border border-[#00687B]/30 text-[#00687B] text-xs font-mono font-semibold tracking-wider uppercase mb-4">
+                    <i class="fas fa-map-marked-alt"></i> Location Map
+                </span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Find Us Here</h2>
+                <div class="w-20 h-1 bg-gradient-to-r from-[#00687B] to-[#00d9b0] mx-auto mb-6"></div>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Located in the heart of Kathmandu, we're easily accessible and ready to welcome you to our office.
                 </p>
@@ -1523,83 +1574,162 @@
         </div>
     </section>
 
-    <!-- Simplified Footer -->
-    <footer class="footer-enhanced">
-        <div class="footer-content">
-            <div class="footer-main">
-                <!-- Left Section: Logo & Description -->
-                <div class="footer-logo-section">
-                    <div class="footer-logo-container">
-                        <div class="footer-logo">
-                            <img src="img/MainLogo.png" alt="Pioneer Software Solutions" />
-                        </div>
-                        <div>
-                            <h3 class="footer-company-name">Pioneer Software</h3>
-                            <p class="text-sm text-gray-500">Solutions Pvt Ltd</p>
-                        </div>
-                    </div>
-                    <p class="footer-description">
-                        Transforming ideas into reality with cutting-edge software solutions. We deliver excellence in custom development, web applications, and comprehensive support services for businesses across Nepal.
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <!-- Rotating Tech Orbit Top Right -->
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="12s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Pulsing Orbit Bottom Left -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360" viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180" dur="15s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+            <!-- Tech Grid Overlay Pattern -->
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and distribution management since 2010.
                     </p>
-                </div>
-
-                <!-- Center Section: Just Image -->
-                <div class="footer-center-section">
-                    <div class="footer-center-image">
-                        <img src="img/footer.gif" alt="Pioneer Software Achievement" />
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;" class="ft-social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
                     </div>
                 </div>
 
-                <!-- Right Section: Contact Information -->
-                <div class="footer-contact-section">
-                    <div class="contact-title">
-                        Contact Us
-                    </div>
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Solutions -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="tallyprime.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cube" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime Solutions</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                        <li><a href="tallycloud.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;" class="ft-link"><i class="fas fa-cloud" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
                     
-                    <div class="footer-contact-info-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-building"></i>
-                        </div>
-                        <div class="footer-contact-details">
-                            <h4>Office Address</h4>
-                            <p>
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
                                 Naag Pokhari, Kathmandu, Nepal<br>
-                                80 meter north from Hotel Marriot
-                            </p>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel Marriott)</span>
+                            </div>
                         </div>
-                    </div>
-                    
-                    <div class="footer-contact-info-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">
+                                +977-1-4533234 / 4533434
+                            </div>
                         </div>
-                        <div class="footer-contact-details">
-                            <h4>Phone Numbers</h4>
-                            <p class="phone-numbers">
-                                +977-1-4533234<br>
-                                +977-1-4533434<br>
-                                +977-1-4533331
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-contact-info-item">
-                        <div class="footer-contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="footer-contact-details">
-                            <h4>Email Address</h4>
-                            <p>info@pioneersoftware.com.np</p>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;">
+                                info@pioneersoftware.com.np
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
-            
-            <!-- Bottom Section -->
-            <div class="footer-bottom">
-                <p>© 2025 Pioneer Software Solutions Pvt Ltd. All Rights Reserved.</p>
+
+            <!-- Footer Bottom Border & Copyright -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    © 2025 <strong style="color:#cbd5e1;">Pioneer Software Solutions Pvt Ltd</strong>. All Rights Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;font-size:0.8rem;color:#64748b;">
+                    <a href="about.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Company Profile</a>
+                    <span>•</span>
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Support Hotline</a>
+                    <span>•</span>
+                    <a href="tallycusto.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Tally Customization</a>
+                </div>
             </div>
         </div>
+
+        <style>
+            .ft-social-btn:hover {
+                background: #00687B !important;
+                color: #ffffff !important;
+                border-color: #00d9b0 !important;
+                transform: translateY(-3px);
+            }
+            .ft-link:hover {
+                color: #00d9b0 !important;
+                padding-left: 4px;
+            }
+            .ft-sublink:hover {
+                color: #00d9b0 !important;
+            }
+            @media (max-width: 1024px) {
+                .footer-grid-layout { grid-template-columns: 1fr 1fr !important; }
+            }
+            @media (max-width: 640px) {
+                .footer-grid-layout { grid-template-columns: 1fr !important; }
+            }
+        </style>
     </footer>
 
     <!-- Enhanced Floating Contact -->
