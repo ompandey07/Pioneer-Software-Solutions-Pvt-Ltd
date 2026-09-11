@@ -1237,7 +1237,7 @@
                     Why Choose Us
                 </div>
                 <h2
-                    style="font-size:clamp(2rem,4vw,3rem);font-weight:800;color:#0f172a;letter-spacing:-0.03em;line-height:1.1;margin:0 0 0.75rem 0;">
+                    style="font-family:'Kaushan Script',cursive;font-size:clamp(2rem,4vw,3rem);font-weight:400;color:#0f172a;line-height:1.2;margin:0 0 0.75rem 0;">
                     Why Choose <span style="color:#00687B;">Pioneer?</span></h2>
                 <div style="width:48px;height:3px;background:#00687B;"></div>
             </div>
@@ -1384,6 +1384,294 @@
                 #why-grid {
                     grid-template-columns: 1fr !important;
                 }
+            }
+        </style>
+    </section>
+
+    <!-- Credentials That Speak for Us Section -->
+    <section id="credentials-speak-hero" style="padding: 5.5rem 0; background: #ffffff; color: #0f172a; position: relative; overflow: hidden; border-radius: 0;">
+        
+        <!-- Top Accent Solid Teal Divider Line -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg, #00687B 0%, #0096AD 50%, #00687B 100%);border-radius:0;"></div>
+
+        <!-- Animated Background Tech Orbits & Grid SVGs (Page Theme Teal Accent) -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:1;border-radius:0;">
+            <!-- Outer Rotating Orbit (Top Left) -->
+            <svg style="position:absolute;top:-80px;left:-80px;opacity:0.08;" width="460" height="460" viewBox="0 0 460 460" fill="none">
+                <circle cx="230" cy="230" r="210" stroke="#00687B" stroke-width="1.5" stroke-dasharray="14 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 230 230" to="360 230 230" dur="35s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="230" cy="230" r="150" stroke="#0096AD" stroke-width="1" stroke-dasharray="8 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 230 230" to="0 230 230" dur="25s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="230" cy="230" r="90" stroke="#00687B" stroke-width="0.8" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 230 230" to="360 230 230" dur="18s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+
+            <!-- Grid Mesh Accent (Bottom Right) -->
+            <svg style="position:absolute;bottom:-40px;right:-40px;opacity:0.06;" width="400" height="400" viewBox="0 0 400 400" fill="none">
+                <g stroke="#00687B" stroke-width="0.8" stroke-dasharray="6 8">
+                    <line x1="0" y1="50" x2="400" y2="50" />
+                    <line x1="0" y1="130" x2="400" y2="130" />
+                    <line x1="0" y1="210" x2="400" y2="210" />
+                    <line x1="0" y1="290" x2="400" y2="290" />
+                    <line x1="0" y1="370" x2="400" y2="370" />
+                    <line x1="50" y1="0" x2="50" y2="400" />
+                    <line x1="130" y1="0" x2="130" y2="400" />
+                    <line x1="210" y1="0" x2="210" y2="400" />
+                    <line x1="290" y1="0" x2="290" y2="400" />
+                    <line x1="370" y1="0" x2="370" y2="400" />
+                </g>
+                <circle cx="210" cy="210" r="160" stroke="#0096AD" stroke-width="1.2" stroke-dasharray="10 14">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="40s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+
+            <!-- Floating Glowing Tech Particles -->
+            <div class="cred-particle cred-p1"></div>
+            <div class="cred-particle cred-p2"></div>
+            <div class="cred-particle cred-p3"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative" style="z-index:2;">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Column: Content & Highlights (7 cols on LG) -->
+                <div class="lg:col-span-7">
+                    
+                    <!-- Label / Eyebrow Badge -->
+                    <div style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.4rem 1rem;background:#00687B;color:#ffffff;font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:1.25rem;border-radius:0;">
+                        <svg class="cred-pulse-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                        <span>Credentials That Speak for Us</span>
+                    </div>
+
+                    <!-- Main Section Heading with Kaushan Script font (matching hero section font) -->
+                    <h2 style="font-family:'Kaushan Script', cursive;font-size:clamp(2.3rem, 4vw, 3.4rem);font-weight:400;color:#0f172a;line-height:1.25;margin:0 0 0.75rem 0;">
+                        Technology We Know. <span style="color:#00687B;">Solutions You Trust.</span>
+                    </h2>
+                    
+                    <!-- Decorative Underline Bar -->
+                    <div style="width:50px;height:3px;background:#00687B;margin-bottom:1.5rem;border-radius:0;"></div>
+
+                    <!-- Description -->
+                    <p style="font-size:1.05rem;color:#475569;line-height:1.75;margin:0 0 2.25rem 0;max-width:620px;">
+                        Years of experience across leading business technologies help us deliver the right solutions for every client.
+                    </p>
+
+                    <!-- Trust Pillars / Key Highlights (2x2 Grid) -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" style="margin-bottom:2.25rem;">
+                        
+                        <!-- Card 1: Authorized Gold Partner -->
+                        <div class="cred-trust-card" style="background:#f8fafc;border:1px solid #cbd5e1;border-left:4px solid #00687B;padding:1.1rem 1.25rem;border-radius:0;transition:all 0.3s ease;">
+                            <div style="display:flex;align-items:flex-start;gap:0.85rem;">
+                                <div style="width:38px;height:38px;border-radius:0;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 15l-2 5l9-9l-9-9l2 5l-7 4z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size:0.95rem;font-weight:700;color:#0f172a;margin:0 0 0.25rem 0;">Authorized Gold Partner</h4>
+                                    <p style="font-size:0.8rem;color:#64748b;line-height:1.45;margin:0;">Official Tally Gold tier certification representing elite software mastery.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2: Enterprise ERP Solutions -->
+                        <div class="cred-trust-card" style="background:#f8fafc;border:1px solid #cbd5e1;border-left:4px solid #00687B;padding:1.1rem 1.25rem;border-radius:0;transition:all 0.3s ease;">
+                            <div style="display:flex;align-items:flex-start;gap:0.85rem;">
+                                <div style="width:38px;height:38px;border-radius:0;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="2" y="3" width="20" height="14" rx="0" ry="0"/>
+                                        <line x1="8" y1="21" x2="16" y2="21"/>
+                                        <line x1="12" y1="17" x2="12" y2="21"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size:0.95rem;font-weight:700;color:#0f172a;margin:0 0 0.25rem 0;">Tailored Technology</h4>
+                                    <p style="font-size:0.8rem;color:#64748b;line-height:1.45;margin:0;">Custom statutory reporting, cloud integration, and ERP workflows.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Deep Industry Mastery -->
+                        <div class="cred-trust-card" style="background:#f8fafc;border:1px solid #cbd5e1;border-left:4px solid #00687B;padding:1.1rem 1.25rem;border-radius:0;transition:all 0.3s ease;">
+                            <div style="display:flex;align-items:flex-start;gap:0.85rem;">
+                                <div style="width:38px;height:38px;border-radius:0;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                        <polyline points="22 4 12 14.01 9 11.01"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size:0.95rem;font-weight:700;color:#0f172a;margin:0 0 0.25rem 0;">15+ Years Excellence</h4>
+                                    <p style="font-size:0.8rem;color:#64748b;line-height:1.45;margin:0;">Over a decade of empowering thousands of businesses across Nepal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4: Dedicated Support -->
+                        <div class="cred-trust-card" style="background:#f8fafc;border:1px solid #cbd5e1;border-left:4px solid #00687B;padding:1.1rem 1.25rem;border-radius:0;transition:all 0.3s ease;">
+                            <div style="display:flex;align-items:flex-start;gap:0.85rem;">
+                                <div style="width:38px;height:38px;border-radius:0;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 style="font-size:0.95rem;font-weight:700;color:#0f172a;margin:0 0 0.25rem 0;">Solutions You Trust</h4>
+                                    <p style="font-size:0.8rem;color:#64748b;line-height:1.45;margin:0;">Proven track record with high retention and rapid response support.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Action Link & Stats -->
+                    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+                        <a href="about.html#awards-section" style="display:inline-flex;align-items:center;gap:0.6rem;padding:0.75rem 1.6rem;background:#00687B;color:#fff;font-size:0.88rem;font-weight:700;border-radius:0;box-shadow:4px 4px 0px rgba(0,104,123,0.2);transition:all 0.3s ease;" class="cred-cta-btn">
+                            <span>View All Certifications</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+
+                        <div style="display:flex;align-items:center;gap:1.25rem;padding-left:1rem;border-left:3px solid #00687B;">
+                            <div>
+                                <div style="font-size:1.25rem;font-weight:800;color:#00687B;line-height:1;">100%</div>
+                                <div style="font-size:0.7rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.2rem;font-weight:600;">Verified</div>
+                            </div>
+                            <div>
+                                <div style="font-size:1.25rem;font-weight:800;color:#0f172a;line-height:1;">2500+</div>
+                                <div style="font-size:0.7rem;color:#64748b;text-transform:uppercase;letter-spacing:0.05em;margin-top:0.2rem;font-weight:600;">Clients</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Hero Graphic & Floating SVG Badges (5 cols on LG) -->
+                <div class="lg:col-span-5 relative" style="display:flex;justify-content:center;">
+                    
+                    <!-- Main Hero Image Frame Container -->
+                    <div class="cred-hero-frame" style="position:relative;width:100%;max-width:500px;background:#ffffff;border:2px solid #00687B;border-radius:0;padding:12px;box-shadow:8px 8px 0px rgba(0,104,123,0.12);transition:transform 0.4s ease;">
+                        
+                        <!-- Tech Brackets: Top Left -->
+                        <div style="position:absolute;top:-6px;left:-6px;width:20px;height:20px;border-top:3px solid #00687B;border-left:3px solid #00687B;z-index:4;border-radius:0;"></div>
+                        <!-- Tech Brackets: Bottom Right -->
+                        <div style="position:absolute;bottom:-6px;right:-6px;width:20px;height:20px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;z-index:4;border-radius:0;"></div>
+
+                        <!-- Image Wrap -->
+                        <div style="position:relative;overflow:hidden;border-radius:0;background:#ffffff;border:1px solid #e2e8f0;">
+                            <img src="Awards/CertifiedHero.png" alt="Technology We Know. Solutions You Trust - Pioneer Software Credentials" style="width:100%;height:auto;display:block;object-fit:cover;border-radius:0;" />
+                        </div>
+
+                        <!-- Floating Top-Right Badge: Tally Gold Partner Shield SVG -->
+                        <div class="cred-float-badge cred-badge-tr" style="position:absolute;top:-18px;right:-18px;background:#00687B;border:2px solid #ffffff;padding:0.6rem 0.9rem;border-radius:0;box-shadow:4px 4px 12px rgba(0,0,0,0.15);display:flex;align-items:center;gap:0.6rem;z-index:5;">
+                            <div style="position:relative;">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L3 7V12C3 17.55 6.84 22.74 12 24C17.16 22.74 21 17.55 21 12V7L12 2Z" fill="#ffffff" stroke="#ffffff" stroke-width="1.5"/>
+                                    <path d="M9 12L11 14L15 10" stroke="#00687B" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style="font-size:0.65rem;font-weight:700;color:rgba(255,255,255,0.85);letter-spacing:0.08em;text-transform:uppercase;">Certified</div>
+                                <div style="font-size:0.78rem;font-weight:800;color:#ffffff;">Gold Partner</div>
+                            </div>
+                        </div>
+
+                        <!-- Floating Bottom-Left Badge: Excellence SVG -->
+                        <div class="cred-float-badge cred-badge-bl" style="position:absolute;bottom:-20px;left:-18px;background:#0f172a;border:2px solid #00687B;padding:0.6rem 0.9rem;border-radius:0;box-shadow:4px 4px 12px rgba(0,0,0,0.15);display:flex;align-items:center;gap:0.6rem;z-index:5;">
+                            <div style="width:28px;height:28px;border-radius:0;background:#00687B;display:flex;align-items:center;justify-content:center;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="square" stroke-linejoin="miter">
+                                    <rect x="3" y="3" width="18" height="18"/>
+                                    <polyline points="9 12 12 15 16 9"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div style="font-size:0.65rem;font-weight:700;color:#94a3b8;letter-spacing:0.05em;text-transform:uppercase;">Proven Record</div>
+                                <div style="font-size:0.78rem;font-weight:800;color:#ffffff;">Years of Growth</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <style>
+            /* Ensure NO border radius on any children in this section */
+            #credentials-speak-hero,
+            #credentials-speak-hero * {
+                border-radius: 0 !important;
+            }
+
+            /* Particle Floating Animation */
+            .cred-particle {
+                position: absolute;
+                border-radius: 0 !important;
+                background: #00687B;
+                opacity: 0.12;
+                animation: credFloat 8s ease-in-out infinite alternate;
+            }
+            .cred-p1 { width: 120px; height: 120px; top: 15%; right: 5%; animation-duration: 10s; }
+            .cred-p2 { width: 80px; height: 80px; bottom: 20%; left: 8%; animation-duration: 7s; }
+            .cred-p3 { width: 50px; height: 50px; top: 60%; right: 40%; animation-duration: 9s; }
+
+            @keyframes credFloat {
+                0% { transform: translateY(0) scale(1); opacity: 0.08; }
+                100% { transform: translateY(-20px) scale(1.05); opacity: 0.18; }
+            }
+
+            /* Icon pulse animation */
+            .cred-pulse-icon {
+                animation: credPulse 2s ease-in-out infinite;
+            }
+            @keyframes credPulse {
+                0%, 100% { transform: scale(1); opacity: 1; }
+                50% { transform: scale(1.2); opacity: 0.8; }
+            }
+
+            /* Trust cards hover effect */
+            .cred-trust-card:hover {
+                background: #ffffff !important;
+                border-color: #00687B !important;
+                border-left-color: #00687B !important;
+                transform: translateY(-3px);
+                box-shadow: 6px 6px 0px rgba(0, 104, 123, 0.15) !important;
+            }
+
+            /* Hero Frame Hover Effect */
+            .cred-hero-frame:hover {
+                transform: translateY(-6px);
+                box-shadow: 12px 12px 0px rgba(0, 104, 123, 0.2) !important;
+            }
+
+            /* Float Badges Animations */
+            .cred-badge-tr {
+                animation: floatBadgeTR 4s ease-in-out infinite alternate;
+            }
+            .cred-badge-bl {
+                animation: floatBadgeBL 5s ease-in-out infinite alternate;
+            }
+
+            @keyframes floatBadgeTR {
+                0% { transform: translateY(0px); }
+                100% { transform: translateY(-8px); }
+            }
+            @keyframes floatBadgeBL {
+                0% { transform: translateY(0px); }
+                100% { transform: translateY(8px); }
+            }
+
+            /* CTA Button Hover */
+            .cred-cta-btn:hover {
+                transform: translateY(-2px);
+                background: #005262 !important;
+                box-shadow: 6px 6px 0px rgba(0, 82, 98, 0.25) !important;
             }
         </style>
     </section>
