@@ -684,185 +684,560 @@
             }
         }
 
-        /* ===== ACHIEVEMENTS GALLERY SECTION ===== */
+        /* ===== ACHIEVEMENTS SECTION - LIGHT WHITE THEME ===== */
         .achievements-section {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #e2e8f0 100%);
+            background: #ffffff;
             position: relative;
             overflow: hidden;
-            padding: 120px 0;
+            padding: 120px 0 130px;
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
+        /* Subtle dot grid — linear-gradient only, no radial */
         .achievements-section::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background:
-                radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.03) 0%, transparent 50%);
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0,104,123,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,104,123,0.05) 1px, transparent 1px);
+            background-size: 32px 32px;
+            pointer-events: none;
         }
 
+        /* Teal top accent line */
         .achievements-section::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(circle at 2px 2px, rgba(102, 126, 234, 0.04) 1px, transparent 0);
-            background-size: 30px 30px;
-            opacity: 0.3;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df, #0096AD, #00687B);
+            background-size: 200% 100%;
+            animation: shimmerLine 4s linear infinite;
+        }
+        @keyframes shimmerLine {
+            0%   { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
         }
 
+        /* Section header */
         .achievements-title {
             font-family: 'Kaushan Script', cursive;
             color: #00687B;
             -webkit-text-fill-color: #00687B;
             font-size: 3.5rem;
             font-weight: 800;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
             line-height: 1.1;
             text-align: center;
         }
 
         .achievements-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 4rem;
             color: #4b5563;
-            max-width: 700px;
+            max-width: 660px;
             margin-left: auto;
             margin-right: auto;
-            line-height: 1.6;
+            line-height: 1.7;
             text-align: center;
         }
 
-        .achievements-gallery {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-            height: 600px;
-            display: flex;
+        /* Badge strip above title */
+        .awards-badge {
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            background: rgba(0,104,123,0.08);
+            border: 1px solid rgba(0,104,123,0.25);
+            border-radius: 100px;
+            padding: 6px 18px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #00687B;
+            margin-bottom: 1rem;
+        }
+        .awards-badge span.dot {
+            width: 7px; height: 7px;
+            background: #00687B;
+            border-radius: 50%;
+            animation: pulseDot 1.6s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+            0%,100% { transform: scale(1); opacity:1; }
+            50%      { transform: scale(1.5); opacity:0.4; }
         }
 
+        /* ===== ACHIEVEMENTS GALLERY GRID ===== */
+        .achievements-gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.4rem;
+            max-width: 1150px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        @media (max-width: 1024px) {
+            .achievements-gallery { grid-template-columns: repeat(4, 1fr); }
+            .achievements-title { font-size: 2.6rem; }
+        }
+        @media (max-width: 768px) {
+            .achievements-gallery { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .achievements-title { font-size: 2rem; }
+        }
+        @media (max-width: 480px) {
+            .achievements-gallery { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+        }
+
+        /* Card item — flat image, transparent background, sharp corners */
         .achievement-item {
-            position: absolute;
-            transition: all 0.4s ease;
+            position: relative;
             cursor: pointer;
-            border: 3px solid #00687B;
-            background: white;
+            background: transparent;
+            border: none;
+            border-radius: 0 !important;
             padding: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            overflow: visible;
+            box-shadow: none;
+            transition: none;
+        }
+
+        /* 4 Corner Bracket Outline on Hover */
+        /* Top-Left Corner */
+        .achievement-item::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 14px; height: 14px;
+            border-top: 2px solid #00687B;
+            border-left: 2px solid #00687B;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Bottom-Right Corner */
+        .achievement-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0; right: 0;
+            width: 14px; height: 14px;
+            border-bottom: 2px solid #00687B;
+            border-right: 2px solid #00687B;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Top-Right Corner */
+        .achievement-label::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 14px; height: 14px;
+            border-top: 2px solid #00687B;
+            border-right: 2px solid #00687B;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Bottom-Left Corner */
+        .achievement-label::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0;
+            width: 14px; height: 14px;
+            border-bottom: 2px solid #00687B;
+            border-left: 2px solid #00687B;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Show all 4 corner brackets on hover */
+        .achievement-item:hover::before,
+        .achievement-item:hover::after,
+        .achievement-item:hover .achievement-label::before,
+        .achievement-item:hover .achievement-label::after {
+            opacity: 1;
+        }
+
+        /* Featured card */
+        .achievement-item.achievement-featured {
+            border: none;
+            border-radius: 0 !important;
+            box-shadow: none;
         }
 
         .achievement-item:hover {
-            transform: scale(1.15);
+            transform: none;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        /* Image — sharp corners, full clarity, no radius, no animation */
+        .achievement-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            display: block;
+            border-radius: 0 !important;
+            transition: none;
+            background: transparent;
+        }
+        .achievement-item:hover img {
+            transform: none;
+        }
+
+        /* Card label — clean text below image */
+        .achievement-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #374151;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-top: 10px;
+            padding: 0 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+
+        /* Floating particles */
+        .award-particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            animation: particleDrift linear infinite;
+        }
+        @keyframes particleDrift {
+            0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.7; }
+            50%  { opacity: 0.3; }
+            100% { transform: translateY(-100px) translateX(var(--drift,15px)) scale(0); opacity: 0; }
+        }
+
+        /* ===== AWARD MODAL — RAW IMAGE ONLY (NO WHITE BG DIV, NO RADIUS) ===== */
+        .award-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 15, 25, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 99998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .award-modal-backdrop.is-open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .award-modal {
+            background: transparent;
+            border: none;
+            border-radius: 0 !important;
+            box-shadow: none;
+            max-width: 92vw;
+            max-height: 92vh;
+            position: relative;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0.92);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.25s ease;
+        }
+        .award-modal-backdrop.is-open .award-modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .award-modal-close {
+            position: absolute;
+            top: -20px; right: -20px;
+            width: 38px; height: 38px;
+            background: #ffffff;
+            border: 1px solid #94a3b8;
+            border-radius: 0 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #0f172a;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+            transition: all 0.25s ease;
+            z-index: 30;
+        }
+        .award-modal-close:hover {
+            background: #00687B;
+            color: #ffffff;
+            border-color: #00687B;
+            transform: scale(1.1);
+        }
+
+        .award-modal-img-wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 0 !important;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+
+        #award-modal-img {
+            max-width: 88vw;
+            max-height: 85vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 0 !important;
+            display: block;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-10px); }
+        }
+        .award-image:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
+        }
+
+        /* Section header */
+        .achievements-title {
+            font-family: 'Kaushan Script', cursive;
+            background: linear-gradient(135deg, #00c4df 0%, #00687B 50%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3.8rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+            text-align: center;
+            text-shadow: none;
+            filter: drop-shadow(0 0 30px rgba(0,196,223,0.35));
+        }
+
+        .achievements-subtitle {
+            font-size: 1.15rem;
+            margin-bottom: 4rem;
+            color: #94a3b8;
+            max-width: 660px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* Badge strip above title */
+        .awards-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,196,223,0.1);
+            border: 1px solid rgba(0,196,223,0.3);
+            border-radius: 100px;
+            padding: 6px 18px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #00c4df;
+            margin-bottom: 1.2rem;
+        }
+
+        .awards-badge span.dot {
+            width: 7px; height: 7px;
+            background: #00c4df;
+            border-radius: 50%;
+            animation: pulseDot 1.6s ease-in-out infinite;
+        }
+
+        @keyframes pulseDot {
+            0%,100% { transform: scale(1); opacity:1; }
+            50% { transform: scale(1.5); opacity:0.5; }
+        }
+
+        /* ===== ACHIEVEMENTS GALLERY GRID ===== */
+        .achievements-gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.4rem;
+            max-width: 1150px;
+            margin: 0 auto;
+            position: relative;
             z-index: 10;
-            border-color: #0096AD;
-            box-shadow: 0 20px 40px rgba(0, 104, 123, 0.25);
+        }
+
+        @media (max-width: 1024px) {
+            .achievements-gallery { grid-template-columns: repeat(4, 1fr); }
+            .achievements-title { font-size: 2.8rem; }
+        }
+        @media (max-width: 768px) {
+            .achievements-gallery { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+            .achievements-title { font-size: 2.2rem; }
+        }
+        @media (max-width: 480px) {
+            .achievements-gallery { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+        }
+
+        /* Card base */
+        .achievement-item {
+            position: relative;
+            cursor: pointer;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(0,196,223,0.18);
+            border-radius: 12px;
+            padding: 12px;
+            aspect-ratio: 4 / 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            backdrop-filter: blur(8px);
+        }
+
+        /* Shimmer sweep on hover */
+        .achievement-item::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent 30%, rgba(0,196,223,0.08) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+            border-radius: 12px;
+        }
+        .achievement-item:hover::before { transform: translateX(100%); }
+
+        /* Neon border glow on hover */
+        .achievement-item::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 13px;
+            background: linear-gradient(135deg, #00c4df, #764ba2, #00687B);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: -1;
+        }
+        .achievement-item:hover::after { opacity: 1; }
+
+        /* Featured card (first award) */
+        .achievement-item.achievement-featured {
+            background: rgba(0,196,223,0.07);
+            border-color: rgba(0,196,223,0.4);
+            box-shadow: 0 0 20px rgba(0,196,223,0.12), inset 0 0 20px rgba(0,196,223,0.04);
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-10px) scale(1.04);
+            z-index: 20;
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(0,196,223,0.2),
+                inset 0 0 15px rgba(0,196,223,0.05);
+            border-color: transparent;
         }
 
         .achievement-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: 85%;
+            object-fit: contain;
             display: block;
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+        }
+        .achievement-item:hover img {
+            transform: scale(1.06);
+            filter: drop-shadow(0 8px 20px rgba(0,196,223,0.3));
         }
 
-        /* Center Achievement */
-        .achievement-center {
-            width: 220px;
-            height: 220px;
-            z-index: 5;
-            border-width: 4px;
-            border-color: #764ba2;
-        }
-
-        /* Surrounding Achievements */
-        .achievement-top {
-            width: 160px;
-            height: 120px;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .achievement-top-right {
-            width: 160px;
-            height: 120px;
-            top: 15%;
-            right: 0;
-            transform: translateX(20%);
-        }
-
-        .achievement-bottom-right {
-            width: 160px;
-            height: 120px;
-            bottom: 15%;
-            right: 0;
-            transform: translateX(20%);
-        }
-
-        .achievement-bottom {
-            width: 160px;
-            height: 120px;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .achievement-bottom-left {
-            width: 160px;
-            height: 120px;
-            bottom: 15%;
-            left: 0;
-            transform: translateX(-20%);
-        }
-
-        .achievement-top-left {
-            width: 160px;
-            height: 120px;
-            top: 15%;
-            left: 0;
-            transform: translateX(-20%);
-        }
-
-        /* Achievement Labels */
+        /* Card label */
         .achievement-label {
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.95);
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #374151;
+            font-size: 0.68rem;
+            font-weight: 700;
+            color: #94a3b8;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-top: 6px;
+            transition: color 0.3s ease;
             white-space: nowrap;
-            border: 1px solid rgba(102, 126, 234, 0.2);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 100%;
+        }
+        .achievement-item:hover .achievement-label { color: #00c4df; }
+
+        /* Click hint icon */
+        .award-click-hint {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 22px; height: 22px;
+            background: rgba(0,196,223,0.15);
+            border: 1px solid rgba(0,196,223,0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             opacity: 0;
+            transform: scale(0.7);
             transition: all 0.3s ease;
+            font-size: 9px;
+            color: #00c4df;
         }
-
-        .achievement-item:hover .achievement-label {
+        .achievement-item:hover .award-click-hint {
             opacity: 1;
-            transform: translateX(-50%) translateY(-5px);
+            transform: scale(1);
         }
 
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
+        /* Floating particles (set via JS) */
+        .award-particle {
+            position: absolute;
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: rgba(0,196,223,0.6);
+            pointer-events: none;
+            animation: particleDrift linear infinite;
         }
+        @keyframes particleDrift {
+            0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0.8; }
+            50%  { opacity: 0.4; }
+            100% { transform: translateY(-120px) translateX(var(--drift,20px)) scale(0); opacity: 0; }
+        }
+
+
 
         .award-image:hover {
             transform: scale(1.05) translateY(-5px);
@@ -2308,65 +2683,182 @@
     </section>
 
     <!-- Achievements & Awards Section -->
-    <section class="achievements-section">
+    <section class="achievements-section" id="awards-section">
+
+        <!-- ===== Animated SVG Decorations (light theme) ===== -->
+        <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1;">
+
+            <!-- Top-right spinning orbit rings — visible on white -->
+            <svg style="position:absolute;top:-80px;right:-80px;opacity:0.22;" width="480" height="480" viewBox="0 0 480 480" fill="none">
+                <circle cx="240" cy="240" r="220" stroke="#0096AD" stroke-width="1.2" stroke-dasharray="14 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="40s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="240" cy="240" r="150" stroke="#00687B" stroke-width="1" stroke-dasharray="6 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 240 240" to="0 240 240" dur="26s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="240" cy="240" r="80" stroke="#667eea" stroke-width="1" stroke-dasharray="4 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 240 240" to="360 240 240" dur="14s" repeatCount="indefinite"/>
+                </circle>
+                <!-- Orbiting dot -->
+                <circle r="5" fill="#0096AD" opacity="0.7">
+                    <animateMotion dur="40s" repeatCount="indefinite">
+                        <mpath href="#aw-orbit-outer"/>
+                    </animateMotion>
+                </circle>
+                <path id="aw-orbit-outer" d="M 240,20 A 220,220 0 1 1 239.9,20" fill="none"/>
+                <circle r="3.5" fill="#667eea" opacity="0.65">
+                    <animateMotion dur="14s" repeatCount="indefinite">
+                        <mpath href="#aw-orbit-inner"/>
+                    </animateMotion>
+                </circle>
+                <path id="aw-orbit-inner" d="M 240,160 A 80,80 0 1 1 239.9,160" fill="none"/>
+            </svg>
+
+            <!-- Bottom-left orbit -->
+            <svg style="position:absolute;bottom:-90px;left:-90px;opacity:0.18;" width="380" height="380" viewBox="0 0 380 380" fill="none">
+                <circle cx="190" cy="190" r="170" stroke="#667eea" stroke-width="1" stroke-dasharray="10 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 190 190" to="0 190 190" dur="34s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="190" cy="190" r="100" stroke="#00687B" stroke-width="1.2" stroke-dasharray="5 9">
+                    <animateTransform attributeName="transform" type="rotate" from="0 190 190" to="360 190 190" dur="18s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+
+            <!-- Animated horizontal accent lines (replaces shooting stars) -->
+            <svg style="position:absolute;top:0;left:0;width:100%;height:100%;" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" fill="none">
+                <line x1="0" y1="120" x2="160" y2="125" stroke="#0096AD" stroke-width="1.5" opacity="0">
+                    <animate attributeName="x1" values="-200;1400" dur="5s" begin="0s" repeatCount="indefinite"/>
+                    <animate attributeName="x2" values="0;1600" dur="5s" begin="0s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;0.35;0" dur="5s" begin="0s" repeatCount="indefinite"/>
+                </line>
+                <line x1="0" y1="320" x2="180" y2="328" stroke="#667eea" stroke-width="1" opacity="0">
+                    <animate attributeName="x1" values="-200;1400" dur="6.5s" begin="2s" repeatCount="indefinite"/>
+                    <animate attributeName="x2" values="0;1600" dur="6.5s" begin="2s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;0.3;0" dur="6.5s" begin="2s" repeatCount="indefinite"/>
+                </line>
+                <line x1="0" y1="500" x2="200" y2="492" stroke="#00687B" stroke-width="1" opacity="0">
+                    <animate attributeName="x1" values="-200;1400" dur="7s" begin="4s" repeatCount="indefinite"/>
+                    <animate attributeName="x2" values="0;1600" dur="7s" begin="4s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="0;0.25;0" dur="7s" begin="4s" repeatCount="indefinite"/>
+                </line>
+            </svg>
+
+            <!-- Floating geometric shapes -->
+            <svg style="position:absolute;top:18%;left:5%;opacity:0.18;animation:floatGeo1 8s ease-in-out infinite;" width="56" height="56" viewBox="0 0 56 56" fill="none">
+                <polygon points="28,2 54,42 2,42" stroke="#0096AD" stroke-width="1.5" fill="none"/>
+            </svg>
+            <svg style="position:absolute;bottom:22%;right:5%;opacity:0.15;animation:floatGeo2 11s ease-in-out infinite;" width="48" height="48" viewBox="0 0 48 48" fill="none">
+                <rect x="4" y="4" width="40" height="40" stroke="#667eea" stroke-width="1.5" fill="none" transform="rotate(22 24 24)"/>
+            </svg>
+            <svg style="position:absolute;top:60%;left:3%;opacity:0.12;animation:floatGeo1 13s ease-in-out infinite reverse;" width="38" height="38" viewBox="0 0 38 38" fill="none">
+                <circle cx="19" cy="19" r="15" stroke="#00687B" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+            </svg>
+            <!-- Top-center diamond accent -->
+            <svg style="position:absolute;top:40px;left:50%;transform:translateX(-50%);opacity:0.1;" width="260" height="100" viewBox="0 0 260 100" fill="none">
+                <polyline points="130,4 254,50 130,96 6,50" stroke="#0096AD" stroke-width="1.5" fill="none">
+                    <animate attributeName="opacity" values="0.2;0.7;0.2" dur="5s" repeatCount="indefinite"/>
+                </polyline>
+                <polyline points="130,18 238,50 130,82 22,50" stroke="#667eea" stroke-width="1" fill="none">
+                    <animate attributeName="opacity" values="0.6;0.15;0.6" dur="5s" repeatCount="indefinite"/>
+                </polyline>
+            </svg>
+        </div>
+
+        <style>
+            @keyframes floatGeo1 {
+                0%,100% { transform: translateY(0) rotate(0deg); }
+                50% { transform: translateY(-16px) rotate(12deg); }
+            }
+            @keyframes floatGeo2 {
+                0%,100% { transform: translateY(0) rotate(0deg); }
+                50% { transform: translateY(-12px) rotate(-10deg); }
+            }
+        </style>
+
+        <!-- Main content -->
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="achievements-title">
-                    Our Achievements & Awards
-                </h2>
-
+                <div class="awards-badge">
+                    <span class="dot"></span>
+                    Recognized Excellence
+                </div>
+                <h2 class="achievements-title">Our Achievements &amp; Awards</h2>
                 <p class="achievements-subtitle">
                     Celebrating our journey of excellence with prestigious certifications, awards, and recognitions that
-                    validate our commitment to delivering exceptional software solutions.
+                    validate our unwavering commitment to delivering exceptional software solutions.
                 </p>
             </div>
 
             <!-- Achievements Gallery -->
-            <div class="achievements-gallery slide-in-bottom">
-                <!-- Center Achievement -->
-                <div class="achievement-item achievement-center">
-                    <img src="Awards/Classic.png" alt="Main Achievement" />
+            <div class="achievements-gallery slide-in-bottom" id="awards-gallery">
+
+                <div class="achievement-item achievement-featured" data-award-img="Awards/Classic.png" data-award-title="Excellence Award 2024">
+                    <img src="Awards/Classic.png" alt="Excellence Award" loading="lazy" />
                     <div class="achievement-label">Excellence Award 2024</div>
                 </div>
 
-                <!-- Top Achievement -->
-                <div class="achievement-item achievement-top">
-                    <img src="Awards/Warior.png" alt="Top Achievement" />
+                <div class="achievement-item" data-award-img="Awards/Warior.png" data-award-title="Industry Recognition">
+                    <img src="Awards/Warior.png" alt="Industry Recognition" loading="lazy" />
                     <div class="achievement-label">Industry Recognition</div>
                 </div>
 
-                <!-- Top Right Achievement -->
-                <div class="achievement-item achievement-top-right">
-                    <img src="Awards/award.png" alt="Certification" />
+                <div class="achievement-item" data-award-img="Awards/award.png" data-award-title="Professional Certificate">
+                    <img src="Awards/award.png" alt="Professional Certificate" loading="lazy" />
                     <div class="achievement-label">Professional Certificate</div>
                 </div>
 
-                <!-- Bottom Right Achievement -->
-                <div class="achievement-item achievement-bottom-right">
-                    <img src="Awards/Mega.png" alt="Quality Award" />
+                <div class="achievement-item" data-award-img="Awards/Mega.png" data-award-title="Quality Excellence">
+                    <img src="Awards/Mega.png" alt="Quality Excellence" loading="lazy" />
                     <div class="achievement-label">Quality Excellence</div>
                 </div>
 
-                <!-- Bottom Achievement -->
-                <div class="achievement-item achievement-bottom">
-                    <img src="Awards/MSME.png" alt="Innovation Award" />
+                <div class="achievement-item" data-award-img="Awards/MSME.png" data-award-title="Innovation Award">
+                    <img src="Awards/MSME.png" alt="Innovation Award" loading="lazy" />
                     <div class="achievement-label">Innovation Award</div>
                 </div>
 
-                <!-- Bottom Left Achievement -->
-                <div class="achievement-item achievement-bottom-left">
-                    <img src="Awards/Retentions.png" alt="Customer Satisfaction" />
+                <div class="achievement-item" data-award-img="Awards/Retentions.png" data-award-title="Customer Satisfaction">
+                    <img src="Awards/Retentions.png" alt="Customer Satisfaction" loading="lazy" />
                     <div class="achievement-label">Customer Satisfaction</div>
                 </div>
 
-                <!-- Top Left Achievement -->
-                <div class="achievement-item achievement-top-left">
-                    <img src="Awards/award2.jpg" alt="Technology Partner" />
+                <div class="achievement-item" data-award-img="Awards/award2.jpg" data-award-title="Technology Partner">
+                    <img src="Awards/award2.jpg" alt="Technology Partner" loading="lazy" />
                     <div class="achievement-label">Technology Partner</div>
                 </div>
+
+                <div class="achievement-item" data-award-img="Awards/GrowthLeader.png" data-award-title="Growth Leader">
+                    <img src="Awards/GrowthLeader.png" alt="Growth Leader" loading="lazy" />
+                    <div class="achievement-label">Growth Leader</div>
+                </div>
+
+                <div class="achievement-item" data-award-img="Awards/TransFormations.png" data-award-title="Transformations Award">
+                    <img src="Awards/TransFormations.png" alt="Transformations Award" loading="lazy" />
+                    <div class="achievement-label">Transformations Award</div>
+                </div>
+
+                <div class="achievement-item" data-award-img="Awards/GoldPartner.jpg" data-award-title="Gold Partner">
+                    <img src="Awards/GoldPartner.jpg" alt="Gold Partner" loading="lazy" />
+                    <div class="achievement-label">Gold Partner</div>
+                </div>
+
             </div>
         </div>
     </section>
+
+    <!-- ===== Award Modal ===== -->
+    <div class="award-modal-backdrop" id="award-modal-backdrop" role="dialog" aria-modal="true" aria-label="Award Preview">
+        <div class="award-modal" id="award-modal">
+            <!-- Close button -->
+            <button class="award-modal-close" id="award-modal-close" aria-label="Close award modal">
+                <i class="fas fa-times"></i>
+            </button>
+            <!-- Image -->
+            <div class="award-modal-img-wrap">
+                <img id="award-modal-img" src="" alt="Award Preview" />
+            </div>
+        </div>
+    </div>
 
     <!-- Modern High-Tech Animated Footer -->
     <footer
@@ -2852,6 +3344,74 @@
                 console.log('Pioneer Software Solutions - About Page Loaded Successfully');
             });
         }
+
+        // ===== Award Modal Logic =====
+        (function () {
+            const backdrop = document.getElementById('award-modal-backdrop');
+            const modalImg = document.getElementById('award-modal-img');
+            const closeBtn = document.getElementById('award-modal-close');
+
+            function openModal(imgSrc, altText) {
+                if (!backdrop || !modalImg) return;
+                modalImg.src = imgSrc;
+                modalImg.alt = altText || 'Award Preview';
+                backdrop.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                if (!backdrop) return;
+                backdrop.classList.remove('is-open');
+                document.body.style.overflow = '';
+                setTimeout(() => { if (modalImg) modalImg.src = ''; }, 350);
+            }
+
+            // Card click
+            document.querySelectorAll('.achievement-item').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    const src = card.dataset.awardImg || card.querySelector('img')?.src || '';
+                    const title = card.dataset.awardTitle || 'Award Preview';
+                    openModal(src, title);
+                });
+            });
+
+            // Close button
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+            // Click outside modal box
+            if (backdrop) {
+                backdrop.addEventListener('click', function (e) {
+                    if (e.target === backdrop) closeModal();
+                });
+            }
+
+            // Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && backdrop && backdrop.classList.contains('is-open')) closeModal();
+            });
+
+            // ===== Floating particles in awards section =====
+            const section = document.getElementById('awards-section');
+            if (section) {
+                for (let i = 0; i < 18; i++) {
+                    const p = document.createElement('div');
+                    p.className = 'award-particle';
+                    const size = Math.random() * 3 + 2;
+                    p.style.cssText = [
+                        'width:'  + size + 'px',
+                        'height:' + size + 'px',
+                        'left:'   + Math.random() * 100 + '%',
+                        'top:'    + (20 + Math.random() * 60) + '%',
+                        '--drift:' + (Math.random() * 40 - 20) + 'px',
+                        'animation-duration:' + (4 + Math.random() * 6) + 's',
+                        'animation-delay:'    + (Math.random() * 5)     + 's',
+                        'opacity:' + (0.3 + Math.random() * 0.5),
+                        'background: ' + (Math.random() > 0.5 ? 'rgba(0,104,123,0.5)' : 'rgba(0,150,173,0.5)')
+                    ].join(';');
+                    section.appendChild(p);
+                }
+            }
+        })();
     </script>
     <script src="Assests/inspectblock.js"></script>
 </body>
