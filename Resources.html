@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Resources - Pioneer Software Solutions Pvt Ltd</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- SEO -->
+    <meta charset="UTF-8" />
+    <meta name="description"
+        content="Pioneer Software Solutions Pvt Ltd offers cutting-edge software solutions for businesses, including custom software development, web application development, and mobile app development. Contact us to transform your ideas into reality." />
+    <meta name="keywords"
+        content="Pioneer Software Solutions, software solutions, custom software development, web application development, mobile app development" />
+    <meta name="author" content="Pioneer Software Solutions Pvt Ltd" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="og:title" property="og:title" content="Pioneer Software Solutions Pvt Ltd" />
+    <meta name="og:description" property="og:description"
+        content="Pioneer Software Solutions Pvt Ltd offers cutting-edge software solutions for businesses, including custom software development, web application development, and mobile app development. Contact us to transform your ideas into reality." />
+    <meta name="og:image" property="og:image" content="https://www.pioneersoftware.com.np/img/about.png" />
+    <meta name="og:url" property="og:url" content="www.pioneersoftware.com.np" />
+    <meta name="og:type" property="og:type" content="website" />
+    <meta name="og:site_name" property="og:site_name" content="Pioneer Software Solutions Pvt Ltd" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Pioneer Software Solutions Pvt Ltd" />
+    <meta name="twitter:description"
+        content="Pioneer Software Solutions Pvt Ltd offers cutting-edge software solutions for businesses, including custom software development, web application development, and mobile app development. Contact us to transform your ideas into reality." />
+    <meta name="twitter:image" content="https://www.pioneersoftware.com.np/img/award2.jpg" />
+    <meta name="twitter:site" content="www.pioneersoftware.com.np" />
+    <meta name="twitter:creator" content="www.pioneersoftware.com.np" />
+
+    <!-- Favicon -->
+    <link href="img/FinalLogo.png" rel="icon" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link href="Assests/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- YouTube-style Top Progress Bar -->
+    <div class="top-progress-bar" id="topProgressBar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Enhanced Navigation -->
+    <nav class="nav-enhanced fixed w-full top-0">
+        <div class="nav-container">
+            <!-- Logo Section (Left) -->
+            <a href="index.html" class="logo-section">
+                <img src="img/FinalLogo.png" alt="Pioneer Software Solutions"
+                    class="nav-logo-img h-11 max-h-12 w-auto object-contain" />
+            </a>
+
+            <!-- Navigation Menu (Right) -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>About</span>
+                </a>
+                <div class="relative">
+                    <button class="nav-item dropdown-trigger" id="products-dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        <span>Products</span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-3 h-3 text-[#00687B] transition-transform ml-1 stroke-current" id="dropdown-arrow"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-enhanced" id="dropdown-menu">
+                        <div class="p-0">
+                            <a href="tallycusto.html" class="dropdown-item">
+                                <i class="fas fa-cogs text-orange-500"></i>
+                                <span>Tally Customization</span>
+                            </a>
+                            <a href="behave.html" class="dropdown-item">
+                                <i class="fas fa-database text-green-500"></i>
+                                <span>Distribution & Management System</span>
+                            </a>
+                            <a href="webdev.html" class="dropdown-item">
+                                <i class="fas fa-globe text-blue-500"></i>
+                                <span>Custom Web Based Application</span>
+                            </a>
+                            <a href="tallyprime.html" class="dropdown-item">
+                                <i class="fas fa-cube text-purple-500"></i>
+                                <span>Tally Prime</span>
+                            </a>
+                            <a href="easybill.html" class="dropdown-item">
+                                <i class="fas fa-file-invoice text-red-500"></i>
+                                <span>Easy Bill – Billing Management Solution</span>
+                            </a>
+                            <a href="Oval9.html" class="dropdown-item">
+                                <i class="fas fa-brain text-[#00687B]"></i>
+                                <span>Oval9 ERP – AI-Powered Business Management</span>
+                            </a>
+                            <a href="satreport.html" class="dropdown-item">
+                                <i class="fas fa-file-alt text-indigo-500"></i>
+                                <span>Customized Statutory Report</span>
+                            </a>
+                            <a href="biz.html" class="dropdown-item">
+                                <i class="fas fa-chart-line text-teal-500"></i>
+                                <span>Biz Analyst</span>
+                            </a>
+                            <a href="tallycloud.html" class="dropdown-item">
+                                <i class="fa fa-cloud text-cyan-500"></i>
+                                <span>Tally On Cloud Service</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="clints.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span>Clients</span>
+                </a>
+                <a href="Resources.html" class="nav-item active">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span>Resources</span>
+                </a>
+                <a href="downloads.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Downloads</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    <polyline points="9 22 9 12 15 12 15 22" />
+                </svg>
+                Home
+            </a>
+            <a href="about.html" class="mobile-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="16" x2="12" y2="12" />
+                    <line x1="12" y1="8" x2="12.01" y2="8" />
+                </svg>
+                About
+            </a>
+            <a href="clints.html" class="mobile-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+                Clients
+            </a>
+            <div class="mobile-nav-item" style="color:#667eea;font-weight:600">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                </svg>
+                Products
+            </div>
+            <a href="tallycusto.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M12 20h9" />
+                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                </svg>
+                Tally Customization
+            </a>
+            <a href="behave.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <ellipse cx="12" cy="5" rx="9" ry="3" />
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+                Distribution & Management
+            </a>
+            <a href="webdev.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="2" y1="12" x2="22" y2="12" />
+                    <path
+                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                </svg>
+                Web Development
+            </a>
+            <a href="tallyprime.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#a855f7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path
+                        d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                </svg>
+                Tally Prime
+            </a>
+            <a href="easybill.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#ef4444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                </svg>
+                Easy Bill
+            </a>
+            <a href="Oval9.html" class="mobile-nav-item ml-4">
+                <i class="fas fa-brain text-[#00687B] mr-2"></i>
+                Oval9 ERP
+            </a>
+            <a href="satreport.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#6366f1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+                    <polyline points="13 2 13 9 20 9" />
+                </svg>
+                Statutory Reports
+            </a>
+            <a href="biz.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#14b8a6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                </svg>
+                Biz Analyst
+            </a>
+            <a href="tallycloud.html" class="mobile-nav-item ml-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                    stroke="#06b6d4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
+                </svg>
+                Tally Cloud
+            </a>
+            <a href="Resources.html" class="mobile-nav-item active">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                </svg>
+                Resources
+            </a>
+            <a href="downloads.html" class="mobile-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                </svg>
+                Downloads
+            </a>
+            <a href="contact.html" class="mobile-nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    style="display:inline;vertical-align:middle;margin-right:8px">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.77 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 overflow-hidden" style="background: linear-gradient(135deg, #071527 0%, #003642 50%, #00687B 100%); margin-top: 60px;">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <path d="M0 0 L100 100 M100 0 L0 100" stroke="white" stroke-width="0.5" />
+            </svg>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00d9b0]/20 text-[#00d9b0] text-sm font-semibold tracking-wide uppercase mb-4 border border-[#00d9b0]/30">
+                <i class="fas fa-play-circle"></i> Knowledge Hub & Video Guides
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">
+                Pioneer Software Resources
+            </h1>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto mb-6 text-justify text-justify-inter-word">
+                Explore official video tutorials, step by step technical walkthroughs, and helpful guides designed to help your business master TallyPrime features, report views, auto backup configuration, and banking setups.
+            </p>
+            <div class="flex items-center justify-center gap-2 text-sm text-slate-400 font-medium">
+                <a href="index.html" class="hover:text-white transition-colors">Home</a>
+                <i class="fas fa-chevron-right text-xs text-[#00d9b0]"></i>
+                <span class="text-[#00d9b0]">Resources</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Featured Video Section -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-teal-100 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                    <i class="fab fa-youtube text-red-600"></i> Featured Video Guide
+                </div>
+                <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
+                    Configuring Tally Auto Backup on Tally Drive or Local Machine
+                </h2>
+                <div class="w-20 h-1 bg-[#00687B] mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600 max-w-3xl mx-auto text-justify text-justify-inter-word">
+                    Watch our step by step video guide explaining how to set up automated background backups for TallyPrime. Learn how to protect your accounting data across local storage drives and encrypted cloud servers seamlessly.
+                </p>
+            </div>
+
+            <!-- Featured Player Box with Instant Click-to-Play Facade -->
+            <div class="max-w-4xl mx-auto">
+                <div class="yt-lazy-player relative w-full overflow-hidden rounded-2xl shadow-2xl border-2 border-[#00687B]/20 bg-black cursor-pointer group" style="padding-top: 56.25%;" data-id="eF-IW2-8W6w" data-title="Configuring Tally Auto Backup on Tally Drive or Local Machine">
+                    <img src="https://img.youtube.com/vi/eF-IW2-8W6w/sddefault.jpg" alt="Configuring Tally Auto Backup thumbnail" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" loading="lazy" />
+                    <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-red-600/90 group-hover:bg-red-600 text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-all duration-300">
+                            <i class="fas fa-play text-2xl sm:text-3xl ml-1"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Video Tutorials Grid Section -->
+    <section class="py-16 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-[#00687B] font-bold text-sm uppercase tracking-wider block mb-2">Video Library</span>
+                <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-3">
+                    More TallyPrime Helpful Video Tutorials
+                </h2>
+                <div class="w-20 h-1 bg-[#00687B] mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600 max-w-2xl mx-auto text-justify text-justify-inter-word">
+                    Browse our curated playlist of video tutorials to learn how to navigate dashboards, customize report views, manage cheque books, and configure email servers in TallyPrime. Click any video to play.
+                </p>
+            </div>
+
+            <!-- 2x2 Video Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                
+                <!-- Video 1 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                    <div class="yt-lazy-player relative w-full overflow-hidden bg-black cursor-pointer group" style="padding-top: 56.25%;" data-id="2eakmQ5ixqk" data-title="How to Access Dashboard in TallyPrime | TallyHelp">
+                        <img src="https://img.youtube.com/vi/2eakmQ5ixqk/hqdefault.jpg" alt="How to Access Dashboard in TallyPrime thumbnail" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-red-600/90 group-hover:bg-red-600 text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-teal-50 text-[#00687B] text-xs font-bold mb-2">
+                                Dashboard & Analytics
+                            </span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                How to Access Dashboard in TallyPrime | TallyHelp
+                            </h3>
+                            <p class="text-slate-600 text-sm text-justify text-justify-inter-word">
+                                Discover how to navigate the interactive dashboard in TallyPrime to gain instant visual summaries of sales, cash flow, purchase performance, and financial metrics.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                    <div class="yt-lazy-player relative w-full overflow-hidden bg-black cursor-pointer group" style="padding-top: 56.25%;" data-id="WmeUSJTRtMw" data-title="How to Save Views, Set/Alter Default Views & Delete Views for Reports in TallyPrime">
+                        <img src="https://img.youtube.com/vi/WmeUSJTRtMw/hqdefault.jpg" alt="How to Save Views in TallyPrime thumbnail" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-red-600/90 group-hover:bg-red-600 text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-teal-50 text-[#00687B] text-xs font-bold mb-2">
+                                Reporting & Customization
+                            </span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                How to Save Views, Set/Alter Default Views & Delete Views for Reports in TallyPrime
+                            </h3>
+                            <p class="text-slate-600 text-sm text-justify text-justify-inter-word">
+                                Learn how to personalize your reporting experience in TallyPrime by saving custom report configurations, setting default layouts, and modifying saved views.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                    <div class="yt-lazy-player relative w-full overflow-hidden bg-black cursor-pointer group" style="padding-top: 56.25%;" data-id="C9MqgYuOYQA" data-title="How to Send E-mails from TallyPrime Using Gmail Servers">
+                        <img src="https://img.youtube.com/vi/C9MqgYuOYQA/hqdefault.jpg" alt="How to Send E-mails from TallyPrime thumbnail" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-red-600/90 group-hover:bg-red-600 text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-teal-50 text-[#00687B] text-xs font-bold mb-2">
+                                Email & Communication
+                            </span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                How to Send E-mails from TallyPrime Using Gmail Servers
+                            </h3>
+                            <p class="text-slate-600 text-sm text-justify text-justify-inter-word">
+                                Follow this video guide to configure Gmail SMTP settings in TallyPrime, enabling you to dispatch invoices, customer statements, and receipts directly from the software.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col">
+                    <div class="yt-lazy-player relative w-full overflow-hidden bg-black cursor-pointer group" style="padding-top: 56.25%;" data-id="2As_fEA0n3c" data-title="How to Manage Cheque Books in TallyPrime">
+                        <img src="https://img.youtube.com/vi/2As_fEA0n3c/hqdefault.jpg" alt="How to Manage Cheque Books thumbnail" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90" loading="lazy" />
+                        <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-red-600/90 group-hover:bg-red-600 text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300">
+                                <i class="fas fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <span class="inline-block px-2.5 py-1 rounded bg-teal-50 text-[#00687B] text-xs font-bold mb-2">
+                                Banking & Finance
+                            </span>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">
+                                How to Manage Cheque Books in TallyPrime
+                            </h3>
+                            <p class="text-slate-600 text-sm text-justify text-justify-inter-word">
+                                Master banking management in TallyPrime by learning how to configure cheque registers, track cheque ranges, print cheques, and reconcile bank transactions accurately.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Knowledge Resources Call to Action Section -->
+    <section class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <!-- Bottom More Resources Call To Action -->
+            <div class="p-8 sm:p-12 rounded-2xl bg-gradient-to-br from-[#071527] to-[#004f5e] text-white shadow-xl max-w-4xl mx-auto relative overflow-hidden">
+                <div class="relative z-10">
+                    <h3 class="text-2xl sm:text-3xl font-extrabold mb-3">
+                        Looking for Official Tally Articles & Tax Updates?
+                    </h3>
+                    <p class="text-slate-300 max-w-2xl mx-auto mb-8 text-sm sm:text-base text-justify text-justify-inter-word">
+                        Access official Tally Solutions blogs covering accounting best practices, VAT tax compliance tips, inventory management strategies, and new software releases.
+                    </p>
+                    <div>
+                        <a href="https://tallysolutions.com/blogs/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gradient-to-r from-[#00687B] to-[#004f5e] hover:from-[#008096] hover:to-[#00687B] text-white font-bold text-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 text-decoration-none">
+                            <span>More Resources</span>
+                            <i class="fas fa-external-link-alt text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lazy Video Player Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lazyPlayers = document.querySelectorAll('.yt-lazy-player');
+            lazyPlayers.forEach(function(player) {
+                player.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-id');
+                    const videoTitle = this.getAttribute('data-title') || 'YouTube Video';
+                    const iframe = document.createElement('iframe');
+                    iframe.setAttribute('src', 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1');
+                    iframe.setAttribute('title', videoTitle);
+                    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+                    iframe.setAttribute('allowfullscreen', 'true');
+                    iframe.className = 'absolute top-0 left-0 w-full h-full border-0';
+                    this.innerHTML = '';
+                    this.appendChild(iframe);
+                });
+            });
+        });
+    </script>
+
+<!-- Modern High-Tech Animated Footer -->
+    <footer
+        style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+
+        <!-- Animated Background SVG Decorators -->
+        <div
+            style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <!-- Rotating Tech Orbit Top Right -->
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420"
+                viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210"
+                        dur="30s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210"
+                        dur="20s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="210" cy="210" r="70" stroke="#00d9b0" stroke-width="2" stroke-dasharray="4 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210"
+                        dur="12s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+            <!-- Pulsing Orbit Bottom Left -->
+            <svg style="position:absolute;bottom:-60px;left:-60px;opacity:0.1;" width="360" height="360"
+                viewBox="0 0 360 360" fill="none">
+                <circle cx="180" cy="180" r="150" stroke="#00687B" stroke-width="1.5" stroke-dasharray="10 12">
+                    <animateTransform attributeName="transform" type="rotate" from="360 180 180" to="0 180 180"
+                        dur="25s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="180" cy="180" r="90" stroke="#00c4df" stroke-width="1" stroke-dasharray="6 8">
+                    <animateTransform attributeName="transform" type="rotate" from="0 180 180" to="360 180 180"
+                        dur="15s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+            <!-- Tech Grid Overlay Pattern -->
+            <div
+                style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;">
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;"
+                class="footer-grid-layout">
+
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions"
+                            style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;text-justify:inter-word;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting
+                        firm. We specialize in automated accounting systems, custom web solutions, and distribution
+                        management since 2010.
+                    </p>
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank"
+                            style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"
+                            class="ft-social-btn">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#"
+                            style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"
+                            class="ft-social-btn">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#"
+                            style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"
+                            class="ft-social-btn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#"
+                            style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"
+                            class="ft-social-btn">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4
+                        style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span
+                            style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-chevron-right"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-chevron-right"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-chevron-right"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-chevron-right"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.9rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-chevron-right"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Solutions -->
+                <div>
+                    <h4
+                        style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Services
+                        <span
+                            style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="tallycusto.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-cog"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally
+                                Customization</a></li>
+                        <li><a href="behave.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-database"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution
+                                Management</a></li>
+                        <li><a href="webdev.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-globe"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web
+                                Applications</a></li>
+                        <li><a href="tallyprime.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-cube"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Prime
+                                Solutions</a></li>
+                        <li><a href="easybill.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-file-invoice"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a>
+                        </li>
+                        <li><a href="tallycloud.html"
+                                style="color:#94a3b8;text-decoration:none;font-size:0.88rem;transition:color 0.3s ease;"
+                                class="ft-link"><i class="fas fa-cloud"
+                                    style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally On Cloud</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact & Location -->
+                <div>
+                    <h4
+                        style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Contact &amp; Location
+                        <span
+                            style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+
+                    <div style="display:flex;flex-direction:column;gap:1.2rem;">
+                        <div style="display:flex;gap:0.75rem;align-items:flex-start;">
+                            <i class="fas fa-map-marker-alt" style="color:#00d9b0;margin-top:4px;font-size:0.9rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;line-height:1.5;">
+                                Naag Pokhari, Kathmandu, Nepal<br>
+                                <span style="color:#64748b;font-size:0.78rem;">(80 meter north from Hotel
+                                    Marriott)</span>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-phone-alt" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;font-family:'JetBrains Mono',monospace;">
+                                +977-1-4533234 / 4533434
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:0.75rem;align-items:center;">
+                            <i class="fas fa-envelope" style="color:#00d9b0;font-size:0.85rem;"></i>
+                            <div style="font-size:0.85rem;color:#94a3b8;">
+                                info@pioneersoftware.com.np
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom Border & Copyright -->
+            <div
+                style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    © Since 2010 <strong style="color:#cbd5e1;">Pioneer Software Solutions Pvt Ltd</strong>. All Rights
+                    Reserved.
+                </p>
+                <div style="display:flex;gap:1.5rem;font-size:0.8rem;color:#64748b;">
+                    <a href="about.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Company
+                        Profile</a>
+                    <span>•</span>
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Support
+                        Hotline</a>
+                    <span>•</span>
+                    <a href="tallycusto.html" style="color:#64748b;text-decoration:none;" class="ft-sublink">Tally
+                        Customization</a>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .ft-social-btn:hover {
+                background: #00687B !important;
+                color: #ffffff !important;
+                border-color: #00d9b0 !important;
+                transform: translateY(-3px);
+            }
+
+            .ft-link:hover {
+                color: #00d9b0 !important;
+                padding-left: 4px;
+            }
+
+            .ft-sublink:hover {
+                color: #00d9b0 !important;
+            }
+
+            @media (max-width: 1024px) {
+                .footer-grid-layout {
+                    grid-template-columns: 1fr 1fr !important;
+                }
+            }
+
+            @media (max-width: 640px) {
+                .footer-grid-layout {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+    </footer>
+
+    <!-- Enhanced Floating Contact -->
+    <div class="floating-contact">
+        <div class="contact-trigger" id="contactTrigger">
+            <img src="img/whatsapp.png" alt="WhatsApp" class="w-10 h-10" />
+        </div>
+
+        <div class="contact-popup" id="contactPopup">
+            <div class="contact-popup-header">
+                <h3 class="text-xl font-bold flex items-center justify-center gap-2">
+                    <i class="fas fa-users"></i>
+                    Contact Our Team
+                </h3>
+                <p class="text-sm opacity-90 mt-1">Click on any contact to call directly</p>
+            </div>
+
+            <div class="contact-popup-body">
+                <div class="contact-person" onclick="callNumber('+9779851141375')">
+                    <img src="Team/Images/Anil.jpg" class="contact-avatar">
+                    <div class="contact-details flex-1">
+                        <h4>Anil Munakarmi</h4>
+                    </div>
+                    <div class="contact-phone">+977-985-1141375</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533801')">
+                    <img src="Team/Images/mani.jpg" class="contact-avatar">
+                    <div class="contact-details flex-1">
+                        <h4>Mani Maharjan</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533801</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533802')">
+                    <img src="Team/Images/Suman.jpg" class="contact-avatar">
+                    <div class="contact-details flex-1">
+                        <h4>Suman Mool</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533802</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533803')">
+                    <img src="Team/Images/Ranjit.jpg" class="contact-avatar">
+                    <div class="contact-details flex-1">
+                        <h4>Ranjit Bata</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533803</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533804')">
+                    <img src="Team/Images/Ashish.png" class="contact-avatar">
+                    <div class="contact-details flex-1">
+                        <h4>Ashish Shrestha</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533804</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533805')">
+                    <img src="Team/Images/Nhuja.png" class="contact-avatar">
+                    <div class="contact-details flex-1">
+                        <h4>Nhuja Maharjan</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533805</div>
+                </div>
+
+                <div class="contact-person" onclick="callNumber('+9779805533806')">
+                    <img src="Team/Images/Om.jpg" class="contact-avatar">
+                    <div class="contact-details flex-1">
+                        <h4>Om Pandey</h4>
+                    </div>
+                    <div class="contact-phone">+977-980-5533806</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function callNumber(phoneNumber) {
+            window.location.href = 'tel:' + phoneNumber;
+        }
+    </script>
+    <script src="Assests/index.js"></script>
+    <script src="Assests/inspectblock.js"></script>
+</body>
+
+</html>
