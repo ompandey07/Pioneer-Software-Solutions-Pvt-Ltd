@@ -52,14 +52,21 @@
     }
     </script>
 
+    <!-- Performance Optimizations & Preconnects -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+    <link rel="preload" as="image" href="img/NewHeroSection.webp" type="image/webp" fetchpriority="high" />
+
     <!-- Favicon -->
-    <link href="img/FinalLogo.png" rel="icon" />
+    <link href="img/FinalLogo.webp" rel="icon" type="image/webp" />
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <!-- Font Awesome (Non-blocking) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" /></noscript>
 
     <!-- Google Fonts -->
     <link
@@ -81,7 +88,7 @@
         <div class="nav-container">
             <!-- Logo Section (Left) -->
             <a href="index.html" class="logo-section">
-                <img src="img/FinalLogo.png" alt="Pioneer Software Solutions"
+                <img src="img/FinalLogo.webp" alt="Pioneer Software Solutions" fetchpriority="high" decoding="async"
                     class="nav-logo-img h-11 max-h-12 w-auto object-contain" />
             </a>
 
@@ -458,7 +465,7 @@
                         </svg>
 
                         <!-- Original hero image — untouched -->
-                        <img src="img/NewHeroSection.png" alt="Software Solutions"
+                        <img src="img/NewHeroSection.webp" alt="Software Solutions" fetchpriority="high" decoding="async"
                             class="hero-img-main max-w-3xl lg:max-w-5xl w-full relative" style="z-index:1;" />
 
                     </div>
@@ -547,7 +554,7 @@
                         <!-- Sharp Corner Brackets — bottom-right -->
                         <div style="position:absolute;bottom:-6px;right:-6px;width:18px;height:18px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;"></div>
 
-                        <img src="Awards/TallyGoldPartner.png" alt="Tally Gold Partner"
+                        <img src="Awards/TallyGoldPartner.webp" loading="lazy" decoding="async" alt="Tally Gold Partner"
                             style="width:100%;height:auto;display:block;object-fit:cover;" />
 
                         <!-- Floating Badge — bottom-left (like about.html) -->
@@ -701,7 +708,7 @@
                         <!-- Corner brackets: bottom-right -->
                         <div style="position:absolute;bottom:-7px;right:-7px;width:20px;height:20px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;z-index:3;"></div>
 
-                        <img src="img/WorkIntro.png" alt="Trusted Tally Solutions Partner - Pioneer Software" style="width:100%;height:auto;display:block;object-fit:cover;" />
+                        <img src="img/WorkIntro.webp" loading="lazy" decoding="async" alt="Trusted Tally Solutions Partner - Pioneer Software" style="width:100%;height:auto;display:block;object-fit:cover;" />
 
                         <!-- Floating badge: bottom-left -->
                         <div style="position:absolute;bottom:-18px;left:-18px;background:#00687B;color:#fff;padding:0.7rem 1.1rem;z-index:4;box-shadow:4px 4px 0px rgba(0,82,98,0.25);">
@@ -829,7 +836,7 @@
                         </circle>
                     </svg>
 
-                    <img id="svcPanelIcon" src="img/Products/customize.png" alt="Service"
+                    <img id="svcPanelIcon" src="img/Products/customize.webp" loading="lazy" decoding="async" alt="Service"
                         style="height:64px;width:auto;max-width:180px;object-fit:contain;align-self:flex-start;display:block;margin-bottom:0.5rem;" />
                     <div>
                         <h3 id="svcPanelTitle" style="font-size:1.4rem;font-weight:700;color:#0f172a;margin:0 0 0.5rem 0;">
@@ -879,7 +886,7 @@
                         data-f1="Custom Reports &amp; Analytics" data-f2="Automated Data Entry"
                         data-f3="Third-party System Integration" data-f4="Advanced Security Features"
                         style="background:#f0f9fb;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;border-bottom:3px solid #00687B;">
-                        <img src="img/Products/customize.png" alt="Tally Customization"
+                        <img src="img/Products/customize.webp" loading="lazy" decoding="async" alt="Tally Customization"
                             style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#00687B;margin:0 0 0.35rem 0;">Tally
                             Customization</h4>
@@ -894,7 +901,7 @@
                         data-f1="Custom Web Applications" data-f2="Responsive Design" data-f3="E-Commerce Solutions"
                         data-f4="API Integration"
                         style="background:#ffffff;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-                        <img src="img/Products/WebDevelopment.png" alt="Web Dev"
+                        <img src="img/Products/WebDevelopment.webp" loading="lazy" decoding="async" alt="Web Dev"
                             style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#0f172a;margin:0 0 0.35rem 0;">Web Development
                         </h4>
@@ -909,7 +916,7 @@
                         data-f1="GST &amp; Compliance Ready" data-f2="Real-time Reports" data-f3="Multi-company Support"
                         data-f4="Cloud Backup"
                         style="background:#ffffff;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-                        <img src="img/Products/TallyNew.png" alt="Tally Prime"
+                        <img src="img/Products/TallyNew.webp" loading="lazy" decoding="async" alt="Tally Prime"
                             style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#0f172a;margin:0 0 0.35rem 0;">Tally Prime</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Modern ERP for accounting
@@ -922,7 +929,7 @@
                         data-icon="img/Products/EasyBill.png" data-link="easybill.html" data-f1="Invoice Generation"
                         data-f2="Payment Tracking" data-f3="Financial Reports" data-f4="Multi-branch Support"
                         style="background:#ffffff;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-                        <img src="img/Products/EasyBill.png" alt="EasyBill"
+                        <img src="img/Products/EasyBill.webp" loading="lazy" decoding="async" alt="EasyBill"
                             style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#0f172a;margin:0 0 0.35rem 0;">EasyBill</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Smart billing &amp; invoice
@@ -935,7 +942,7 @@
                         data-icon="img/Products/creport.png" data-link="satreport.html" data-f1="Statutory Compliance"
                         data-f2="Custom Report Design" data-f3="Tally Integration" data-f4="VAT &amp; Tax Reports"
                         style="background:#ffffff;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-                        <img src="img/Products/creport.png" alt="Reports"
+                        <img src="img/Products/creport.webp" loading="lazy" decoding="async" alt="Reports"
                             style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#0f172a;margin:0 0 0.35rem 0;">Statutory Reports
                         </h4>
@@ -949,7 +956,7 @@
                         data-icon="img/Products/biz.png" data-link="biz.html" data-f1="Real-time Tally Data"
                         data-f2="Sales Analytics" data-f3="Performance Dashboard" data-f4="Mobile Access"
                         style="background:#ffffff;padding:1.5rem;cursor:pointer;position:relative;overflow:hidden;">
-                        <img src="img/Products/biz.png" alt="Biz Analyst"
+                        <img src="img/Products/biz.webp" loading="lazy" decoding="async" alt="Biz Analyst"
                             style="width:36px;height:36px;object-fit:contain;margin-bottom:0.75rem;" />
                         <h4 style="font-size:0.9rem;font-weight:700;color:#0f172a;margin:0 0 0.35rem 0;">Biz Analyst</h4>
                         <p style="font-size:0.78rem;color:#64748b;margin:0;line-height:1.5;">Real-time business
@@ -1075,7 +1082,7 @@
                         style="position:absolute;bottom:-12px;right:-12px;width:60px;height:60px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;z-index:3;">
                     </div>
 
-                    <img src="img/About.png" alt="About Pioneer Software Solutions"
+                    <img src="img/About.webp" loading="lazy" decoding="async" alt="About Pioneer Software Solutions"
                         style="width:100%;display:block;position:relative;z-index:1;" />
 
                     <!-- Floating stat badge — top right -->
@@ -1254,7 +1261,7 @@
                     <div style="position:absolute;bottom:-6px;right:-6px;width:18px;height:18px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;z-index:3;"></div>
 
                     <div style="position:relative;overflow:hidden;background:#f8fafc;border:1px solid #e2e8f0;">
-                        <img src="Awards/GrowthLeader.png" alt="Growth Leader Award" style="width:100%;height:auto;display:block;object-fit:cover;transition:transform 0.4s ease;" class="award-img" />
+                        <img src="Awards/GrowthLeader.webp" loading="lazy" decoding="async" alt="Growth Leader Award" style="width:100%;height:auto;display:block;object-fit:cover;transition:transform 0.4s ease;" class="award-img" />
                     </div>
 
                     <div style="padding:1.25rem 0.5rem 0.5rem 0.5rem;text-align:center;">
@@ -1275,7 +1282,7 @@
                     <div style="position:absolute;bottom:-6px;right:-6px;width:18px;height:18px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;z-index:3;"></div>
 
                     <div style="position:relative;overflow:hidden;background:#f8fafc;border:1px solid #e2e8f0;">
-                        <img src="Awards/TallyGoldPartner.png" alt="Tally Gold Partner Certification" style="width:100%;height:auto;display:block;object-fit:cover;transition:transform 0.4s ease;" class="award-img" />
+                        <img src="Awards/TallyGoldPartner.webp" loading="lazy" decoding="async" alt="Tally Gold Partner Certification" style="width:100%;height:auto;display:block;object-fit:cover;transition:transform 0.4s ease;" class="award-img" />
                     </div>
 
                     <div style="padding:1.25rem 0.5rem 0.5rem 0.5rem;text-align:center;">
@@ -1296,7 +1303,7 @@
                     <div style="position:absolute;bottom:-6px;right:-6px;width:18px;height:18px;border-bottom:3px solid #00687B;border-right:3px solid #00687B;z-index:3;"></div>
 
                     <div style="position:relative;overflow:hidden;background:#f8fafc;border:1px solid #e2e8f0;">
-                        <img src="Awards/TransFormations.png" alt="Transformation Champion Award" style="width:100%;height:auto;display:block;object-fit:cover;transition:transform 0.4s ease;" class="award-img" />
+                        <img src="Awards/TransFormations.webp" loading="lazy" decoding="async" alt="Transformation Champion Award" style="width:100%;height:auto;display:block;object-fit:cover;transition:transform 0.4s ease;" class="award-img" />
                     </div>
 
                     <div style="padding:1.25rem 0.5rem 0.5rem 0.5rem;text-align:center;">
@@ -1356,7 +1363,7 @@
                     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
                         <div
                             style="width:42px;height:42px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <img src="img/whyus/expert.png" alt="Expertise"
+                            <img src="img/whyus/expert.webp" loading="lazy" decoding="async" alt="Expertise"
                                 style="width:24px;height:24px;filter:brightness(0) invert(1);object-fit:contain;" />
                         </div>
                         <span
@@ -1376,7 +1383,7 @@
                     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
                         <div
                             style="width:42px;height:42px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <img src="img/whyus/customize.png" alt="Customized"
+                            <img src="img/whyus/customize.webp" loading="lazy" decoding="async" alt="Customized"
                                 style="width:24px;height:24px;filter:brightness(0) invert(1);object-fit:contain;" />
                         </div>
                         <span
@@ -1396,7 +1403,7 @@
                     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
                         <div
                             style="width:42px;height:42px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <img src="img/whyus/dialogue.png" alt="Communication"
+                            <img src="img/whyus/dialogue.webp" loading="lazy" decoding="async" alt="Communication"
                                 style="width:24px;height:24px;filter:brightness(0) invert(1);object-fit:contain;" />
                         </div>
                         <span
@@ -1415,7 +1422,7 @@
                     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
                         <div
                             style="width:42px;height:42px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <img src="img/whyus/cost.png" alt="Cost"
+                            <img src="img/whyus/cost.webp" loading="lazy" decoding="async" alt="Cost"
                                 style="width:24px;height:24px;filter:brightness(0) invert(1);object-fit:contain;" />
                         </div>
                         <span
@@ -1435,7 +1442,7 @@
                     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
                         <div
                             style="width:42px;height:42px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <img src="img/whyus/customer-service.png" alt="Support"
+                            <img src="img/whyus/customer-service.webp" loading="lazy" decoding="async" alt="Support"
                                 style="width:24px;height:24px;filter:brightness(0) invert(1);object-fit:contain;" />
                         </div>
                         <span
@@ -1454,7 +1461,7 @@
                     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
                         <div
                             style="width:42px;height:42px;background:#00687B;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <img src="img/whyus/timely.png" alt="Timely"
+                            <img src="img/whyus/timely.webp" loading="lazy" decoding="async" alt="Timely"
                                 style="width:24px;height:24px;filter:brightness(0) invert(1);object-fit:contain;" />
                         </div>
                         <span
@@ -1671,7 +1678,7 @@
 
                         <!-- Image Wrap -->
                         <div style="position:relative;overflow:hidden;border-radius:0;background:#ffffff;border:1px solid #e2e8f0;">
-                            <img src="Awards/CertifiedHero.png" alt="Technology We Know. Solutions You Trust - Pioneer Software Credentials" style="width:100%;height:auto;display:block;object-fit:cover;border-radius:0;" />
+                            <img src="Awards/CertifiedHero.webp" loading="lazy" decoding="async" alt="Technology We Know. Solutions You Trust - Pioneer Software Credentials" style="width:100%;height:auto;display:block;object-fit:cover;border-radius:0;" />
                         </div>
 
                         <!-- Floating Top-Right Badge: Tally Gold Partner Shield SVG -->
@@ -1832,7 +1839,7 @@
                 <!-- Col 1: Brand Info -->
                 <div>
                     <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
-                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions"
+                        <img src="img/FinalLogo.webp" loading="lazy" decoding="async" alt="Pioneer Software Solutions"
                             style="height:50px;width:auto;object-fit:contain;" />
                     </a>
                     <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;text-justify:inter-word;">
@@ -2028,7 +2035,7 @@
     <!-- Enhanced Floating Contact -->
     <div class="floating-contact">
         <div class="contact-trigger" id="contactTrigger">
-            <img src="img/whatsapp.png" alt="WhatsApp" class="w-10 h-10" />
+            <img src="img/whatsapp.webp" loading="lazy" decoding="async" alt="WhatsApp" class="w-10 h-10" />
         </div>
 
         <div class="contact-popup" id="contactPopup">
@@ -2042,7 +2049,7 @@
 
             <div class="contact-popup-body">
                 <div class="contact-person" onclick="callNumber('+9779851141375')">
-                    <img src="Team/Images/Anil.jpg" class="contact-avatar">
+                    <img src="Team/Images/Anil.webp" loading="lazy" decoding="async" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Anil Munakarmi</h4>
                     </div>
@@ -2050,7 +2057,7 @@
                 </div>
 
                 <div class="contact-person" onclick="callNumber('+9779805533801')">
-                    <img src="Team/Images/mani.jpg" class="contact-avatar">
+                    <img src="Team/Images/mani.webp" loading="lazy" decoding="async" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Mani Maharjan</h4>
                     </div>
@@ -2058,7 +2065,7 @@
                 </div>
 
                 <div class="contact-person" onclick="callNumber('+9779805533802')">
-                    <img src="Team/Images/Suman.jpg" class="contact-avatar">
+                    <img src="Team/Images/Suman.webp" loading="lazy" decoding="async" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Suman Mool</h4>
                     </div>
@@ -2066,7 +2073,7 @@
                 </div>
 
                 <div class="contact-person" onclick="callNumber('+9779805533803')">
-                    <img src="Team/Images/Ranjit.jpg" class="contact-avatar">
+                    <img src="Team/Images/Ranjit.jpg" loading="lazy" decoding="async" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Ranjit Bata</h4>
                     </div>
@@ -2074,7 +2081,7 @@
                 </div>
 
                 <div class="contact-person" onclick="callNumber('+9779805533804')">
-                    <img src="Team/Images/Ashish.png" class="contact-avatar">
+                    <img src="Team/Images/Ashish.webp" loading="lazy" decoding="async" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Ashish Shrestha</h4>
                     </div>
@@ -2082,7 +2089,7 @@
                 </div>
 
                 <div class="contact-person" onclick="callNumber('+9779805533805')">
-                    <img src="Team/Images/Nhuja.png" class="contact-avatar">
+                    <img src="Team/Images/Nhuja.webp" loading="lazy" decoding="async" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Nhuja Maharjan</h4>
                     </div>
@@ -2090,7 +2097,7 @@
                 </div>
 
                 <div class="contact-person" onclick="callNumber('+9779805533806')">
-                    <img src="Team/Images/Om.jpg" class="contact-avatar">
+                    <img src="Team/Images/Om.webp" loading="lazy" decoding="async" class="contact-avatar">
                     <div class="contact-details flex-1">
                         <h4>Om Pandey</h4>
                     </div>
@@ -2105,8 +2112,8 @@
             window.location.href = 'tel:' + phoneNumber;
         }
     </script>
-    <script src="Assests/index.js"></script>
-    <script src="Assests/inspectblock.js"></script>
+    <script src="Assests/index.js" defer></script>
+    <script src="Assests/inspectblock.js" defer></script>
 </body>
 
 </html>

@@ -2,4 +2,5 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/pioneersoftwarec/public_html/
-    - /bin/cp * $DEPLOYPATH
+    - /bin/cp -R * .htaccess $DEPLOYPATH
+
