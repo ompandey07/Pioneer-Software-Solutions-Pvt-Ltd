@@ -554,11 +554,196 @@
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 104, 123, 0.15);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
         }
 
         .report-image:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 15px 35px rgba(0, 104, 123, 0.15);
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 104, 123, 0.25);
+        }
+
+        /* ===== REPORT PREVIEW MODAL ===== */
+        .stat-report-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 15, 25, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 99998;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .stat-report-modal-backdrop.is-open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .stat-report-modal {
+            background: #ffffff;
+            border: 3px solid #00687B;
+            border-radius: 0 !important;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+            max-width: 92vw;
+            max-height: 90vh;
+            position: relative;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: scale(0.92);
+            opacity: 0;
+            transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1), opacity 0.25s ease;
+        }
+
+        .stat-report-modal-backdrop.is-open .stat-report-modal {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .stat-report-modal-close {
+            position: absolute;
+            top: -18px; right: -18px;
+            width: 38px; height: 38px;
+            background: #00687B;
+            border: 2px solid #ffffff;
+            border-radius: 0 !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #ffffff;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+            transition: all 0.25s ease;
+            z-index: 30;
+        }
+
+        .stat-report-modal-close:hover {
+            background: #0f172a;
+            color: #ffffff;
+            border-color: #00687B;
+            transform: scale(1.1);
+        }
+
+        .stat-report-modal-img-wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 0 !important;
+            background: #ffffff;
+        }
+
+        #stat-report-modal-img {
+            max-width: 88vw;
+            max-height: 82vh;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            border-radius: 0 !important;
+            display: block;
+        }
+
+        /* ===== REPORT IMAGE CONTAINER & CENTERED ZOOM ICON ===== */
+        .report-img-wrapper {
+            position: relative;
+            display: block;
+            width: 100%;
+            cursor: pointer !important;
+            overflow: hidden;
+            border: 2px solid #e2e8f0;
+            background: #ffffff;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 0 !important;
+        }
+
+        .report-img-wrapper:hover {
+            border-color: #00687B !important;
+            box-shadow: 0 14px 35px rgba(0, 104, 123, 0.25) !important;
+        }
+
+        .report-img-wrapper img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: contain;
+            display: block;
+            cursor: pointer !important;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0 !important;
+        }
+
+        .report-img-wrapper:hover img {
+            transform: scale(1.05);
+        }
+
+        .report-img-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer !important;
+            z-index: 10;
+        }
+
+        .report-img-wrapper:hover .report-img-overlay {
+            opacity: 1;
+        }
+
+        .report-zoom-btn {
+            background: #00687B;
+            color: #ffffff;
+            padding: 0.65rem 1.25rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            box-shadow: 0 8px 20px rgba(0, 104, 123, 0.4);
+            transform: translateY(10px);
+            transition: transform 0.3s cubic-bezier(0.34, 1.2, 0.64, 1), background 0.2s;
+            border-radius: 0 !important;
+            border: 1.5px solid #ffffff;
+            cursor: pointer !important;
+        }
+
+        .report-img-wrapper:hover .report-zoom-btn {
+            transform: translateY(0);
+        }
+
+        .report-zoom-btn:hover {
+            background: #004f5e;
+        }
+
+        .report-section img,
+        .report-image {
+            cursor: pointer !important;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .report-section img:hover,
+        .report-image:hover {
+            cursor: pointer !important;
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px rgba(0, 104, 123, 0.25) !important;
+            border-color: #00687B !important;
         }
 
         .report-content,
@@ -1428,115 +1613,340 @@
         </div>
     </section>
 
-    <!-- NEW TALLY CONTENT LOOK & FLAT BODY PRODUCT SECTION -->
+    <!-- STATUTORY REPORTING SUITE — ALTERNATING SPLIT ROWS (NO DIV AROUND IMAGES) -->
     <section class="report-section" style="background: #fafafa; padding: 80px 0;">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
             <!-- Solution Header -->
-            <div class="text-center mb-12 slide-in-bottom">
-                <h2 class="text-3xl font-extrabold text-[#00687B] mb-2">Statutory Reporting Suite</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-sm">Pre-built and customized Inland Revenue Office (IRD
-                    Nepal) compliance reports for TallyPrime.</p>
+            <div class="text-center mb-14 slide-in-bottom">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3" style="border-radius:0 !important;">
+                    <i class="fas fa-layer-group text-[11px]"></i>
+                    <span>TallyPrime IRD Nepal Compliance Suite</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-normal text-[#0f172a] mb-3" style="font-family:'Kaushan Script',cursive;">
+                    Statutory Reporting <span style="color:#00687B;">Suite</span>
+                </h2>
+                <div class="w-16 h-1 bg-[#00687B] mx-auto mb-4"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+                    Pre-built and customized Inland Revenue Department (IRD Nepal) compliance reports for TallyPrime. Explore our full range of official tax, VAT, and audit reporting solutions.
+                </p>
             </div>
 
-            <!-- 1. Customized Statutory Report Overview -->
-            <div class="tally-solution-block slide-in-bottom">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-5">
-                        <img src="img/Products/anu1.jpg" alt="Customized Statutory Report" class="report-image"
-                            style="width: 100%; height: auto; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
-                    </div>
-                    <div class="lg:col-span-7">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
-                            <i class="fas fa-file-alt text-[10px]"></i> IRD Nepal Compliance
+            <!-- 8 STATUTORY REPORTS - ALTERNATING SPLIT ROWS WITH CENTERED HOVER ZOOM PREVIEW BUTTON -->
+            <div class="space-y-16">
+
+                <!-- REPORT 1: Anusuchi 13 Report -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="report-img-wrapper lg:col-span-6" data-img-src="img/STATREPORTS/Anusuchi 13 Report.PNG" data-img-alt="Anusuchi 13 Report">
+                        <img src="img/STATREPORTS/Anusuchi 13 Report.PNG" alt="Anusuchi 13 Report" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
+                            </div>
                         </div>
-                        <h2 class="text-3xl font-extrabold text-gray-900 mb-3">Customized Statutory Reports</h2>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            Businesses across Nepal require specialized statutory reports to comply with frequently
-                            updated government regulations. Beyond standard financial statements, Pioneer Software
-                            Solutions provides tailor-made statutory report extensions for TallyPrime to guarantee 100%
-                            tax compliance.
+                    </div>
+                    <div class="lg:col-span-6 flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-file-invoice text-[10px]"></i> Mandatory Tax Return
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Anusuchi 13 Report</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Mandated by the Inland Revenue Department (IRD) of Nepal. Auto-compiles purchase, sales, and taxable figures directly from TallyPrime vouchers formatted ready for official tax return filing.
                         </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5 text-xs text-gray-700">
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-[#00687B]"></i> ANUSUCHI 13 Tax Compliance
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-[#00687B]"></i> Item-Wise VAT Purchase Registers
-                            </div>
-                            <div class="flex items-center gap-2">
-                                <i class="fas fa-check-circle text-[#00687B]"></i> Customer Confirmation Statements
-                            </div>
-                            <div class="flex items-center gap-2">
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Automated Sales &amp; Purchase Tax Returns
+                            </li>
+                            <li class="flex items-center gap-2">
                                 <i class="fas fa-check-circle text-[#00687B]"></i> Direct Export to IRD Excel Formats
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> 100% Tax Audit &amp; Compliance Ready
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire Anusuchi 13 Report</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REPORT 2: VAT Summary Report -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="lg:col-span-6 lg:order-first order-last flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-calculator text-[10px]"></i> VAT Reconciliation
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">VAT Summary Report</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Comprehensive VAT summary report detailing monthly taxable, tax-exempt, import, and local purchase/sales figures aligned with Nepal tax auditor standards.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Monthly Taxable &amp; Exempt Breakdown
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Local Purchase vs. Import Reconciliation
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Multi-Period Comparison &amp; Audit Trail
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire VAT Summary Report</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report-img-wrapper lg:col-span-6 lg:order-last order-first" data-img-src="img/STATREPORTS/VAT Summary Report.PNG" data-img-alt="VAT Summary Report">
+                        <img src="img/STATREPORTS/VAT Summary Report.PNG" alt="VAT Summary Report" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
                             </div>
                         </div>
-                        <div>
-                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
-                                <i class="fas fa-paper-plane"></i>
-                                <span>Request Report Customization</span>
-                            </a>
-                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 2. ANUSUCHI 13 Report -->
-            <div class="tally-solution-block slide-in-bottom">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                    <div class="lg:col-span-7 order-last lg:order-first">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
-                            <i class="fas fa-table text-[10px]"></i> Mandated Tax Module
+                <!-- REPORT 3: Sales Vat Register -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="report-img-wrapper lg:col-span-6" data-img-src="img/STATREPORTS/Sales Vat Register.PNG" data-img-alt="Sales Vat Register">
+                        <img src="img/STATREPORTS/Sales Vat Register.PNG" alt="Sales Vat Register" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
+                            </div>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">ANUSUCHI 13 Compliance Report</h3>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                            The ANUSUCHI 13 Report is a critical compliance requirement mandated by the Inland Revenue
-                            Office of Nepal. Our customized module compiles sales and purchase figures straight from
-                            TallyPrime vouchers and formats them ready for official tax filing.
+                    </div>
+                    <div class="lg:col-span-6 flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-table text-[10px]"></i> Sales Tax Audit
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Sales Vat Register</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Item-wise and bill-wise Sales VAT register for TallyPrime with automated tax breakdown, invoice tracking, party PAN numbers, and direct export to IRD Excel formats.
                         </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Bill-Wise &amp; Item-Wise Tax Breakdowns
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Party PAN &amp; Invoice Verification
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Ready-to-Upload IRD Filing Templates
+                            </li>
+                        </ul>
                         <div>
-                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
                                 <i class="fas fa-paper-plane"></i>
-                                <span>Get ANUSUCHI 13 Module</span>
+                                <span>Inquire Sales Vat Register</span>
                             </a>
                         </div>
                     </div>
-                    <div class="lg:col-span-5">
-                        <img src="img/Products/anu1.jpg" alt="ANUSUCHI 13 Report" class="report-image"
-                            style="width: 100%; height: auto; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
+                </div>
+
+                <!-- REPORT 4: TDS STATEMENT REPORT -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="lg:col-span-6 lg:order-first order-last flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-percent text-[10px]"></i> Tax Withholding
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">TDS STATEMENT REPORT</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Automated Tax Deducted at Source (TDS) reporting module for tracking vendor withholdings, ETDS filings, section-wise tax rates, and monthly tax payment summaries.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Section-Wise TDS Deductions &amp; Rates
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> ETDS Ready Upload &amp; Verification
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Vendor-Wise Tax Withholding History
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire TDS Statement</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report-img-wrapper lg:col-span-6 lg:order-last order-first" data-img-src="img/STATREPORTS/TDS STATEMENT REPORT.PNG" data-img-alt="TDS STATEMENT REPORT">
+                        <img src="img/STATREPORTS/TDS STATEMENT REPORT.PNG" alt="TDS STATEMENT REPORT" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- 3. Confirmation Statement & VAT Registers -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="tally-solution-block slide-in-left" style="margin-bottom: 0;">
-                    <img src="img/Products/anu3.jpg" alt="Confirmation Statement" class="report-image mb-4"
-                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Confirmation Statement</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                        Validate financial transactions with party balance confirmation statements generated directly
-                        from TallyPrime ledgers.
-                    </p>
-                    <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
-                        <span>Inquire Statement</span>
-                    </a>
+                <!-- REPORT 5: Confirmation Letter -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="report-img-wrapper lg:col-span-6" data-img-src="img/STATREPORTS/Confirmation Letter.PNG" data-img-alt="Confirmation Letter">
+                        <img src="img/STATREPORTS/Confirmation Letter.PNG" alt="Confirmation Letter" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-envelope-open-text text-[10px]"></i> Audit Statements
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Confirmation Letter</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Automated party balance confirmation letters with custom letterhead branding for vendor and customer audit verification, complete with signature blocks and terms.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Automated Ledger Balance Matching
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Customizable Letterhead &amp; Signatures
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Direct PDF &amp; Print Export from Tally
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire Confirmation Letter</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="tally-solution-block slide-in-right" style="margin-bottom: 0;">
-                    <img src="img/Products/anu2.jpg" alt="Item-wise VAT Purchase Register" class="report-image mb-4"
-                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 0 !important; box-shadow: none !important; border: none !important; display: block;" />
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Item-wise VAT Purchase Register</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                        Detailed item-level tracking of VAT purchase registers essential for auditing and tax credit
-                        claims under Nepal tax laws.
-                    </p>
-                    <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important;">
-                        <span>Inquire Register</span>
-                    </a>
+                <!-- REPORT 6: Sundry Debtors Report -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="lg:col-span-6 lg:order-first order-last flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-users-cog text-[10px]"></i> Receivables Control
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">Sundry Debtors Report</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Detailed aging analysis and party-wise outstanding statement for tracking customer receivables, overdue balances, payment history, and collection schedules.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Customized Aging Intervals (15/30/60/90 Days)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Customer Outstanding &amp; Credit Limits
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Automated Overdue Collection Alerts
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire Debtors Report</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report-img-wrapper lg:col-span-6 lg:order-last order-first" data-img-src="img/STATREPORTS/Sundry Debtors Report.PNG" data-img-alt="Sundry Debtors Report">
+                        <img src="img/STATREPORTS/Sundry Debtors Report.PNG" alt="Sundry Debtors Report" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- REPORT 7: CUSTOM NEPALI MONTHS STATICS -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="report-img-wrapper lg:col-span-6" data-img-src="img/STATREPORTS/CUSTOM NEPALI MONTHS STATICS.PNG" data-img-alt="CUSTOM NEPALI MONTHS STATICS">
+                        <img src="img/STATREPORTS/CUSTOM NEPALI MONTHS STATICS.PNG" alt="CUSTOM NEPALI MONTHS STATICS" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-calendar-alt text-[10px]"></i> Bikram Sambat Calendar
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">CUSTOM NEPALI MONTHS STATICS</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Financial and inventory statistics organized according to the Bikram Sambat (BS) Nepali calendar months (Baisakh to Chaitra) directly inside Tally.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Baisakh - Chaitra Financial Breakdown
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Dual Date System (BS &amp; AD Dual Support)
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Month-on-Month Growth &amp; Sales Trends
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire BS Month Statics</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REPORT 8: CUSTOM ADDIOTNAL FEATURES -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-white p-6 sm:p-8 border-l-4 border-l-[#00687B] border-y border-r border-gray-200">
+                    <div class="lg:col-span-6 lg:order-first order-last flex flex-col gap-3">
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider w-fit" style="border-radius: 0 !important;">
+                            <i class="fas fa-cogs text-[10px]"></i> Custom TDL Modules
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-gray-900">CUSTOM ADDIOTNAL FEATURES</h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Specialized custom fields, extra TDL reporting vouchers, audit trail logs, custom invoice layouts, and tailored regulatory print formats built specifically for your enterprise.
+                        </p>
+                        <ul class="space-y-2 text-xs sm:text-sm text-gray-700 my-2">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Tailored TDL Vouchers &amp; Custom Fields
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Security &amp; Audit Trail Control Modules
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Custom Print Formats &amp; QR Integration
+                            </li>
+                        </ul>
+                        <div>
+                            <a href="contact.html" class="btn-enhanced" style="border-radius: 0 !important; padding: 11px 24px; font-size: 0.85rem;">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Inquire Custom Features</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="report-img-wrapper lg:col-span-6 lg:order-last order-first" data-img-src="img/STATREPORTS/CUSTOM ADDIOTNAL FEATURES.PNG" data-img-alt="CUSTOM ADDIOTNAL FEATURES">
+                        <img src="img/STATREPORTS/CUSTOM ADDIOTNAL FEATURES.PNG" alt="CUSTOM ADDIOTNAL FEATURES" />
+                        <div class="report-img-overlay">
+                            <div class="report-zoom-btn">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Preview Report</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -2015,6 +2425,66 @@
             });
         }
     </script>
+
+    <!-- Statutory Report Image Preview Modal (Same as about.html Award Modal) -->
+    <div class="stat-report-modal-backdrop" id="stat-report-modal-backdrop" role="dialog" aria-modal="true" aria-label="Statutory Report Preview">
+        <div class="stat-report-modal" id="stat-report-modal">
+            <button class="stat-report-modal-close" id="stat-report-modal-close" aria-label="Close preview">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="stat-report-modal-img-wrap">
+                <img id="stat-report-modal-img" src="" alt="Statutory Report Preview" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Statutory Report Image Click Modal Script -->
+    <script>
+        (function () {
+            const backdrop = document.getElementById('stat-report-modal-backdrop');
+            const modalImg = document.getElementById('stat-report-modal-img');
+            const closeBtn = document.getElementById('stat-report-modal-close');
+
+            function openModal(imgSrc, altText) {
+                if (!backdrop || !modalImg) return;
+                modalImg.src = imgSrc;
+                modalImg.alt = altText || 'Statutory Report Preview';
+                backdrop.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                if (!backdrop) return;
+                backdrop.classList.remove('is-open');
+                document.body.style.overflow = '';
+                setTimeout(function () { if (modalImg) modalImg.src = ''; }, 350);
+            }
+
+            // Make all report image wrappers & images clickable to open enlarged modal
+            document.querySelectorAll('.report-img-wrapper, .report-section img').forEach(function (el) {
+                el.style.setProperty('cursor', 'pointer', 'important');
+                el.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const src = this.dataset.imgSrc || this.querySelector('img')?.src || (this.tagName === 'IMG' ? this.src : '');
+                    const alt = this.dataset.imgAlt || this.querySelector('img')?.alt || (this.tagName === 'IMG' ? this.alt : 'Statutory Report Preview');
+                    if (src) openModal(src, alt);
+                });
+            });
+
+            if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+            if (backdrop) {
+                backdrop.addEventListener('click', function (e) {
+                    if (e.target === backdrop) closeModal();
+                });
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && backdrop && backdrop.classList.contains('is-open')) closeModal();
+            });
+        })();
+    </script>
+
     <script src="Assests/inspectblock.js"></script>
 </body>
 
