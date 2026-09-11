@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Oval9 - Nepal's Most Complete AI-Powered Business Management Software | Pioneer Software</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta
+        content="Oval9, Oval9 ERP, AI-Powered Business Management, ERP Nepal, IRD Nepal CBMS, Bikram Sambat ERP, Nepal Accounting Software"
+        name="keywords">
+    <meta
+        content="Oval9 is Nepal's most complete AI-powered business management software and cloud ERP. Purpose-built for Nepal with IRD compliance, CBMS sync, Bikram Sambat calendar, and 16 integrated modules."
+        name="description">
+
+    <!-- SEO -->
+    <meta name="author" content="Pioneer Software Solutions Pvt Ltd">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta property="og:title" content="Oval9 - Nepal's Most Complete AI-Powered Business Management Software">
+    <meta property="og:description"
+        content="Oval9 brings every aspect of your business under one intelligent platform with AI intelligence, 16 powerful modules, IRD Nepal compliance, and CBMS integration.">
+    <meta property="og:image" content="https://www.pioneersoftware.com.np/img/OvalNineLogo.png">
+    <meta property="og:url" content="www.pioneersoftware.com.np/Oval9.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link href="img/Logo.jpg" rel="icon">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #00687B 0%, #0096AD 100%);
+            --secondary-gradient: linear-gradient(135deg, #0096AD 0%, #00c4df 100%);
+            --accent-gradient: linear-gradient(135deg, #00d9b0 0%, #0096AD 100%);
+            --dark-gradient: linear-gradient(135deg, #071527 0%, #0f2035 100%);
+        }
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            overflow-x: hidden;
+            background: #071527;
+            cursor: url('/Custom/cursor.png'), auto;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .font-kaushan {
+            font-family: 'Kaushan Script', cursive;
+        }
+
+        /* ===== CUSTOM SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #00687B, #0096AD);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, #004F5E, #00687B);
+        }
+
+        /* ===== PROGRESS BAR ===== */
+        .top-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00687B, #0096AD, #00c4df);
+            width: 0%;
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(0, 104, 123, 0.5);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .nav-enhanced {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            border-bottom: 2px solid #00687B;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            box-shadow: none;
+        }
+
+        .nav-enhanced.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: none;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.22);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            position: relative;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            z-index: 10;
+            text-decoration: none;
+        }
+
+        .nav-logo-img {
+            height: 44px !important;
+            max-height: 48px !important;
+            width: auto !important;
+            object-fit: contain !important;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            text-decoration: none;
+            color: #374151;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+            overflow: visible;
+            background: transparent;
+        }
+
+        .nav-item.active {
+            color: #00687B;
+            background: rgba(0, 104, 123, 0.08);
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00687B, #0096AD);
+            transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 0;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        .nav-item:hover {
+            color: #00687B;
+        }
+
+        .nav-item i {
+            color: #00687B;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover i {
+            transform: scale(1.15);
+        }
+
+        /* Dropdown */
+        .dropdown-enhanced {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 10px);
+            min-width: 350px;
+            width: max-content;
+            max-width: 450px;
+            background: white;
+            border-radius: 0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e2e8f0;
+            border-top: 2px solid #00687B;
+            z-index: 1000;
+            margin-top: 4px;
+        }
+
+        .dropdown-enhanced.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #374151;
+            transition: all 0.3s ease;
+            border-radius: 0;
+            margin: 0;
+            white-space: nowrap;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .dropdown-item.active {
+            background: rgba(0, 104, 123, 0.08);
+            color: #00687B;
+            border-left: 4px solid #00687B;
+        }
+
+        .dropdown-item:hover {
+            background: linear-gradient(90deg, #f8fafc, #f1f5f9);
+            color: #1f2937;
+            transform: translateX(8px);
+            border-left: 4px solid #00687B;
+        }
+
+        .dropdown-item i {
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover i {
+            transform: scale(1.2);
+        }
+
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #374151;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 60px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 60px);
+            background: white;
+            z-index: 999;
+            transition: left 0.3s ease;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-nav-item {
+            display: block;
+            padding: 1rem 0;
+            color: #374151;
+            text-decoration: none;
+            border-bottom: 1px solid #f1f5f9;
+            font-weight: 500;
+        }
+
+        .mobile-nav-item:hover {
+            color: #00687B;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-header {
+            background: linear-gradient(135deg, #ffffff 0%, #f0f7f9 50%, #e1eff3 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 90px 0 70px;
+            margin-top: 60px;
+            border-bottom: 1px solid rgba(0, 104, 123, 0.15);
+        }
+
+        .hero-bg-svg-1 {
+            position: absolute;
+            top: -40px;
+            right: -40px;
+            width: 440px;
+            height: 440px;
+            opacity: 0.35;
+            pointer-events: none;
+            animation: floatSvgSlow 22s infinite ease-in-out alternate;
+        }
+
+        .hero-bg-svg-2 {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            width: 380px;
+            height: 380px;
+            opacity: 0.28;
+            pointer-events: none;
+            animation: floatSvgReverse 18s infinite ease-in-out alternate;
+        }
+
+        @keyframes floatSvgSlow {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-25px, 20px) rotate(6deg); }
+            100% { transform: translate(15px, -15px) rotate(-4deg); }
+        }
+
+        @keyframes floatSvgReverse {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, -20px) rotate(-8deg); }
+            100% { transform: translate(-15px, 15px) rotate(5deg); }
+        }
+
+        .breadcrumb-enhanced {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+
+        .breadcrumb-enhanced a {
+            color: #00687B;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .breadcrumb-enhanced a:hover {
+            color: #0096AD;
+            text-decoration: underline;
+        }
+
+        /* ===== PRODUCT SECTION ===== */
+        .product-section {
+            background: #fafafa;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .tally-solution-block {
+            background: white;
+            border-left: 4px solid #00687B;
+            border-radius: 0 !important;
+            padding: 2.5rem;
+            margin-bottom: 3.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .tally-solution-block:hover {
+            border-left-color: #0096AD;
+        }
+
+        /* ===== MODULE CARD ===== */
+        .module-card {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            border-top: 3px solid #00687B;
+            padding: 1.75rem;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            border-top-color: #00d9b0;
+            box-shadow: 0 15px 30px rgba(0, 104, 123, 0.12);
+        }
+
+        .module-card-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 104, 123, 0.08);
+            border: 1px solid rgba(0, 104, 123, 0.2);
+            color: #00687B;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .module-card:hover .module-card-icon {
+            background: #00687B;
+            color: #ffffff;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-enhanced {
+            background: linear-gradient(135deg, #00687B 0%, #0096AD 100%);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 0 !important;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 104, 123, 0.2);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-enhanced:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 104, 123, 0.3);
+        }
+
+        /* ===== FLOATING CONTACT ===== */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+
+        .contact-trigger {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        @media (max-width: 1024px) {
+            .nav-menu { display: none; }
+            .mobile-menu-btn { display: flex; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top Progress Bar -->
+    <div class="top-progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="nav-enhanced fixed top-0 left-0 w-full" id="navbar">
+        <div class="nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="logo-section">
+                <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" class="nav-logo-img" />
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span>Home</span>
+                </a>
+                <a href="about.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span>About</span>
+                </a>
+                <div class="relative">
+                    <button class="nav-item dropdown-trigger active" id="products-dropdown">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                        </svg>
+                        <span>Products</span>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            class="w-3 h-3 text-[#00687B] transition-transform ml-1 stroke-current" id="dropdown-arrow"
+                            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <div class="dropdown-enhanced" id="dropdown-menu">
+                        <div class="p-0">
+                            <a href="tallycusto.html" class="dropdown-item">
+                                <i class="fas fa-cogs text-[#00687B]"></i>
+                                <span>Tally Customization</span>
+                            </a>
+                            <a href="behave.html" class="dropdown-item">
+                                <i class="fas fa-database text-green-600"></i>
+                                <span>Distribution &amp; Management System</span>
+                            </a>
+                            <a href="webdev.html" class="dropdown-item">
+                                <i class="fas fa-globe text-blue-600"></i>
+                                <span>Custom Web Based Application</span>
+                            </a>
+                            <a href="tallyprime.html" class="dropdown-item">
+                                <i class="fas fa-cube text-purple-600"></i>
+                                <span>Tally Prime</span>
+                            </a>
+                            <a href="easybill.html" class="dropdown-item">
+                                <i class="fas fa-file-invoice text-red-600"></i>
+                                <span>Easy Bill – Billing Management Solution</span>
+                            </a>
+                            <a href="Oval9.html" class="dropdown-item active">
+                                <i class="fas fa-brain text-[#00687B]"></i>
+                                <span>Oval9 ERP – AI-Powered Business Management</span>
+                            </a>
+                            <a href="satreport.html" class="dropdown-item">
+                                <i class="fas fa-file-alt text-indigo-600"></i>
+                                <span>Customized Statutory Report</span>
+                            </a>
+                            <a href="biz.html" class="dropdown-item">
+                                <i class="fas fa-chart-line text-[#00687B]"></i>
+                                <span>Biz Analyst</span>
+                            </a>
+                            <a href="tallycloud.html" class="dropdown-item">
+                                <i class="fa fa-cloud text-cyan-600"></i>
+                                <span>Tally On Cloud Service</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <a href="clints.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span>Clients</span>
+                </a>
+                <a href="downloads.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Downloads</span>
+                </a>
+                <a href="contact.html" class="nav-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-[#00687B] stroke-current" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <span>Contact</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <a href="index.html" class="mobile-nav-item"><i class="fas fa-home text-[#00687B] mr-2"></i> Home</a>
+            <a href="about.html" class="mobile-nav-item"><i class="fas fa-info-circle text-[#00687B] mr-2"></i> About</a>
+            <a href="downloads.html" class="mobile-nav-item"><i class="fas fa-download text-[#00687B] mr-2"></i> Downloads</a>
+            <a href="clints.html" class="mobile-nav-item"><i class="fas fa-users text-[#00687B] mr-2"></i> Clients</a>
+            <div class="mobile-nav-item font-bold text-[#00687B]"><i class="fas fa-box text-[#00687B] mr-2"></i> Products</div>
+            <a href="tallycusto.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Tally Customization</a>
+            <a href="behave.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Distribution &amp; Management</a>
+            <a href="webdev.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Web Development</a>
+            <a href="tallyprime.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Tally Prime</a>
+            <a href="easybill.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Easy Bill</a>
+            <a href="Oval9.html" class="mobile-nav-item ml-4 font-semibold text-[#00687B]"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Oval9 ERP</a>
+            <a href="satreport.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Statutory Reports</a>
+            <a href="biz.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Biz Analyst</a>
+            <a href="tallycloud.html" class="mobile-nav-item ml-4"><i class="fas fa-angle-right text-[#00687B] mr-2"></i> Tally Cloud</a>
+            <a href="contact.html" class="mobile-nav-item"><i class="fas fa-phone text-[#00687B] mr-2"></i> Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER SECTION -->
+    <section class="hero-header">
+        <!-- Background Animated SVGs -->
+        <svg class="hero-bg-svg-1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="85" stroke="#00687B" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.4" />
+            <circle cx="100" cy="100" r="60" stroke="#0096AD" stroke-width="1" opacity="0.3" />
+            <circle cx="100" cy="100" r="35" fill="url(#heroGlowOval)" opacity="0.25" />
+            <circle cx="100" cy="15" r="5" fill="#00687B" />
+            <circle cx="160" cy="140" r="4" fill="#0096AD" />
+            <circle cx="35" cy="130" r="6" fill="#00687B" />
+            <defs>
+                <radialGradient id="heroGlowOval" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(100 100) rotate(90) scale(35)">
+                    <stop stop-color="#00687B" />
+                    <stop offset="1" stop-color="#0096AD" stop-opacity="0" />
+                </radialGradient>
+            </defs>
+        </svg>
+
+        <svg class="hero-bg-svg-2" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 120 Q 70 40, 120 120 T 220 120" stroke="#00687B" stroke-width="2" stroke-dasharray="4 4"
+                fill="none" opacity="0.35" />
+            <path d="M20 160 Q 80 80, 140 160 T 220 100" stroke="#0096AD" stroke-width="1.5" fill="none"
+                opacity="0.3" />
+            <rect x="110" y="110" width="20" height="20" rx="3" fill="#00687B" opacity="0.2"
+                transform="rotate(45 120 120)" />
+            <circle cx="120" cy="120" r="4" fill="#00687B" />
+        </svg>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="text-center">
+                <!-- Product Logo Image -->
+                <div class="mb-6 flex justify-center">
+                    <img src="img/OvalNineLogo.png" alt="Oval9 AI Powered ERP Logo"
+                        class="h-24 sm:h-28 object-contain drop-shadow-md" />
+                </div>
+
+                <!-- Sharp Eyebrow Tag -->
+                <div
+                    class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider border-l-2 border-[#00687B] mb-5">
+                    <i class="fas fa-brain text-[10px]"></i>
+                    <span>Next-Gen Enterprise Solution</span>
+                </div>
+
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-5 tracking-tight">
+                    Oval9: Nepal's Most Complete <br class="hidden sm:inline" />
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#00687B] via-[#00839B] to-[#0096AD]">
+                        AI-Powered Business Management Software
+                    </span>
+                </h1>
+
+                <nav class="breadcrumb-enhanced justify-center mb-8">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <a href="#">Products</a>
+                    <i class="fas fa-chevron-right text-xs text-gray-400"></i>
+                    <span class="text-gray-500 font-medium">Oval9 ERP</span>
+                </nav>
+
+                <div class="max-w-4xl mx-auto text-gray-600 text-base sm:text-lg leading-relaxed space-y-4 mb-8">
+                    <p style="text-align:justify;text-justify:inter-word;">
+                        In today's fast-moving business environment, running a company on scattered spreadsheets, manual ledgers, and disconnected tools is no longer sustainable. Businesses across Nepal — from growing trading firms to established enterprises — are looking for smarter, faster, and more compliant ways to manage their operations. That is exactly where Oval9 steps in.
+                    </p>
+                    <p style="text-align:justify;text-justify:inter-word;">
+                        Developed and purpose-built for the Nepalese business environment, Oval9 is a comprehensive, cloud-based Enterprise Resource Planning system that brings every aspect of your business under one intelligent platform. Whether you are managing sales, tracking inventory, handling accounts, or filing VAT, Oval9 does it all — and it does it with the power of artificial intelligence.
+                    </p>
+                </div>
+
+                <!-- Hero Feature Pills -->
+                <div class="flex flex-wrap justify-center gap-3 mb-8">
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> 16 Integrated Modules
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> AI-Driven Intelligence
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> IRD &amp; CBMS Nepal Sync
+                    </span>
+                    <span class="px-3.5 py-1.5 bg-white text-[#00687B] text-xs font-semibold border border-[#00687B]/30 shadow-sm flex items-center gap-1.5">
+                        <i class="fas fa-check-circle text-[#00687B] text-[11px]"></i> Bikram Sambat Native Calendar
+                    </span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#modules" class="btn-enhanced">
+                        <i class="fas fa-th-large"></i>
+                        <span>Explore 16 Modules</span>
+                    </a>
+                    <a href="contact.html" class="btn-enhanced" style="background: linear-gradient(135deg, #071527 0%, #0f2035 100%);">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Schedule Oval9 Demo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT IS OVAL9 SECTION -->
+    <section class="product-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="tally-solution-block">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-cube text-[10px]"></i> Core Architecture
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">What Is Oval9?</h2>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                            Oval9 is a web-based business management software designed specifically for businesses operating in Nepal. Unlike generic ERP solutions built for foreign markets, Oval9 is engineered from the ground up to meet the unique needs of Nepali businesses — including full compliance with the Inland Revenue Department's requirements, native support for the Bikram Sambat calendar, and real-time synchronisation with the government's Computerised Billing Management System (CBMS) for VAT purposes.
+                        </p>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-5" style="text-align:justify;text-justify:inter-word;">
+                            The platform supports multi-company operations from a single instance, making it ideal for business groups and holding companies that need to manage multiple entities without switching between different systems. Each company's data is fully isolated through a strict tenant architecture, ensuring complete privacy, security, and data integrity across all accounts.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-700 font-medium">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Multi-Tenant Isolated Architecture
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Real-time CBMS &amp; IRD Integration
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Native Bikram Sambat Date Engine
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-check-circle text-[#00687B]"></i> Group Holding Multi-Company Support
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Animated Tech SVG Graphic -->
+                    <div class="lg:col-span-5">
+                        <div style="position:relative;width:100%;height:320px;background:linear-gradient(135deg, #071527 0%, #0f2035 100%);border:2px solid #00687B;box-shadow:8px 8px 0px rgba(0,104,123,0.15);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.25rem;">
+                            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.12) 1px, transparent 0);background-size:20px 20px;"></div>
+
+                            <svg viewBox="0 0 400 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:relative;z-index:2;">
+                                <defs>
+                                    <linearGradient id="ovalGrad1" x1="0" y1="0" x2="400" y2="280">
+                                        <stop offset="0%" stop-color="#00687B" />
+                                        <stop offset="100%" stop-color="#00d9b0" />
+                                    </linearGradient>
+                                    <filter id="glowOval" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="5" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+
+                                <!-- Central Orbit Node -->
+                                <circle cx="200" cy="140" r="70" stroke="#00687B" stroke-width="1.5" stroke-dasharray="8 6">
+                                    <animateTransform attributeName="transform" type="rotate" from="0 200 140" to="360 200 140" dur="20s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="200" cy="140" r="45" stroke="#00d9b0" stroke-width="2" filter="url(#glowOval)">
+                                    <animateTransform attributeName="transform" type="rotate" from="360 200 140" to="0 200 140" dur="12s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="200" cy="140" r="20" fill="url(#ovalGrad1)"/>
+
+                                <!-- Satellite Nodes -->
+                                <g>
+                                    <circle cx="90" cy="80" r="16" fill="#0f2035" stroke="#00687B" stroke-width="1.5"/>
+                                    <path d="M 90 80 L 160 120" stroke="#00687B" stroke-width="1" stroke-dasharray="3 3"/>
+                                    <circle cx="310" cy="80" r="16" fill="#0f2035" stroke="#00d9b0" stroke-width="1.5"/>
+                                    <path d="M 310 80 L 240 120" stroke="#00d9b0" stroke-width="1" stroke-dasharray="3 3"/>
+                                    <circle cx="90" cy="200" r="16" fill="#0f2035" stroke="#00d9b0" stroke-width="1.5"/>
+                                    <path d="M 90 200 L 160 160" stroke="#00d9b0" stroke-width="1" stroke-dasharray="3 3"/>
+                                    <circle cx="310" cy="200" r="16" fill="#0f2035" stroke="#00687B" stroke-width="1.5"/>
+                                    <path d="M 310 200 L 240 160" stroke="#00687B" stroke-width="1" stroke-dasharray="3 3"/>
+                                </g>
+
+                                <!-- Floating Badges -->
+                                <g transform="translate(130, 20)">
+                                    <rect width="140" height="32" rx="4" fill="#0f2035" stroke="#00d9b0" stroke-width="1.5" filter="url(#glowOval)"/>
+                                    <text x="12" y="20" fill="#ffffff" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700">🇳🇵 NEPAL IRD &amp; CBMS</text>
+                                </g>
+                                <g transform="translate(130, 230)">
+                                    <rect width="140" height="32" rx="4" fill="#0f2035" stroke="#00687B" stroke-width="1.5"/>
+                                    <text x="14" y="20" fill="#00d9b0" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700">🔒 MULTI-TENANT CLOUD</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 16 POWERFUL MODULES SECTION -->
+    <section class="product-section" id="modules" style="background:#ffffff;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider border-l-2 border-[#00687B] mb-3">
+                    <i class="fas fa-th-large text-[10px]"></i> All-In-One Ecosystem
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4">A Platform Built Around 16 Powerful Modules</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-sm sm:text-base leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                    Oval9 is organised into sixteen independent application modules, each handling a distinct area of your business. Together, they form a seamless, fully integrated system where data flows automatically from one module to the next — eliminating duplication, reducing errors, and giving you a real-time view of your entire operation.
+                </p>
+            </div>
+
+            <!-- 16 Module Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Module 1 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Trading &amp; Sales</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Create and manage sales invoices, quotations, and orders with speed and accuracy across wholesale and retail streams.
+                    </p>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-truck-loading"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Purchase Management</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Streamline your procurement process end-to-end from purchase requisitions and orders to supplier payments.
+                    </p>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-boxes"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Inventory Control</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Track stock levels in real time, manage multiple warehouses, batch expiry dates, and never run out of best-selling products.
+                    </p>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-calculator"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Finance &amp; Accounting</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Maintain accurate financial books with journal entries, general ledgers, trial balances, and automated financial statements.
+                    </p>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-receipt"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Payments &amp; Receipts</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Record every cash, cheque, and digital transaction with full audit trails and automated bank reconciliation support.
+                    </p>
+                </div>
+
+                <!-- Module 6 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">VAT &amp; Tax Reporting</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Generate government-ready VAT returns including Anusuchi 13, TDS schedules, and other IRD-compliant filings automatically.
+                    </p>
+                </div>
+
+                <!-- Module 7 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-user-tie"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Customer Management</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Maintain a complete database of your clients, credit limits, transaction histories, and outstanding receivable balances.
+                    </p>
+                </div>
+
+                <!-- Module 8 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Supplier Management</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Keep detailed records of all vendors, purchase agreements, order histories, and scheduled payable balances in one place.
+                    </p>
+                </div>
+
+                <!-- Module 9 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-ship"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Export Module</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Handle international trade documentation, customs manifest filings, and foreign currency LC requirements effortlessly.
+                    </p>
+                </div>
+
+                <!-- Module 10 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-plane-departure"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Travel Management</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Manage business travel booking requests, passenger itineraries, expense claims, and employee reimbursements efficiently.
+                    </p>
+                </div>
+
+                <!-- Module 11 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-gavel"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Law Firm Module</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Specialised suite for legal practices to manage client case files, court schedules, retainer billing, and legal documentation.
+                    </p>
+                </div>
+
+                <!-- Module 12 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-search-dollar"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Audit Management</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Maintain strict transparency and internal compliance with immutable user activity logs and built-in audit trail tools.
+                    </p>
+                </div>
+
+                <!-- Module 13 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Reports &amp; Analytics</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Access over 100 pre-built reports covering every operational corner of your enterprise with multi-format export capabilities.
+                    </p>
+                </div>
+
+                <!-- Module 14 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">AI Assistant</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Ask operational questions in plain English and receive instant, data-backed analytical insights directly from your live database.
+                    </p>
+                </div>
+
+                <!-- Module 15 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-print"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Custom Print Formats</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Design and generate professional invoices, thermal receipts, and official tax documents styled in your custom branding.
+                    </p>
+                </div>
+
+                <!-- Module 16 -->
+                <div class="module-card">
+                    <div class="module-card-icon"><i class="fas fa-[#00687B] fa-tachometer-alt"></i></div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Smart Dashboard</h3>
+                    <p class="text-gray-600 text-xs leading-relaxed" style="text-align:justify;text-justify:inter-word;">
+                        Get an instant, live overview of key business metrics, cash flow trends, and sales highlights the moment you log in.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI POWERED INTELLIGENCE SECTION -->
+    <section class="product-section">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="tally-solution-block">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Animated AI Graphic -->
+                    <div class="lg:col-span-5">
+                        <div style="position:relative;width:100%;height:340px;background:linear-gradient(135deg, #071527 0%, #0f2035 100%);border:2px solid #00687B;box-shadow:8px 8px 0px rgba(0,104,123,0.15);overflow:hidden;display:flex;align-items:center;justify-content:center;padding:1.25rem;">
+                            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.15) 1px, transparent 0);background-size:24px 24px;"></div>
+
+                            <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:relative;z-index:2;">
+                                <defs>
+                                    <linearGradient id="aiGrad" x1="0" y1="0" x2="400" y2="300">
+                                        <stop offset="0%" stop-color="#00687B" />
+                                        <stop offset="50%" stop-color="#0096AD" />
+                                        <stop offset="100%" stop-color="#00d9b0" />
+                                    </linearGradient>
+                                    <filter id="glowAi" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="6" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                </defs>
+
+                                <!-- Central AI Brain Core -->
+                                <circle cx="200" cy="150" r="55" fill="none" stroke="url(#aiGrad)" stroke-width="3" filter="url(#glowAi)">
+                                    <animate attributeName="stroke-dasharray" values="0 350; 350 0" dur="4s" repeatCount="indefinite"/>
+                                </circle>
+                                <circle cx="200" cy="150" r="35" fill="#0f2035" stroke="#00d9b0" stroke-width="1.5"/>
+
+                                <!-- Neural Network Nodes -->
+                                <g stroke="#00d9b0" stroke-width="1" stroke-dasharray="3 3" opacity="0.6">
+                                    <line x1="200" y1="150" x2="80" y2="70"/>
+                                    <line x1="200" y1="150" x2="320" y2="70"/>
+                                    <line x1="200" y1="150" x2="80" y2="230"/>
+                                    <line x1="200" y1="150" x2="320" y2="230"/>
+                                </g>
+
+                                <circle cx="80" cy="70" r="8" fill="#00687B"/>
+                                <circle cx="320" cy="70" r="8" fill="#00d9b0"/>
+                                <circle cx="80" cy="230" r="8" fill="#00d9b0"/>
+                                <circle cx="320" cy="230" r="8" fill="#00687B"/>
+
+                                <!-- AI Text Floating Element -->
+                                <g transform="translate(110, 25)">
+                                    <rect width="180" height="34" rx="4" fill="#0f2035" stroke="#00d9b0" stroke-width="1.5" filter="url(#glowAi)"/>
+                                    <text x="16" y="21" fill="#ffffff" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700">🤖 OVAL9 AI ENGINE</text>
+                                </g>
+
+                                <g transform="translate(95, 245)">
+                                    <rect width="210" height="34" rx="4" fill="#0f2035" stroke="#00687B" stroke-width="1.5"/>
+                                    <text x="14" y="21" fill="#00d9b0" font-family="Space Grotesk, sans-serif" font-size="10" font-weight="700">⚡ PREDICTIVE ANALYTICS LIVE</text>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                            <i class="fas fa-brain text-[10px]"></i> Intelligent Core
+                        </div>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">AI-Powered Intelligence at the Core</h2>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                            What sets Oval9 apart from traditional ERP software is its deeply integrated artificial intelligence layer. The platform's AI assistant is not a bolt-on feature — it is built into the core of the system and designed to make your daily operations smarter and faster.
+                        </p>
+
+                        <div class="space-y-3 text-xs sm:text-sm text-gray-700">
+                            <div class="p-3 bg-gray-50 border-l-2 border-[#00687B]">
+                                <div class="font-bold text-gray-900 mb-0.5"><i class="fas fa-comment-dots text-[#00687B] mr-2"></i>Ask Questions in Plain Language</div>
+                                <p class="text-gray-600 text-xs" style="text-align:justify;text-justify:inter-word;">
+                                    Simply type "What were my top-selling products last month?" and get an instant, accurate answer drawn from your live business data.
+                                </p>
+                            </div>
+
+                            <div class="p-3 bg-gray-50 border-l-2 border-[#00687B]">
+                                <div class="font-bold text-gray-900 mb-0.5"><i class="fas fa-chart-line text-[#00687B] mr-2"></i>Predictive Analytics</div>
+                                <p class="text-gray-600 text-xs" style="text-align:justify;text-justify:inter-word;">
+                                    The system analyses your historical data to forecast sales trends, predict inventory demand, and help you plan ahead with confidence.
+                                </p>
+                            </div>
+
+                            <div class="p-3 bg-gray-50 border-l-2 border-[#00687B]">
+                                <div class="font-bold text-gray-900 mb-0.5"><i class="fas fa-cogs text-[#00687B] mr-2"></i>Automate Repetitive Tasks</div>
+                                <p class="text-gray-600 text-xs" style="text-align:justify;text-justify:inter-word;">
+                                    From generating routine reports to sending follow-up payment reminders, Oval9 automates routine work so your team can focus on growth.
+                                </p>
+                            </div>
+
+                            <div class="p-3 bg-gray-50 border-l-2 border-[#00687B]">
+                                <div class="font-bold text-gray-900 mb-0.5"><i class="fas fa-lightbulb text-[#00687B] mr-2"></i>Smart Business Insights</div>
+                                <p class="text-gray-600 text-xs" style="text-align:justify;text-justify:inter-word;">
+                                    The AI continuously monitors operational data and surfaces actionable recommendations to optimize cash flow and profit margins.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 100+ REPORTS & BUILT FOR NEPAL SECTION -->
+    <section class="product-section" style="background:#ffffff;border-top:1px solid #e2e8f0;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Card 1: 100+ Reports -->
+                <div class="tally-solution-block mb-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                        <i class="fas fa-file-alt text-[10px]"></i> Reporting Engine
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">100+ Reports, Always Ready</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                        One of Oval9's most powerful features is its reporting engine. With over 100 pre-built reports available across more than 15 export formats, you always have the information you need — in the format you need it.
+                    </p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                        Whether you need a daily sales summary, a stock valuation report, a profit and loss statement, or a government-mandated VAT return, Oval9 generates it automatically. Reports can be exported as PDF, Excel, and other formats, and are updated in real time as your data changes.
+                    </p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                        For businesses dealing with IRD compliance, Oval9 takes the stress out of tax season. Government reports including VAT Anusuchi 13, TDS returns, and other regulatory filings, are produced in the exact format required by Nepal's Inland Revenue Department — ready to submit without any manual reformatting.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-700 font-medium">
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> 15+ Export Formats (PDF, Excel, CSV)</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> Real-time Live Data Updates</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> IRD Anusuchi 13 VAT Automation</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> Instant TDS Tax Returns</div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Built for Nepal -->
+                <div class="tally-solution-block mb-0">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-[#00687B]/10 text-[#00687B] text-xs font-bold uppercase tracking-wider mb-3">
+                        <i class="fas fa-flag text-[10px]"></i> Localized Engineering
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-3">Built for Nepal, From the Ground Up</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                        Most ERP systems available in Nepal are either expensive foreign platforms that require heavy customisation, or basic local software that cannot scale with your business. Oval9 is different.
+                    </p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                        It natively supports the Bikram Sambat calendar across all transactional records, so your invoices, reports, and entries always reflect the dates your business actually works with. It integrates directly with the Computerised Billing Management System (CBMS) for real-time VAT synchronisation, keeping you compliant without any extra effort.
+                    </p>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4" style="text-align:justify;text-justify:inter-word;">
+                        And it is designed for the realities of Nepali business — the typical workflows, the tax structures, the compliance requirements, and the operational patterns that local businesses deal with every day.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-gray-700 font-medium">
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> Native Bikram Sambat Engine</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> Direct Government CBMS Integration</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> Local Tax &amp; Regulatory Workflow</div>
+                        <div class="flex items-center gap-2"><i class="fas fa-check-circle text-[#00687B]"></i> Enterprise Scale at Local Value</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom CTA Box -->
+            <div class="mt-12 p-8 bg-gradient-to-r from-[#071527] to-[#0f2035] text-white text-center border-t-4 border-[#00687B]">
+                <h3 class="text-2xl sm:text-3xl font-extrabold mb-3">Ready to Modernize Your Business with Oval9?</h3>
+                <p class="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base mb-6" style="text-align:justify;text-justify:inter-word;">
+                    Join forward-thinking businesses across Nepal leveraging Oval9's AI-driven ERP ecosystem for complete operational compliance, control, and growth.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="contact.html" class="btn-enhanced">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>Contact Sales / Get Started</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern High-Tech Animated Footer -->
+    <footer style="background: linear-gradient(135deg, #071527 0%, #0f2035 60%, #004f5e 100%); color: #cbd5e1; position: relative; overflow: hidden; padding: 5rem 0 2rem 0; border-top: 3px solid #00687B;">
+        <!-- Animated Background SVG Decorators -->
+        <div style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:1;">
+            <svg style="position:absolute;top:-60px;right:-60px;opacity:0.12;" width="420" height="420" viewBox="0 0 420 420" fill="none">
+                <circle cx="210" cy="210" r="190" stroke="#00c4df" stroke-width="1.5" stroke-dasharray="12 10">
+                    <animateTransform attributeName="transform" type="rotate" from="0 210 210" to="360 210 210" dur="30s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="210" cy="210" r="130" stroke="#00687B" stroke-width="1" stroke-dasharray="8 14">
+                    <animateTransform attributeName="transform" type="rotate" from="360 210 210" to="0 210 210" dur="20s" repeatCount="indefinite" />
+                </circle>
+            </svg>
+            <div style="position:absolute;inset:0;background-image:radial-gradient(circle at 1px 1px, rgba(0,217,176,0.08) 1px, transparent 0);background-size:24px 24px;opacity:0.6;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div style="display:grid;grid-template-columns:1.2fr 0.8fr 1fr 1.1fr;gap:3rem;margin-bottom:4rem;" class="footer-grid-layout">
+                <!-- Col 1: Brand Info -->
+                <div>
+                    <a href="index.html" style="display:inline-block;margin-bottom:1.25rem;">
+                        <img src="img/FinalLogo.png" alt="Pioneer Software Solutions" style="height:50px;width:auto;object-fit:contain;" />
+                    </a>
+                    <p style="font-size:0.9rem;color:#94a3b8;line-height:1.7;margin-bottom:1.5rem;text-align:justify;text-justify:inter-word;">
+                        Pioneer Software Solutions Pvt Ltd is Nepal's premier software engineering and Tally consulting firm. We specialize in automated accounting systems, custom web solutions, and enterprise ERP implementations since 2010.
+                    </p>
+                    <div style="display:flex;gap:0.75rem;">
+                        <a href="https://www.facebook.com/pioneersoftwaresolutions/" target="_blank" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="width:38px;height:38px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,104,123,0.4);display:flex;align-items:center;justify-content:center;color:#00d9b0;transition:all 0.3s ease;"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Quick Links
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="index.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Home</a></li>
+                        <li><a href="about.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>About Us</a></li>
+                        <li><a href="downloads.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Downloads</a></li>
+                        <li><a href="clints.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Our Clients</a></li>
+                        <li><a href="contact.html" style="color:#94a3b8;text-decoration:none;font-size:0.9rem;"><i class="fas fa-chevron-right" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Contact Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Products & Services -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Products &amp; Solutions
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.75rem;">
+                        <li><a href="Oval9.html" style="color:#00d9b0;text-decoration:none;font-size:0.88rem;font-weight:700;"><i class="fas fa-brain" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Oval9 AI ERP</a></li>
+                        <li><a href="tallycusto.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;"><i class="fas fa-cog" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Tally Customization</a></li>
+                        <li><a href="behave.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;"><i class="fas fa-database" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Distribution Management</a></li>
+                        <li><a href="webdev.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;"><i class="fas fa-globe" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Custom Web Applications</a></li>
+                        <li><a href="easybill.html" style="color:#94a3b8;text-decoration:none;font-size:0.88rem;"><i class="fas fa-file-invoice" style="font-size:0.65rem;color:#00d9b0;margin-right:8px;"></i>Easy Bill Software</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Info -->
+                <div>
+                    <h4 style="font-size:1.05rem;font-weight:700;color:#ffffff;margin-bottom:1.5rem;position:relative;padding-bottom:0.5rem;display:inline-block;">
+                        Head Office
+                        <span style="position:absolute;bottom:0;left:0;width:30px;height:2.5px;background:#00d9b0;"></span>
+                    </h4>
+                    <p style="font-size:0.88rem;color:#94a3b8;line-height:1.7;margin-bottom:0.75rem;">
+                        <i class="fas fa-map-marker-alt text-[#00d9b0] mr-2"></i> Kathmandu, Nepal
+                    </p>
+                    <p style="font-size:0.88rem;color:#94a3b8;line-height:1.7;margin-bottom:0.75rem;">
+                        <i class="fas fa-phone-alt text-[#00d9b0] mr-2"></i> +977-1-5911578
+                    </p>
+                    <p style="font-size:0.88rem;color:#94a3b8;line-height:1.7;">
+                        <i class="fas fa-envelope text-[#00d9b0] mr-2"></i> info@pioneersoftware.com.np
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div style="border-top:1px solid rgba(255,255,255,0.08);padding-top:1.75rem;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;">
+                <p style="font-size:0.85rem;color:#64748b;margin:0;">
+                    &copy; 2026 Pioneer Software Solutions Pvt Ltd. All rights reserved. Powered by Oval9 ERP.
+                </p>
+                <div style="display:flex;gap:1.5rem;font-size:0.85rem;">
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;">Privacy Policy</a>
+                    <a href="contact.html" style="color:#64748b;text-decoration:none;">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Contact Trigger -->
+    <div class="floating-contact">
+        <a href="contact.html" class="contact-trigger" title="Contact Pioneer Software">
+            <i class="fab fa-whatsapp text-white text-2xl"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript for Navbar & Mobile Menu -->
+    <script>
+        // Navbar Dropdown Toggle
+        const dropdownBtn = document.getElementById('products-dropdown');
+        const dropdownMenu = document.getElementById('dropdown-menu');
+        const dropdownArrow = document.getElementById('dropdown-arrow');
+
+        if (dropdownBtn && dropdownMenu) {
+            dropdownBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdownMenu.classList.toggle('show');
+                if (dropdownArrow) dropdownArrow.classList.toggle('rotate-180');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!dropdownMenu.contains(e.target) && !dropdownBtn.contains(e.target)) {
+                    dropdownMenu.classList.remove('show');
+                    if (dropdownArrow) dropdownArrow.classList.remove('rotate-180');
+                }
+            });
+        }
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+        }
+
+        // Top Progress Bar Scroll Handler
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progressFill = document.getElementById('progressFill');
+            if (progressFill) progressFill.style.width = scrolled + '%';
+
+            const navbar = document.getElementById('navbar');
+            if (navbar) {
+                if (winScroll > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

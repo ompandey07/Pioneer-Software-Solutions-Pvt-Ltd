@@ -334,7 +334,7 @@
             background: linear-gradient(135deg, #ffffff 0%, #f0f7f9 50%, #e1eff3 100%);
             position: relative;
             overflow: hidden;
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             padding-top: 60px;
